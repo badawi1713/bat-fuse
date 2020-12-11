@@ -17,7 +17,7 @@ import FuseLayoutConfigs from 'app/fuse-layouts/FuseLayoutConfigs';
 
 function getInitialSettings() {
 	const defaultLayoutStyle =
-		FuseSettingsConfig.layout && FuseSettingsConfig.layout.style ? FuseSettingsConfig.layout.style : 'layout1';
+		FuseSettingsConfig.layout && FuseSettingsConfig.layout.style ? FuseSettingsConfig.layout.style : 'layout2';
 	const layout = {
 		style: defaultLayoutStyle,
 		config: FuseLayoutConfigs[defaultLayoutStyle].defaults

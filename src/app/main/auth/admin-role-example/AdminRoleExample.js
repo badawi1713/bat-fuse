@@ -51,7 +51,7 @@ function AdminRoleExample(props) {
                                         config: {}
                                     }
                                 },
-                                auth    : authRoles.admin,//['admin']
+                                auth    : authRoles.admin,//['ADMIN']
                                 routes  : [
                                     {
                                         path     : '/auth/admin-role-example',
@@ -73,7 +73,7 @@ function AdminRoleExample(props) {
                                         'id'   : 'only-admin-navigation-item',
                                         'title': 'Nav item only for Admin',
                                         'type' : 'item',
-                                        'auth' : authRoles.admin,//['admin']
+                                        'auth' : authRoles.admin,//['ADMIN']
                                         'url'  : '/auth/admin-role-example',
                                         'icon' : 'verified_user'
                                     }

@@ -2,7 +2,7 @@
   "name": "Material-UI",
   "short_name": "MUI",
   "display": "browser",
-  "start_url": "/",
+  "start_url": "/login",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "icons": [

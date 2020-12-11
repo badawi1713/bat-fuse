@@ -7,7 +7,7 @@ const StaffRoleExampleConfig = {
 			config: {}
 		}
 	},
-	auth: authRoles.staff, // ['admin','staff']
+	auth: authRoles.staff, // ['ADMIN','staff']
 	routes: [
 		{
 			path: '/auth/staff-role-example',

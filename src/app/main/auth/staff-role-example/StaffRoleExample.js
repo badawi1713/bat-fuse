@@ -51,7 +51,7 @@ function StaffRoleExample(props) {
                                         config: {}
                                     }
                                 },
-                                auth    : authRoles.staff,//['admin',staff']
+                                auth    : authRoles.staff,//['ADMIN',staff']
                                 routes  : [
                                     {
                                         path     : '/auth/staff-role-example',
@@ -73,7 +73,7 @@ function StaffRoleExample(props) {
                                         'id'   : 'only-staff-navigation-item',
                                         'title': 'Nav item only for Staff',
                                         'type' : 'item',
-                                        'auth' : authRoles.staff,//['admin','staff']
+                                        'auth' : authRoles.staff,//['ADMIN','staff']
                                         'url'  : '/auth/staff-role-example',
                                         'icon' : 'verified_user'
                                     }

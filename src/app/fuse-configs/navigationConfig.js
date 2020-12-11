@@ -19,6 +19,14 @@ const navigationConfig = [
 		icon: 'apps',
 		children: [
 			{
+				id: 'home',
+				title: 'Home',
+				translate: 'Home',
+				type: 'item',
+				icon: 'home',
+				url: '/home'
+			},
+			{
 				id: 'dashboards',
 				title: 'Dashboards',
 				translate: 'DASHBOARDS',

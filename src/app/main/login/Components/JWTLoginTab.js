@@ -3,11 +3,10 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import Typography from '@material-ui/core/Typography';
+import { submitLogin } from 'app/auth/store/loginSlice';
 import Formsy from 'formsy-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { submitLogin } from 'app/auth/store/loginSlice';
 
 function JWTLoginTab(props) {
 	const dispatch = useDispatch();
@@ -19,7 +18,7 @@ function JWTLoginTab(props) {
 	const formRef = useRef(null);
 
 	useEffect(() => {
-		if (login.error && (login.error.email || login.error.password)) {
+		if (login.error && (login.error.username || login.error.password)) {
 			formRef.current.updateInputsWithError({
 				...login.error
 			});
@@ -40,7 +39,7 @@ function JWTLoginTab(props) {
 	}
 
 	return (
-		<div className="w-full">
+		<div className="w-full pb-96">
 			<Formsy
 				onValidSubmit={handleSubmit}
 				onValid={enableButton}
@@ -51,20 +50,20 @@ function JWTLoginTab(props) {
 				<TextFieldFormsy
 					className="mb-16"
 					type="text"
-					name="email"
-					label="Username/Email"
-					value="admin"
+					name="username"
+					label="Username"
+					value=""
 					validations={{
-						minLength: 4
+						minLength: 1
 					}}
 					validationErrors={{
-						minLength: 'Min character length is 4'
+						minLength: 'Username cannot be blank'
 					}}
 					InputProps={{
 						endAdornment: (
 							<InputAdornment position="end">
 								<Icon className="text-20" color="action">
-									email
+									person
 								</Icon>
 							</InputAdornment>
 						)
@@ -78,12 +77,12 @@ function JWTLoginTab(props) {
 					type="password"
 					name="password"
 					label="Password"
-					value="admin"
+					value=""
 					validations={{
-						minLength: 4
+						minLength: 1
 					}}
 					validationErrors={{
-						minLength: 'Min character length is 4'
+						minLength: 'Password cannot be blank'
 					}}
 					InputProps={{
 						className: 'pr-2',
@@ -114,56 +113,6 @@ function JWTLoginTab(props) {
 					Login
 				</Button>
 			</Formsy>
-
-			<table className="text-center w-full mt-32">
-				<thead>
-					<tr>
-						<th>
-							<Typography className="font-600" color="textSecondary">
-								Role
-							</Typography>
-						</th>
-						<th>
-							<Typography className="font-600" color="textSecondary">
-								Username
-							</Typography>
-						</th>
-						<th>
-							<Typography className="font-600" color="textSecondary">
-								Password
-							</Typography>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<Typography className="font-600" color="textSecondary">
-								Admin
-							</Typography>
-						</td>
-						<td>
-							<Typography>admin</Typography>
-						</td>
-						<td>
-							<Typography>admin</Typography>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<Typography className="font-600" color="textSecondary">
-								Staff
-							</Typography>
-						</td>
-						<td>
-							<Typography>staff</Typography>
-						</td>
-						<td>
-							<Typography>staff</Typography>
-						</td>
-					</tr>
-				</tbody>
-			</table>
 		</div>
 	);
 }

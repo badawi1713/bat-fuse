@@ -1,6 +1,7 @@
 import FuseUtils from '@fuse/utils/FuseUtils';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+require('dotenv').config();
 /* eslint-disable camelcase */
 
 class JwtService extends FuseUtils.EventEmitter {
@@ -58,18 +59,18 @@ class JwtService extends FuseUtils.EventEmitter {
 		});
 	};
 
-	signInWithEmailAndPassword = (email, password) => {
+	signInWithEmailAndPassword = (username, password) => {
 		return new Promise((resolve, reject) => {
 			axios
-				.get('/api/auth', {
+				.post(`https://icore-tools.ptpjb.com/service/identity/auth`, {
 					data: {
-						email,
+						username,
 						password
 					}
 				})
 				.then(response => {
 					if (response.data.user) {
-						this.setSession(response.data.access_token);
+						this.setSession(response.data.token);
 						resolve(response.data.user);
 					} else {
 						reject(response.data.error);
@@ -81,15 +82,15 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithToken = () => {
 		return new Promise((resolve, reject) => {
 			axios
-				.get('/api/auth/access-token', {
-					data: {
-						access_token: this.getAccessToken()
+				.get(`https://icore-tools.ptpjb.com/service/identity/validate/access-token`, {
+					headers: {
+						Authorization: `Bearer ${this.getAccessToken()}`
 					}
 				})
 				.then(response => {
-					if (response.data.user) {
-						this.setSession(response.data.access_token);
-						resolve(response.data.user);
+					if (response.data.object.user) {
+						this.setSession(this.getAccessToken());
+						resolve(response.data.object.user);
 					} else {
 						this.logout();
 						reject(new Error('Failed to login with token.'));

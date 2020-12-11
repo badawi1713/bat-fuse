@@ -4,11 +4,21 @@ import firebaseService from 'app/services/firebaseService';
 import jwtService from 'app/services/jwtService';
 import { setUserData } from './userSlice';
 
-export const submitLogin = ({ email, password }) => async dispatch => {
+export const submitLogin = ({ username, password }) => async dispatch => {
 	return jwtService
-		.signInWithEmailAndPassword(email, password)
+		.signInWithEmailAndPassword(username, password)
 		.then(user => {
-			dispatch(setUserData(user));
+			console.log(user);
+			dispatch(
+				setUserData({
+					role: [user.role.roleName],
+					data: {
+						displayName: user.fullname,
+						email: user.email,
+						photoURL: user.imageUrl
+					}
+				})
+			);
 
 			return dispatch(loginSuccess());
 		})

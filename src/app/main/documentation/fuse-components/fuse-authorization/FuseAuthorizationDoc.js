@@ -93,7 +93,7 @@ function FuseAuthorizationDoc() {
 							<TableCell>
 								<code>[admin,user]</code>
 							</TableCell>
-							<TableCell>Only 'admin' and 'user' roles are allowed</TableCell>
+							<TableCell>Only 'ADMIN' and 'user' roles are allowed</TableCell>
 						</TableRow>
 					</TableBody>
 				</Table>
@@ -152,15 +152,15 @@ function FuseAuthorizationDoc() {
 						</TableRow>
 						<TableRow>
 							<TableCell>
-								<code>['admin','user']</code> (array)
+								<code>['ADMIN','user']</code> (array)
 							</TableCell>
-							<TableCell>User has roles 'admin' and 'user'</TableCell>
+							<TableCell>User has roles 'ADMIN' and 'user'</TableCell>
 						</TableRow>
 						<TableRow>
 							<TableCell>
 								<code>"admin"</code> (string)
 							</TableCell>
-							<TableCell>User has 'admin' role</TableCell>
+							<TableCell>User has 'ADMIN' role</TableCell>
 						</TableRow>
 					</TableBody>
 				</Table>
@@ -185,7 +185,7 @@ function FuseAuthorizationDoc() {
 						'id'   : 'only-admin-navigation-item',
 						'title': 'Nav item only for Admin',
 						'type' : 'item',
-						'auth' : authRoles.admin,//['admin']
+						'auth' : authRoles.admin,//['ADMIN']
 						'url'  : '/auth/admin-role-example',
 						'icon' : 'verified_user'
 					  },
@@ -207,7 +207,7 @@ function FuseAuthorizationDoc() {
 				file,
 				<br />
 				Set defaultAuth paramater
-				<code>FuseUtils.generateRoutesFromConfigs(routeConfigs, ['admin','staff','user'])</code>
+				<code>FuseUtils.generateRoutesFromConfigs(routeConfigs, ['ADMIN','staff','user'])</code>
 				,
 				<br />
 				The individual route configs which has auth option won't be overridden,
@@ -244,7 +244,7 @@ function FuseAuthorizationDoc() {
 					];
 					
 					const routes = [
-						...FuseUtils.generateRoutesFromConfigs(routeConfigs, ['admin','staff','user']),
+						...FuseUtils.generateRoutesFromConfigs(routeConfigs, ['ADMIN','staff','user']),
 						{
 							path     : '/',
 							exact    : true,
@@ -301,9 +301,9 @@ function FuseAuthorizationDoc() {
 					
 					const routes = [
 						//if you want to make whole app auth protected by default change defaultAuth for example:
-						// ...FuseUtils.generateRoutesFromConfigs(routeConfigs, ['admin','staff','user']),
+						// ...FuseUtils.generateRoutesFromConfigs(routeConfigs, ['ADMIN','staff','user']),
 						// The individual route configs which has auth option won't be overridden.
-						...FuseUtils.generateRoutesFromConfigs(routeConfigs, ['admin', 'staff', 'user']),
+						...FuseUtils.generateRoutesFromConfigs(routeConfigs, ['ADMIN', 'staff', 'user']),
 						{
 							path     : '/',
 							exact    : true,

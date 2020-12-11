@@ -11,14 +11,14 @@ const config = {
 			position: 'below'
 		},
 		footer: {
-			display: true,
+			display: false,
 			style: 'fixed'
 		},
 		leftSidePanel: {
 			display: true
 		},
 		rightSidePanel: {
-			display: true
+			display: false
 		}
 	},
 	form: {

@@ -15,14 +15,14 @@ const authDB = {
 			uuid: 'XgbuVEXBU5gtSKdbQRP1Zbbby1i1',
 			from: 'custom-db',
 			password: 'admin',
-			role: 'admin',
+			role: 'ADMIN',
 			data: {
 				displayName: 'Abbott Keitch',
 				photoURL: 'assets/images/avatars/Abbott.jpg',
 				email: 'admin',
 				settings: {
 					layout: {
-						style: 'layout1',
+						style: 'layout2',
 						config: {
 							scroll: 'content',
 							navbar: {
@@ -160,7 +160,7 @@ mock.onPost('/api/auth/register').reply(request => {
 			uuid: FuseUtils.generateGUID(),
 			from: 'custom-db',
 			password,
-			role: 'admin',
+			role: 'ADMIN',
 			data: {
 				displayName,
 				photoURL: 'assets/images/avatars/Abbott.jpg',
