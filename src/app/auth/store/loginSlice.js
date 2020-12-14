@@ -8,14 +8,26 @@ export const submitLogin = ({ username, password }) => async dispatch => {
 	return jwtService
 		.signInWithEmailAndPassword(username, password)
 		.then(user => {
-			console.log(user);
 			dispatch(
 				setUserData({
 					role: [user.role.roleName],
 					data: {
 						displayName: user.fullname,
 						email: user.email,
-						photoURL: user.imageUrl
+						photoURL: user.imageUrl,
+						settings: {
+							layout: {
+								style: 'layout2'
+							},
+							customScrollbars: true,
+							theme: {
+								main: 'defaultDark',
+								navbar: 'defaultDark',
+								toolbar: 'defaultDark',
+								footer: 'defaultDark'
+							}
+						},
+						shortcuts: []
 					}
 				})
 			);
@@ -23,7 +35,15 @@ export const submitLogin = ({ username, password }) => async dispatch => {
 			return dispatch(loginSuccess());
 		})
 		.catch(error => {
-			return dispatch(loginError(error));
+			if (error.errorlogin) {
+				dispatch(
+					showMessage({
+						message: error.errorlogin
+					})
+				);
+			}
+
+			return false;
 		});
 };
 
@@ -63,10 +83,7 @@ export const submitLoginWithFireBase = ({ username, password }) => async dispatc
 
 const initialState = {
 	success: false,
-	error: {
-		username: null,
-		password: null
-	}
+	error: null
 };
 
 const loginSlice = createSlice({

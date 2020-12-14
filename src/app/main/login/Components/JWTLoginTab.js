@@ -19,9 +19,6 @@ function JWTLoginTab(props) {
 
 	useEffect(() => {
 		if (login.error && (login.error.username || login.error.password)) {
-			formRef.current.updateInputsWithError({
-				...login.error
-			});
 			disableButton();
 		}
 	}, [login.error]);

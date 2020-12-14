@@ -46,7 +46,7 @@ function NavbarMobileLayout2(props) {
 
 				<Hidden lgUp>
 					<NavbarMobileToggleButton className="w-40 h-40 p-0">
-						<Icon>{theme.direction === 'ltr' ? 'arrow_back' : 'arrow_forward'}"</Icon>
+						<Icon fontSize="small">{theme.direction === 'ltr' ? 'arrow_back' : 'arrow_forward'}"</Icon>
 					</NavbarMobileToggleButton>
 				</Hidden>
 			</AppBar>

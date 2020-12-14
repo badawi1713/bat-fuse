@@ -41,7 +41,20 @@ class Auth extends Component {
 							data: {
 								displayName: user.fullname,
 								email: user.email,
-								photoURL: user.imageUrl
+								photoURL: user.imageUrl,
+								settings: {
+									layout: {
+										style: 'layout2'
+									},
+									customScrollbars: true,
+									theme: {
+										main: 'defaultDark',
+										navbar: 'defaultDark',
+										toolbar: 'defaultDark',
+										footer: 'defaultDark'
+									}
+								},
+								shortcuts: []
 							}
 						});
 

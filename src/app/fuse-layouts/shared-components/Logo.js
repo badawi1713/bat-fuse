@@ -32,7 +32,7 @@ function Logo() {
 	return (
 		<div className={clsx(classes.root, 'flex items-center')}>
 			<img className="logo-icon" src="assets/images/logos/logo-pjb.svg" alt="logo" />
-			<Typography className="text-16 mx-12 font-light logo-text" color="inherit">
+			<Typography className="text-12 font-bold mx-10 font-light logo-text" color="inherit">
 				BOILER AUTO TUNING
 			</Typography>
 		</div>

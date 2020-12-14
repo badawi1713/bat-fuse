@@ -68,13 +68,24 @@ class JwtService extends FuseUtils.EventEmitter {
 						password
 					}
 				})
-				.then(response => {
-					if (response.data.user) {
-						this.setSession(response.data.token);
-						resolve(response.data.user);
-					} else {
-						reject(response.data.error);
+				.then(
+					response => {
+						console.log(response);
+						if (response.data.user) {
+							this.setSession(response.data.token);
+							resolve(response.data.user);
+						} else {
+							reject(response.data.message);
+						}
+					},
+					error => {
+						return Promise.reject(error.response);
 					}
+				)
+				.catch(error => {
+					reject({
+						errorlogin: (error && error.data.message) || 'Oops... Something went wrong with server'
+					});
 				});
 		});
 	};
