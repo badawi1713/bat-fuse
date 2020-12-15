@@ -1,6 +1,5 @@
 import { Button, ButtonGroup, Card, CardContent, Container, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import clsx from 'clsx';
 import React, { useState } from 'react';
 
@@ -163,12 +162,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -181,12 +174,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -198,12 +185,6 @@ const CombustionConfig = () => {
 															<Typography className="text-12">Set Point</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -219,12 +200,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -238,12 +213,6 @@ const CombustionConfig = () => {
 															</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -268,12 +237,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -286,12 +249,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -303,12 +260,6 @@ const CombustionConfig = () => {
 															<Typography className="text-12">Demand</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -324,12 +275,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -341,12 +286,6 @@ const CombustionConfig = () => {
 															<Typography className="text-12">RH2 Temperature</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -384,12 +323,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -402,12 +335,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -419,12 +346,6 @@ const CombustionConfig = () => {
 															<Typography className="text-12">Set Point</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -439,12 +360,6 @@ const CombustionConfig = () => {
 															</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -469,12 +384,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -487,12 +396,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -504,12 +407,6 @@ const CombustionConfig = () => {
 															<Typography className="text-12">Set Point</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -524,12 +421,6 @@ const CombustionConfig = () => {
 															</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -556,12 +447,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -573,12 +458,6 @@ const CombustionConfig = () => {
 															<Typography className="text-12">Coal Flow (tph)</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOff}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -594,12 +473,6 @@ const CombustionConfig = () => {
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
 															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
-															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
 																</Typography>
@@ -611,12 +484,6 @@ const CombustionConfig = () => {
 															<Typography className="text-12">SA Flow (kg/h)</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh
@@ -631,12 +498,6 @@ const CombustionConfig = () => {
 															</Typography>
 														</Grid>
 														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<FiberManualRecordIcon
-																	fontSize="small"
-																	className={classes.statusOn}
-																/>
-															</Grid>
 															<Grid item>
 																<Typography className="text-12">
 																	123 kCal/kWh

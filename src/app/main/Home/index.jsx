@@ -23,7 +23,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+
 import clsx from 'clsx';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -352,7 +352,7 @@ const Home = () => {
 															id="panel1a-header"
 														>
 															<Typography className={clsx(classes.heading, 'text-12')}>
-																(12/12/2020 14:30:00) NEW ADVISORY FOR COMBUSTION
+																(12/12/2020 14:30:00) NEW ADVISORY FOR COMBUSTION UNIT 1
 															</Typography>
 														</AccordionSummary>
 														<AccordionDetails>
@@ -461,7 +461,229 @@ const Home = () => {
 															id="panel2a-header"
 														>
 															<Typography className={clsx(classes.heading, 'text-12')}>
-																(12/12/2020 14:30:00) NEW ADVISORY FOR SOOTBLOW
+																(12/12/2020 14:30:00) NEW ADVISORY FOR SOOTBLOW UNIT 1
+															</Typography>
+														</AccordionSummary>
+														<AccordionDetails>
+															<Grid container direction="column" spacing={1}>
+																<Grid item>
+																	<Paper className={classes.root}>
+																		<TableContainer className={classes.container}>
+																			<Table
+																				size="small"
+																				stickyHeader
+																				aria-label="sticky table"
+																			>
+																				<TableHead>
+																					<TableRow>
+																						{sootblowDataColumns.map(
+																							column => (
+																								<TableCell
+																									key={column.id}
+																									align={column.align}
+																								>
+																									{column.label}
+																								</TableCell>
+																							)
+																						)}
+																					</TableRow>
+																				</TableHead>
+																				<TableBody>
+																					{sootblowDataRows
+																						.slice(
+																							page * rowsPerPage,
+																							page * rowsPerPage +
+																								rowsPerPage
+																						)
+																						.map(row => {
+																							return (
+																								<TableRow
+																									hover
+																									role="checkbox"
+																									tabIndex={-1}
+																									key={row.code}
+																								>
+																									{sootblowDataColumns.map(
+																										column => {
+																											const value =
+																												row[
+																													column
+																														.id
+																												];
+																											return (
+																												<TableCell
+																													key={
+																														column.id
+																													}
+																													align={
+																														column.align
+																													}
+																												>
+																													{column.format &&
+																													typeof value ===
+																														'number'
+																														? column.format(
+																																value
+																														  )
+																														: value}
+																												</TableCell>
+																											);
+																										}
+																									)}
+																								</TableRow>
+																							);
+																						})}
+																				</TableBody>
+																			</Table>
+																		</TableContainer>
+																		<TablePagination
+																			rowsPerPageOptions={[10, 25, 100]}
+																			component="div"
+																			count={sootblowDataRows.length}
+																			rowsPerPage={rowsPerPage}
+																			page={page}
+																			onChangePage={handleChangePage}
+																			onChangeRowsPerPage={
+																				handleChangeRowsPerPage
+																			}
+																		/>
+																	</Paper>
+																</Grid>
+																<Grid item>
+																	<Link to="/sootblow">
+																		<Button
+																			fullWidth
+																			variant="contained"
+																			className="text-12"
+																		>
+																			SHOW DETAIL
+																		</Button>
+																	</Link>
+																</Grid>
+															</Grid>
+														</AccordionDetails>
+													</Accordion>
+												</div>
+											</Grid>
+											<Grid item container xs={12}>
+												<div className={classes.root}>
+													<Accordion>
+														<AccordionSummary
+															expandIcon={<ExpandMoreIcon />}
+															aria-controls="panel1a-content"
+															id="panel1a-header"
+														>
+															<Typography className={clsx(classes.heading, 'text-12')}>
+																(12/12/2020 14:30:00) NEW ADVISORY FOR COMBUSTION UNIT 2
+															</Typography>
+														</AccordionSummary>
+														<AccordionDetails>
+															<Grid container direction="column" spacing={1}>
+																<Grid item>
+																	<Paper className={classes.root}>
+																		<TableContainer className={classes.container}>
+																			<Table
+																				size="small"
+																				stickyHeader
+																				aria-label="sticky table"
+																			>
+																				<TableHead>
+																					<TableRow>
+																						{combustionDataColumns.map(
+																							column => (
+																								<TableCell
+																									key={column.id}
+																									align={column.align}
+																								>
+																									{column.label}
+																								</TableCell>
+																							)
+																						)}
+																					</TableRow>
+																				</TableHead>
+																				<TableBody>
+																					{combustionDataRows
+																						.slice(
+																							page * rowsPerPage,
+																							page * rowsPerPage +
+																								rowsPerPage
+																						)
+																						.map(row => {
+																							return (
+																								<TableRow
+																									hover
+																									role="checkbox"
+																									tabIndex={-1}
+																									key={row.code}
+																								>
+																									{combustionDataColumns.map(
+																										column => {
+																											const value =
+																												row[
+																													column
+																														.id
+																												];
+																											return (
+																												<TableCell
+																													key={
+																														column.id
+																													}
+																													align={
+																														column.align
+																													}
+																												>
+																													{column.format &&
+																													typeof value ===
+																														'number'
+																														? column.format(
+																																value
+																														  )
+																														: value}
+																												</TableCell>
+																											);
+																										}
+																									)}
+																								</TableRow>
+																							);
+																						})}
+																				</TableBody>
+																			</Table>
+																		</TableContainer>
+																		<TablePagination
+																			rowsPerPageOptions={[10, 25, 100]}
+																			component="div"
+																			count={combustionDataRows.length}
+																			rowsPerPage={rowsPerPage}
+																			page={page}
+																			onChangePage={handleChangePage}
+																			onChangeRowsPerPage={
+																				handleChangeRowsPerPage
+																			}
+																		/>
+																	</Paper>
+																</Grid>
+																<Grid item>
+																	<Link to="/combustion">
+																		<Button
+																			fullWidth
+																			variant="contained"
+																			className="text-12"
+																		>
+																			SHOW DETAIL
+																		</Button>
+																	</Link>
+																</Grid>
+															</Grid>
+														</AccordionDetails>
+													</Accordion>
+													<Accordion>
+														<AccordionSummary
+															expandIcon={<ExpandMoreIcon />}
+															aria-controls="panel2a-content"
+															id="panel2a-header"
+														>
+															<Typography className={clsx(classes.heading, 'text-12')}>
+																(12/12/2020 14:30:00) NEW ADVISORY FOR SOOTBLOW UNIT 2
 															</Typography>
 														</AccordionSummary>
 														<AccordionDetails>
@@ -595,12 +817,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -613,12 +829,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -630,12 +840,6 @@ const Home = () => {
 																<Typography className="text-12">Set Point</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -651,12 +855,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -670,12 +868,6 @@ const Home = () => {
 																</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -700,12 +892,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -718,12 +904,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -735,12 +915,6 @@ const Home = () => {
 																<Typography className="text-12">Demand</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -756,12 +930,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -775,12 +943,6 @@ const Home = () => {
 																</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -819,12 +981,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -837,12 +993,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -854,12 +1004,6 @@ const Home = () => {
 																<Typography className="text-12">Set Point</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -874,12 +1018,6 @@ const Home = () => {
 																</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -904,12 +1042,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -922,12 +1054,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -939,12 +1065,6 @@ const Home = () => {
 																<Typography className="text-12">Set Point</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -959,12 +1079,6 @@ const Home = () => {
 																</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -991,12 +1105,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -1010,12 +1118,6 @@ const Home = () => {
 																</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOff}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
@@ -1031,12 +1133,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -1051,12 +1147,6 @@ const Home = () => {
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
 																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
-																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
 																	</Typography>
@@ -1070,12 +1160,6 @@ const Home = () => {
 																</Typography>
 															</Grid>
 															<Grid item container xs={8} justify="flex-end" spacing={2}>
-																<Grid item>
-																	<FiberManualRecordIcon
-																		fontSize="small"
-																		className={classes.statusOn}
-																	/>
-																</Grid>
 																<Grid item>
 																	<Typography className="text-12">
 																		123 kCal/kWh
