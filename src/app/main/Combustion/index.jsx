@@ -1,7 +1,8 @@
-import { Card, CardContent, Container, Grid, Typography } from '@material-ui/core';
+import { Button, ButtonGroup, Card, CardContent, Container, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import React from 'react';
+import clsx from 'clsx';
+import React, { useState } from 'react';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -25,11 +26,17 @@ const useStyles = makeStyles(theme => ({
 	},
 	statusButtonOn: {
 		color: '#FFF',
-		backgroundColor: '#FA0000'
+		backgroundColor: '#FA0000',
+		'&:hover': {
+			backgroundColor: '#bd291e'
+		}
 	},
 	statusButtonOff: {
 		color: '#FFF',
-		backgroundColor: '#3D9140'
+		backgroundColor: '#3D9140',
+		'&:hover': {
+			backgroundColor: '#327835'
+		}
 	},
 	container: {
 		maxHeight: 200
@@ -42,6 +49,25 @@ const useStyles = makeStyles(theme => ({
 const CombustionConfig = () => {
 	const classes = useStyles();
 
+	const [masterControlStatus, setMasterControlStatus] = useState(false);
+	const [operationControlStatus, setOperationControlStatus] = useState(false);
+
+	const masterControlToggleOn = () => {
+		setMasterControlStatus(true);
+	};
+
+	const masterControlToggleOff = () => {
+		setMasterControlStatus(false);
+	};
+
+	const operationControlToggleOn = () => {
+		setOperationControlStatus(true);
+	};
+
+	const operationControlToggleOff = () => {
+		setOperationControlStatus(false);
+	};
+
 	return (
 		<Container className="py-16">
 			<Grid container spacing={2}>
@@ -52,6 +78,67 @@ const CombustionConfig = () => {
 					<Grid item xs={12}>
 						<hr />
 					</Grid>
+				</Grid>
+				<Grid item container justify="space-between" alignItems="center" xs={12}>
+					<Grid item xs={8} md={10}>
+						<Typography className="text-12">Operation Control</Typography>
+					</Grid>
+					<Grid item xs={4} md={2}>
+						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+							<Button
+								onClick={operationControlToggleOn}
+								className={clsx(
+									'text-12',
+									operationControlStatus ? classes.statusButtonOff : 'primary'
+								)}
+							>
+								Manual
+							</Button>
+							<Button
+								onClick={operationControlToggleOff}
+								className={clsx('text-12', operationControlStatus ? 'primary' : classes.statusButtonOn)}
+							>
+								Auto
+							</Button>
+						</ButtonGroup>
+					</Grid>
+				</Grid>
+
+				<Grid item container justify="space-between" alignItems="center" xs={12}>
+					<Grid item xs={8} md={10}>
+						<Typography className="text-12">Master Control</Typography>
+					</Grid>
+					<Grid item xs={4} md={2}>
+						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+							<Button
+								onClick={masterControlToggleOn}
+								className={clsx('text-12', masterControlStatus ? classes.statusButtonOff : 'primary')}
+							>
+								ON
+							</Button>
+							<Button
+								onClick={masterControlToggleOff}
+								className={clsx('text-12', masterControlStatus ? 'primary' : classes.statusButtonOn)}
+							>
+								OFF
+							</Button>
+						</ButtonGroup>
+					</Grid>
+				</Grid>
+
+				<Grid item container justify="space-between" alignItems="center" xs={12}>
+					<Grid item xs={8} md={10}>
+						<Typography className="text-12">Safe Guard</Typography>
+					</Grid>
+					<Grid item xs={4} md={2}>
+						<Button fullWidth variant="contained" className={clsx('text-12', classes.statusButtonOff)}>
+							Ready
+						</Button>
+					</Grid>
+				</Grid>
+
+				<Grid item xs={12}>
+					<hr />
 				</Grid>
 				<Grid item xs={12}>
 					<Card>

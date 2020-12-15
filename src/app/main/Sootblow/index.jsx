@@ -138,16 +138,16 @@ const Sootblow = () => {
 						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
 							<Button
 								onClick={operationControlToggleOn}
-								className={clsx('text-12', operationControlStatus ? classes.statusButtonOn : 'primary')}
+								className={clsx(
+									'text-12',
+									operationControlStatus ? classes.statusButtonOff : 'primary'
+								)}
 							>
 								Manual
 							</Button>
 							<Button
 								onClick={operationControlToggleOff}
-								className={clsx(
-									'text-12',
-									operationControlStatus ? 'primary' : classes.statusButtonOff
-								)}
+								className={clsx('text-12', operationControlStatus ? 'primary' : classes.statusButtonOn)}
 							>
 								Auto
 							</Button>
@@ -163,13 +163,13 @@ const Sootblow = () => {
 						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
 							<Button
 								onClick={masterControlToggleOn}
-								className={clsx('text-12', masterControlStatus ? classes.statusButtonOn : 'primary')}
+								className={clsx('text-12', masterControlStatus ? classes.statusButtonOff : 'primary')}
 							>
 								ON
 							</Button>
 							<Button
 								onClick={masterControlToggleOff}
-								className={clsx('text-12', masterControlStatus ? 'primary' : classes.statusButtonOff)}
+								className={clsx('text-12', masterControlStatus ? 'primary' : classes.statusButtonOn)}
 							>
 								OFF
 							</Button>
@@ -182,8 +182,8 @@ const Sootblow = () => {
 						<Typography className="text-12">Safe Guard</Typography>
 					</Grid>
 					<Grid item xs={4} md={2}>
-						<Button fullWidth variant="contained" className="text-12">
-							Disabled
+						<Button fullWidth variant="contained" className={clsx('text-12', classes.statusButtonOff)}>
+							Ready
 						</Button>
 					</Grid>
 				</Grid>
@@ -242,11 +242,11 @@ const Sootblow = () => {
 							/>
 						</Paper>
 					</Grid>
-					<Grid item xs={2}>
+					{/* <Grid item xs={2}>
 						<Button variant="contained" color="secondary" className="text-12">
 							Apply
 						</Button>
-					</Grid>
+					</Grid> */}
 				</Grid>
 
 				<Grid item container spacing={1}>

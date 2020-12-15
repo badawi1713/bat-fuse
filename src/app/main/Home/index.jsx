@@ -147,7 +147,7 @@ const Home = () => {
 													<Typography>Boiler Optimization Parameter Status</Typography>
 												</Grid>
 												<Grid item>
-													<Typography>Permissive Status</Typography>
+													<Typography>Safe Guard</Typography>
 												</Grid>
 											</Grid>
 										</Grid>
@@ -185,7 +185,7 @@ const Home = () => {
 													<Button
 														className={clsx(
 															classes.statusButton,
-															classes.statusButtonOn,
+															classes.statusButtonOff,
 															'text-12',
 															'p-0'
 														)}
@@ -230,7 +230,7 @@ const Home = () => {
 													<Button
 														className={clsx(
 															classes.statusButton,
-															classes.statusButtonOff,
+															classes.statusButtonOn,
 															'text-12',
 															'p-0'
 														)}
@@ -275,7 +275,7 @@ const Home = () => {
 													<Button
 														className={clsx(
 															classes.statusButton,
-															classes.statusButtonOn,
+															classes.statusButtonOff,
 															'text-12',
 															'p-0'
 														)}
@@ -320,7 +320,7 @@ const Home = () => {
 													<Button
 														className={clsx(
 															classes.statusButton,
-															classes.statusButtonOff,
+															classes.statusButtonOn,
 															'text-12',
 															'p-0'
 														)}
