@@ -242,7 +242,7 @@ const Home = () => {
 											</Grid>
 										</Grid>
 
-										<Grid item container>
+										{/* <Grid item container>
 											<Grid item container justify="space-between" alignItems="center">
 												<Grid item container alignItems="center" xs={8} md={10}>
 													<Grid item md={3}>
@@ -285,9 +285,9 @@ const Home = () => {
 													</Button>
 												</Grid>
 											</Grid>
-										</Grid>
+										</Grid> */}
 
-										<Grid item container>
+										{/* <Grid item container>
 											<Grid item container justify="space-between" alignItems="center">
 												<Grid item container alignItems="center" xs={8} md={10}>
 													<Grid item md={3}>
@@ -330,7 +330,7 @@ const Home = () => {
 													</Button>
 												</Grid>
 											</Grid>
-										</Grid>
+										</Grid> */}
 									</Grid>
 
 									<Grid item container justify="space-between" xs={12}>
@@ -352,7 +352,7 @@ const Home = () => {
 															id="panel1a-header"
 														>
 															<Typography className={clsx(classes.heading, 'text-12')}>
-																(12/12/2020 14:30:00) NEW ADVISORY FOR COMBUSTION UNIT 1
+																(12/12/2020 14:30:00) NEW ADVISORY FOR COMBUSTION
 															</Typography>
 														</AccordionSummary>
 														<AccordionDetails>
@@ -444,7 +444,7 @@ const Home = () => {
 																	<Link to="/combustion">
 																		<Button
 																			fullWidth
-																			variant="contained"
+																			variant="outlined"
 																			className="text-12"
 																		>
 																			SHOW DETAIL
@@ -461,7 +461,7 @@ const Home = () => {
 															id="panel2a-header"
 														>
 															<Typography className={clsx(classes.heading, 'text-12')}>
-																(12/12/2020 14:30:00) NEW ADVISORY FOR SOOTBLOW UNIT 1
+																(12/12/2020 14:30:00) NEW ADVISORY FOR SOOTBLOW
 															</Typography>
 														</AccordionSummary>
 														<AccordionDetails>
@@ -553,7 +553,7 @@ const Home = () => {
 																	<Link to="/sootblow">
 																		<Button
 																			fullWidth
-																			variant="contained"
+																			variant="outlined"
 																			className="text-12"
 																		>
 																			SHOW DETAIL
@@ -565,7 +565,7 @@ const Home = () => {
 													</Accordion>
 												</div>
 											</Grid>
-											<Grid item container xs={12}>
+											{/* <Grid item container xs={12}>
 												<div className={classes.root}>
 													<Accordion>
 														<AccordionSummary
@@ -786,7 +786,7 @@ const Home = () => {
 														</AccordionDetails>
 													</Accordion>
 												</div>
-											</Grid>
+											</Grid> */}
 										</Grid>
 									</Grid>
 								</Grid>

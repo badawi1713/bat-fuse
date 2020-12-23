@@ -15,10 +15,10 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React from 'react';
 import { MainBottomSchema, MainLeftSchema, MainRightSchema } from './Components';
 import { backData, frontData, leftData, leftInputData, rightData, rightInputData } from './utils/data/dummyData';
-
+import SvgSootblowTjAwarAwar from './Components/SootblowSchema/SvgSootblowTjAwarAwar';
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%'
@@ -89,6 +89,7 @@ const Sootblow = () => {
 
 	const [page, setPage] = React.useState(0);
 	const [rowsPerPage, setRowsPerPage] = React.useState(10);
+	const [masterControlStatus, setMasterControlStatus] = React.useState(false);
 
 	const handleChangePage = (event, newPage) => {
 		setPage(newPage);
@@ -99,24 +100,15 @@ const Sootblow = () => {
 		setPage(0);
 	};
 
-	const [masterControlStatus, setMasterControlStatus] = useState(false);
-	const [operationControlStatus, setOperationControlStatus] = useState(false);
-
-	const masterControlToggleOn = () => {
+	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
 	};
 
-	const masterControlToggleOff = () => {
+	const handleMasterControlOff = () => {
 		setMasterControlStatus(false);
 	};
 
-	const operationControlToggleOn = () => {
-		setOperationControlStatus(true);
-	};
-
-	const operationControlToggleOff = () => {
-		setOperationControlStatus(false);
-	};
+	const operationControlStatus = false;
 
 	return (
 		<Container className="py-16">
@@ -137,7 +129,6 @@ const Sootblow = () => {
 					<Grid item xs={4} md={2}>
 						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
 							<Button
-								onClick={operationControlToggleOn}
 								className={clsx(
 									'text-12',
 									operationControlStatus ? classes.statusButtonOff : 'primary'
@@ -146,7 +137,6 @@ const Sootblow = () => {
 								Manual
 							</Button>
 							<Button
-								onClick={operationControlToggleOff}
 								className={clsx('text-12', operationControlStatus ? 'primary' : classes.statusButtonOn)}
 							>
 								Auto
@@ -162,13 +152,13 @@ const Sootblow = () => {
 					<Grid item xs={4} md={2}>
 						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
 							<Button
-								onClick={masterControlToggleOn}
+								onClick={handleMasterControlOn}
 								className={clsx('text-12', masterControlStatus ? classes.statusButtonOff : 'primary')}
 							>
 								ON
 							</Button>
 							<Button
-								onClick={masterControlToggleOff}
+								onClick={handleMasterControlOff}
 								className={clsx('text-12', masterControlStatus ? 'primary' : classes.statusButtonOn)}
 							>
 								OFF
@@ -242,11 +232,6 @@ const Sootblow = () => {
 							/>
 						</Paper>
 					</Grid>
-					{/* <Grid item xs={2}>
-						<Button variant="contained" color="secondary" className="text-12">
-							Apply
-						</Button>
-					</Grid> */}
 				</Grid>
 
 				<Grid item container spacing={1}>
@@ -256,6 +241,10 @@ const Sootblow = () => {
 					<Grid item xs={12}>
 						<hr />
 					</Grid>
+				</Grid>
+
+				<Grid item xs={12}>
+					<SvgSootblowTjAwarAwar width="100%" />
 				</Grid>
 
 				<Grid item container spacing={1}>

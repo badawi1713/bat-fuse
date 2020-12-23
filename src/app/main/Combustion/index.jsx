@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, Card, CardContent, Container, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React from 'react';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -48,24 +48,25 @@ const useStyles = makeStyles(theme => ({
 const CombustionConfig = () => {
 	const classes = useStyles();
 
-	const [masterControlStatus, setMasterControlStatus] = useState(false);
-	const [operationControlStatus, setOperationControlStatus] = useState(false);
+	// const [masterControlStatus, setMasterControlStatus] = useState(false);
+	// const [operationControlStatus, setOperationControlStatus] = useState(false);
+	const masterControlStatus = false;
+	const operationControlStatus = false;
+	// const masterControlToggleOn = () => {
+	// 	setMasterControlStatus(true);
+	// };
 
-	const masterControlToggleOn = () => {
-		setMasterControlStatus(true);
-	};
+	// const masterControlToggleOff = () => {
+	// 	setMasterControlStatus(false);
+	// };
 
-	const masterControlToggleOff = () => {
-		setMasterControlStatus(false);
-	};
+	// const operationControlToggleOn = () => {
+	// 	setOperationControlStatus(true);
+	// };
 
-	const operationControlToggleOn = () => {
-		setOperationControlStatus(true);
-	};
-
-	const operationControlToggleOff = () => {
-		setOperationControlStatus(false);
-	};
+	// const operationControlToggleOff = () => {
+	// 	setOperationControlStatus(false);
+	// };
 
 	return (
 		<Container className="py-16">
@@ -85,7 +86,6 @@ const CombustionConfig = () => {
 					<Grid item xs={4} md={2}>
 						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
 							<Button
-								onClick={operationControlToggleOn}
 								className={clsx(
 									'text-12',
 									operationControlStatus ? classes.statusButtonOff : 'primary'
@@ -94,7 +94,6 @@ const CombustionConfig = () => {
 								Manual
 							</Button>
 							<Button
-								onClick={operationControlToggleOff}
 								className={clsx('text-12', operationControlStatus ? 'primary' : classes.statusButtonOn)}
 							>
 								Auto
@@ -110,13 +109,11 @@ const CombustionConfig = () => {
 					<Grid item xs={4} md={2}>
 						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
 							<Button
-								onClick={masterControlToggleOn}
 								className={clsx('text-12', masterControlStatus ? classes.statusButtonOff : 'primary')}
 							>
 								ON
 							</Button>
 							<Button
-								onClick={masterControlToggleOff}
 								className={clsx('text-12', masterControlStatus ? 'primary' : classes.statusButtonOn)}
 							>
 								OFF
