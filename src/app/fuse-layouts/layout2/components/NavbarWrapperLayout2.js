@@ -1,12 +1,12 @@
-import Hidden from '@material-ui/core/Hidden';
+// import Hidden from '@material-ui/core/Hidden';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import NavbarMobileLayout2 from 'app/fuse-layouts/layout2/components/NavbarMobileLayout2';
-import NavbarMobileToggleFab from 'app/fuse-layouts/shared-components/NavbarMobileToggleFab';
-import { navbarCloseMobile } from 'app/store/fuse/navbarSlice';
+// import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+// import NavbarMobileLayout2 from 'app/fuse-layouts/layout2/components/NavbarMobileLayout2';
+// import NavbarMobileToggleFab from 'app/fuse-layouts/shared-components/NavbarMobileToggleFab';
+// import { navbarCloseMobile } from 'app/store/fuse/navbarSlice';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectNavbarTheme } from 'app/store/fuse/settingsSlice';
 import NavbarLayout2 from './NavbarLayout2';
 
@@ -39,23 +39,23 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function NavbarWrapperLayout2(props) {
-	const dispatch = useDispatch();
-	const config = useSelector(({ fuse }) => fuse.settings.current.layout.config);
+	// const dispatch = useDispatch();
+	// const config = useSelector(({ fuse }) => fuse.settings.current.layout.config);
 	const navbarTheme = useSelector(selectNavbarTheme);
-	const navbar = useSelector(({ fuse }) => fuse.navbar);
+	// const navbar = useSelector(({ fuse }) => fuse.navbar);
 
 	const classes = useStyles(props);
 
 	return (
 		<>
 			<ThemeProvider theme={navbarTheme}>
-				<Hidden mdDown>
-					<Paper className={classes.navbar} square elevation={2}>
-						<NavbarLayout2 />
-					</Paper>
-				</Hidden>
+				{/* <Hidden mdDown> */}
+				<Paper className={classes.navbar} square elevation={2}>
+					<NavbarLayout2 />
+				</Paper>
+				{/* </Hidden> */}
 
-				<Hidden lgUp>
+				{/* <Hidden lgUp>
 					<SwipeableDrawer
 						anchor="left"
 						variant="temporary"
@@ -72,14 +72,14 @@ function NavbarWrapperLayout2(props) {
 					>
 						<NavbarMobileLayout2 />
 					</SwipeableDrawer>
-				</Hidden>
+				</Hidden> */}
 			</ThemeProvider>
 
-			{config.navbar.display && !config.toolbar.display && (
+			{/* {config.navbar.display && !config.toolbar.display && (
 				<Hidden lgUp>
 					<NavbarMobileToggleFab />
 				</Hidden>
-			)}
+			)} */}
 		</>
 	);
 }

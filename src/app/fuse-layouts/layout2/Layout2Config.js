@@ -15,7 +15,7 @@ const config = {
 			style: 'fixed'
 		},
 		leftSidePanel: {
-			display: true
+			display: false
 		},
 		rightSidePanel: {
 			display: false

@@ -86,7 +86,7 @@ function Login() {
 
 							<FuseAnimate delay={500}>
 								<Typography variant="subtitle1" color="inherit" className="mt-32">
-									Integrated Reliability, Availability & Efficiency Optimization System
+									Boiler Auto Tuning Dashboard
 								</Typography>
 							</FuseAnimate>
 						</div>

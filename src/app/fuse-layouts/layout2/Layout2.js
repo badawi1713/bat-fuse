@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
-// import FooterLayout2 from './components/FooterLayout2';
+import FooterLayout2 from './components/FooterLayout2';
 import LeftSideLayout2 from './components/LeftSideLayout2';
 import NavbarWrapperLayout2 from './components/NavbarWrapperLayout2';
 import RightSideLayout2 from './components/RightSideLayout2';
@@ -91,11 +91,11 @@ function Layout2(props) {
 
 								{props.children}
 
-								{/* {config.footer.display && config.footer.style === 'static' && <FooterLayout2 />} */}
+								{config.footer.display && config.footer.style === 'static' && <FooterLayout2 />}
 							</div>
 						</FuseScrollbars>
 
-						{/* {config.footer.display && config.footer.style === 'fixed' && <FooterLayout2 />} */}
+						{config.footer.display && config.footer.style === 'fixed' && <FooterLayout2 />}
 
 						<SettingsPanel />
 					</div>

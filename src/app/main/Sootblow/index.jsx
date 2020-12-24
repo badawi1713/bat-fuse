@@ -16,9 +16,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import React from 'react';
-import { MainBottomSchema, MainLeftSchema, MainRightSchema } from './Components';
-import { backData, frontData, leftData, leftInputData, rightData, rightInputData } from './utils/data/dummyData';
-import SvgSootblowTjAwarAwar from './Components/SootblowSchema/SvgSootblowTjAwarAwar';
+import { SvgSootblowTjAwarAwar } from './Components';
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%'
@@ -111,7 +109,7 @@ const Sootblow = () => {
 	const operationControlStatus = false;
 
 	return (
-		<Container className="py-16">
+		<Container className="py-16 h-full">
 			<Grid container spacing={2}>
 				<Grid item xs={12} container spacing={1}>
 					<Grid item>
@@ -245,30 +243,6 @@ const Sootblow = () => {
 
 				<Grid item xs={12}>
 					<SvgSootblowTjAwarAwar width="100%" />
-				</Grid>
-
-				<Grid item container spacing={1}>
-					<Grid item container xs={6}>
-						<MainLeftSchema data={leftInputData} />
-					</Grid>
-					<Grid item container xs={6}>
-						<MainRightSchema data={rightInputData} />
-					</Grid>
-				</Grid>
-
-				<Grid item container spacing={1}>
-					<Grid item container xs={6} md={3}>
-						<MainBottomSchema title="FRONT" data={frontData} />
-					</Grid>
-					<Grid item container xs={6} md={3}>
-						<MainBottomSchema title="LEFT" data={leftData} />
-					</Grid>
-					<Grid item container xs={6} md={3}>
-						<MainBottomSchema title="RIGHT" data={rightData} />
-					</Grid>
-					<Grid item container xs={6} md={3}>
-						<MainBottomSchema title="BACK" data={backData} />
-					</Grid>
 				</Grid>
 			</Grid>
 		</Container>
