@@ -1,8 +1,22 @@
-import { Button, ButtonGroup, Card, CardContent, Container, Grid, Typography } from '@material-ui/core';
+import {
+	Button,
+	ButtonGroup,
+	Container,
+	Grid,
+	Paper,
+	Table,
+	TableBody,
+	TableCell,
+	TableContainer,
+	TableHead,
+	TableRow,
+	Typography
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import React from 'react';
-
+import { ArrowBack } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%'
@@ -45,475 +59,313 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const CombustionConfig = () => {
+const createParameterData = (parameter, value) => {
+	return { parameter, value };
+};
+
+const parameterData = [
+	createParameterData('Parameter Description 1', 100),
+	createParameterData('Parameter Description 2', 200),
+	createParameterData('Parameter Description 3', 300),
+	createParameterData('Parameter Description 4', 400),
+	createParameterData('Parameter Description 5', 500),
+	createParameterData('Parameter Description 6', 600),
+	createParameterData('Parameter Description 7', 700),
+	createParameterData('Parameter Description 8', 800),
+	createParameterData('Parameter Description 9', 900)
+];
+
+const createO2ControlBiasData = (parameter, value) => {
+	return { parameter, value };
+};
+
+const o2ControlBiasData = [
+	createO2ControlBiasData('Bias', 100),
+	createO2ControlBiasData('Current', 200),
+	createO2ControlBiasData('Set Point', 300),
+	createO2ControlBiasData('O2 R', 400),
+	createO2ControlBiasData('O2 L', 500)
+];
+
+const createBurnerTiltData = (parameter, value) => {
+	return { parameter, value };
+};
+
+const burnerTiltData = [
+	createBurnerTiltData('Bias', 100),
+	createBurnerTiltData('Current', 200),
+	createBurnerTiltData('Demand', 300),
+	createBurnerTiltData('Final SH Temperature', 400),
+	createBurnerTiltData('RH2 Temperature', 500)
+];
+
+const createSequenceData = (sequence, value) => {
+	return { sequence, value };
+};
+
+const sequenceData = [
+	createSequenceData('Sequence-1', 2),
+	createSequenceData('Sequence-2', 3),
+	createSequenceData('Sequence-3', 0),
+	createSequenceData('Sequence-4', 6),
+	createSequenceData('Sequence-5', 7),
+	createSequenceData('Sequence-6', 8),
+	createSequenceData('Sequence-7', 9),
+	createSequenceData('Sequence-8', 0),
+	createSequenceData('Sequence-9', 0)
+];
+
+const Combustion = () => {
 	const classes = useStyles();
 
-	// const [masterControlStatus, setMasterControlStatus] = useState(false);
-	// const [operationControlStatus, setOperationControlStatus] = useState(false);
-	const masterControlStatus = false;
-	const operationControlStatus = false;
-	// const masterControlToggleOn = () => {
-	// 	setMasterControlStatus(true);
-	// };
+	const [masterControlStatus, setMasterControlStatus] = React.useState(false);
 
-	// const masterControlToggleOff = () => {
-	// 	setMasterControlStatus(false);
-	// };
+	const handleMasterControlOn = () => {
+		setMasterControlStatus(true);
+	};
 
-	// const operationControlToggleOn = () => {
-	// 	setOperationControlStatus(true);
-	// };
-
-	// const operationControlToggleOff = () => {
-	// 	setOperationControlStatus(false);
-	// };
+	const handleMasterControlOff = () => {
+		setMasterControlStatus(false);
+	};
 
 	return (
-		<Container className="py-16">
-			<Grid container spacing={2}>
-				<Grid item xs={12} container spacing={1}>
-					<Grid item>
-						<Typography>Combustion</Typography>
+		<Container className="py-16 h-full">
+			<Grid container spacing={1}>
+				{/* Top Section */}
+				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
+					<Grid item container xs={3} spacing={2} alignItems="center">
+						<Grid item>
+							<Link to="/home">
+								<ArrowBack color="action" fontSize="small" />
+							</Link>
+						</Grid>
+						<Grid item>
+							<Typography className="text-11">COMBUSTION OPTIMIZATION</Typography>
+						</Grid>
 					</Grid>
-					<Grid item xs={12}>
-						<hr />
+					<Grid item container xs={9} justify="flex-end" spacing={2}>
+						<Grid item container direction="column" alignItems="center" xs={3}>
+							<Grid item className="w-full">
+								<Typography className="text-center text-10">Operation Control</Typography>
+							</Grid>
+							<Grid item className="w-full">
+								<Button
+									disableFocusRipple
+									disableRipple
+									disableTouchRipple
+									fullWidth
+									variant="contained"
+									className={clsx('text-8 cursor-default', classes.statusButtonOn)}
+								>
+									MANUAL
+								</Button>
+							</Grid>
+						</Grid>
+						<Grid item container direction="column" alignItems="center" xs={3}>
+							<Grid item className="w-full">
+								<Typography className="text-center text-10">Master Control</Typography>
+							</Grid>
+							<Grid item className="w-full">
+								<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+									<Button
+										onClick={handleMasterControlOn}
+										className={clsx(
+											'text-8',
+											masterControlStatus ? classes.statusButtonOff : 'primary'
+										)}
+									>
+										ON
+									</Button>
+									<Button
+										onClick={handleMasterControlOff}
+										className={clsx(
+											'text-8',
+											masterControlStatus ? 'primary' : classes.statusButtonOn
+										)}
+									>
+										OFF
+									</Button>
+								</ButtonGroup>
+							</Grid>
+						</Grid>
+						<Grid item container direction="column" alignItems="center" xs={3}>
+							<Grid item className="w-full">
+								<Typography className="text-center text-10">Safe Guard</Typography>
+							</Grid>
+							<Grid item className="w-full">
+								<Button
+									disableFocusRipple
+									disableRipple
+									disableTouchRipple
+									fullWidth
+									variant="contained"
+									className={clsx('text-8 cursor-default', classes.statusButtonOff)}
+								>
+									Ready
+								</Button>
+							</Grid>
+						</Grid>
 					</Grid>
 				</Grid>
-				<Grid item container justify="space-between" alignItems="center" xs={12}>
-					<Grid item xs={8} md={10}>
-						<Typography className="text-12">Operation Control</Typography>
-					</Grid>
-					<Grid item xs={4} md={2}>
-						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
-							<Button
-								className={clsx(
-									'text-12',
-									operationControlStatus ? classes.statusButtonOff : 'primary'
-								)}
-							>
-								Manual
-							</Button>
-							<Button
-								className={clsx('text-12', operationControlStatus ? 'primary' : classes.statusButtonOn)}
-							>
-								Auto
-							</Button>
-						</ButtonGroup>
-					</Grid>
-				</Grid>
+				{/* Top Section */}
 
-				<Grid item container justify="space-between" alignItems="center" xs={12}>
-					<Grid item xs={8} md={10}>
-						<Typography className="text-12">Master Control</Typography>
-					</Grid>
-					<Grid item xs={4} md={2}>
-						<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
-							<Button
-								className={clsx('text-12', masterControlStatus ? classes.statusButtonOff : 'primary')}
-							>
-								ON
-							</Button>
-							<Button
-								className={clsx('text-12', masterControlStatus ? 'primary' : classes.statusButtonOn)}
-							>
-								OFF
-							</Button>
-						</ButtonGroup>
-					</Grid>
-				</Grid>
-
-				<Grid item container justify="space-between" alignItems="center" xs={12}>
-					<Grid item xs={8} md={10}>
-						<Typography className="text-12">Safe Guard</Typography>
-					</Grid>
-					<Grid item xs={4} md={2}>
-						<Button fullWidth variant="contained" className={clsx('text-12', classes.statusButtonOff)}>
-							Ready
-						</Button>
-					</Grid>
-				</Grid>
-
-				<Grid item xs={12}>
-					<hr />
-				</Grid>
-				<Grid item xs={12}>
-					<Card>
-						<CardContent>
-							<Grid container spacing={2}>
-								<Grid item xs={12}>
-									<Typography>Manipulated Variable</Typography>
+				{/* Main Content */}
+				<Grid item container xs={12} justify="space-between" className="w-full" alignItems="center" spacing={1}>
+					<Grid item xs={12} className="p- mb-8">
+						<Grid container spacing={1}>
+							<Grid item xs={12}>
+								<Typography className="text-11">Manipulated Variable</Typography>
+							</Grid>
+							<Grid item container spacing={1}>
+								<Grid item md={6}>
+									<TableContainer component={Paper} square>
+										<Table className={classes.table} size="small" aria-label="a dense table">
+											<TableHead>
+												<TableRow>
+													<TableCell className="text-10 py-6">O2 Control Bias</TableCell>
+													<TableCell align="right" className="text-10 py-6">
+														Value
+													</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{o2ControlBiasData.map(row => (
+													<TableRow key={row.name}>
+														<TableCell component="th" scope="row" className="text-8 py-8">
+															{row.parameter}
+														</TableCell>
+														<TableCell align="right" className="text-8 py-8">
+															{row.value}
+														</TableCell>
+													</TableRow>
+												))}
+											</TableBody>
+										</Table>
+									</TableContainer>
 								</Grid>
-								<Grid item container spacing={2}>
-									<Grid item xs={12} md={6}>
-										<Card>
-											<CardContent>
-												<Grid container spacing={1}>
-													<Grid item xs={12}>
-														<Typography>
-															O<sub>2</sub> Control Bias
-														</Typography>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Bias</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Curr</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Set Point</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">
-																O<sub>2</sub> R
-															</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">
-																O<sub>2</sub> L
-															</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-												</Grid>
-											</CardContent>
-										</Card>
-									</Grid>
-									<Grid item xs={12} md={6}>
-										<Card>
-											<CardContent>
-												<Grid container spacing={1}>
-													<Grid item xs={12}>
-														<Typography>Burner Tilt</Typography>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Bias</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Curr</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Demand</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">
-																Final SH Temperature
-															</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">RH2 Temperature</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-												</Grid>
-											</CardContent>
-										</Card>
-									</Grid>
+								<Grid item md={6}>
+									<TableContainer component={Paper} square>
+										<Table className={classes.table} size="small" aria-label="a dense table">
+											<TableHead>
+												<TableRow>
+													<TableCell className="text-10 py-6">Burner Tilt</TableCell>
+													<TableCell align="right" className="text-10 py-6">
+														Value
+													</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{burnerTiltData.map(row => (
+													<TableRow key={row.name}>
+														<TableCell component="th" scope="row" className="text-8 py-8">
+															{row.parameter}
+														</TableCell>
+														<TableCell align="right" className="text-8 py-8">
+															{row.value}
+														</TableCell>
+													</TableRow>
+												))}
+											</TableBody>
+										</Table>
+									</TableContainer>
 								</Grid>
 							</Grid>
-						</CardContent>
-					</Card>
-				</Grid>
-				<Grid item xs={12}>
-					<Card>
-						<CardContent>
-							<Grid container spacing={2}>
-								<Grid item xs={12}>
-									<Typography>Control Variable</Typography>
+						</Grid>
+					</Grid>
+					<Grid item xs={12} className="p-0">
+						<Grid container spacing={1}>
+							<Grid item xs={12}>
+								<Typography className="text-11">Control Variable</Typography>
+							</Grid>
+							<Grid item container spacing={1}>
+								<Grid item md={4}>
+									<TableContainer component={Paper} square>
+										<Table className={classes.table} size="small" aria-label="a dense table">
+											<TableHead>
+												<TableRow>
+													<TableCell className="text-10 py-6">Primary Air Control</TableCell>
+													<TableCell align="right" className="text-10 py-6">
+														Value
+													</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{o2ControlBiasData.map(row => (
+													<TableRow key={row.name}>
+														<TableCell component="th" scope="row" className="text-8 py-8">
+															{row.parameter}
+														</TableCell>
+														<TableCell align="right" className="text-8 py-8">
+															{row.value}
+														</TableCell>
+													</TableRow>
+												))}
+											</TableBody>
+										</Table>
+									</TableContainer>
 								</Grid>
-								<Grid item container spacing={2}>
-									<Grid item xs={12} md={6}>
-										<Card>
-											<CardContent>
-												<Grid container spacing={1}>
-													<Grid item xs={12}>
-														<Typography>Secondary Air Control</Typography>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Bias</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Curr</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Set Point</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">
-																Furnace L Wind Box DP
-															</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-												</Grid>
-											</CardContent>
-										</Card>
-									</Grid>
-									<Grid item xs={12} md={6}>
-										<Card>
-											<CardContent>
-												<Grid container spacing={1}>
-													<Grid item xs={12}>
-														<Typography>Secondary Air Control</Typography>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Bias</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">App</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Set Point</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">
-																Furnace R Wind Box DP
-															</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-												</Grid>
-											</CardContent>
-										</Card>
-									</Grid>
-									<Grid item xs={12}>
-										<Card>
-											<CardContent>
-												<Grid container spacing={1}>
-													<Grid item xs={12}>
-														<Typography>Load (MW)</Typography>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">
-																Main Steam Flow (tph)
-															</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">Coal Flow (tph)</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">
-																Primary Air Flow (kg/h)
-															</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">SA Flow (kg/h)</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-													<Grid item container xs={12} alignItems="center">
-														<Grid item xs={4}>
-															<Typography className="text-12">
-																Main Steam Pressure (Mpag)
-															</Typography>
-														</Grid>
-														<Grid item container xs={8} justify="flex-end" spacing={2}>
-															<Grid item>
-																<Typography className="text-12">
-																	123 kCal/kWh
-																</Typography>
-															</Grid>
-														</Grid>
-													</Grid>
-												</Grid>
-											</CardContent>
-										</Card>
-									</Grid>
+								<Grid item md={4}>
+									<TableContainer component={Paper} square>
+										<Table className={classes.table} size="small" aria-label="a dense table">
+											<TableHead>
+												<TableRow>
+													<TableCell className="text-10 py-6">
+														Secondary Air Control
+													</TableCell>
+													<TableCell align="right" className="text-10 py-6">
+														Value
+													</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{burnerTiltData.map(row => (
+													<TableRow key={row.name}>
+														<TableCell component="th" scope="row" className="text-8 py-8">
+															{row.parameter}
+														</TableCell>
+														<TableCell align="right" className="text-8 py-8">
+															{row.value}
+														</TableCell>
+													</TableRow>
+												))}
+											</TableBody>
+										</Table>
+									</TableContainer>
+								</Grid>
+								<Grid item md={4}>
+									<TableContainer component={Paper} square>
+										<Table className={classes.table} size="small" aria-label="a dense table">
+											<TableHead>
+												<TableRow>
+													<TableCell className="text-10 py-6">Load (MW)</TableCell>
+													<TableCell align="right" className="text-10 py-6">
+														Value
+													</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{burnerTiltData.map(row => (
+													<TableRow key={row.name}>
+														<TableCell component="th" scope="row" className="text-8 py-8">
+															{row.parameter}
+														</TableCell>
+														<TableCell align="right" className="text-8 py-8">
+															{row.value}
+														</TableCell>
+													</TableRow>
+												))}
+											</TableBody>
+										</Table>
+									</TableContainer>
 								</Grid>
 							</Grid>
-						</CardContent>
-					</Card>
+						</Grid>
+					</Grid>
 				</Grid>
+				{/* Main Content */}
 			</Grid>
 		</Container>
 	);
 };
 
-export default CombustionConfig;
+export default Combustion;

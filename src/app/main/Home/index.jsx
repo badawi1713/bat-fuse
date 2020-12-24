@@ -14,9 +14,8 @@ const Home = () => {
 							<Link to="/combustion">
 								<Button fullWidth variant="outlined" className="h-full">
 									<Grid container justify="center" alignItems="center">
-										<Grid item></Grid>
 										<Grid item>
-											<Typography>Combustion</Typography>
+											<Typography variant="h4">Combustion Optimization</Typography>
 										</Grid>
 									</Grid>
 								</Button>
@@ -26,9 +25,8 @@ const Home = () => {
 							<Link to="/sootblow">
 								<Button fullWidth variant="outlined" className="h-full">
 									<Grid container justify="center" alignItems="center">
-										<Grid item></Grid>
 										<Grid item>
-											<Typography>Sootblow</Typography>
+											<Typography variant="h4">Sootblow Optimization</Typography>
 										</Grid>
 									</Grid>
 								</Button>
@@ -44,14 +42,14 @@ const Home = () => {
 						<Grid item xs={12} md={6}>
 							<Link to="/combustion">
 								<Button fullWidth variant="outlined" style={{ height: '40vh' }}>
-									<Typography>Combustion</Typography>
+									<Typography variant="h6">Combustion Optimization</Typography>
 								</Button>
 							</Link>
 						</Grid>
 						<Grid item xs={12} md={6}>
 							<Link to="/sootblow">
 								<Button fullWidth variant="outlined" style={{ height: '40vh' }}>
-									<Typography>Sootblow</Typography>
+									<Typography variant="h6">Sootblow Optimization</Typography>
 								</Button>
 							</Link>
 						</Grid>

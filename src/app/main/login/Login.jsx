@@ -56,12 +56,6 @@ function Login() {
 										<Typography className="text-24 font-800 logo-text" color="inherit">
 											SOKKET
 										</Typography>
-										<Typography
-											className="text-16 tracking-widest -mt-8 font-700"
-											color="textSecondary"
-										>
-											PT. PJB
-										</Typography>
 									</div>
 								</div>
 							</FuseAnimate>
@@ -85,8 +79,8 @@ function Login() {
 							</FuseAnimate>
 
 							<FuseAnimate delay={500}>
-								<Typography variant="subtitle1" color="inherit" className="mt-32">
-									Boiler Auto Tuning Dashboard
+								<Typography variant="subtitle1" color="inherit" className="mt-32 text-center">
+									Boiler Auto Tuning
 								</Typography>
 							</FuseAnimate>
 						</div>
