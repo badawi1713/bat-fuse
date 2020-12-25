@@ -115,7 +115,7 @@ const Combustion = () => {
 			<Grid container spacing={1}>
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
-					<Grid item container xs={3} spacing={2} alignItems="center">
+					<Grid item container xs={12} md={3} spacing={2} alignItems="center">
 						<Grid item>
 							<Link to="/home">
 								<ArrowBack color="action" fontSize="small" />
@@ -125,8 +125,16 @@ const Combustion = () => {
 							<Typography className="text-11">COMBUSTION OPTIMIZATION</Typography>
 						</Grid>
 					</Grid>
-					<Grid item container xs={9} justify="flex-end" spacing={2}>
-						<Grid item container direction="column" alignItems="center" xs={3}>
+					<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
+						<Grid
+							className="mb-8 md:mb-0"
+							item
+							container
+							direction="column"
+							alignItems="center"
+							xs={12}
+							md={3}
+						>
 							<Grid item className="w-full">
 								<Typography className="text-center text-10">Operation Control</Typography>
 							</Grid>
@@ -143,7 +151,15 @@ const Combustion = () => {
 								</Button>
 							</Grid>
 						</Grid>
-						<Grid item container direction="column" alignItems="center" xs={3}>
+						<Grid
+							className="mb-8 md:ml-8 md:mb-0"
+							item
+							container
+							direction="column"
+							alignItems="center"
+							xs={12}
+							md={3}
+						>
 							<Grid item className="w-full">
 								<Typography className="text-center text-10">Master Control</Typography>
 							</Grid>
@@ -170,7 +186,7 @@ const Combustion = () => {
 								</ButtonGroup>
 							</Grid>
 						</Grid>
-						<Grid item container direction="column" alignItems="center" xs={3}>
+						<Grid className="md:ml-8" item container direction="column" alignItems="center" xs={12} md={3}>
 							<Grid item className="w-full">
 								<Typography className="text-center text-10">Safe Guard</Typography>
 							</Grid>
@@ -199,7 +215,7 @@ const Combustion = () => {
 								<Typography className="text-11">Manipulated Variable</Typography>
 							</Grid>
 							<Grid item container spacing={1}>
-								<Grid item md={6}>
+								<Grid item xs={12} md={6}>
 									<TableContainer component={Paper} square>
 										<Table className={classes.table} size="small" aria-label="a dense table">
 											<TableHead>
@@ -225,7 +241,7 @@ const Combustion = () => {
 										</Table>
 									</TableContainer>
 								</Grid>
-								<Grid item md={6}>
+								<Grid item xs={12} md={6}>
 									<TableContainer component={Paper} square>
 										<Table className={classes.table} size="small" aria-label="a dense table">
 											<TableHead>
@@ -260,7 +276,7 @@ const Combustion = () => {
 								<Typography className="text-11">Control Variable</Typography>
 							</Grid>
 							<Grid item container spacing={1}>
-								<Grid item md={4}>
+								<Grid item xs={12} md={4}>
 									<TableContainer component={Paper} square>
 										<Table className={classes.table} size="small" aria-label="a dense table">
 											<TableHead>
@@ -286,7 +302,7 @@ const Combustion = () => {
 										</Table>
 									</TableContainer>
 								</Grid>
-								<Grid item md={4}>
+								<Grid item xs={12} md={4}>
 									<TableContainer component={Paper} square>
 										<Table className={classes.table} size="small" aria-label="a dense table">
 											<TableHead>
@@ -314,7 +330,7 @@ const Combustion = () => {
 										</Table>
 									</TableContainer>
 								</Grid>
-								<Grid item md={4}>
+								<Grid item xs={12} md={4}>
 									<TableContainer component={Paper} square>
 										<Table className={classes.table} size="small" aria-label="a dense table">
 											<TableHead>

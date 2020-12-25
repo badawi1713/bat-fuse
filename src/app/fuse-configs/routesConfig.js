@@ -3,7 +3,6 @@ import appsConfigs from 'app/main/apps/appsConfigs';
 import authRoleExamplesConfigs from 'app/main/auth/authRoleExamplesConfigs';
 import CallbackConfig from 'app/main/callback/CallbackConfig';
 import DocumentationConfig from 'app/main/documentation/DocumentationConfig';
-import BoilerOptimationConfig from 'app/main/BoilerOptimation/BoilerOptimationConfig';
 import SootblowConfig from 'app/main/Sootblow/SootblowConfig';
 import HomeConfig from 'app/main/Home/HomeConfig';
 import LoginConfig from 'app/main/Login/LoginConfig';
@@ -24,7 +23,6 @@ const routeConfigs = [
 	HomeConfig,
 	SootblowConfig,
 	CombustionConfig,
-	BoilerOptimationConfig,
 	LogoutConfig,
 	LoginConfig,
 	RegisterConfig,

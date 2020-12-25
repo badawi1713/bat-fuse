@@ -154,7 +154,7 @@ const Sootblow = () => {
 			<Grid container spacing={1}>
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
-					<Grid item container xs={3} spacing={2} alignItems="center">
+					<Grid item container xs={12} md={3} spacing={2} alignItems="center">
 						<Grid item>
 							<Link to="/home">
 								<ArrowBack color="action" fontSize="small" />
@@ -164,8 +164,16 @@ const Sootblow = () => {
 							<Typography className="text-11">SOOTBLOW OPTIMIZATION</Typography>
 						</Grid>
 					</Grid>
-					<Grid item container xs={9} justify="flex-end" spacing={2}>
-						<Grid item container direction="column" alignItems="center" xs={3}>
+					<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
+						<Grid
+							className="mb-8 md:mb-0"
+							item
+							container
+							direction="column"
+							alignItems="center"
+							xs={12}
+							md={3}
+						>
 							<Grid item className="w-full">
 								<Typography className="text-center text-10">Operation Control</Typography>
 							</Grid>
@@ -182,7 +190,15 @@ const Sootblow = () => {
 								</Button>
 							</Grid>
 						</Grid>
-						<Grid item container direction="column" alignItems="center" xs={3}>
+						<Grid
+							className="mb-8 md:ml-8 md:mb-0"
+							item
+							container
+							direction="column"
+							alignItems="center"
+							xs={12}
+							md={3}
+						>
 							<Grid item className="w-full">
 								<Typography className="text-center text-10">Master Control</Typography>
 							</Grid>
@@ -209,7 +225,7 @@ const Sootblow = () => {
 								</ButtonGroup>
 							</Grid>
 						</Grid>
-						<Grid item container direction="column" alignItems="center" xs={3}>
+						<Grid className="md:ml-8" item container direction="column" alignItems="center" xs={12} md={3}>
 							<Grid item className="w-full">
 								<Typography className="text-center text-10">Safe Guard</Typography>
 							</Grid>
@@ -232,16 +248,16 @@ const Sootblow = () => {
 
 				{/* Main Content */}
 				<Grid item container xs={12} justify="space-between" className="w-full" alignItems="center" spacing={1}>
-					<Grid item xs={9} className="h-full p-0">
-						<Paper className="h-full py-5 px-10" square>
+					<Grid item xs={12} md={9} className="md:h-full p-0">
+						<Paper className="md:h-full py-5 px-10 my-0" square>
 							<center>
 								<SvgSootblowTjAwarAwar colorid201={colorId201.color} width="90%" height="100%" />
 							</center>
 						</Paper>
 					</Grid>
-					<Grid item xs={3} container className="h-full w-full p-0">
+					<Grid item xs={12} md={3} container className="md:h-full w-full p-0">
 						<Grid item className="w-full mb-8">
-							<TableContainer component={Paper} className="h-full" square>
+							<TableContainer component={Paper} className="md:h-full" square>
 								<Table className={classes.table} size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
@@ -267,7 +283,7 @@ const Sootblow = () => {
 							</TableContainer>
 						</Grid>
 						<Grid item className="w-full">
-							<TableContainer component={Paper} className="h-full" square>
+							<TableContainer component={Paper} className="md:h-full" square>
 								<Table className={classes.table} size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
