@@ -1,16 +1,13 @@
 import * as React from 'react';
 
 const SvgSootblowTjAwarAwar = props => {
-	console.log('Color', props.colorId201);
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			width={props.width || 1277.482}
+			width={props.width || '11.811in'}
 			height={props.height || 604.724}
-			viewBox="0 0 958.11 453.543"
-			xmlSpace="preserve"
+			viewBox="0 0 850.394 453.543"
 			colorInterpolationFilters="sRGB"
-			id="sootblow-tj-awar-awar_svg__svg11348"
 			fill="none"
 			fillRule="evenodd"
 			fontSize={12}
@@ -19,4109 +16,2079 @@ const SvgSootblowTjAwarAwar = props => {
 			strokeMiterlimit={3}
 			{...props}
 		>
-			<style type="text/css" id="style8536">
+			<style>
 				{
-					'.sootblow-tj-awar-awar_svg__st2,.sootblow-tj-awar-awar_svg__st5,.sootblow-tj-awar-awar_svg__st6,.sootblow-tj-awar-awar_svg__st7,.sootblow-tj-awar-awar_svg__st8,.sootblow-tj-awar-awar_svg__st9{fill:#f93;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:.24}.sootblow-tj-awar-awar_svg__st5,.sootblow-tj-awar-awar_svg__st6,.sootblow-tj-awar-awar_svg__st7,.sootblow-tj-awar-awar_svg__st8,.sootblow-tj-awar-awar_svg__st9{fill:url(#sootblow-tj-awar-awar_svg__grad0-20)}.sootblow-tj-awar-awar_svg__st6,.sootblow-tj-awar-awar_svg__st7,.sootblow-tj-awar-awar_svg__st8,.sootblow-tj-awar-awar_svg__st9{fill:url(#sootblow-tj-awar-awar_svg__grad0-24)}.sootblow-tj-awar-awar_svg__st7,.sootblow-tj-awar-awar_svg__st8,.sootblow-tj-awar-awar_svg__st9{fill:url(#sootblow-tj-awar-awar_svg__grad0-28)}.sootblow-tj-awar-awar_svg__st8,.sootblow-tj-awar-awar_svg__st9{fill:#d8d8d8}.sootblow-tj-awar-awar_svg__st9{fill:url(#sootblow-tj-awar-awar_svg__grad0-34)}.sootblow-tj-awar-awar_svg__st10{fill:#fff}.sootblow-tj-awar-awar_svg__st10,.sootblow-tj-awar-awar_svg__st11,.sootblow-tj-awar-awar_svg__st12{stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}.sootblow-tj-awar-awar_svg__st12{fill:none;stroke:none;stroke-width:.75}.sootblow-tj-awar-awar_svg__st13{fill:#000;font-family:Calibri;font-size:1.00001em}.sootblow-tj-awar-awar_svg__st14{fill:red;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}.sootblow-tj-awar-awar_svg__st15{fill:#000;font-family:Calibri;font-size:.666664em}'
+					'.sootblow_svg__st2{fill:#f93;stroke:none;stroke-width:.24}.sootblow_svg__st2,.sootblow_svg__st3,.sootblow_svg__st5{stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st3{fill:url(#sootblow_svg__grad0-12);stroke:none;stroke-width:.24}.sootblow_svg__st5{fill:url(#sootblow_svg__grad0-20)}.sootblow_svg__st5,.sootblow_svg__st6,.sootblow_svg__st7{stroke:none;stroke-width:.24}.sootblow_svg__st6{fill:url(#sootblow_svg__grad0-24);stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st7{fill:url(#sootblow_svg__grad0-28)}.sootblow_svg__st10,.sootblow_svg__st7,.sootblow_svg__st8,.sootblow_svg__st9{stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st8{fill:#fff;stroke:none;stroke-width:.24}.sootblow_svg__st10,.sootblow_svg__st9{stroke:#000;stroke-width:2}.sootblow_svg__st10{fill:#fff}.sootblow_svg__st11{fill:#000;font-family:Calibri;font-size:1.00001em}.sootblow_svg__st12,.sootblow_svg__st13{fill:#ff0;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}.sootblow_svg__st13{fill:none;stroke:none;stroke-width:.75}.sootblow_svg__st14{fill:#000;font-family:Calibri;font-size:.666664em}.sootblow_svg__st15{stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.25}.sootblow_svg__st18{fill:#000;font-family:Calibri;font-size:.833336em}'
 				}
 			</style>
-			<defs id="sootblow-tj-awar-awar_svg__Patterns_And_Gradients">
+			<defs id="sootblow_svg__Patterns_And_Gradients">
 				<linearGradient
-					id="sootblow-tj-awar-awar_svg__grad0-12"
+					id="sootblow_svg__grad0-12"
 					x1={0}
 					y1={0}
 					x2={1}
 					y2={0}
 					gradientTransform="rotate(325 .5 .5)"
 				>
-					<stop offset={0} stopColor="#f93" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8538" />
-					<stop offset={0.57} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8540" />
-					<stop offset={1} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8542" />
+					<stop offset={0} stopColor="#f93" />
+					<stop offset={0.57} stopColor="#ffc000" />
+					<stop offset={1} stopColor="#ffc000" />
 				</linearGradient>
-				<linearGradient id="sootblow-tj-awar-awar_svg__grad0-16" x1={0} y1={0} x2={1} y2={0}>
-					<stop offset={0} stopColor="#f60" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8545" />
-					<stop offset={0.42} stopColor="#ffb311" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8547" />
-					<stop offset={1} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8549" />
+				<linearGradient id="sootblow_svg__grad0-16" x1={0} y1={0} x2={1} y2={0}>
+					<stop offset={0} stopColor="#f60" />
+					<stop offset={0.42} stopColor="#ffb311" />
+					<stop offset={1} stopColor="#ffc000" />
 				</linearGradient>
-				<linearGradient id="sootblow-tj-awar-awar_svg__grad0-20" x1={0} y1={0} x2={1} y2={0}>
-					<stop offset={0} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8552" />
-					<stop offset={0.48} stopColor="#f60" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8554" />
-					<stop offset={0.95} stopColor="#f54a0a" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8556" />
+				<linearGradient id="sootblow_svg__grad0-20" x1={0} y1={0} x2={1} y2={0}>
+					<stop offset={0} stopColor="#ffc000" />
+					<stop offset={0.48} stopColor="#f60" />
+					<stop offset={0.95} stopColor="#f54a0a" />
 				</linearGradient>
 				<linearGradient
-					id="sootblow-tj-awar-awar_svg__grad0-24"
+					id="sootblow_svg__grad0-24"
 					x1={0}
 					y1={0}
 					x2={1}
 					y2={0}
 					gradientTransform="rotate(90 .5 .5)"
 				>
-					<stop offset={0} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8559" />
-					<stop offset={0.71} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8561" />
-					<stop offset={1} stopColor="#fee599" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8563" />
+					<stop offset={0} stopColor="#ffc000" />
+					<stop offset={0.71} stopColor="#ffc000" />
+					<stop offset={1} stopColor="#fee599" />
 				</linearGradient>
 				<linearGradient
-					id="sootblow-tj-awar-awar_svg__grad0-28"
+					id="sootblow_svg__grad0-28"
 					x1={0}
 					y1={0}
 					x2={1}
 					y2={0}
 					gradientTransform="rotate(270 .5 .5)"
 				>
-					<stop offset={0} stopColor="#f54a0a" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8566" />
-					<stop offset={1} stopColor="#f59d56" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8568" />
+					<stop offset={0} stopColor="#f54a0a" />
+					<stop offset={1} stopColor="#f59d56" />
 				</linearGradient>
-				<linearGradient
-					id="sootblow-tj-awar-awar_svg__grad0-34"
-					x1={0}
-					y1={0}
-					x2={1}
-					y2={0}
-					gradientTransform="rotate(90 .5 .5)"
-				>
-					<stop offset={0} stopColor="#f59d56" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8571" />
-					<stop offset={0} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8573" />
-					<stop offset={1} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8575" />
-				</linearGradient>
-				<linearGradient
-					id="sootblow-tj-awar-awar_svg__grad0-379"
-					x1={0}
-					y1={0}
-					x2={1}
-					y2={0}
-					gradientTransform="rotate(315 .5 .5)"
-				>
-					<stop offset={0} stopColor="#f93" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8578" />
-					<stop offset={0.57} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8580" />
-					<stop offset={1} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8582" />
-				</linearGradient>
-				<linearGradient id="sootblow-tj-awar-awar_svg__grad0-383" x1={0} y1={0} x2={1} y2={0}>
-					<stop offset={0} stopColor="#f60" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8585" />
-					<stop offset={0.51} stopColor="#ffb311" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8587" />
-					<stop offset={1} stopColor="#ffc000" stopOpacity={1} id="sootblow-tj-awar-awar_svg__stop8589" />
+				<linearGradient id="sootblow_svg__grad0-580" x1={0} y1={0} x2={1} y2={0}>
+					<stop offset={0} stopColor="#f60" />
+					<stop offset={0.53} stopColor="#ffb311" />
+					<stop offset={1} stopColor="#ffc000" />
 				</linearGradient>
 			</defs>
-			<g id="sootblow-tj-awar-awar_svg__g8600">
-				<g id="sootblow-tj-awar-awar_svg__shape1-1">
-					<path
-						id="sootblow-tj-awar-awar_svg__rect8597"
-						fill="#d8d8d8"
-						stroke="none"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth={0.75}
-						d="M0 0h958.11v453.543H0z"
-					/>
-				</g>
+			<g id="sootblow_svg__shape1-1">
+				<path
+					fill="#fff"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					strokeWidth={0.75}
+					d="M0 0h850.394v453.543H0z"
+				/>
 			</g>
-			<g id="sootblow-tj-awar-awar_svg__g11346">
-				<g id="sootblow-tj-awar-awar_svg__shape738-3" transform="translate(483.997 -270.524)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st2"
-						id="sootblow-tj-awar-awar_svg__rect8606"
-						d="M0 435.785h80.22v17.758H0z"
-					/>
+			<g>
+				<g id="sootblow_svg__shape738-3" transform="translate(433.907 -252.253)">
+					<path className="sootblow_svg__st2" d="M0 435.785h80.221v17.758H0z" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape737-5" transform="translate(389.647 -270.647)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st2"
-						id="sootblow-tj-awar-awar_svg__rect8611"
-						d="M0 435.785h80.22v17.758H0z"
-					/>
+				<g id="sootblow_svg__shape737-5" transform="translate(344.498 -252.376)">
+					<path className="sootblow_svg__st2" d="M0 435.785h80.221v17.758H0z" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape736-7" transform="translate(436.535 -55.365)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st2"
-						id="sootblow-tj-awar-awar_svg__rect8616"
-						d="M0 435.785h80.22v17.758H0z"
-					/>
+				<g id="sootblow_svg__shape736-7" transform="translate(391.387 -41.346)">
+					<path className="sootblow_svg__st2" d="M0 435.785h80.221v17.758H0z" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape1-9" transform="translate(758.184 -362.079)">
-					<path
-						id="sootblow-tj-awar-awar_svg__rect8621"
-						fill="url(#sootblow-tj-awar-awar_svg__grad0-12)"
-						stroke="none"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth={0.24}
-						d="M0 372.037h90.401v81.506H0z"
-					/>
+				<g id="sootblow_svg__shape1-9" transform="translate(670.399 -344.564)">
+					<path className="sootblow_svg__st3" d="M0 378.898h90.401v74.646H0z" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape2-13" transform="matrix(1 0 0 -1 751.615 543.364)">
+				<g id="sootblow_svg__shape2-13" transform="matrix(1 0 0 -1 663.83 561.634)">
 					<path
-						d="M0 453.54h93.29L0 410.64z"
-						id="sootblow-tj-awar-awar_svg__path8626"
-						fill="url(#sootblow-tj-awar-awar_svg__grad0-16)"
-						stroke="none"
+						d="M0 453.54h93.29L0 410.64v42.9z"
+						fill="url(#sootblow_svg__grad0-16)"
 						strokeLinecap="round"
 						strokeLinejoin="round"
 						strokeWidth={0.24}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape4-17" transform="rotate(90 506.05 514.6)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st5"
-						id="sootblow-tj-awar-awar_svg__rect8631"
-						d="M0 258.539h355.465v195.005H0z"
-					/>
+				<g id="sootblow_svg__shape4-17" transform="rotate(90 470.437 504.77)">
+					<path className="sootblow_svg__st5" d="M0 300.879h349.606v152.664H0z" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape7-21" transform="translate(840.651 -97.323)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st6"
-						id="sootblow-tj-awar-awar_svg__rect8636"
-						d="M0 105.874h106.299v347.669H0z"
-					/>
+				<g id="sootblow_svg__shape7-21" transform="translate(746.168 -116.375)">
+					<path className="sootblow_svg__st6" d="M0 150.709h85.631v302.835H0z" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape3-25" transform="rotate(180 381.057 408.78)">
-					<path
-						d="M0 453.54h195l-60.93-79.67H60.94z"
-						className="sootblow-tj-awar-awar_svg__st7"
-						id="sootblow-tj-awar-awar_svg__path8641"
-					/>
+				<g id="sootblow_svg__shape3-25" transform="rotate(180 337.164 417.916)">
+					<path d="M0 453.54h152.66l-42.11-55.51H42.11L0 453.54z" className="sootblow_svg__st7" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape5-29" transform="rotate(-90 235.169 -73.4)">
-					<path
-						d="M33.71 453.54l-16.86-33.7L0 453.54z"
-						className="sootblow-tj-awar-awar_svg__st8"
-						id="sootblow-tj-awar-awar_svg__path8646"
-					/>
+				<g id="sootblow_svg__shape5-29" transform="rotate(-90 202.393 -22.353)">
+					<path d="M33.71 453.54l-16.86-37.67L0 453.54h33.71z" className="sootblow_svg__st8" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape6-31" transform="translate(524.409 -402.091)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st9"
-						id="sootblow-tj-awar-awar_svg__rect8651"
-						d="M0 410.642h42.901v42.901H0z"
-					/>
+				<g id="sootblow_svg__shape10-31" transform="rotate(24.105 1000.272 1808.576)">
+					<path d="M0 453.54h36.93" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape9-35" transform="translate(530.538 -408.22)">
-					<path
-						d="M0 438.22a15.322 15.322 0 0130.64 0 15.322 15.322 0 11-30.64 0z"
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__path8656"
-					/>
+				<g id="sootblow_svg__shape11-34" transform="rotate(154.626 411.4 367.325)">
+					<path d="M0 453.54h116.82" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape10-37" transform="rotate(26.565 1017.886 1842.013)">
-					<path
-						d="M0 453.54h37.69"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8661"
-					/>
+				<g id="sootblow_svg__shape12-37" transform="rotate(90 470.437 504.77)">
+					<path d="M0 453.54h347.95" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape11-40" transform="rotate(154.59 460.444 367.484)">
-					<path
-						d="M0 453.54h122.9"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8666"
-					/>
+				<g id="sootblow_svg__shape13-40" transform="rotate(90 625.503 659.837)">
+					<path d="M0 453.54h274.49" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape12-43" transform="rotate(90 484.699 536.151)">
-					<path
-						d="M0 453.54h312.56"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8671"
-					/>
+				<g id="sootblow_svg__shape15-43" transform="rotate(52.815 332.581 943.189)">
+					<path d="M0 453.54h69.68" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape13-46" transform="rotate(90 695.97 704.52)">
-					<path
-						d="M0 453.54h305.3"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8676"
-					/>
+				<g id="sootblow_svg__shape16-46" transform="rotate(127.185 354.855 585.34)">
+					<path d="M0 453.54h69.68" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape14-49" transform="rotate(90 484.7 493.252)">
-					<path
-						d="M0 453.54h42.9"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8681"
-					/>
+				<g id="sootblow_svg__shape17-49" transform="translate(563.776 -15.745)">
+					<path d="M0 453.54h68.44" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape15-52" transform="rotate(52.589 374.148 982.647)">
-					<path
-						d="M0 453.54h100.31"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8686"
-					/>
+				<g id="sootblow_svg__shape19-52" transform="rotate(180 415.9 243.939)">
+					<path d="M0 453.54h310.14" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape16-55" transform="rotate(127.411 403.174 597.064)">
-					<path
-						d="M0 453.54h100.31"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8691"
-					/>
+				<g id="sootblow_svg__shape20-55" transform="rotate(90 474.801 653.069)">
+					<path d="M0 453.54h167.25" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape17-58" transform="translate(628.047 -9.853)">
-					<path
-						d="M0 453.54h73.17"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8696"
-					/>
+				<g id="sootblow_svg__shape21-58" transform="rotate(90 392.988 734.882)">
+					<path d="M0 453.54h40.39" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape18-61" transform="rotate(180 283.655 252.498)">
-					<path
-						d="M0 453.54h42.9"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8701"
-					/>
+				<g id="sootblow_svg__shape22-61" transform="translate(745.601 -116.375)">
+					<path d="M0 453.54h99.03" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape19-64" transform="rotate(180 473.476 231.047)">
-					<path
-						d="M0 453.54h422.54"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8706"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape20-67" transform="rotate(90 526.946 688.715)">
-					<path
-						d="M0 453.54h165.48"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8711"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape21-70" transform="rotate(90 446.019 769.641)">
-					<path
-						d="M0 453.54h40.39"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8716"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape22-73" transform="translate(839.419 -96.79)">
-					<path
-						d="M0 453.54h117.24"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8721"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape24-76" transform="translate(529.006 -416.187)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st12"
-						id="sootblow-tj-awar-awar_svg__rect8728"
-						d="M0 438.834h33.708v14.709H0z"
-					/>
-					<text
-						x={10.41}
-						y={449.79}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text8730"
-					>
-						{'SD'}
-					</text>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape29-79" transform="translate(856.397 -125.977)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect8737"
-						d="M0 434.009h72.979v19.535H0z"
-					/>
-					<text
-						x={20.42}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text8739"
-					>
+				<g id="sootblow_svg__shape29-64" transform="translate(762.427 -150.676)">
+					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
+					<text x={13.69} y={450.02} className="sootblow_svg__st11">
 						{'P. ECO'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape37-82" transform="rotate(90 600.391 692.569)">
-					<path
-						d="M0 453.54h264.58"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path8744"
-					/>
+				<g id="sootblow_svg__shape37-67" transform="rotate(90.145 542.862 655.476)">
+					<path d="M0 453.54h224.04" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape38-85" transform="translate(856.397 -179.331)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect8751"
-						d="M0 434.009h72.979v19.535H0z"
-					/>
-					<text
-						x={20.76}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text8753"
-					>
+				<g id="sootblow_svg__shape38-70" transform="translate(762.427 -194.168)">
+					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
+					<text x={14.03} y={450.02} className="sootblow_svg__st11">
 						{'S. ECO'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group41-88" transform="translate(862.106 -151.181)">
-					<g id="sootblow-tj-awar-awar_svg__shape39-89" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8760"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape40-91" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8767"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8769"
-						>
-							{'603'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group42-94" transform="translate(904.626 -151.181)">
-					<g id="sootblow-tj-awar-awar_svg__shape43-95" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8777"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape44-97" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8784"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8786"
-						>
-							{'604'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group45-100" transform="translate(862.44 -204.588)">
-					<g id="sootblow-tj-awar-awar_svg__shape46-101" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8794"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape47-103" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8801"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8803"
-						>
-							{'601'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group48-106" transform="translate(904.96 -204.588)">
-					<g id="sootblow-tj-awar-awar_svg__shape49-107" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8811"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape50-109" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8818"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8820"
-						>
-							{'602'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape51-112" transform="translate(856.242 -232.685)">
+				<g id="sootblow_svg__shape39-73" transform="translate(770.627 -170.589)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect8828"
-						d="M0 434.009h72.979v19.535H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={20.42}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text8830"
-					>
-						{'P. ECO'}
+				</g>
+				<g id="sootblow_svg__shape40-75" transform="translate(766.395 -183.037)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'603'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape52-115" transform="translate(856.242 -287.244)">
+				<g id="sootblow_svg__shape43-78" transform="translate(800.107 -170.589)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect8837"
-						d="M0 434.009h72.979v19.535H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={20.76}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text8839"
-					>
-						{'S. ECO'}
+				</g>
+				<g id="sootblow_svg__shape44-80" transform="translate(795.875 -183.037)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'604'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group53-118" transform="translate(861.911 -258.898)">
-					<g id="sootblow-tj-awar-awar_svg__shape54-119" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8846"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape55-121" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8853"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8855"
-						>
-							{'812'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group56-124" transform="translate(904.431 -258.898)">
-					<g id="sootblow-tj-awar-awar_svg__shape57-125" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8863"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape58-127" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8870"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8872"
-						>
-							{'813'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group59-130" transform="translate(879.202 -315.591)">
-					<g id="sootblow-tj-awar-awar_svg__shape60-131" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8880"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape61-133" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8887"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8889"
-						>
-							{'810'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group62-136" transform="translate(911.474 -315.591)">
-					<g id="sootblow-tj-awar-awar_svg__shape63-137" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8897"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape64-139" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8904"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8906"
-						>
-							{'811'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group67-142" transform="translate(864.213 -343.12)">
-					<g id="sootblow-tj-awar-awar_svg__shape65-143">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect8914"
-							d="M0 362.018h20.409v91.525H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape66-145">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8921"
-							d="M0 362.018h20.409v91.525H0z"
-						/>
-						<text
-							x={10.2}
-							y={383.38}
-							writingMode="tb-rl"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text8923"
-						>
-							{'VER. LTSH'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group68-148" transform="translate(844.053 -330.072)">
-					<g id="sootblow-tj-awar-awar_svg__shape69-149" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path8931"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape70-151" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8938"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text8940"
-						>
-							{'809'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group71-154" transform="translate(828.176 -366.614)">
-					<g id="sootblow-tj-awar-awar_svg__shape72-155">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect8948"
-							d="M0 380.339h20.409v73.205H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape73-157">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8955"
-							d="M0 380.339h20.409v73.205H0z"
-						/>
-						<text
-							x={10.2}
-							y={393.44}
-							writingMode="tb-rl"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text8957"
-						>
-							{'FINAL SH.'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group74-160" transform="translate(781.124 -354.685)">
-					<g id="sootblow-tj-awar-awar_svg__shape75-161">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect8965"
-							d="M0 368.41h20.409v85.134H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape76-163">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8972"
-							d="M0 368.41h20.409v85.134H0z"
-						/>
-						<text
-							x={10.2}
-							y={386.97}
-							writingMode="tb-rl"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text8974"
-						>
-							{'FINAL RH.'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group77-166" transform="translate(735.769 -338.268)">
-					<g id="sootblow-tj-awar-awar_svg__shape78-167">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect8982"
-							d="M0 351.992h20.409v101.551H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape79-169">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect8989"
-							d="M0 351.992h20.409v101.551H0z"
-						/>
-						<text
-							x={10.2}
-							y={379.31}
-							writingMode="tb-rl"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text8991"
-						>
-							{'RH PEND.'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group80-172" transform="translate(670.573 -269.63)">
-					<g id="sootblow-tj-awar-awar_svg__shape30-173" transform="translate(0 -17.614)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect8999"
-							d="M0 311.811h25.204v141.732H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape32-175">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9006"
-							d="M0 294.197h25.046v159.347H0z"
-						/>
-						<text
-							x={12.52}
-							y={347.2}
-							writingMode="tb-rl"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9008"
-						>
-							{'PLATEN SH'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group81-178" transform="translate(576.252 -285.452)">
-					<g id="sootblow-tj-awar-awar_svg__shape25-179">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9016"
-							d="M0 310.117h31.267v143.426H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape33-181" transform="translate(.195)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9023"
-							d="M0 310.117h31.072v143.426H0z"
-						/>
-						<text
-							x={15.54}
-							y={355.33}
-							writingMode="tb-rl"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9025"
-						>
-							{'PANELS SH'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group82-184" transform="translate(610.116 -285.452)">
-					<g id="sootblow-tj-awar-awar_svg__shape83-185">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9033"
-							d="M0 310.117h31.267v143.426H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape84-187" transform="translate(.195)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9040"
-							d="M0 310.117h31.072v143.426H0z"
-						/>
-						<text
-							x={15.54}
-							y={355.33}
-							writingMode="tb-rl"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9042"
-						>
-							{'PANELS SH'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group85-190" transform="translate(646.195 -343.294)">
-					<g id="sootblow-tj-awar-awar_svg__shape86-191" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9050"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape87-193" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9057"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9059"
-						>
-							{'801'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group88-196" transform="translate(705.911 -338.268)">
-					<g id="sootblow-tj-awar-awar_svg__shape89-197" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9067"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape90-199" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9074"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9076"
-						>
-							{'804'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group91-202" transform="translate(705.981 -375.426)">
-					<g id="sootblow-tj-awar-awar_svg__shape92-203" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9084"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape93-205" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9091"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9093"
-						>
-							{'803'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group94-208" transform="translate(705.911 -411.969)">
-					<g id="sootblow-tj-awar-awar_svg__shape95-209" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9101"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape96-211" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9108"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9110"
-						>
-							{'802'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group97-214" transform="translate(758.517 -366.614)">
-					<g id="sootblow-tj-awar-awar_svg__shape98-215" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9118"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape99-217" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9125"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9127"
-						>
-							{'806'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group100-220" transform="translate(758.447 -403.157)">
-					<g id="sootblow-tj-awar-awar_svg__shape101-221" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9135"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape102-223" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9142"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9144"
-						>
-							{'805'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group103-226" transform="translate(804.97 -372.899)">
-					<g id="sootblow-tj-awar-awar_svg__shape104-227" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9152"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape105-229" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9159"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9161"
-						>
-							{'808'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group106-232" transform="translate(804.9 -409.442)">
-					<g id="sootblow-tj-awar-awar_svg__shape107-233" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9169"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape108-235" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9176"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9178"
-						>
-							{'807'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group109-238" transform="translate(586.343 -159.993)">
-					<g id="sootblow-tj-awar-awar_svg__shape110-239" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9186"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape111-241" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9193"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9195"
-						>
-							{'405'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group112-244" transform="translate(624.948 -159.993)">
-					<g id="sootblow-tj-awar-awar_svg__shape113-245" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9203"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape114-247" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9210"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9212"
-						>
-							{'406'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group118-250" transform="translate(663.552 -159.993)">
-					<g id="sootblow-tj-awar-awar_svg__shape119-251" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9220"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape120-253" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9227"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9229"
-						>
-							{'407'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group124-256" transform="translate(701.187 -159.993)">
-					<g id="sootblow-tj-awar-awar_svg__shape125-257" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9237"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape126-259" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9244"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9246"
-						>
-							{'408'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group127-262" transform="translate(586.299 -188.339)">
-					<g id="sootblow-tj-awar-awar_svg__shape128-263" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9254"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape129-265" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9261"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9263"
-						>
-							{'409'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group130-268" transform="translate(624.904 -188.339)">
-					<g id="sootblow-tj-awar-awar_svg__shape131-269" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9271"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape132-271" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9278"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9280"
-						>
-							{'410'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group133-274" transform="translate(663.508 -188.339)">
-					<g id="sootblow-tj-awar-awar_svg__shape134-275" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9288"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape135-277" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9295"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9297"
-						>
-							{'411'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group136-280" transform="translate(701.142 -188.339)">
-					<g id="sootblow-tj-awar-awar_svg__shape137-281" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9305"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape138-283" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9312"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9314"
-						>
-							{'412'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group139-286" transform="translate(586.321 -216.686)">
-					<g id="sootblow-tj-awar-awar_svg__shape140-287" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9322"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape141-289" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9329"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9331"
-						>
-							{'413'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group142-292" transform="translate(624.926 -216.686)">
-					<g id="sootblow-tj-awar-awar_svg__shape143-293" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9339"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape144-295" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9346"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9348"
-						>
-							{'414'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group145-298" transform="translate(663.53 -216.686)">
-					<g id="sootblow-tj-awar-awar_svg__shape146-299" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9356"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape147-301" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9363"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9365"
-						>
-							{'415'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group148-304" transform="translate(701.165 -216.686)">
-					<g id="sootblow-tj-awar-awar_svg__shape149-305" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9373"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape150-307" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9380"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9382"
-						>
-							{'416'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group151-310" transform="translate(586.277 -245.032)">
-					<g id="sootblow-tj-awar-awar_svg__shape152-311" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9390"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape153-313" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9397"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9399"
-						>
-							{'417'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group154-316" transform="translate(624.881 -245.032)">
-					<g id="sootblow-tj-awar-awar_svg__shape155-317" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9407"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape156-319" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9414"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9416"
-						>
-							{'418'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group157-322" transform="translate(663.486 -245.032)">
-					<g id="sootblow-tj-awar-awar_svg__shape158-323" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9424"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape159-325" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9431"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9433"
-						>
-							{'419'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group160-328" transform="translate(701.12 -245.032)">
-					<g id="sootblow-tj-awar-awar_svg__shape161-329" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9441"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape162-331" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9448"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9450"
-						>
-							{'420'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group163-334" transform="translate(586.384 -89.127)">
-					<g id="sootblow-tj-awar-awar_svg__shape164-335" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9458"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape165-337" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9465"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9467"
-						>
-							{'401'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group166-340" transform="translate(624.988 -89.127)">
-					<g id="sootblow-tj-awar-awar_svg__shape167-341" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9475"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape168-343" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9482"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9484"
-						>
-							{'402'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group169-346" transform="translate(663.592 -89.127)">
-					<g id="sootblow-tj-awar-awar_svg__shape170-347" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9492"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape171-349" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9499"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9501"
-						>
-							{'403'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group172-352" transform="translate(701.227 -89.127)">
-					<g id="sootblow-tj-awar-awar_svg__shape173-353" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9509"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape174-355" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9516"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9518"
-						>
-							{'404'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape176-358" transform="translate(738.604 -89.127)">
+				<g id="sootblow_svg__shape46-83" transform="translate(770.627 -214.133)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9526"
-						d="M0 434.009h20.409v19.535H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={7.16}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9528"
-					>
-						{'1'}
+				</g>
+				<g id="sootblow_svg__shape47-85" transform="translate(766.395 -226.581)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'601'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape177-361" transform="translate(738.604 -159.993)">
+				<g id="sootblow_svg__shape49-88" transform="translate(800.107 -214.133)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9535"
-						d="M0 434.009h20.409v19.535H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={7.16}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9537"
-					>
-						{'2'}
+				</g>
+				<g id="sootblow_svg__shape50-90" transform="translate(795.875 -226.581)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'602'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape178-364" transform="translate(738.604 -188.339)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9544"
-						d="M0 434.009h20.409v19.535H0z"
-					/>
-					<text
-						x={7.16}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9546"
-					>
-						{'3'}
+				<g id="sootblow_svg__shape51-93" transform="translate(762.427 -237.256)">
+					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
+					<text x={11.85} y={450.02} className="sootblow_svg__st11">
+						{'P. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape179-367" transform="translate(738.604 -216.686)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9553"
-						d="M0 434.009h20.409v19.535H0z"
-					/>
-					<text
-						x={7.16}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9555"
-					>
-						{'4'}
+				<g id="sootblow_svg__shape52-96" transform="translate(762.427 -281.813)">
+					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
+					<text x={12.19} y={450.02} className="sootblow_svg__st11">
+						{'S. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape180-370" transform="translate(738.604 -245.032)">
+				<g id="sootblow_svg__shape54-99" transform="translate(770.627 -258.639)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9562"
-						d="M0 434.009h20.409v19.535H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={7.16}
-						y={447.38}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9564"
-					>
-						{'5'}
+				</g>
+				<g id="sootblow_svg__shape55-101" transform="translate(766.395 -271.087)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'812'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape181-373" transform="translate(946.951 -139.691)">
+				<g id="sootblow_svg__shape57-104" transform="translate(800.107 -258.639)">
 					<path
-						d="M0 453.54h10.47"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9569"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape348-376" transform="matrix(-1 0 0 1 195.853 -362)">
-					<path
-						id="sootblow-tj-awar-awar_svg__rect9574"
-						fill="url(#sootblow-tj-awar-awar_svg__grad0-379)"
-						stroke="none"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth={0.24}
-						d="M0 372.037h90.401v81.506H0z"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape349-380" transform="rotate(180 101.211 271.721)">
-					<path
-						d="M0 453.54h93.29L0 410.64z"
-						id="sootblow-tj-awar-awar_svg__path9579"
-						fill="url(#sootblow-tj-awar-awar_svg__grad0-383)"
-						stroke="none"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth={0.24}
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape350-384" transform="matrix(0 1 1 0 -66.614 8.63)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st5"
-						id="sootblow-tj-awar-awar_svg__rect9584"
-						d="M0 258.539h355.465v195.005H0z"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape351-387" transform="matrix(-1 0 0 1 113.386 -97.244)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st6"
-						id="sootblow-tj-awar-awar_svg__rect9589"
-						d="M0 105.874h106.299v347.669H0z"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape352-390" transform="matrix(1 0 0 -1 191.924 817.639)">
-					<path
-						d="M0 453.54h195l-60.93-79.67H60.94z"
-						className="sootblow-tj-awar-awar_svg__st7"
-						id="sootblow-tj-awar-awar_svg__path9594"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape353-393" transform="matrix(0 -1 -1 0 645.468 161.848)">
-					<path
-						d="M33.71 453.54l-16.86-33.7L0 453.54z"
-						className="sootblow-tj-awar-awar_svg__st8"
-						id="sootblow-tj-awar-awar_svg__path9599"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape354-395" transform="matrix(-1 0 0 1 429.628 -402.012)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st9"
-						id="sootblow-tj-awar-awar_svg__rect9604"
-						d="M0 410.642h42.901v42.901H0z"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape355-398" transform="matrix(-1 0 0 1 423.499 -408.141)">
-					<path
-						d="M0 438.22a15.322 15.322 0 0130.64 0 15.322 15.322 0 11-30.64 0z"
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__path9609"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape356-400" transform="scale(-1 1) rotate(26.565 540.702 -178.628)">
-					<path
-						d="M0 453.54h37.69"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9614"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape357-403" transform="scale(1 -1) rotate(-25.41 -1153.14 -73.551)">
-					<path
-						d="M0 453.54h122.9"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9619"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape358-406" transform="matrix(0 1 1 0 -66.817 51.531)">
-					<path
-						d="M0 453.54h312.56"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9624"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape359-409" transform="matrix(0 1 1 0 -446.457 8.63)">
-					<path
-						d="M0 453.54h305.3"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9629"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape360-412" transform="matrix(0 1 1 0 -23.916 8.63)">
-					<path
-						d="M0 453.54h42.9"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9634"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape361-415" transform="scale(-1 1) rotate(52.589 -102.95 17.28)">
-					<path
-						d="M0 453.54h100.31"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9639"
-					/>
-				</g>
-				<g
-					id="sootblow-tj-awar-awar_svg__shape362-418"
-					transform="scale(1 -1) rotate(-52.589 -731.421 -149.488)"
-				>
-					<path
-						d="M0 453.54h100.31"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9644"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape363-421" transform="matrix(-1 0 0 1 325.99 -9.775)">
-					<path
-						d="M0 453.54h73.17"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9649"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape364-424" transform="matrix(1 0 0 -1 386.727 505.074)">
-					<path
-						d="M0 453.54h42.9"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9654"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape365-427" transform="matrix(1 0 0 -1 7.087 462.173)">
-					<path
-						d="M0 453.54h422.54"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9659"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape366-430" transform="matrix(0 1 1 0 -261.619 161.848)">
-					<path
-						d="M0 453.54h165.48"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9664"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape367-433" transform="matrix(0 1 1 0 -261.619 323.701)">
-					<path
-						d="M0 453.54h40.39"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9669"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape368-436" transform="matrix(-1 0 0 1 114.618 -96.711)">
-					<path
-						d="M0 453.54h114.62"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9674"
-					/>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape369-439" transform="matrix(-1 0 0 1 425.031 -416.108)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st12"
-						id="sootblow-tj-awar-awar_svg__rect9681"
-						d="M0 438.834h33.708v14.709H0z"
-					/>
-					<text
-						x={-23.3}
-						y={449.79}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9683"
-					>
-						{'SD'}
+				<g id="sootblow_svg__shape58-106" transform="translate(795.875 -271.087)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'813'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape370-442" transform="matrix(-1 0 0 1 97.64 -125.898)">
+				<g id="sootblow_svg__shape60-109" transform="translate(781.294 -302.352)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9690"
-						d="M0 434.009h72.979v19.535H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={-52.56}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9692"
-					>
-						{'P. ECO'}
+				</g>
+				<g id="sootblow_svg__shape61-111" transform="translate(777.062 -314.8)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'810'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape371-445" transform="matrix(0 1 1 0 -338.925 92.256)">
+				<g id="sootblow_svg__shape63-114" transform="translate(805.776 -302.352)">
 					<path
-						d="M0 453.54h264.58"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path9697"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape372-448" transform="matrix(-1 0 0 1 97.64 -179.252)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9704"
-						d="M0 434.009h72.979v19.535H0z"
-					/>
-					<text
-						x={-52.22}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9706"
-					>
-						{'S. ECO'}
+				<g id="sootblow_svg__shape64-116" transform="translate(801.545 -314.8)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'811'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group373-451" transform="matrix(-1 0 0 1 91.93 -151.102)">
-					<g id="sootblow-tj-awar-awar_svg__shape374-452" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9713"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape375-454" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9720"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9722"
-						>
-							{'603'}
-						</text>
-					</g>
+				<g id="sootblow_svg__shape65-119" transform="translate(766.395 -324.85)">
+					<path className="sootblow_svg__st10" d="M0 372.037h15.412v81.506H0z" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group376-457" transform="matrix(-1 0 0 1 49.411 -151.102)">
-					<g id="sootblow-tj-awar-awar_svg__shape377-458" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9730"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape378-460" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9737"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9739"
-						>
-							{'604'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group379-463" transform="matrix(-1 0 0 1 91.597 -204.509)">
-					<g id="sootblow-tj-awar-awar_svg__shape380-464" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9747"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape381-466" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9754"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9756"
-						>
-							{'601'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group382-469" transform="matrix(-1 0 0 1 49.077 -204.509)">
-					<g id="sootblow-tj-awar-awar_svg__shape383-470" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9764"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape384-472" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9771"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9773"
-						>
-							{'602'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape385-475" transform="matrix(-1 0 0 1 97.795 -232.606)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9781"
-						d="M0 434.009h72.979v19.535H0z"
-					/>
-					<text
-						x={-52.56}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9783"
-					>
-						{'P. ECO'}
+				<g id="sootblow_svg__shape66-121" transform="translate(766.395 -324.85)">
+					<path className="sootblow_svg__st13" d="M0 372.037h15.412v81.506H0z" />
+					<text x={7.71} y={388.39} writingMode="tb-rl" className="sootblow_svg__st11">
+						{'VER. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape386-478" transform="matrix(-1 0 0 1 97.795 -287.165)">
+				<g id="sootblow_svg__shape69-124" transform="translate(749.549 -316.217)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect9790"
-						d="M0 434.009h72.979v19.535H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={-52.22}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text9792"
-					>
-						{'S. ECO'}
+				</g>
+				<g id="sootblow_svg__shape70-126" transform="translate(745.317 -328.665)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'809'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group387-481" transform="matrix(-1 0 0 1 92.126 -258.819)">
-					<g id="sootblow-tj-awar-awar_svg__shape388-482" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9799"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape389-484" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9806"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9808"
-						>
-							{'812'}
-						</text>
-					</g>
+				<g id="sootblow_svg__shape72-129" transform="translate(728.593 -351.085)">
+					<path className="sootblow_svg__st10" d="M0 391.797h15.412v61.747H0z" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group390-487" transform="matrix(-1 0 0 1 49.606 -258.819)">
-					<g id="sootblow-tj-awar-awar_svg__shape391-488" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9816"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape392-490" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9823"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9825"
-						>
-							{'813'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group393-493" transform="matrix(-1 0 0 1 74.835 -315.512)">
-					<g id="sootblow-tj-awar-awar_svg__shape394-494" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9833"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape395-496" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9840"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9842"
-						>
-							{'810'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group396-499" transform="matrix(-1 0 0 1 42.563 -315.512)">
-					<g id="sootblow-tj-awar-awar_svg__shape397-500" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9850"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape398-502" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9857"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9859"
-						>
-							{'811'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group399-505" transform="matrix(-1 0 0 1 89.825 -343.042)">
-					<g id="sootblow-tj-awar-awar_svg__shape400-506">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9867"
-							d="M0 362.018h20.409v91.525H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape401-508">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9874"
-							d="M0 362.018h20.409v91.525H0z"
-						/>
-						<text
-							x={-10.2}
-							y={383.38}
-							writingMode="tb-rl"
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9876"
-						>
-							{'VER. LTSH'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group402-511" transform="matrix(-1 0 0 1 109.984 -329.993)">
-					<g id="sootblow-tj-awar-awar_svg__shape403-512" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path9884"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape404-514" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9891"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text9893"
-						>
-							{'809'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group405-517" transform="matrix(-1 0 0 1 125.861 -366.535)">
-					<g id="sootblow-tj-awar-awar_svg__shape406-518">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9901"
-							d="M0 380.339h20.409v73.205H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape407-520">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9908"
-							d="M0 380.339h20.409v73.205H0z"
-						/>
-						<text
-							x={-10.2}
-							y={393.44}
-							writingMode="tb-rl"
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9910"
-						>
-							{'FINAL SH.'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group408-523" transform="matrix(-1 0 0 1 172.913 -354.606)">
-					<g id="sootblow-tj-awar-awar_svg__shape409-524">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9918"
-							d="M0 368.41h20.409v85.134H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape410-526">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9925"
-							d="M0 368.41h20.409v85.134H0z"
-						/>
-						<text
-							x={-10.2}
-							y={386.97}
-							writingMode="tb-rl"
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9927"
-						>
-							{'FINAL RH.'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group411-529" transform="matrix(-1 0 0 1 218.268 -338.189)">
-					<g id="sootblow-tj-awar-awar_svg__shape412-530">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9935"
-							d="M0 351.992h20.409v101.551H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape413-532">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9942"
-							d="M0 351.992h20.409v101.551H0z"
-						/>
-						<text
-							x={-10.2}
-							y={379.31}
-							writingMode="tb-rl"
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9944"
-						>
-							{'RH PEND.'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group414-535" transform="matrix(-1 0 0 1 283.465 -269.551)">
-					<g id="sootblow-tj-awar-awar_svg__shape415-536" transform="translate(0 -17.614)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9952"
-							d="M0 311.811h25.204v141.732H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape416-538">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9959"
-							d="M0 294.197h25.046v159.347H0z"
-						/>
-						<text
-							x={-12.52}
-							y={347.2}
-							writingMode="tb-rl"
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9961"
-						>
-							{'PLATEN SH'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group417-541" transform="matrix(-1 0 0 1 377.785 -285.373)">
-					<g id="sootblow-tj-awar-awar_svg__shape418-542">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9969"
-							d="M0 310.117h31.267v143.426H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape419-544" transform="translate(.195)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9976"
-							d="M0 310.117h31.072v143.426H0z"
-						/>
-						<text
-							x={-15.54}
-							y={355.33}
-							writingMode="tb-rl"
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9978"
-						>
-							{'PANELS SH'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group420-547" transform="matrix(-1 0 0 1 343.921 -285.373)">
-					<g id="sootblow-tj-awar-awar_svg__shape421-548">
-						<path
-							className="sootblow-tj-awar-awar_svg__st10"
-							id="sootblow-tj-awar-awar_svg__rect9986"
-							d="M0 310.117h31.267v143.426H0z"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape422-550" transform="translate(.195)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect9993"
-							d="M0 310.117h31.072v143.426H0z"
-						/>
-						<text
-							x={-15.54}
-							y={355.33}
-							writingMode="tb-rl"
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st13"
-							id="sootblow-tj-awar-awar_svg__text9995"
-						>
-							{'PANELS SH'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group423-553" transform="matrix(-1 0 0 1 307.843 -343.215)">
-					<g id="sootblow-tj-awar-awar_svg__shape424-554" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10003"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape425-556" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10010"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10012"
-						>
-							{'801'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group426-559" transform="matrix(-1 0 0 1 248.126 -338.189)">
-					<g id="sootblow-tj-awar-awar_svg__shape427-560" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10020"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape428-562" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10027"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10029"
-						>
-							{'804'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group429-565" transform="matrix(-1 0 0 1 248.056 -375.347)">
-					<g id="sootblow-tj-awar-awar_svg__shape430-566" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10037"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape431-568" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10044"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10046"
-						>
-							{'803'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group432-571" transform="matrix(-1 0 0 1 248.126 -411.89)">
-					<g id="sootblow-tj-awar-awar_svg__shape433-572" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10054"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape434-574" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10061"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10063"
-						>
-							{'802'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group435-577" transform="matrix(-1 0 0 1 195.52 -366.535)">
-					<g id="sootblow-tj-awar-awar_svg__shape436-578" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10071"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape437-580" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10078"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10080"
-						>
-							{'806'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group438-583" transform="matrix(-1 0 0 1 195.591 -403.078)">
-					<g id="sootblow-tj-awar-awar_svg__shape439-584" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10088"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape440-586" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10095"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10097"
-						>
-							{'805'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group441-589" transform="matrix(-1 0 0 1 149.067 -372.82)">
-					<g id="sootblow-tj-awar-awar_svg__shape442-590" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10105"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape443-592" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10112"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10114"
-						>
-							{'808'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group444-595" transform="matrix(-1 0 0 1 149.137 -409.363)">
-					<g id="sootblow-tj-awar-awar_svg__shape445-596" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10122"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape446-598" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10129"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10131"
-						>
-							{'807'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group447-601" transform="matrix(-1 0 0 1 367.694 -159.914)">
-					<g id="sootblow-tj-awar-awar_svg__shape448-602" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10139"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape449-604" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10146"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10148"
-						>
-							{'308'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group450-607" transform="matrix(-1 0 0 1 329.089 -159.914)">
-					<g id="sootblow-tj-awar-awar_svg__shape451-608" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10156"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape452-610" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10163"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10165"
-						>
-							{'307'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group453-613" transform="matrix(-1 0 0 1 290.485 -159.914)">
-					<g id="sootblow-tj-awar-awar_svg__shape454-614" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10173"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape455-616" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10180"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10182"
-						>
-							{'306'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group456-619" transform="matrix(-1 0 0 1 252.85 -159.914)">
-					<g id="sootblow-tj-awar-awar_svg__shape457-620" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10190"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape458-622" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10197"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10199"
-						>
-							{'305'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group459-625" transform="matrix(-1 0 0 1 367.738 -188.26)">
-					<g id="sootblow-tj-awar-awar_svg__shape460-626" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10207"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape461-628" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10214"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10216"
-						>
-							{'312'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group462-631" transform="matrix(-1 0 0 1 329.134 -188.26)">
-					<g id="sootblow-tj-awar-awar_svg__shape463-632" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10224"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape464-634" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10231"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10233"
-						>
-							{'311'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group465-637" transform="matrix(-1 0 0 1 290.529 -188.26)">
-					<g id="sootblow-tj-awar-awar_svg__shape466-638" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10241"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape467-640" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10248"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10250"
-						>
-							{'310'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group468-643" transform="matrix(-1 0 0 1 252.895 -188.26)">
-					<g id="sootblow-tj-awar-awar_svg__shape469-644" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10258"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape470-646" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10265"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10267"
-						>
-							{'309'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group471-649" transform="matrix(-1 0 0 1 367.716 -216.607)">
-					<g id="sootblow-tj-awar-awar_svg__shape472-650" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10275"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape473-652" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10282"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10284"
-						>
-							{'316'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group474-655" transform="matrix(-1 0 0 1 329.111 -216.607)">
-					<g id="sootblow-tj-awar-awar_svg__shape475-656" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10292"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape476-658" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10299"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10301"
-						>
-							{'315'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group477-661" transform="matrix(-1 0 0 1 290.507 -216.607)">
-					<g id="sootblow-tj-awar-awar_svg__shape478-662" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10309"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape479-664" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10316"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10318"
-						>
-							{'314'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group480-667" transform="matrix(-1 0 0 1 252.873 -216.607)">
-					<g id="sootblow-tj-awar-awar_svg__shape481-668" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10326"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape482-670" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10333"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10335"
-						>
-							{'313'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group483-673" transform="matrix(-1 0 0 1 367.76 -244.953)">
-					<g id="sootblow-tj-awar-awar_svg__shape484-674" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10343"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape485-676" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10350"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10352"
-						>
-							{'320'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group486-679" transform="matrix(-1 0 0 1 329.156 -244.953)">
-					<g id="sootblow-tj-awar-awar_svg__shape487-680" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10360"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape488-682" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10367"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10369"
-						>
-							{'319'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group489-685" transform="matrix(-1 0 0 1 290.551 -244.953)">
-					<g id="sootblow-tj-awar-awar_svg__shape490-686" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10377"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape491-688" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10384"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10386"
-						>
-							{'318'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group492-691" transform="matrix(-1 0 0 1 252.917 -244.953)">
-					<g id="sootblow-tj-awar-awar_svg__shape493-692" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10394"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape494-694" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10401"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10403"
-						>
-							{'317'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group495-697" transform="matrix(-1 0 0 1 367.654 -89.048)">
-					<g id="sootblow-tj-awar-awar_svg__shape496-698" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10411"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape497-700" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10418"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10420"
-						>
-							{'304'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group498-703" transform="matrix(-1 0 0 1 329.049 -89.048)">
-					<g id="sootblow-tj-awar-awar_svg__shape499-704" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10428"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape500-706" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10435"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10437"
-						>
-							{'303'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group501-709" transform="matrix(-1 0 0 1 290.445 -89.048)">
-					<g id="sootblow-tj-awar-awar_svg__shape502-710" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10445"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape503-712" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10452"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10454"
-						>
-							{'302'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group504-715" transform="matrix(-1 0 0 1 252.81 -89.048)">
-					<g id="sootblow-tj-awar-awar_svg__shape505-716" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10462"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape506-718" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10469"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={-16.29}
-							y={452.4}
-							transform="scale(-1 1)"
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10471"
-						>
-							{'301'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape507-721" transform="matrix(-1 0 0 1 215.433 -89.048)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect10479"
-						d="M0 434.009h20.409v19.535H0z"
-					/>
-					<text
-						x={-13.25}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text10481"
-					>
-						{'1'}
+				<g id="sootblow_svg__shape73-131" transform="translate(728.593 -351.085)">
+					<path className="sootblow_svg__st13" d="M0 391.797h15.412v61.747H0z" />
+					<text x={7.71} y={399.17} writingMode="tb-rl" className="sootblow_svg__st11">
+						{'FINAL SH.'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape508-724" transform="matrix(-1 0 0 1 215.433 -159.914)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect10488"
-						d="M0 434.009h20.409v19.535H0z"
-					/>
-					<text
-						x={-13.25}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text10490"
-					>
-						{'2'}
+				<g id="sootblow_svg__shape75-134" transform="translate(690.504 -339.323)">
+					<path className="sootblow_svg__st10" d="M0 377.73h15.412v75.813H0z" />
+				</g>
+				<g id="sootblow_svg__shape76-136" transform="translate(690.504 -339.323)">
+					<path className="sootblow_svg__st13" d="M0 377.73h15.412v75.813H0z" />
+					<text x={7.71} y={391.63} writingMode="tb-rl" className="sootblow_svg__st11">
+						{'FINAL RH.'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape509-727" transform="matrix(-1 0 0 1 215.433 -188.26)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect10497"
-						d="M0 434.009h20.409v19.535H0z"
-					/>
-					<text
-						x={-13.25}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text10499"
-					>
-						{'3'}
+				<g id="sootblow_svg__shape78-139" transform="translate(647.984 -319.997)">
+					<path className="sootblow_svg__st10" d="M0 362.018h15.412v91.525H0z" />
+				</g>
+				<g id="sootblow_svg__shape79-141" transform="translate(647.984 -319.997)">
+					<path className="sootblow_svg__st13" d="M0 362.018h15.412v91.525H0z" />
+					<text x={7.71} y={384.32} writingMode="tb-rl" className="sootblow_svg__st11">
+						{'RH PEND.'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape510-730" transform="matrix(-1 0 0 1 215.433 -216.607)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect10506"
-						d="M0 434.009h20.409v19.535H0z"
-					/>
-					<text
-						x={-13.25}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text10508"
-					>
-						{'4'}
+				<g id="sootblow_svg__shape30-144" transform="translate(599.711 -285.036)">
+					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				</g>
+				<g id="sootblow_svg__shape32-146" transform="translate(599.553 -268.973)">
+					<path className="sootblow_svg__st13" d="M0 311.811h20.409v141.732H0z" />
+					<text x={10.2} y={356.01} writingMode="tb-rl" className="sootblow_svg__st11">
+						{'PLATEN SH'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape511-733" transform="matrix(-1 0 0 1 215.433 -244.953)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st10"
-						id="sootblow-tj-awar-awar_svg__rect10515"
-						d="M0 434.009h20.409v19.535H0z"
-					/>
-					<text
-						x={-13.25}
-						y={447.38}
-						transform="scale(-1 1)"
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text10517"
-					>
-						{'5'}
+				<g id="sootblow_svg__shape25-149" transform="translate(528.281 -284.938)">
+					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				</g>
+				<g id="sootblow_svg__shape33-151" transform="translate(528.408 -284.938)">
+					<path className="sootblow_svg__st13" d="M0 327.874h20.282v125.669H0z" />
+					<text x={10.14} y={364.2} writingMode="tb-rl" className="sootblow_svg__st11">
+						{'PANELS SH'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape512-736" transform="matrix(-1 0 0 1 7.087 -139.612)">
+				<g id="sootblow_svg__shape83-154" transform="translate(551.711 -284.938)">
+					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				</g>
+				<g id="sootblow_svg__shape84-156" transform="translate(551.839 -284.938)">
+					<path className="sootblow_svg__st13" d="M0 327.874h20.282v125.669H0z" />
+					<text x={10.14} y={364.2} writingMode="tb-rl" className="sootblow_svg__st11">
+						{'PANELS SH'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape86-159" transform="translate(579.754 -325.023)">
 					<path
-						d="M0 453.54h7.09"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path10522"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group514-739" transform="translate(389.877 -159.955)">
-					<g id="sootblow-tj-awar-awar_svg__shape515-740" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10529"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape516-742" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10536"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10538"
-						>
-							{'105'}
-						</text>
-					</g>
+				<g id="sootblow_svg__shape87-161" transform="translate(575.522 -337.471)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'801'}
+					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group517-745" transform="translate(409.391 -159.955)">
-					<g id="sootblow-tj-awar-awar_svg__shape518-746" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10546"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape519-748" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10553"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10555"
-						>
-							{'106'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group520-751" transform="translate(429.588 -159.955)">
-					<g id="sootblow-tj-awar-awar_svg__shape521-752" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10563"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape522-754" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10570"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10572"
-						>
-							{'107'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group523-757" transform="translate(449.06 -159.955)">
-					<g id="sootblow-tj-awar-awar_svg__shape524-758" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10580"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape525-760" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10587"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10589"
-						>
-							{'108'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group526-763" transform="translate(389.833 -188.301)">
-					<g id="sootblow-tj-awar-awar_svg__shape527-764" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10597"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape528-766" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10604"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10606"
-						>
-							{'109'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group529-769" transform="translate(409.347 -188.301)">
-					<g id="sootblow-tj-awar-awar_svg__shape530-770" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10614"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape531-772" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10621"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10623"
-						>
-							{'110'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group532-775" transform="translate(429.543 -188.301)">
-					<g id="sootblow-tj-awar-awar_svg__shape533-776" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10631"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape534-778" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10638"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10640"
-						>
-							{'111'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group535-781" transform="translate(449.016 -188.301)">
-					<g id="sootblow-tj-awar-awar_svg__shape536-782" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10648"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape537-784" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10655"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10657"
-						>
-							{'112'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group538-787" transform="translate(389.855 -216.648)">
-					<g id="sootblow-tj-awar-awar_svg__shape539-788" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10665"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape540-790" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10672"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10674"
-						>
-							{'113'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group541-793" transform="translate(409.369 -216.648)">
-					<g id="sootblow-tj-awar-awar_svg__shape542-794" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10682"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape543-796" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10689"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10691"
-						>
-							{'114'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group544-799" transform="translate(429.565 -216.648)">
-					<g id="sootblow-tj-awar-awar_svg__shape545-800" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10699"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape546-802" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10706"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10708"
-						>
-							{'115'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group547-805" transform="translate(449.038 -216.648)">
-					<g id="sootblow-tj-awar-awar_svg__shape548-806" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10716"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape549-808" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10723"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10725"
-						>
-							{'116'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group550-811" transform="translate(389.811 -244.994)">
-					<g id="sootblow-tj-awar-awar_svg__shape551-812" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10733"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape552-814" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10740"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10742"
-						>
-							{'117'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group553-817" transform="translate(409.325 -244.994)">
-					<g id="sootblow-tj-awar-awar_svg__shape554-818" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10750"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape555-820" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10757"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10759"
-						>
-							{'118'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group556-823" transform="translate(429.521 -244.994)">
-					<g id="sootblow-tj-awar-awar_svg__shape557-824" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10767"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape558-826" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10774"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10776"
-						>
-							{'119'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group559-829" transform="translate(448.994 -244.994)">
-					<g id="sootblow-tj-awar-awar_svg__shape560-830" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10784"
-							stroke="#000"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape561-832" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10791"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10793"
-						>
-							{'120'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group562-835" transform="translate(389.918 -89.089)">
-					<g id="sootblow-tj-awar-awar_svg__shape563-836" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10801"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape564-838" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10808"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10810"
-						>
-							{'101'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group565-841" transform="translate(409.431 -89.089)">
-					<g id="sootblow-tj-awar-awar_svg__shape566-842" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10818"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape567-844" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10825"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10827"
-						>
-							{'102'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group568-847" transform="translate(429.628 -89.089)">
-					<g id="sootblow-tj-awar-awar_svg__shape569-848" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10835"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape570-850" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10842"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10844"
-						>
-							{'103'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group571-853" transform="translate(449.101 -89.089)">
-					<g id="sootblow-tj-awar-awar_svg__shape572-854" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10852"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape573-856" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10859"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10861"
-						>
-							{'104'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape579-859" transform="rotate(90 339.295 504.059)">
+				<g id="sootblow_svg__shape89-164" transform="translate(627.306 -319.997)">
 					<path
-						d="M0 453.54h204.49"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path10867"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape580-862" transform="rotate(89.977 379.322 544.122)">
+				<g id="sootblow_svg__shape90-166" transform="translate(623.074 -332.445)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'804'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape92-169" transform="translate(627.376 -357.155)">
 					<path
-						d="M0 453.54h205"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path10872"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape581-865" transform="rotate(-179.638 234.781 410.911)">
+				<g id="sootblow_svg__shape93-171" transform="translate(623.144 -369.603)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'803'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape95-174" transform="translate(627.306 -393.698)">
 					<path
-						d="M0 453.54h80.02"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path10877"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape582-868" transform="rotate(-179.638 234.488 317.872)">
+				<g id="sootblow_svg__shape96-176" transform="translate(623.074 -406.146)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'802'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape98-179" transform="translate(670.532 -348.343)">
 					<path
-						d="M0 453.54h80.02"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path10882"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape583-871" transform="rotate(180 234.874 309.154)">
+				<g id="sootblow_svg__shape99-181" transform="translate(666.301 -360.791)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'806'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape101-184" transform="translate(670.462 -384.886)">
 					<path
-						d="M0 453.54h79.94"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path10887"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape584-874" transform="translate(389.811 -269.291)">
+				<g id="sootblow_svg__shape102-186" transform="translate(666.231 -397.334)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'805'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape104-189" transform="translate(711.316 -354.628)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st12"
-						id="sootblow-tj-awar-awar_svg__rect10894"
-						d="M0 433.701h80.22v19.843H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={23.33}
-						y={447.22}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text10896"
-					>
+				</g>
+				<g id="sootblow_svg__shape105-191" transform="translate(707.085 -367.076)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'808'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape107-194" transform="translate(711.246 -391.171)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape108-196" transform="translate(707.014 -403.619)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'807'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape110-199" transform="translate(544.05 -141.722)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape111-201" transform="translate(539.819 -154.17)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'405'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape113-204" transform="translate(576.985 -141.722)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape114-206" transform="translate(572.754 -154.17)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'406'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape119-209" transform="translate(608.166 -141.722)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape120-211" transform="translate(603.935 -154.17)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'407'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape125-214" transform="translate(640.091 -141.722)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape126-216" transform="translate(635.86 -154.17)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'408'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape128-219" transform="translate(544.006 -170.069)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape129-221" transform="translate(539.774 -182.517)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'409'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape131-224" transform="translate(576.941 -170.069)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape132-226" transform="translate(572.709 -182.517)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'410'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape134-229" transform="translate(608.122 -170.069)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape135-231" transform="translate(603.891 -182.517)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'411'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape137-234" transform="translate(640.047 -170.069)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape138-236" transform="translate(635.816 -182.517)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'412'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape140-239" transform="translate(544.028 -198.415)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape141-241" transform="translate(539.796 -210.863)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'413'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape143-244" transform="translate(576.963 -198.415)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape144-246" transform="translate(572.732 -210.863)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'414'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape146-249" transform="translate(608.144 -198.415)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape147-251" transform="translate(603.913 -210.863)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'415'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape149-254" transform="translate(640.069 -198.415)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape150-256" transform="translate(635.838 -210.863)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'416'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape152-259" transform="translate(543.984 -226.761)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape153-261" transform="translate(539.752 -239.21)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'417'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape155-264" transform="translate(576.919 -226.761)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape156-266" transform="translate(572.687 -239.21)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'418'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape158-269" transform="translate(608.1 -226.761)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape159-271" transform="translate(603.868 -239.21)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'419'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape161-274" transform="translate(640.025 -226.761)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape162-276" transform="translate(635.793 -239.21)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'420'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape164-279" transform="translate(544.09 -70.856)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape165-281" transform="translate(539.859 -83.304)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'401'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape167-284" transform="translate(577.025 -70.856)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape168-286" transform="translate(572.794 -83.304)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'402'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape170-289" transform="translate(608.207 -70.856)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape171-291" transform="translate(603.975 -83.304)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'403'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape173-294" transform="translate(640.132 -70.856)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape174-296" transform="translate(635.9 -83.304)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'404'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape181-299" transform="translate(833.293 -144.721)">
+					<path d="M0 453.54h10.47" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape515-302" transform="translate(348.961 -141.684)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape516-304" transform="translate(344.729 -154.132)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'105'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape518-307" transform="translate(368.474 -141.684)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape519-309" transform="translate(364.242 -154.132)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'106'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape521-312" transform="translate(388.671 -141.684)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape522-314" transform="translate(384.439 -154.132)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'107'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape524-317" transform="translate(408.144 -141.684)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape525-319" transform="translate(403.912 -154.132)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'108'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape527-322" transform="translate(348.916 -170.031)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape528-324" transform="translate(344.685 -182.479)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'109'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape530-327" transform="translate(368.43 -170.031)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape531-329" transform="translate(364.198 -182.479)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'110'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape533-332" transform="translate(388.626 -170.031)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape534-334" transform="translate(384.395 -182.479)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'111'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape536-337" transform="translate(408.099 -170.031)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape537-339" transform="translate(403.868 -182.479)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'112'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape539-342" transform="translate(348.938 -198.377)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape540-344" transform="translate(344.707 -210.825)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'113'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape542-347" transform="translate(368.452 -198.377)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape543-349" transform="translate(364.22 -210.825)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'114'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape545-352" transform="translate(388.649 -198.377)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape546-354" transform="translate(384.417 -210.825)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'115'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape548-357" transform="translate(408.121 -198.377)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape549-359" transform="translate(403.89 -210.825)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'116'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape551-362" transform="translate(348.894 -226.724)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape552-364" transform="translate(344.662 -239.172)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'117'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape554-367" transform="translate(368.408 -226.724)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape555-369" transform="translate(364.176 -239.172)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'118'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape557-372" transform="translate(388.604 -226.724)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape558-374" transform="translate(384.373 -239.172)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'119'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape560-377" transform="translate(408.077 -226.724)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape561-379" transform="translate(403.845 -239.172)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'120'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape563-382" transform="translate(349.001 -72.524)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape564-384" transform="translate(344.769 -84.972)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'101'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape566-387" transform="translate(368.514 -72.524)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape567-389" transform="translate(364.283 -84.972)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'102'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape569-392" transform="translate(388.711 -72.524)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape570-394" transform="translate(384.479 -84.972)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'103'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape572-397" transform="translate(408.184 -72.524)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape573-399" transform="translate(403.952 -84.972)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'104'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape579-402" transform="rotate(90 307.586 490.62)">
+					<path d="M0 453.54h204.49" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape580-405" transform="rotate(89.977 347.609 530.675)">
+					<path d="M0 453.54h205" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape581-408" transform="rotate(-179.638 212.236 420.118)">
+					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape582-411" transform="rotate(179.798 212.583 327.73)">
+					<path d="M0 453.54h80.06" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape583-414" transform="rotate(180 212.3 318.289)">
+					<path d="M0 453.54h79.94" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape584-417" transform="translate(344.662 -251.021)">
+					<path className="sootblow_svg__st13" d="M0 433.701h80.221v19.843H0z" />
+					<text x={23.33} y={447.22} className="sootblow_svg__st11">
 						{'FRONT'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group651-877" transform="translate(483.94 -159.869)">
-					<g id="sootblow-tj-awar-awar_svg__shape652-878" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10903"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape653-880" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10910"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10912"
-						>
-							{'205'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group654-883" transform="translate(503.454 -159.869)">
-					<g id="sootblow-tj-awar-awar_svg__shape655-884" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10920"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape656-886" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10927"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10929"
-						>
-							{'206'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group657-889" transform="translate(523.651 -159.869)">
-					<g id="sootblow-tj-awar-awar_svg__shape658-890" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10937"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape659-892" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10944"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10946"
-						>
-							{'207'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group660-895" transform="translate(543.123 -159.869)">
-					<g id="sootblow-tj-awar-awar_svg__shape661-896" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10954"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape662-898" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10961"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10963"
-						>
-							{'208'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group663-901" transform="translate(483.896 -188.215)">
-					<g id="sootblow-tj-awar-awar_svg__shape664-902" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10971"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape665-904" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10978"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10980"
-						>
-							{'209'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group666-907" transform="translate(503.41 -188.215)">
-					<g id="sootblow-tj-awar-awar_svg__shape667-908" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path10988"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape668-910" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect10995"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text10997"
-						>
-							{'210'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group669-913" transform="translate(523.606 -188.215)">
-					<g id="sootblow-tj-awar-awar_svg__shape670-914" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11005"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape671-916" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11012"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11014"
-						>
-							{'211'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group672-919" transform="translate(543.079 -188.215)">
-					<g id="sootblow-tj-awar-awar_svg__shape673-920" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11022"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape674-922" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11029"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11031"
-						>
-							{'212'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group675-925" transform="translate(483.918 -216.562)">
-					<g id="sootblow-tj-awar-awar_svg__shape676-926" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11039"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape677-928" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11046"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11048"
-						>
-							{'213'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group678-931" transform="translate(503.432 -216.562)">
-					<g id="sootblow-tj-awar-awar_svg__shape679-932" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11056"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape680-934" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11063"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11065"
-						>
-							{'214'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group681-937" transform="translate(523.628 -216.562)">
-					<g id="sootblow-tj-awar-awar_svg__shape682-938" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11073"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape683-940" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11080"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11082"
-						>
-							{'215'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group684-943" transform="translate(543.101 -216.562)">
-					<g id="sootblow-tj-awar-awar_svg__shape685-944" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11090"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape686-946" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11097"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11099"
-						>
-							{'216'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group687-949" transform="translate(483.874 -244.908)">
-					<g id="sootblow-tj-awar-awar_svg__shape688-950" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11107"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape689-952" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11114"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11116"
-						>
-							{'217'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group690-955" transform="translate(503.388 -244.908)">
-					<g id="sootblow-tj-awar-awar_svg__shape691-956" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11124"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape692-958" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11131"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11133"
-						>
-							{'218'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group693-961" transform="translate(523.584 -244.908)">
-					<g id="sootblow-tj-awar-awar_svg__shape694-962" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11141"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape695-964" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11148"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11150"
-						>
-							{'219'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group696-967" transform="translate(543.057 -244.908)">
-					<g id="sootblow-tj-awar-awar_svg__shape697-968" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11158"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape698-970" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11165"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11167"
-						>
-							{'220'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group699-973" transform="translate(483.98 -89.003)">
-					<g id="sootblow-tj-awar-awar_svg__shape700-974" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={props.colorId201}
-							id="sootblow-tj-awar-awar_svg__path11175"
-							stroke="#000"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape701-976" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11182"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11184"
-						>
-							{'201'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group702-979" transform="translate(503.494 -89.003)">
-					<g id="sootblow-tj-awar-awar_svg__shape703-980" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11192"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape704-982" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11199"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11201"
-						>
-							{'202'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group705-985" transform="translate(523.691 -89.003)">
-					<g id="sootblow-tj-awar-awar_svg__shape706-986" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11209"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape707-988" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11216"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11218"
-						>
-							{'203'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group708-991" transform="translate(543.163 -89.003)">
-					<g id="sootblow-tj-awar-awar_svg__shape709-992" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11226"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape710-994" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11233"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11235"
-						>
-							{'204'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape711-997" transform="rotate(90 386.284 551.134)">
+				<g id="sootblow_svg__shape652-420" transform="translate(438.081 -141.598)">
 					<path
-						d="M0 453.54h204.49"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11241"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape712-1000" transform="rotate(89.977 426.308 591.214)">
+				<g id="sootblow_svg__shape653-422" transform="translate(433.85 -154.046)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'205'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape655-425" transform="translate(457.595 -141.598)">
 					<path
-						d="M0 453.54h205"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11246"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape713-1003" transform="rotate(-179.638 281.813 410.806)">
+				<g id="sootblow_svg__shape656-427" transform="translate(453.363 -154.046)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'206'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape658-430" transform="translate(477.792 -141.598)">
 					<path
-						d="M0 453.54h80.02"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11251"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape714-1006" transform="rotate(-179.638 281.52 317.767)">
+				<g id="sootblow_svg__shape659-432" transform="translate(473.56 -154.046)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'207'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape661-435" transform="translate(497.264 -141.598)">
 					<path
-						d="M0 453.54h80.02"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11256"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape715-1009" transform="rotate(180 281.906 309.197)">
+				<g id="sootblow_svg__shape662-437" transform="translate(493.033 -154.046)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'208'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape664-440" transform="translate(438.037 -169.944)">
 					<path
-						d="M0 453.54h79.94"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11261"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape716-1012" transform="translate(483.874 -269.205)">
+				<g id="sootblow_svg__shape665-442" transform="translate(433.805 -182.392)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'209'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape667-445" transform="translate(457.551 -169.944)">
 					<path
-						className="sootblow-tj-awar-awar_svg__st12"
-						id="sootblow-tj-awar-awar_svg__rect11268"
-						d="M0 433.701h80.22v19.843H0z"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
-					<text
-						x={27.06}
-						y={447.22}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text11270"
-					>
+				</g>
+				<g id="sootblow_svg__shape668-447" transform="translate(453.319 -182.392)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'210'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape670-450" transform="translate(477.747 -169.944)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape671-452" transform="translate(473.516 -182.392)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'211'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape673-455" transform="translate(497.22 -169.944)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape674-457" transform="translate(492.988 -182.392)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'212'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape676-460" transform="translate(438.059 -198.291)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape677-462" transform="translate(433.828 -210.739)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'213'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape679-465" transform="translate(457.573 -198.291)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape680-467" transform="translate(453.341 -210.739)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'214'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape682-470" transform="translate(477.769 -198.291)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape683-472" transform="translate(473.538 -210.739)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'215'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape685-475" transform="translate(497.242 -198.291)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape686-477" transform="translate(493.011 -210.739)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'216'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape688-480" transform="translate(438.015 -226.637)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape689-482" transform="translate(433.783 -239.085)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'217'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape691-485" transform="translate(457.529 -226.637)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape692-487" transform="translate(453.297 -239.085)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'218'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape694-490" transform="translate(477.725 -226.637)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape695-492" transform="translate(473.493 -239.085)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'219'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape697-495" transform="translate(497.198 -226.637)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape698-497" transform="translate(492.966 -239.085)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'220'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape700-500" transform="translate(438.121 -72.438)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape701-502" transform="translate(433.89 -84.886)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'201'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape703-505" transform="translate(457.635 -72.438)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape704-507" transform="translate(453.403 -84.886)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'202'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape706-510" transform="translate(477.832 -72.438)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape707-512" transform="translate(473.6 -84.886)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'203'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape709-515" transform="translate(497.304 -72.438)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape710-517" transform="translate(493.073 -84.886)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'204'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape711-520" transform="rotate(90 352.103 535.224)">
+					<path d="M0 453.54h204.49" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape712-523" transform="rotate(89.977 392.126 575.296)">
+					<path d="M0 453.54h205" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape713-526" transform="rotate(-179.638 256.796 420.02)">
+					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape714-529" transform="rotate(-179.638 256.503 326.981)">
+					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape715-532" transform="rotate(180 256.86 318.332)">
+					<path d="M0 453.54h79.94" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape716-535" transform="translate(433.783 -250.934)">
+					<path className="sootblow_svg__st13" d="M0 433.701h80.221v19.843H0z" />
+					<text x={27.06} y={447.22} className="sootblow_svg__st11">
 						{'BACK'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__group717-1015" transform="translate(446.362 -29.532)">
-					<g id="sootblow-tj-awar-awar_svg__shape718-1016" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11277"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape719-1018" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11284"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11286"
-						>
-							{'901'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__group726-1021" transform="translate(486.047 -29.154)">
-					<g id="sootblow-tj-awar-awar_svg__shape727-1022" transform="translate(4.232)">
-						<path
-							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							fill={'#fff000'}
-							id="sootblow-tj-awar-awar_svg__path11294"
-						/>
-					</g>
-					<g id="sootblow-tj-awar-awar_svg__shape728-1024" transform="translate(0 -12.448)">
-						<path
-							className="sootblow-tj-awar-awar_svg__st12"
-							id="sootblow-tj-awar-awar_svg__rect11301"
-							d="M0 446.457h20.409v7.087H0z"
-						/>
-						<text
-							x={4.12}
-							y={452.4}
-							className="sootblow-tj-awar-awar_svg__st15"
-							id="sootblow-tj-awar-awar_svg__text11303"
-						>
-							{'902'}
-						</text>
-					</g>
-				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape729-1027" transform="rotate(90 255.115 634.963)">
+				<g id="sootblow_svg__shape718-538" transform="translate(405.445 -15.513)">
 					<path
-						d="M0 453.54h51.93"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11309"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape730-1030" transform="rotate(89.91 295.142 675.34)">
+				<g id="sootblow_svg__shape719-540" transform="translate(401.214 -27.961)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'901'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape727-543" transform="translate(445.13 -15.135)">
 					<path
-						d="M0 453.54h52.44"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11314"
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
 					/>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape731-1033" transform="rotate(-179.638 258.242 442.098)">
-					<path
-						d="M0 453.54h80.02"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11319"
-					/>
+				<g id="sootblow_svg__shape728-545" transform="translate(440.899 -27.583)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+						{'902'}
+					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape732-1036" transform="rotate(-179.638 258.19 425.34)">
-					<path
-						d="M0 453.54h80.02"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11324"
-					/>
+				<g id="sootblow_svg__shape729-548" transform="rotate(90 225.531 619.399)">
+					<path d="M0 453.54h51.93" className="sootblow_svg__st15" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape733-1039" transform="rotate(180 258.236 416.696)">
-					<path
-						d="M0 453.54h79.94"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11329"
-					/>
+				<g id="sootblow_svg__shape730-551" transform="rotate(89.91 265.547 659.739)">
+					<path d="M0 453.54h52.44" className="sootblow_svg__st15" />
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape734-1042" transform="translate(436.535 -54.207)">
-					<path
-						className="sootblow-tj-awar-awar_svg__st12"
-						id="sootblow-tj-awar-awar_svg__rect11336"
-						d="M0 433.701h80.22v19.843H0z"
-					/>
-					<text
-						x={31.54}
-						y={447.22}
-						className="sootblow-tj-awar-awar_svg__st13"
-						id="sootblow-tj-awar-awar_svg__text11338"
-					>
+				<g id="sootblow_svg__shape731-554" transform="rotate(-179.638 235.69 449.178)">
+					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape732-557" transform="rotate(-179.638 235.637 432.421)">
+					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape733-560" transform="rotate(180 235.662 423.705)">
+					<path d="M0 453.54h79.94" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape734-563" transform="translate(391.387 -40.188)">
+					<path className="sootblow_svg__st13" d="M0 433.701h80.221v19.843H0z" />
+					<text x={31.54} y={447.22} className="sootblow_svg__st11">
 						{'A H'}
 					</text>
 				</g>
-				<g id="sootblow-tj-awar-awar_svg__shape735-1045" transform="rotate(90 265.214 664.55)">
+				<g id="sootblow_svg__shape735-566" transform="rotate(90 235.63 648.985)">
+					<path d="M0 453.54h32.44" className="sootblow_svg__st15" />
+				</g>
+				<g id="sootblow_svg__shape9-569" transform="translate(498.375 -418.643)">
 					<path
-						d="M0 453.54h32.44"
-						className="sootblow-tj-awar-awar_svg__st11"
-						id="sootblow-tj-awar-awar_svg__path11343"
+						d="M0 438.22a15.322 15.322 0 0130.64 0 15.322 15.322 0 11-30.64 0z"
+						className="sootblow_svg__st10"
 					/>
+				</g>
+				<g id="sootblow_svg__shape24-571" transform="translate(496.843 -426.61)">
+					<path className="sootblow_svg__st13" d="M0 438.834h33.708v14.709H0z" />
+					<text x={10.41} y={449.79} className="sootblow_svg__st11">
+						{'SD'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape741-574" transform="matrix(-1 0 0 1 187.695 -344.564)">
+					<path className="sootblow_svg__st3" d="M0 378.898h90.401v74.646H0z" />
+				</g>
+				<g id="sootblow_svg__shape742-577" transform="rotate(180 97.131 280.817)">
+					<path
+						d="M0 453.54h93.29L0 410.64v42.9z"
+						fill="url(#sootblow_svg__grad0-580)"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={0.24}
+					/>
+				</g>
+				<g id="sootblow_svg__shape743-581" transform="matrix(0 1 1 0 -117.113 34.334)">
+					<path className="sootblow_svg__st5" d="M0 300.879h347.954v152.664H0z" />
+				</g>
+				<g id="sootblow_svg__shape744-584" transform="matrix(-1 0 0 1 111.926 -116.375)">
+					<path className="sootblow_svg__st6" d="M0 150.709h85.631v302.835H0z" />
+				</g>
+				<g id="sootblow_svg__shape745-587" transform="matrix(1 0 0 -1 183.766 834.649)">
+					<path d="M0 453.54h152.66l-42.11-56.69H42.11L0 453.54z" className="sootblow_svg__st7" />
+				</g>
+				<g id="sootblow_svg__shape746-590" transform="matrix(0 -1 -1 0 634.959 180.04)">
+					<path d="M33.71 453.54l-16.86-36.06L0 453.54h33.71z" className="sootblow_svg__st8" />
+				</g>
+				<g id="sootblow_svg__shape747-592" transform="scale(-1 1) rotate(26.565 506.25 -152.253)">
+					<path d="M0 453.54h37.69" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape748-595" transform="scale(1 -1) rotate(-25.374 -1202.637 -78.385)">
+					<path d="M0 453.54h116.82" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape749-598" transform="matrix(0 1 1 0 -117.113 34.334)">
+					<path d="M0 453.54h347.95" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape750-601" transform="matrix(0 1 1 0 -427.248 34.334)">
+					<path d="M0 453.54h274.49" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape751-604" transform="scale(-1 1) rotate(52.815 -96.466 79.157)">
+					<path d="M0 453.54h69.68" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape752-607" transform="scale(1 -1) rotate(-52.815 -749.73 -149.41)">
+					<path d="M0 453.54h69.68" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape753-610" transform="matrix(-1 0 0 1 294.317 -15.745)">
+					<path d="M0 453.54h68.44" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape754-613" transform="matrix(1 0 0 -1 26.295 487.877)">
+					<path d="M0 453.54h310.14" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape755-616" transform="matrix(0 1 1 0 -269.777 180.04)">
+					<path d="M0 453.54h165.48" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape756-619" transform="matrix(0 1 1 0 -269.777 341.893)">
+					<path d="M0 453.54h40.39" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape757-622" transform="matrix(-1 0 0 1 112.493 -116.375)">
+					<path d="M0 453.54h99.03" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape758-625" transform="matrix(-1 0 0 1 95.667 -150.676)">
+					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
+					<text x={-45.84} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st11">
+						{'P. ECO'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape759-628" transform="scale(1 -1) rotate(-89.855 -228.09 114.103)">
+					<path d="M0 453.54h224.04" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape760-631" transform="matrix(-1 0 0 1 95.667 -194.168)">
+					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
+					<text x={-45.49} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st11">
+						{'S. ECO'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape762-634" transform="matrix(-1 0 0 1 87.467 -170.589)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape763-636" transform="matrix(-1 0 0 1 91.699 -183.037)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'504'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape765-639" transform="matrix(-1 0 0 1 57.987 -170.589)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape766-641" transform="matrix(-1 0 0 1 62.218 -183.037)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'503'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape768-644" transform="matrix(-1 0 0 1 87.467 -214.133)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape769-646" transform="matrix(-1 0 0 1 91.699 -226.581)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'502'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape771-649" transform="matrix(-1 0 0 1 57.987 -214.133)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape772-651" transform="matrix(-1 0 0 1 62.218 -226.581)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'501'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape773-654" transform="matrix(-1 0 0 1 95.667 -237.256)">
+					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
+					<text x={-47.68} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st11">
+						{'P. LTSH'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape774-657" transform="matrix(-1 0 0 1 95.667 -281.813)">
+					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
+					<text x={-47.33} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st11">
+						{'S. LTSH'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape776-660" transform="matrix(-1 0 0 1 87.467 -258.639)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape777-662" transform="matrix(-1 0 0 1 91.699 -271.087)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'713'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape779-665" transform="matrix(-1 0 0 1 57.987 -258.639)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape780-667" transform="matrix(-1 0 0 1 62.218 -271.087)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'712'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape782-670" transform="matrix(-1 0 0 1 76.8 -302.352)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape783-672" transform="matrix(-1 0 0 1 81.032 -314.8)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'711'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape785-675" transform="matrix(-1 0 0 1 52.317 -302.352)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape786-677" transform="matrix(-1 0 0 1 56.55 -314.8)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'710'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape788-680" transform="matrix(-1 0 0 1 91.699 -324.85)">
+					<path className="sootblow_svg__st10" d="M0 372.037h15.412v81.506H0z" />
+				</g>
+				<g id="sootblow_svg__shape789-682" transform="matrix(-1 0 0 1 91.699 -324.85)">
+					<path className="sootblow_svg__st13" d="M0 372.037h15.412v81.506H0z" />
+					<text
+						x={-7.71}
+						y={388.39}
+						writingMode="tb-rl"
+						transform="scale(-1 1)"
+						className="sootblow_svg__st11"
+					>
+						{'VER. LTSH'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape791-685" transform="matrix(-1 0 0 1 108.545 -316.217)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape792-687" transform="matrix(-1 0 0 1 112.777 -328.665)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'709'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape794-690" transform="matrix(-1 0 0 1 129.501 -351.085)">
+					<path className="sootblow_svg__st10" d="M0 391.797h15.412v61.747H0z" />
+				</g>
+				<g id="sootblow_svg__shape795-692" transform="matrix(-1 0 0 1 129.501 -351.085)">
+					<path className="sootblow_svg__st13" d="M0 391.797h15.412v61.747H0z" />
+					<text
+						x={-7.71}
+						y={399.17}
+						writingMode="tb-rl"
+						transform="scale(-1 1)"
+						className="sootblow_svg__st11"
+					>
+						{'FINAL SH.'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape797-695" transform="matrix(-1 0 0 1 167.59 -339.323)">
+					<path className="sootblow_svg__st10" d="M0 377.73h15.412v75.813H0z" />
+				</g>
+				<g id="sootblow_svg__shape798-697" transform="matrix(-1 0 0 1 167.59 -339.323)">
+					<path className="sootblow_svg__st13" d="M0 377.73h15.412v75.813H0z" />
+					<text
+						x={-7.71}
+						y={391.63}
+						writingMode="tb-rl"
+						transform="scale(-1 1)"
+						className="sootblow_svg__st11"
+					>
+						{'FINAL RH.'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape800-700" transform="matrix(-1 0 0 1 210.109 -319.997)">
+					<path className="sootblow_svg__st10" d="M0 362.018h15.412v91.525H0z" />
+				</g>
+				<g id="sootblow_svg__shape801-702" transform="matrix(-1 0 0 1 210.109 -319.997)">
+					<path className="sootblow_svg__st13" d="M0 362.018h15.412v91.525H0z" />
+					<text
+						x={-7.71}
+						y={384.32}
+						writingMode="tb-rl"
+						transform="scale(-1 1)"
+						className="sootblow_svg__st11"
+					>
+						{'RH PEND.'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape802-705" transform="matrix(-1 0 0 1 258.383 -285.036)">
+					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				</g>
+				<g id="sootblow_svg__shape803-707" transform="matrix(-1 0 0 1 258.54 -268.973)">
+					<path className="sootblow_svg__st13" d="M0 311.811h20.409v141.732H0z" />
+					<text
+						x={-10.2}
+						y={356.01}
+						writingMode="tb-rl"
+						transform="scale(-1 1)"
+						className="sootblow_svg__st11"
+					>
+						{'PLATEN SH'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape805-710" transform="matrix(-1 0 0 1 329.813 -284.938)">
+					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				</g>
+				<g id="sootblow_svg__shape806-712" transform="matrix(-1 0 0 1 329.686 -284.938)">
+					<path className="sootblow_svg__st13" d="M0 327.874h20.282v125.669H0z" />
+					<text
+						x={-10.14}
+						y={364.2}
+						writingMode="tb-rl"
+						transform="scale(-1 1)"
+						className="sootblow_svg__st11"
+					>
+						{'PANELS SH'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape808-715" transform="matrix(-1 0 0 1 306.383 -284.938)">
+					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				</g>
+				<g id="sootblow_svg__shape809-717" transform="matrix(-1 0 0 1 306.255 -284.938)">
+					<path className="sootblow_svg__st13" d="M0 327.874h20.282v125.669H0z" />
+					<text
+						x={-10.14}
+						y={364.2}
+						writingMode="tb-rl"
+						transform="scale(-1 1)"
+						className="sootblow_svg__st11"
+					>
+						{'PANELS SH'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape811-720" transform="matrix(-1 0 0 1 278.34 -325.023)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape812-722" transform="matrix(-1 0 0 1 282.572 -337.471)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'701'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape814-725" transform="matrix(-1 0 0 1 230.788 -319.997)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape815-727" transform="matrix(-1 0 0 1 235.02 -332.445)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'704'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape817-730" transform="matrix(-1 0 0 1 230.718 -357.155)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape818-732" transform="matrix(-1 0 0 1 234.95 -369.603)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'703'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape820-735" transform="matrix(-1 0 0 1 230.788 -393.698)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape821-737" transform="matrix(-1 0 0 1 235.02 -406.146)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'702'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape823-740" transform="matrix(-1 0 0 1 187.561 -348.343)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape824-742" transform="matrix(-1 0 0 1 191.793 -360.791)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'706'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape826-745" transform="matrix(-1 0 0 1 187.631 -384.886)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape827-747" transform="matrix(-1 0 0 1 191.863 -397.334)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'705'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape829-750" transform="matrix(-1 0 0 1 146.777 -354.628)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape830-752" transform="matrix(-1 0 0 1 151.009 -367.076)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'708'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape832-755" transform="matrix(-1 0 0 1 146.848 -391.171)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape833-757" transform="matrix(-1 0 0 1 151.079 -403.619)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'707'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape835-760" transform="matrix(-1 0 0 1 314.043 -141.722)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape836-762" transform="matrix(-1 0 0 1 318.275 -154.17)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'308'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape838-765" transform="matrix(-1 0 0 1 281.108 -141.722)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape839-767" transform="matrix(-1 0 0 1 285.34 -154.17)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'307'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape841-770" transform="matrix(-1 0 0 1 249.927 -141.722)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape842-772" transform="matrix(-1 0 0 1 254.159 -154.17)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'306'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape844-775" transform="matrix(-1 0 0 1 218.002 -141.722)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape845-777" transform="matrix(-1 0 0 1 222.234 -154.17)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'305'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape847-780" transform="matrix(-1 0 0 1 314.088 -170.069)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape848-782" transform="matrix(-1 0 0 1 318.319 -182.517)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'312'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape850-785" transform="matrix(-1 0 0 1 281.153 -170.069)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape851-787" transform="matrix(-1 0 0 1 285.384 -182.517)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'311'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape853-790" transform="matrix(-1 0 0 1 249.972 -170.069)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape854-792" transform="matrix(-1 0 0 1 254.203 -182.517)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'310'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape856-795" transform="matrix(-1 0 0 1 218.047 -170.069)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape857-797" transform="matrix(-1 0 0 1 222.278 -182.517)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'309'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape859-800" transform="matrix(-1 0 0 1 314.066 -198.415)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape860-802" transform="matrix(-1 0 0 1 318.297 -210.863)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'316'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape862-805" transform="matrix(-1 0 0 1 281.13 -198.415)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape863-807" transform="matrix(-1 0 0 1 285.362 -210.863)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'315'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape865-810" transform="matrix(-1 0 0 1 249.949 -198.415)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape866-812" transform="matrix(-1 0 0 1 254.181 -210.863)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'314'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape868-815" transform="matrix(-1 0 0 1 218.024 -198.415)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape869-817" transform="matrix(-1 0 0 1 222.256 -210.863)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'313'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape871-820" transform="matrix(-1 0 0 1 314.11 -226.761)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape872-822" transform="matrix(-1 0 0 1 318.342 -239.21)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'320'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape874-825" transform="matrix(-1 0 0 1 281.175 -226.761)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape875-827" transform="matrix(-1 0 0 1 285.406 -239.21)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'319'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape877-830" transform="matrix(-1 0 0 1 249.994 -226.761)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape878-832" transform="matrix(-1 0 0 1 254.225 -239.21)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'318'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape880-835" transform="matrix(-1 0 0 1 218.069 -226.761)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape881-837" transform="matrix(-1 0 0 1 222.3 -239.21)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'317'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape883-840" transform="matrix(-1 0 0 1 314.003 -70.856)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape884-842" transform="matrix(-1 0 0 1 318.235 -83.304)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'304'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape886-845" transform="matrix(-1 0 0 1 281.068 -70.856)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape887-847" transform="matrix(-1 0 0 1 285.3 -83.304)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'303'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape889-850" transform="matrix(-1 0 0 1 249.887 -70.856)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape890-852" transform="matrix(-1 0 0 1 254.119 -83.304)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'302'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape892-855" transform="matrix(-1 0 0 1 217.962 -70.856)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						fill={props.colorid201}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape893-857" transform="matrix(-1 0 0 1 222.194 -83.304)">
+					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+						{'301'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape894-860" transform="matrix(-1 0 0 1 24.801 -144.721)">
+					<path d="M0 453.54h10.47" className="sootblow_svg__st9" />
+				</g>
+				<g id="sootblow_svg__shape896-863" transform="matrix(-1 0 0 1 359.719 -418.643)">
+					<path
+						d="M0 438.22a15.322 15.322 0 0130.64 0 15.322 15.322 0 11-30.64 0z"
+						className="sootblow_svg__st10"
+					/>
+				</g>
+				<g id="sootblow_svg__shape897-865" transform="matrix(-1 0 0 1 361.251 -426.61)">
+					<path className="sootblow_svg__st13" d="M0 438.834h33.708v14.709H0z" />
+					<text x={-23.3} y={449.79} transform="scale(-1 1)" className="sootblow_svg__st11">
+						{'SD'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape1041-868" transform="translate(15.565 -36.18)">
+					<path
+						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
+						fill="red"
+						stroke="#000"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					/>
+				</g>
+				<g id="sootblow_svg__shape1042-870" transform="translate(22.278 -37.533)">
+					<path className="sootblow_svg__st13" d="M0 444.685h65.906v8.858H0z" />
+					<text x={14.65} y={452.11} className="sootblow_svg__st18">
+						{'RETRACT'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape1043-873" transform="translate(15.565 -14.546)">
+					<path
+						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
+						fill="#00b050"
+						stroke="#000"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					/>
+				</g>
+				<g id="sootblow_svg__shape1044-875" transform="translate(24.758 -16.273)">
+					<path className="sootblow_svg__st13" d="M0 444.685h65.906v8.858H0z" />
+					<text x={12.92} y={452.11} className="sootblow_svg__st18">
+						{'ADVANCE'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape1045-878" transform="translate(86.43 -36.18)">
+					<path
+						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
+						fill="#bfbfbf"
+						stroke="#000"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					/>
+				</g>
+				<g id="sootblow_svg__shape1046-880" transform="translate(90.876 -38.93)">
+					<path className="sootblow_svg__st13" d="M0 444.685h80.221v8.858H0z" />
+					<text x={17.65} y={452.11} className="sootblow_svg__st18">
+						{'START FAIL'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape1047-883" transform="translate(86.804 -14.546)">
+					<path
+						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
+						fill={'#fff000'}
+						stroke={'#000'}
+					/>
+				</g>
+				<g id="sootblow_svg__shape1048-885" transform="translate(102.64 -17.113)">
+					<path className="sootblow_svg__st13" d="M0 444.685h80.221v8.858H0z" />
+					<text x={5.53} y={452.11} className="sootblow_svg__st18">
+						{'READY/STANDBY'}
+					</text>
 				</g>
 			</g>
 		</svg>

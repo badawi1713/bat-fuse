@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
 			color: theme.palette.secondary.main,
 			textDecoration: 'none',
 			'&:hover': {
-				textDecoration: 'underline'
+				textDecoration: 'none'
 			}
 		},
 		'a.link, a:not([role=button])[target=_blank]': {

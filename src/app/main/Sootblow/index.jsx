@@ -97,52 +97,49 @@ const Sootblow = () => {
 		createParameterData('Parameter Description 9', 900)
 	]);
 
-	const [colorId201, setColorId201] = React.useState({ value: 0, color: '#eeeeee' });
+	const [colorId201, setColorId201] = React.useState({ value: 0, color: '#fff000' });
 
 	useEffect(() => {
-		const allTableValueHandler = () => {
-			setInterval(() => {
-				const { value } = colorId201;
-				const color =
-					value === 0
-						? '#eeeeee'
-						: value >= 1 && value < 4
-						? '#ff0000'
-						: value >= 4 && value < 7
-						? '#fff000'
-						: '#00ff00';
-				setSequenceData([
-					createSequenceData('Sequence-1', Math.floor(Math.random() * 10)),
-					createSequenceData('Sequence-2', Math.floor(Math.random() * 10)),
-					createSequenceData('Sequence-3', Math.floor(Math.random() * 10)),
-					createSequenceData('Sequence-4', Math.floor(Math.random() * 10)),
-					createSequenceData('Sequence-5', Math.floor(Math.random() * 10)),
-					createSequenceData('Sequence-6', Math.floor(Math.random() * 10)),
-					createSequenceData('Sequence-7', Math.floor(Math.random() * 10)),
-					createSequenceData('Sequence-8', Math.floor(Math.random() * 10)),
-					createSequenceData('Sequence-9', Math.floor(Math.random() * 10))
-				]);
-				setParameterData([
-					createParameterData('Parameter Description 1', Number(Math.random()).toFixed(2)),
-					createParameterData('Parameter Description 2', Number(Math.random()).toFixed(2)),
-					createParameterData('Parameter Description 3', Number(Math.random()).toFixed(2)),
-					createParameterData('Parameter Description 4', Number(Math.random()).toFixed(2)),
-					createParameterData('Parameter Description 5', Number(Math.random()).toFixed(2)),
-					createParameterData('Parameter Description 6', Number(Math.random()).toFixed(2)),
-					createParameterData('Parameter Description 7', Number(Math.random()).toFixed(2)),
-					createParameterData('Parameter Description 8', Number(Math.random()).toFixed(2)),
-					createParameterData('Parameter Description 9', Number(Math.random()).toFixed(2))
-				]);
-				setColorId201({
-					value: Math.floor(Math.random() * 10),
-					color: color
-				});
-			}, 15000);
-		};
+		const allTableValueHandler = setInterval(() => {
+			const { value } = colorId201;
+			const color =
+				value === 0
+					? '#bfbfbf'
+					: value >= 1 && value < 4
+					? '#ff0000'
+					: value >= 4 && value < 7
+					? '#fff000'
+					: '#00b050';
+			setSequenceData([
+				createSequenceData('Sequence-1', Math.floor(Math.random() * 10)),
+				createSequenceData('Sequence-2', Math.floor(Math.random() * 10)),
+				createSequenceData('Sequence-3', Math.floor(Math.random() * 10)),
+				createSequenceData('Sequence-4', Math.floor(Math.random() * 10)),
+				createSequenceData('Sequence-5', Math.floor(Math.random() * 10)),
+				createSequenceData('Sequence-6', Math.floor(Math.random() * 10)),
+				createSequenceData('Sequence-7', Math.floor(Math.random() * 10)),
+				createSequenceData('Sequence-8', Math.floor(Math.random() * 10)),
+				createSequenceData('Sequence-9', Math.floor(Math.random() * 10))
+			]);
+			setParameterData([
+				createParameterData('Parameter Description 1', Number(Math.random()).toFixed(2)),
+				createParameterData('Parameter Description 2', Number(Math.random()).toFixed(2)),
+				createParameterData('Parameter Description 3', Number(Math.random()).toFixed(2)),
+				createParameterData('Parameter Description 4', Number(Math.random()).toFixed(2)),
+				createParameterData('Parameter Description 5', Number(Math.random()).toFixed(2)),
+				createParameterData('Parameter Description 6', Number(Math.random()).toFixed(2)),
+				createParameterData('Parameter Description 7', Number(Math.random()).toFixed(2)),
+				createParameterData('Parameter Description 8', Number(Math.random()).toFixed(2)),
+				createParameterData('Parameter Description 9', Number(Math.random()).toFixed(2))
+			]);
+			setColorId201({
+				value: Math.floor(Math.random() * 10),
+				color: color
+			});
+		}, 15000);
 
-		allTableValueHandler();
-		// eslint-disable-next-line
-	}, []);
+		return () => clearInterval(allTableValueHandler); //This is important
+	}, [colorId201]);
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -237,7 +234,9 @@ const Sootblow = () => {
 				<Grid item container xs={12} justify="space-between" className="w-full" alignItems="center" spacing={1}>
 					<Grid item xs={9} className="h-full p-0">
 						<Paper className="h-full py-5 px-10" square>
-							<SvgSootblowTjAwarAwar colorId201={colorId201.color} width="100%" height="100%" />
+							<center>
+								<SvgSootblowTjAwarAwar colorid201={colorId201.color} width="90%" height="100%" />
+							</center>
 						</Paper>
 					</Grid>
 					<Grid item xs={3} container className="h-full w-full p-0">
@@ -254,7 +253,7 @@ const Sootblow = () => {
 									</TableHead>
 									<TableBody>
 										{parameterData.map(row => (
-											<TableRow key={row.name}>
+											<TableRow key={row.parameter}>
 												<TableCell component="th" scope="row" className="text-8 py-4">
 													{row.parameter}
 												</TableCell>
@@ -280,7 +279,7 @@ const Sootblow = () => {
 									</TableHead>
 									<TableBody>
 										{sequenceData.map(row => (
-											<TableRow key={row.name}>
+											<TableRow key={row.sequence}>
 												<TableCell component="th" scope="row" className="text-8 py-4">
 													{row.sequence}
 												</TableCell>

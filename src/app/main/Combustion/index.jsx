@@ -99,7 +99,7 @@ const Combustion = () => {
 				]);
 			}, 5000);
 		};
-		changeValue();
+		return () => clearInterval(changeValue);
 	}, []);
 
 	const handleMasterControlOn = () => {
