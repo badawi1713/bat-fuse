@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowBack } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
@@ -64,38 +64,85 @@ const createParameterData = (parameter, value) => {
 	return { parameter, value };
 };
 
-const parameterData = [
-	createParameterData('Parameter Description 1', 100),
-	createParameterData('Parameter Description 2', 200),
-	createParameterData('Parameter Description 3', 300),
-	createParameterData('Parameter Description 4', 400),
-	createParameterData('Parameter Description 5', 500),
-	createParameterData('Parameter Description 6', 600),
-	createParameterData('Parameter Description 7', 700),
-	createParameterData('Parameter Description 8', 800),
-	createParameterData('Parameter Description 9', 900)
-];
-
 const createSequenceData = (sequence, value) => {
 	return { sequence, value };
 };
-
-const sequenceData = [
-	createSequenceData('Sequence-1', 2),
-	createSequenceData('Sequence-2', 3),
-	createSequenceData('Sequence-3', 0),
-	createSequenceData('Sequence-4', 6),
-	createSequenceData('Sequence-5', 7),
-	createSequenceData('Sequence-6', 8),
-	createSequenceData('Sequence-7', 9),
-	createSequenceData('Sequence-8', 0),
-	createSequenceData('Sequence-9', 0)
-];
 
 const Sootblow = () => {
 	const classes = useStyles();
 
 	const [masterControlStatus, setMasterControlStatus] = React.useState(false);
+
+	const [sequenceData, setSequenceData] = React.useState([
+		createSequenceData('Sequence-1', 2),
+		createSequenceData('Sequence-2', 3),
+		createSequenceData('Sequence-3', 0),
+		createSequenceData('Sequence-4', 6),
+		createSequenceData('Sequence-5', 7),
+		createSequenceData('Sequence-6', 8),
+		createSequenceData('Sequence-7', 9),
+		createSequenceData('Sequence-8', 0),
+		createSequenceData('Sequence-9', 0)
+	]);
+
+	const [parameterData, setParameterData] = React.useState([
+		createParameterData('Parameter Description 1', 100),
+		createParameterData('Parameter Description 2', 200),
+		createParameterData('Parameter Description 3', 300),
+		createParameterData('Parameter Description 4', 400),
+		createParameterData('Parameter Description 5', 500),
+		createParameterData('Parameter Description 6', 600),
+		createParameterData('Parameter Description 7', 700),
+		createParameterData('Parameter Description 8', 800),
+		createParameterData('Parameter Description 9', 900)
+	]);
+
+	const [colorId201, setColorId201] = React.useState({ value: 0, color: '#eeeeee' });
+
+	useEffect(() => {
+		const allTableValueHandler = () => {
+			setInterval(() => {
+				const { value } = colorId201;
+				const color =
+					value === 0
+						? '#eeeeee'
+						: value >= 1 && value < 4
+						? '#ff0000'
+						: value >= 4 && value < 7
+						? '#fff000'
+						: '#00ff00';
+				setSequenceData([
+					createSequenceData('Sequence-1', Math.floor(Math.random() * 10)),
+					createSequenceData('Sequence-2', Math.floor(Math.random() * 10)),
+					createSequenceData('Sequence-3', Math.floor(Math.random() * 10)),
+					createSequenceData('Sequence-4', Math.floor(Math.random() * 10)),
+					createSequenceData('Sequence-5', Math.floor(Math.random() * 10)),
+					createSequenceData('Sequence-6', Math.floor(Math.random() * 10)),
+					createSequenceData('Sequence-7', Math.floor(Math.random() * 10)),
+					createSequenceData('Sequence-8', Math.floor(Math.random() * 10)),
+					createSequenceData('Sequence-9', Math.floor(Math.random() * 10))
+				]);
+				setParameterData([
+					createParameterData('Parameter Description 1', Number(Math.random()).toFixed(2)),
+					createParameterData('Parameter Description 2', Number(Math.random()).toFixed(2)),
+					createParameterData('Parameter Description 3', Number(Math.random()).toFixed(2)),
+					createParameterData('Parameter Description 4', Number(Math.random()).toFixed(2)),
+					createParameterData('Parameter Description 5', Number(Math.random()).toFixed(2)),
+					createParameterData('Parameter Description 6', Number(Math.random()).toFixed(2)),
+					createParameterData('Parameter Description 7', Number(Math.random()).toFixed(2)),
+					createParameterData('Parameter Description 8', Number(Math.random()).toFixed(2)),
+					createParameterData('Parameter Description 9', Number(Math.random()).toFixed(2))
+				]);
+				setColorId201({
+					value: Math.floor(Math.random() * 10),
+					color: color
+				});
+			}, 15000);
+		};
+
+		allTableValueHandler();
+		// eslint-disable-next-line
+	}, []);
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -107,7 +154,7 @@ const Sootblow = () => {
 
 	return (
 		<Container className="py-16 h-full">
-			<Grid container spacing={1} className="h-full">
+			<Grid container spacing={1}>
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
 					<Grid item container xs={3} spacing={2} alignItems="center">
@@ -190,7 +237,7 @@ const Sootblow = () => {
 				<Grid item container xs={12} justify="space-between" className="w-full" alignItems="center" spacing={1}>
 					<Grid item xs={9} className="h-full p-0">
 						<Paper className="h-full py-5 px-10" square>
-							<SvgSootblowTjAwarAwar width="100%" height="100%" />
+							<SvgSootblowTjAwarAwar colorId201={colorId201.color} width="100%" height="100%" />
 						</Paper>
 					</Grid>
 					<Grid item xs={3} container className="h-full w-full p-0">

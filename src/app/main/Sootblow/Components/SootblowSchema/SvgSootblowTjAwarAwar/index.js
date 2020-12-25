@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-function SvgSootblowTjAwarAwar(props) {
+const SvgSootblowTjAwarAwar = props => {
+	console.log('Color', props.colorId201);
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -345,7 +346,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape39-89" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8760"
 						/>
 					</g>
@@ -369,7 +370,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape43-95" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8777"
 						/>
 					</g>
@@ -393,7 +394,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape46-101" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8794"
 						/>
 					</g>
@@ -417,7 +418,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape49-107" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8811"
 						/>
 					</g>
@@ -471,7 +472,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape54-119" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8846"
 						/>
 					</g>
@@ -495,7 +496,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape57-125" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8863"
 						/>
 					</g>
@@ -519,7 +520,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape60-131" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8880"
 						/>
 					</g>
@@ -543,7 +544,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape63-137" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8897"
 						/>
 					</g>
@@ -592,7 +593,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape69-149" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path8931"
 						/>
 					</g>
@@ -766,7 +767,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape86-191" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9050"
 						/>
 					</g>
@@ -790,7 +791,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape89-197" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9067"
 						/>
 					</g>
@@ -814,7 +815,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape92-203" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9084"
 						/>
 					</g>
@@ -838,7 +839,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape95-209" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9101"
 						/>
 					</g>
@@ -862,7 +863,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape98-215" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9118"
 						/>
 					</g>
@@ -886,7 +887,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape101-221" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9135"
 						/>
 					</g>
@@ -910,7 +911,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape104-227" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9152"
 						/>
 					</g>
@@ -934,7 +935,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape107-233" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9169"
 						/>
 					</g>
@@ -958,7 +959,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape110-239" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9186"
 						/>
 					</g>
@@ -982,7 +983,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape113-245" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9203"
 						/>
 					</g>
@@ -1006,7 +1007,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape119-251" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9220"
 						/>
 					</g>
@@ -1030,7 +1031,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape125-257" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9237"
 						/>
 					</g>
@@ -1054,7 +1055,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape128-263" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9254"
 						/>
 					</g>
@@ -1078,7 +1079,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape131-269" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9271"
 						/>
 					</g>
@@ -1102,7 +1103,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape134-275" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9288"
 						/>
 					</g>
@@ -1126,7 +1127,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape137-281" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9305"
 						/>
 					</g>
@@ -1150,7 +1151,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape140-287" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9322"
 						/>
 					</g>
@@ -1174,7 +1175,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape143-293" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9339"
 						/>
 					</g>
@@ -1198,7 +1199,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape146-299" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9356"
 						/>
 					</g>
@@ -1222,7 +1223,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape149-305" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9373"
 						/>
 					</g>
@@ -1246,7 +1247,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape152-311" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9390"
 						/>
 					</g>
@@ -1270,7 +1271,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape155-317" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9407"
 						/>
 					</g>
@@ -1294,7 +1295,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape158-323" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9424"
 						/>
 					</g>
@@ -1318,7 +1319,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape161-329" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9441"
 						/>
 					</g>
@@ -1342,7 +1343,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape164-335" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9458"
 						/>
 					</g>
@@ -1366,7 +1367,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape167-341" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9475"
 						/>
 					</g>
@@ -1390,7 +1391,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape170-347" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9492"
 						/>
 					</g>
@@ -1414,7 +1415,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape173-353" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9509"
 						/>
 					</g>
@@ -1733,7 +1734,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape374-452" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9713"
 						/>
 					</g>
@@ -1758,7 +1759,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape377-458" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9730"
 						/>
 					</g>
@@ -1783,7 +1784,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape380-464" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9747"
 						/>
 					</g>
@@ -1808,7 +1809,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape383-470" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9764"
 						/>
 					</g>
@@ -1865,7 +1866,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape388-482" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9799"
 						/>
 					</g>
@@ -1890,7 +1891,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape391-488" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9816"
 						/>
 					</g>
@@ -1915,7 +1916,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape394-494" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9833"
 						/>
 					</g>
@@ -1940,7 +1941,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape397-500" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9850"
 						/>
 					</g>
@@ -1991,7 +1992,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape403-512" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path9884"
 						/>
 					</g>
@@ -2172,7 +2173,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape424-554" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10003"
 						/>
 					</g>
@@ -2197,7 +2198,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape427-560" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10020"
 						/>
 					</g>
@@ -2222,7 +2223,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape430-566" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10037"
 						/>
 					</g>
@@ -2247,7 +2248,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape433-572" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10054"
 						/>
 					</g>
@@ -2272,7 +2273,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape436-578" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10071"
 						/>
 					</g>
@@ -2297,7 +2298,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape439-584" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10088"
 						/>
 					</g>
@@ -2322,7 +2323,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape442-590" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10105"
 						/>
 					</g>
@@ -2347,7 +2348,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape445-596" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10122"
 						/>
 					</g>
@@ -2372,7 +2373,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape448-602" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10139"
 						/>
 					</g>
@@ -2397,7 +2398,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape451-608" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10156"
 						/>
 					</g>
@@ -2422,7 +2423,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape454-614" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10173"
 						/>
 					</g>
@@ -2447,7 +2448,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape457-620" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10190"
 						/>
 					</g>
@@ -2472,7 +2473,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape460-626" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10207"
 						/>
 					</g>
@@ -2497,7 +2498,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape463-632" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10224"
 						/>
 					</g>
@@ -2522,7 +2523,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape466-638" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10241"
 						/>
 					</g>
@@ -2547,7 +2548,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape469-644" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10258"
 						/>
 					</g>
@@ -2572,7 +2573,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape472-650" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10275"
 						/>
 					</g>
@@ -2597,7 +2598,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape475-656" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10292"
 						/>
 					</g>
@@ -2622,7 +2623,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape478-662" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10309"
 						/>
 					</g>
@@ -2647,7 +2648,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape481-668" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10326"
 						/>
 					</g>
@@ -2672,7 +2673,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape484-674" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10343"
 						/>
 					</g>
@@ -2697,7 +2698,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape487-680" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10360"
 						/>
 					</g>
@@ -2722,7 +2723,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape490-686" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10377"
 						/>
 					</g>
@@ -2747,7 +2748,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape493-692" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10394"
 						/>
 					</g>
@@ -2772,7 +2773,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape496-698" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10411"
 						/>
 					</g>
@@ -2797,7 +2798,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape499-704" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10428"
 						/>
 					</g>
@@ -2822,7 +2823,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape502-710" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10445"
 						/>
 					</g>
@@ -2847,7 +2848,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape505-716" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10462"
 						/>
 					</g>
@@ -2959,7 +2960,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape515-740" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10529"
 						/>
 					</g>
@@ -2983,7 +2984,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape518-746" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10546"
 						/>
 					</g>
@@ -3007,7 +3008,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape521-752" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10563"
 						/>
 					</g>
@@ -3031,7 +3032,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape524-758" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10580"
 						/>
 					</g>
@@ -3055,7 +3056,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape527-764" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10597"
 						/>
 					</g>
@@ -3079,7 +3080,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape530-770" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10614"
 						/>
 					</g>
@@ -3103,7 +3104,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape533-776" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10631"
 						/>
 					</g>
@@ -3127,7 +3128,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape536-782" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10648"
 						/>
 					</g>
@@ -3151,7 +3152,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape539-788" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10665"
 						/>
 					</g>
@@ -3175,7 +3176,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape542-794" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10682"
 						/>
 					</g>
@@ -3199,7 +3200,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape545-800" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10699"
 						/>
 					</g>
@@ -3223,7 +3224,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape548-806" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10716"
 						/>
 					</g>
@@ -3247,7 +3248,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape551-812" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10733"
 						/>
 					</g>
@@ -3271,7 +3272,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape554-818" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10750"
 						/>
 					</g>
@@ -3295,7 +3296,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape557-824" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10767"
 						/>
 					</g>
@@ -3319,8 +3320,9 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape560-830" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10784"
+							stroke="#000"
 						/>
 					</g>
 					<g id="sootblow-tj-awar-awar_svg__shape561-832" transform="translate(0 -12.448)">
@@ -3343,7 +3345,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape563-836" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10801"
 						/>
 					</g>
@@ -3367,7 +3369,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape566-842" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10818"
 						/>
 					</g>
@@ -3391,7 +3393,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape569-848" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10835"
 						/>
 					</g>
@@ -3415,7 +3417,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape572-854" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10852"
 						/>
 					</g>
@@ -3489,7 +3491,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape652-878" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10903"
 						/>
 					</g>
@@ -3513,7 +3515,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape655-884" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10920"
 						/>
 					</g>
@@ -3537,7 +3539,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape658-890" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10937"
 						/>
 					</g>
@@ -3558,12 +3560,11 @@ function SvgSootblowTjAwarAwar(props) {
 					</g>
 				</g>
 				<g id="sootblow-tj-awar-awar_svg__group660-895" transform="translate(543.123 -159.869)">
-					<g id="sootblow-tj-awar-awar_svg__shape661-896" transform="translate(4.232)" fill="red">
+					<g id="sootblow-tj-awar-awar_svg__shape661-896" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10954"
-							fill="red"
 						/>
 					</g>
 					<g id="sootblow-tj-awar-awar_svg__shape662-898" transform="translate(0 -12.448)">
@@ -3586,7 +3587,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape664-902" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10971"
 						/>
 					</g>
@@ -3610,7 +3611,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape667-908" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path10988"
 						/>
 					</g>
@@ -3634,7 +3635,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape670-914" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11005"
 						/>
 					</g>
@@ -3658,9 +3659,8 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape673-920" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11022"
-							fill="red"
 						/>
 					</g>
 					<g id="sootblow-tj-awar-awar_svg__shape674-922" transform="translate(0 -12.448)">
@@ -3683,7 +3683,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape676-926" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11039"
 						/>
 					</g>
@@ -3707,7 +3707,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape679-932" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11056"
 						/>
 					</g>
@@ -3731,7 +3731,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape682-938" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11073"
 						/>
 					</g>
@@ -3755,7 +3755,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape685-944" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11090"
 						/>
 					</g>
@@ -3779,7 +3779,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape688-950" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11107"
 						/>
 					</g>
@@ -3803,7 +3803,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape691-956" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11124"
 						/>
 					</g>
@@ -3827,7 +3827,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape694-962" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11141"
 						/>
 					</g>
@@ -3851,7 +3851,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape697-968" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11158"
 						/>
 					</g>
@@ -3875,8 +3875,9 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape700-974" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={props.colorId201}
 							id="sootblow-tj-awar-awar_svg__path11175"
+							stroke="#000"
 						/>
 					</g>
 					<g id="sootblow-tj-awar-awar_svg__shape701-976" transform="translate(0 -12.448)">
@@ -3899,7 +3900,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape703-980" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11192"
 						/>
 					</g>
@@ -3923,7 +3924,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape706-986" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11209"
 						/>
 					</g>
@@ -3944,12 +3945,11 @@ function SvgSootblowTjAwarAwar(props) {
 					</g>
 				</g>
 				<g id="sootblow-tj-awar-awar_svg__group708-991" transform="translate(543.163 -89.003)">
-					<g id="sootblow-tj-awar-awar_svg__shape709-992" transform="translate(4.232)" fill="#ff0">
+					<g id="sootblow-tj-awar-awar_svg__shape709-992" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11226"
-							fill="#ff0"
 						/>
 					</g>
 					<g id="sootblow-tj-awar-awar_svg__shape710-994" transform="translate(0 -12.448)">
@@ -4022,7 +4022,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape718-1016" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11277"
 						/>
 					</g>
@@ -4046,7 +4046,7 @@ function SvgSootblowTjAwarAwar(props) {
 					<g id="sootblow-tj-awar-awar_svg__shape727-1022" transform="translate(4.232)">
 						<path
 							d="M0 447.57a5.975 5.975 0 0111.95 0 5.975 5.975 0 11-11.95 0z"
-							className="sootblow-tj-awar-awar_svg__st14"
+							fill={'#fff000'}
 							id="sootblow-tj-awar-awar_svg__path11294"
 						/>
 					</g>
@@ -4126,6 +4126,6 @@ function SvgSootblowTjAwarAwar(props) {
 			</g>
 		</svg>
 	);
-}
+};
 
 export default SvgSootblowTjAwarAwar;

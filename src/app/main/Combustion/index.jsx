@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowBack } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
@@ -59,22 +59,6 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const createParameterData = (parameter, value) => {
-	return { parameter, value };
-};
-
-const parameterData = [
-	createParameterData('Parameter Description 1', 100),
-	createParameterData('Parameter Description 2', 200),
-	createParameterData('Parameter Description 3', 300),
-	createParameterData('Parameter Description 4', 400),
-	createParameterData('Parameter Description 5', 500),
-	createParameterData('Parameter Description 6', 600),
-	createParameterData('Parameter Description 7', 700),
-	createParameterData('Parameter Description 8', 800),
-	createParameterData('Parameter Description 9', 900)
-];
-
 const createO2ControlBiasData = (parameter, value) => {
 	return { parameter, value };
 };
@@ -91,34 +75,32 @@ const createBurnerTiltData = (parameter, value) => {
 	return { parameter, value };
 };
 
-const burnerTiltData = [
-	createBurnerTiltData('Bias', 100),
-	createBurnerTiltData('Current', 200),
-	createBurnerTiltData('Demand', 300),
-	createBurnerTiltData('Final SH Temperature', 400),
-	createBurnerTiltData('RH2 Temperature', 500)
-];
-
-const createSequenceData = (sequence, value) => {
-	return { sequence, value };
-};
-
-const sequenceData = [
-	createSequenceData('Sequence-1', 2),
-	createSequenceData('Sequence-2', 3),
-	createSequenceData('Sequence-3', 0),
-	createSequenceData('Sequence-4', 6),
-	createSequenceData('Sequence-5', 7),
-	createSequenceData('Sequence-6', 8),
-	createSequenceData('Sequence-7', 9),
-	createSequenceData('Sequence-8', 0),
-	createSequenceData('Sequence-9', 0)
-];
-
 const Combustion = () => {
 	const classes = useStyles();
 
 	const [masterControlStatus, setMasterControlStatus] = React.useState(false);
+	const [burnerTiltData, setBurnerTiltData] = React.useState([
+		createBurnerTiltData('Bias', Number(Math.random()).toFixed(2)),
+		createBurnerTiltData('Current', Number(Math.random()).toFixed(2)),
+		createBurnerTiltData('Demand', Number(Math.random()).toFixed(2)),
+		createBurnerTiltData('Final SH Temperature', Number(Math.random()).toFixed(2)),
+		createBurnerTiltData('RH2 Temperature', Number(Math.random()).toFixed(2))
+	]);
+
+	useEffect(() => {
+		const changeValue = () => {
+			setInterval(() => {
+				setBurnerTiltData([
+					createBurnerTiltData('Bias', Number(Math.random()).toFixed(2)),
+					createBurnerTiltData('Current', Number(Math.random()).toFixed(2)),
+					createBurnerTiltData('Demand', Number(Math.random()).toFixed(2)),
+					createBurnerTiltData('Final SH Temperature', Number(Math.random()).toFixed(2)),
+					createBurnerTiltData('RH2 Temperature', Number(Math.random()).toFixed(2))
+				]);
+			}, 5000);
+		};
+		changeValue();
+	}, []);
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -230,7 +212,7 @@ const Combustion = () => {
 											</TableHead>
 											<TableBody>
 												{o2ControlBiasData.map(row => (
-													<TableRow key={row.name}>
+													<TableRow key={row.parameter}>
 														<TableCell component="th" scope="row" className="text-8 py-8">
 															{row.parameter}
 														</TableCell>
@@ -256,7 +238,7 @@ const Combustion = () => {
 											</TableHead>
 											<TableBody>
 												{burnerTiltData.map(row => (
-													<TableRow key={row.name}>
+													<TableRow key={row.parameter}>
 														<TableCell component="th" scope="row" className="text-8 py-8">
 															{row.parameter}
 														</TableCell>
@@ -291,7 +273,7 @@ const Combustion = () => {
 											</TableHead>
 											<TableBody>
 												{o2ControlBiasData.map(row => (
-													<TableRow key={row.name}>
+													<TableRow key={row.parameter}>
 														<TableCell component="th" scope="row" className="text-8 py-8">
 															{row.parameter}
 														</TableCell>
@@ -319,7 +301,7 @@ const Combustion = () => {
 											</TableHead>
 											<TableBody>
 												{burnerTiltData.map(row => (
-													<TableRow key={row.name}>
+													<TableRow key={row.parameter}>
 														<TableCell component="th" scope="row" className="text-8 py-8">
 															{row.parameter}
 														</TableCell>
@@ -345,7 +327,7 @@ const Combustion = () => {
 											</TableHead>
 											<TableBody>
 												{burnerTiltData.map(row => (
-													<TableRow key={row.name}>
+													<TableRow key={row.parameter}>
 														<TableCell component="th" scope="row" className="text-8 py-8">
 															{row.parameter}
 														</TableCell>
