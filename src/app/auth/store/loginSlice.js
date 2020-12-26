@@ -5,6 +5,7 @@ import jwtService from 'app/services/jwtService';
 import { setUserData } from './userSlice';
 
 export const submitLogin = ({ username, password }) => async dispatch => {
+	await dispatch(loginRequest());
 	return jwtService
 		.signInWithEmailAndPassword(username, password)
 		.then(user => {
@@ -42,6 +43,7 @@ export const submitLogin = ({ username, password }) => async dispatch => {
 					})
 				);
 			}
+			dispatch(loginError());
 
 			return false;
 		});
@@ -82,6 +84,7 @@ export const submitLoginWithFireBase = ({ username, password }) => async dispatc
 };
 
 const initialState = {
+	loading: false,
 	success: false,
 	error: null
 };
@@ -90,10 +93,15 @@ const loginSlice = createSlice({
 	name: 'auth/login',
 	initialState,
 	reducers: {
+		loginRequest: (state, action) => {
+			state.loading = true;
+		},
 		loginSuccess: (state, action) => {
 			state.success = true;
+			state.loading = false;
 		},
 		loginError: (state, action) => {
+			state.loading = false;
 			state.success = false;
 			state.error = action.payload;
 		}
@@ -101,6 +109,6 @@ const loginSlice = createSlice({
 	extraReducers: {}
 });
 
-export const { loginSuccess, loginError } = loginSlice.actions;
+export const { loginSuccess, loginError, loginRequest } = loginSlice.actions;
 
 export default loginSlice.reducer;

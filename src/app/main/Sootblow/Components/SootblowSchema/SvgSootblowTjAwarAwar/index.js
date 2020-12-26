@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-const SvgSootblowTjAwarAwar = props => {
+function SvgSootblowTjAwarAwar(props) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			width={props.width || '11.811in'}
+			width={props.width || 1171.651}
 			height={props.height || 604.724}
-			viewBox="0 0 850.394 453.543"
+			viewBox="0 0 878.74 453.543"
 			colorInterpolationFilters="sRGB"
 			fill="none"
 			fillRule="evenodd"
@@ -18,12 +18,20 @@ const SvgSootblowTjAwarAwar = props => {
 		>
 			<style>
 				{
-					'.sootblow_svg__st2{fill:#f93;stroke:none;stroke-width:.24}.sootblow_svg__st2,.sootblow_svg__st3,.sootblow_svg__st5{stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st3{fill:url(#sootblow_svg__grad0-12);stroke:none;stroke-width:.24}.sootblow_svg__st5{fill:url(#sootblow_svg__grad0-20)}.sootblow_svg__st5,.sootblow_svg__st6,.sootblow_svg__st7{stroke:none;stroke-width:.24}.sootblow_svg__st6{fill:url(#sootblow_svg__grad0-24);stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st7{fill:url(#sootblow_svg__grad0-28)}.sootblow_svg__st10,.sootblow_svg__st7,.sootblow_svg__st8,.sootblow_svg__st9{stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st8{fill:#fff;stroke:none;stroke-width:.24}.sootblow_svg__st10,.sootblow_svg__st9{stroke:#000;stroke-width:2}.sootblow_svg__st10{fill:#fff}.sootblow_svg__st11{fill:#000;font-family:Calibri;font-size:1.00001em}.sootblow_svg__st12,.sootblow_svg__st13{fill:#ff0;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}.sootblow_svg__st13{fill:none;stroke:none;stroke-width:.75}.sootblow_svg__st14{fill:#000;font-family:Calibri;font-size:.666664em}.sootblow_svg__st15{stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.25}.sootblow_svg__st18{fill:#000;font-family:Calibri;font-size:.833336em}'
+					'.sootblow_svg__st4{fill:#f93;stroke:none;stroke-width:.24}.sootblow_svg__st4,.sootblow_svg__st5,.sootblow_svg__st7{stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st5{fill:url(#sootblow_svg__grad0-18);stroke:none;stroke-width:.24}.sootblow_svg__st7{fill:url(#sootblow_svg__grad0-26)}.sootblow_svg__st7,.sootblow_svg__st8,.sootblow_svg__st9{stroke:none;stroke-width:.24}.sootblow_svg__st8{fill:url(#sootblow_svg__grad0-30);stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st9{fill:url(#sootblow_svg__grad0-34)}.sootblow_svg__st10,.sootblow_svg__st11,.sootblow_svg__st12,.sootblow_svg__st9{stroke-linecap:round;stroke-linejoin:round}.sootblow_svg__st10{fill:#fff;stroke:none;stroke-width:.24}.sootblow_svg__st11,.sootblow_svg__st12{stroke:#000;stroke-width:2}.sootblow_svg__st12{fill:#fff}.sootblow_svg__st13{fill:#000;font-family:Calibri;font-size:1.00001em}.sootblow_svg__st14,.sootblow_svg__st15{fill:#ff0;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}.sootblow_svg__st15{fill:none;stroke:none;stroke-width:.75}.sootblow_svg__st16{fill:#000;font-family:Calibri;font-size:.666664em}.sootblow_svg__st17{stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.25}.sootblow_svg__st20{fill:#000;font-family:Calibri;font-size:.833336em}.sootblow_svg__st23{font-size:1em}'
 				}
 			</style>
 			<defs id="sootblow_svg__Patterns_And_Gradients">
+				<linearGradient id="sootblow_svg__grad0-6" x1={0} y1={0} x2={1} y2={0}>
+					<stop offset={0} stopColor="#fee599" />
+					<stop offset={1} stopColor="#ffd965" />
+				</linearGradient>
+				<linearGradient id="sootblow_svg__grad0-10" x1={0} y1={0} x2={1} y2={0}>
+					<stop offset={0} stopColor="#ffd965" />
+					<stop offset={1} stopColor="#fee599" />
+				</linearGradient>
 				<linearGradient
-					id="sootblow_svg__grad0-12"
+					id="sootblow_svg__grad0-18"
 					x1={0}
 					y1={0}
 					x2={1}
@@ -34,18 +42,18 @@ const SvgSootblowTjAwarAwar = props => {
 					<stop offset={0.57} stopColor="#ffc000" />
 					<stop offset={1} stopColor="#ffc000" />
 				</linearGradient>
-				<linearGradient id="sootblow_svg__grad0-16" x1={0} y1={0} x2={1} y2={0}>
+				<linearGradient id="sootblow_svg__grad0-22" x1={0} y1={0} x2={1} y2={0}>
 					<stop offset={0} stopColor="#f60" />
 					<stop offset={0.42} stopColor="#ffb311" />
 					<stop offset={1} stopColor="#ffc000" />
 				</linearGradient>
-				<linearGradient id="sootblow_svg__grad0-20" x1={0} y1={0} x2={1} y2={0}>
+				<linearGradient id="sootblow_svg__grad0-26" x1={0} y1={0} x2={1} y2={0}>
 					<stop offset={0} stopColor="#ffc000" />
 					<stop offset={0.48} stopColor="#f60" />
 					<stop offset={0.95} stopColor="#f54a0a" />
 				</linearGradient>
 				<linearGradient
-					id="sootblow_svg__grad0-24"
+					id="sootblow_svg__grad0-30"
 					x1={0}
 					y1={0}
 					x2={1}
@@ -57,7 +65,7 @@ const SvgSootblowTjAwarAwar = props => {
 					<stop offset={1} stopColor="#fee599" />
 				</linearGradient>
 				<linearGradient
-					id="sootblow_svg__grad0-28"
+					id="sootblow_svg__grad0-34"
 					x1={0}
 					y1={0}
 					x2={1}
@@ -67,7 +75,7 @@ const SvgSootblowTjAwarAwar = props => {
 					<stop offset={0} stopColor="#f54a0a" />
 					<stop offset={1} stopColor="#f59d56" />
 				</linearGradient>
-				<linearGradient id="sootblow_svg__grad0-580" x1={0} y1={0} x2={1} y2={0}>
+				<linearGradient id="sootblow_svg__grad0-560" x1={0} y1={0} x2={1} y2={0}>
 					<stop offset={0} stopColor="#f60" />
 					<stop offset={0.53} stopColor="#ffb311" />
 					<stop offset={1} stopColor="#ffc000" />
@@ -79,1960 +87,1811 @@ const SvgSootblowTjAwarAwar = props => {
 					strokeLinecap="round"
 					strokeLinejoin="round"
 					strokeWidth={0.75}
-					d="M0 0h850.394v453.543H0z"
+					d="M0 0h878.74v453.543H0z"
 				/>
 			</g>
 			<g>
-				<g id="sootblow_svg__shape738-3" transform="translate(433.907 -252.253)">
-					<path className="sootblow_svg__st2" d="M0 435.785h80.221v17.758H0z" />
+				<g id="sootblow_svg__shape1056-3" transform="translate(24.108 -111.813)">
+					<path
+						fill="url(#sootblow_svg__grad0-6)"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={0.24}
+						d="M0 426.032h15.412v27.512H0z"
+					/>
 				</g>
-				<g id="sootblow_svg__shape737-5" transform="translate(344.498 -252.376)">
-					<path className="sootblow_svg__st2" d="M0 435.785h80.221v17.758H0z" />
+				<g id="sootblow_svg__shape1053-7" transform="translate(840.091 -111.313)">
+					<path
+						fill="url(#sootblow_svg__grad0-10)"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={0.24}
+						d="M0 426.032h15.412v27.512H0z"
+					/>
 				</g>
-				<g id="sootblow_svg__shape736-7" transform="translate(391.387 -41.346)">
-					<path className="sootblow_svg__st2" d="M0 435.785h80.221v17.758H0z" />
+				<g id="sootblow_svg__shape738-11" transform="translate(444.685 -247.191)">
+					<path className="sootblow_svg__st4" d="M0 435.785h80.221v17.758H0z" />
 				</g>
-				<g id="sootblow_svg__shape1-9" transform="translate(670.399 -344.564)">
-					<path className="sootblow_svg__st3" d="M0 378.898h90.401v74.646H0z" />
+				<g id="sootblow_svg__shape737-13" transform="translate(355.277 -247.314)">
+					<path className="sootblow_svg__st4" d="M0 435.785h80.221v17.758H0z" />
 				</g>
-				<g id="sootblow_svg__shape2-13" transform="matrix(1 0 0 -1 663.83 561.634)">
+				<g id="sootblow_svg__shape1-15" transform="translate(681.177 -339.502)">
+					<path className="sootblow_svg__st5" d="M0 378.898h90.401v74.646H0z" />
+				</g>
+				<g id="sootblow_svg__shape2-19" transform="matrix(1 0 0 -1 674.609 566.696)">
 					<path
 						d="M0 453.54h93.29L0 410.64v42.9z"
-						fill="url(#sootblow_svg__grad0-16)"
+						fill="url(#sootblow_svg__grad0-22)"
 						strokeLinecap="round"
 						strokeLinejoin="round"
 						strokeWidth={0.24}
 					/>
 				</g>
-				<g id="sootblow_svg__shape4-17" transform="rotate(90 470.437 504.77)">
-					<path className="sootblow_svg__st5" d="M0 300.879h349.606v152.664H0z" />
+				<g id="sootblow_svg__shape4-23" transform="rotate(90 473.295 512.69)">
+					<path className="sootblow_svg__st7" d="M0 300.879h349.606v152.664H0z" />
 				</g>
-				<g id="sootblow_svg__shape7-21" transform="translate(746.168 -116.375)">
-					<path className="sootblow_svg__st6" d="M0 150.709h85.631v302.835H0z" />
+				<g id="sootblow_svg__shape7-27" transform="translate(756.946 -111.313)">
+					<path className="sootblow_svg__st8" d="M0 150.709h85.631v302.835H0z" />
 				</g>
-				<g id="sootblow_svg__shape3-25" transform="rotate(180 337.164 417.916)">
-					<path d="M0 453.54h152.66l-42.11-55.51H42.11L0 453.54z" className="sootblow_svg__st7" />
+				<g id="sootblow_svg__shape3-31" transform="rotate(180 342.553 420.447)">
+					<path d="M0 453.54h152.66l-42.11-55.51H42.11L0 453.54z" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow_svg__shape5-29" transform="rotate(-90 202.393 -22.353)">
-					<path d="M33.71 453.54l-16.86-37.67L0 453.54h33.71z" className="sootblow_svg__st8" />
+				<g id="sootblow_svg__shape5-35" transform="rotate(-90 210.313 -25.211)">
+					<path d="M33.71 453.54l-16.86-37.67L0 453.54h33.71z" className="sootblow_svg__st10" />
 				</g>
-				<g id="sootblow_svg__shape10-31" transform="rotate(24.105 1000.272 1808.576)">
-					<path d="M0 453.54h36.93" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape10-37" transform="rotate(24.105 993.809 1836.347)">
+					<path d="M0 453.54h36.93" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape11-34" transform="rotate(154.626 411.4 367.325)">
-					<path d="M0 453.54h116.82" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape11-40" transform="rotate(154.626 416.22 371.069)">
+					<path d="M0 453.54h116.82" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape12-37" transform="rotate(90 470.437 504.77)">
-					<path d="M0 453.54h347.95" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape12-43" transform="rotate(90 473.295 512.69)">
+					<path d="M0 453.54h347.95" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape13-40" transform="rotate(90 625.503 659.837)">
-					<path d="M0 453.54h274.49" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape13-46" transform="rotate(90 628.362 667.758)">
+					<path d="M0 453.54h274.49" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape15-43" transform="rotate(52.815 332.581 943.189)">
-					<path d="M0 453.54h69.68" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape15-49" transform="rotate(52.815 332.873 956.572)">
+					<path d="M0 453.54h69.68" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape16-46" transform="rotate(127.185 354.855 585.34)">
-					<path d="M0 453.54h69.68" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape16-52" transform="rotate(127.185 358.988 590.548)">
+					<path d="M0 453.54h69.68" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape17-49" transform="translate(563.776 -15.745)">
-					<path d="M0 453.54h68.44" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape17-55" transform="translate(574.555 -10.683)">
+					<path d="M0 453.54h68.44" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape19-52" transform="rotate(180 415.9 243.939)">
-					<path d="M0 453.54h310.14" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape19-58" transform="rotate(180 421.288 246.47)">
+					<path d="M0 453.54h310.14" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape20-55" transform="rotate(90 474.801 653.069)">
-					<path d="M0 453.54h167.25" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape20-61" transform="rotate(90 477.66 660.99)">
+					<path d="M0 453.54h167.25" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape21-58" transform="rotate(90 392.988 734.882)">
-					<path d="M0 453.54h40.39" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape21-64" transform="rotate(90 395.848 742.803)">
+					<path d="M0 453.54h40.39" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape22-61" transform="translate(745.601 -116.375)">
-					<path d="M0 453.54h99.03" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape22-67" transform="translate(756.379 -111.313)">
+					<path d="M0 453.54h99.03" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape29-64" transform="translate(762.427 -150.676)">
-					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
-					<text x={13.69} y={450.02} className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape29-70" transform="translate(773.205 -145.614)">
+					<path className="sootblow_svg__st12" d="M0 439.3h59.528v14.243H0z" />
+					<text x={13.69} y={450.02} className="sootblow_svg__st13">
 						{'P. ECO'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape37-67" transform="rotate(90.145 542.862 655.476)">
-					<path d="M0 453.54h224.04" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape37-73" transform="rotate(90.145 545.727 663.384)">
+					<path d="M0 453.54h224.04" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape38-70" transform="translate(762.427 -194.168)">
-					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
-					<text x={14.03} y={450.02} className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape38-76" transform="translate(773.205 -189.106)">
+					<path className="sootblow_svg__st12" d="M0 439.3h59.528v14.243H0z" />
+					<text x={14.03} y={450.02} className="sootblow_svg__st13">
 						{'S. ECO'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape39-73" transform="translate(770.627 -170.589)">
+				<g id="sootblow_svg__shape39-79" transform="translate(781.405 -165.527)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape40-75" transform="translate(766.395 -183.037)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape40-81" transform="translate(777.173 -177.975)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'603'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape43-78" transform="translate(800.107 -170.589)">
+				<g id="sootblow_svg__shape43-84" transform="translate(810.886 -165.527)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape44-80" transform="translate(795.875 -183.037)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape44-86" transform="translate(806.654 -177.975)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'604'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape46-83" transform="translate(770.627 -214.133)">
+				<g id="sootblow_svg__shape46-89" transform="translate(781.405 -209.072)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape47-85" transform="translate(766.395 -226.581)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape47-91" transform="translate(777.173 -221.52)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'601'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape49-88" transform="translate(800.107 -214.133)">
+				<g id="sootblow_svg__shape49-94" transform="translate(810.886 -209.072)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape50-90" transform="translate(795.875 -226.581)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape50-96" transform="translate(806.654 -221.52)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'602'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape51-93" transform="translate(762.427 -237.256)">
-					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
-					<text x={11.85} y={450.02} className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape51-99" transform="translate(773.205 -232.194)">
+					<path className="sootblow_svg__st12" d="M0 439.3h59.528v14.243H0z" />
+					<text x={11.85} y={450.02} className="sootblow_svg__st13">
 						{'P. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape52-96" transform="translate(762.427 -281.813)">
-					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
-					<text x={12.19} y={450.02} className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape52-102" transform="translate(773.205 -276.751)">
+					<path className="sootblow_svg__st12" d="M0 439.3h59.528v14.243H0z" />
+					<text x={12.19} y={450.02} className="sootblow_svg__st13">
 						{'S. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape54-99" transform="translate(770.627 -258.639)">
+				<g id="sootblow_svg__shape54-105" transform="translate(781.405 -253.577)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape55-101" transform="translate(766.395 -271.087)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape55-107" transform="translate(777.173 -266.025)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'812'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape57-104" transform="translate(800.107 -258.639)">
+				<g id="sootblow_svg__shape57-110" transform="translate(810.886 -253.577)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape58-106" transform="translate(795.875 -271.087)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape58-112" transform="translate(806.654 -266.025)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'813'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape60-109" transform="translate(781.294 -302.352)">
+				<g id="sootblow_svg__shape60-115" transform="translate(792.072 -297.29)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape61-111" transform="translate(777.062 -314.8)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape61-117" transform="translate(787.84 -309.738)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'810'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape63-114" transform="translate(805.776 -302.352)">
+				<g id="sootblow_svg__shape63-120" transform="translate(816.555 -297.29)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape64-116" transform="translate(801.545 -314.8)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape64-122" transform="translate(812.323 -309.738)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'811'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape65-119" transform="translate(766.395 -324.85)">
-					<path className="sootblow_svg__st10" d="M0 372.037h15.412v81.506H0z" />
+				<g id="sootblow_svg__shape65-125" transform="translate(777.173 -319.788)">
+					<path className="sootblow_svg__st12" d="M0 372.037h15.412v81.506H0z" />
 				</g>
-				<g id="sootblow_svg__shape66-121" transform="translate(766.395 -324.85)">
-					<path className="sootblow_svg__st13" d="M0 372.037h15.412v81.506H0z" />
-					<text x={7.71} y={388.39} writingMode="tb-rl" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape66-127" transform="translate(777.173 -319.788)">
+					<path className="sootblow_svg__st15" d="M0 372.037h15.412v81.506H0z" />
+					<text x={7.71} y={388.39} writingMode="tb-rl" className="sootblow_svg__st13">
 						{'VER. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape69-124" transform="translate(749.549 -316.217)">
+				<g id="sootblow_svg__shape69-130" transform="translate(760.327 -311.156)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape70-126" transform="translate(745.317 -328.665)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape70-132" transform="translate(756.096 -323.604)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'809'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape72-129" transform="translate(728.593 -351.085)">
-					<path className="sootblow_svg__st10" d="M0 391.797h15.412v61.747H0z" />
+				<g id="sootblow_svg__shape72-135" transform="translate(739.371 -346.023)">
+					<path className="sootblow_svg__st12" d="M0 391.797h15.412v61.747H0z" />
 				</g>
-				<g id="sootblow_svg__shape73-131" transform="translate(728.593 -351.085)">
-					<path className="sootblow_svg__st13" d="M0 391.797h15.412v61.747H0z" />
-					<text x={7.71} y={399.17} writingMode="tb-rl" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape73-137" transform="translate(739.371 -346.023)">
+					<path className="sootblow_svg__st15" d="M0 391.797h15.412v61.747H0z" />
+					<text x={7.71} y={399.17} writingMode="tb-rl" className="sootblow_svg__st13">
 						{'FINAL SH.'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape75-134" transform="translate(690.504 -339.323)">
-					<path className="sootblow_svg__st10" d="M0 377.73h15.412v75.813H0z" />
+				<g id="sootblow_svg__shape75-140" transform="translate(701.282 -334.261)">
+					<path className="sootblow_svg__st12" d="M0 377.73h15.412v75.813H0z" />
 				</g>
-				<g id="sootblow_svg__shape76-136" transform="translate(690.504 -339.323)">
-					<path className="sootblow_svg__st13" d="M0 377.73h15.412v75.813H0z" />
-					<text x={7.71} y={391.63} writingMode="tb-rl" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape76-142" transform="translate(701.282 -334.261)">
+					<path className="sootblow_svg__st15" d="M0 377.73h15.412v75.813H0z" />
+					<text x={7.71} y={391.63} writingMode="tb-rl" className="sootblow_svg__st13">
 						{'FINAL RH.'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape78-139" transform="translate(647.984 -319.997)">
-					<path className="sootblow_svg__st10" d="M0 362.018h15.412v91.525H0z" />
+				<g id="sootblow_svg__shape78-145" transform="translate(658.763 -314.935)">
+					<path className="sootblow_svg__st12" d="M0 362.018h15.412v91.525H0z" />
 				</g>
-				<g id="sootblow_svg__shape79-141" transform="translate(647.984 -319.997)">
-					<path className="sootblow_svg__st13" d="M0 362.018h15.412v91.525H0z" />
-					<text x={7.71} y={384.32} writingMode="tb-rl" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape79-147" transform="translate(658.763 -314.935)">
+					<path className="sootblow_svg__st15" d="M0 362.018h15.412v91.525H0z" />
+					<text x={7.71} y={384.32} writingMode="tb-rl" className="sootblow_svg__st13">
 						{'RH PEND.'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape30-144" transform="translate(599.711 -285.036)">
-					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				<g id="sootblow_svg__shape30-150" transform="translate(610.489 -279.974)">
+					<path className="sootblow_svg__st12" d="M0 327.874h20.409v125.669H0z" />
 				</g>
-				<g id="sootblow_svg__shape32-146" transform="translate(599.553 -268.973)">
-					<path className="sootblow_svg__st13" d="M0 311.811h20.409v141.732H0z" />
-					<text x={10.2} y={356.01} writingMode="tb-rl" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape32-152" transform="translate(610.332 -263.911)">
+					<path className="sootblow_svg__st15" d="M0 311.811h20.409v141.732H0z" />
+					<text x={10.2} y={356.01} writingMode="tb-rl" className="sootblow_svg__st13">
 						{'PLATEN SH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape25-149" transform="translate(528.281 -284.938)">
-					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				<g id="sootblow_svg__shape25-155" transform="translate(539.059 -279.876)">
+					<path className="sootblow_svg__st12" d="M0 327.874h20.409v125.669H0z" />
 				</g>
-				<g id="sootblow_svg__shape33-151" transform="translate(528.408 -284.938)">
-					<path className="sootblow_svg__st13" d="M0 327.874h20.282v125.669H0z" />
-					<text x={10.14} y={364.2} writingMode="tb-rl" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape33-157" transform="translate(539.187 -279.876)">
+					<path className="sootblow_svg__st15" d="M0 327.874h20.282v125.669H0z" />
+					<text x={10.14} y={364.2} writingMode="tb-rl" className="sootblow_svg__st13">
 						{'PANELS SH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape83-154" transform="translate(551.711 -284.938)">
-					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				<g id="sootblow_svg__shape83-160" transform="translate(562.489 -279.876)">
+					<path className="sootblow_svg__st12" d="M0 327.874h20.409v125.669H0z" />
 				</g>
-				<g id="sootblow_svg__shape84-156" transform="translate(551.839 -284.938)">
-					<path className="sootblow_svg__st13" d="M0 327.874h20.282v125.669H0z" />
-					<text x={10.14} y={364.2} writingMode="tb-rl" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape84-162" transform="translate(562.617 -279.876)">
+					<path className="sootblow_svg__st15" d="M0 327.874h20.282v125.669H0z" />
+					<text x={10.14} y={364.2} writingMode="tb-rl" className="sootblow_svg__st13">
 						{'PANELS SH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape86-159" transform="translate(579.754 -325.023)">
+				<g id="sootblow_svg__shape86-165" transform="translate(590.532 -319.961)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape87-161" transform="translate(575.522 -337.471)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape87-167" transform="translate(586.3 -332.41)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'801'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape89-164" transform="translate(627.306 -319.997)">
+				<g id="sootblow_svg__shape89-170" transform="translate(638.084 -314.935)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape90-166" transform="translate(623.074 -332.445)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape90-172" transform="translate(633.852 -327.383)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'804'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape92-169" transform="translate(627.376 -357.155)">
+				<g id="sootblow_svg__shape92-175" transform="translate(638.154 -352.093)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape93-171" transform="translate(623.144 -369.603)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape93-177" transform="translate(633.922 -364.541)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'803'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape95-174" transform="translate(627.306 -393.698)">
+				<g id="sootblow_svg__shape95-180" transform="translate(638.084 -388.636)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape96-176" transform="translate(623.074 -406.146)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape96-182" transform="translate(633.852 -401.084)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'802'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape98-179" transform="translate(670.532 -348.343)">
+				<g id="sootblow_svg__shape98-185" transform="translate(681.311 -343.282)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape99-181" transform="translate(666.301 -360.791)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape99-187" transform="translate(677.079 -355.73)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'806'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape101-184" transform="translate(670.462 -384.886)">
+				<g id="sootblow_svg__shape101-190" transform="translate(681.241 -379.824)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape102-186" transform="translate(666.231 -397.334)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape102-192" transform="translate(677.009 -392.272)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'805'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape104-189" transform="translate(711.316 -354.628)">
+				<g id="sootblow_svg__shape104-195" transform="translate(722.095 -349.566)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape105-191" transform="translate(707.085 -367.076)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape105-197" transform="translate(717.863 -362.015)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'808'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape107-194" transform="translate(711.246 -391.171)">
+				<g id="sootblow_svg__shape107-200" transform="translate(722.025 -386.109)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape108-196" transform="translate(707.014 -403.619)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape108-202" transform="translate(717.793 -398.557)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'807'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape110-199" transform="translate(544.05 -141.722)">
+				<g id="sootblow_svg__shape110-205" transform="translate(554.829 -136.66)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape111-201" transform="translate(539.819 -154.17)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape111-207" transform="translate(550.597 -149.108)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'405'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape113-204" transform="translate(576.985 -141.722)">
+				<g id="sootblow_svg__shape113-210" transform="translate(587.764 -136.66)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape114-206" transform="translate(572.754 -154.17)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape114-212" transform="translate(583.532 -149.108)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'406'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape119-209" transform="translate(608.166 -141.722)">
+				<g id="sootblow_svg__shape119-215" transform="translate(618.945 -136.66)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape120-211" transform="translate(603.935 -154.17)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape120-217" transform="translate(614.713 -149.108)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'407'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape125-214" transform="translate(640.091 -141.722)">
+				<g id="sootblow_svg__shape125-220" transform="translate(650.87 -136.66)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape126-216" transform="translate(635.86 -154.17)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape126-222" transform="translate(646.638 -149.108)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'408'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape128-219" transform="translate(544.006 -170.069)">
+				<g id="sootblow_svg__shape128-225" transform="translate(554.784 -165.007)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape129-221" transform="translate(539.774 -182.517)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape129-227" transform="translate(550.553 -177.455)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'409'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape131-224" transform="translate(576.941 -170.069)">
+				<g id="sootblow_svg__shape131-230" transform="translate(587.72 -165.007)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape132-226" transform="translate(572.709 -182.517)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape132-232" transform="translate(583.488 -177.455)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'410'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape134-229" transform="translate(608.122 -170.069)">
+				<g id="sootblow_svg__shape134-235" transform="translate(618.901 -165.007)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape135-231" transform="translate(603.891 -182.517)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape135-237" transform="translate(614.669 -177.455)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'411'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape137-234" transform="translate(640.047 -170.069)">
+				<g id="sootblow_svg__shape137-240" transform="translate(650.826 -165.007)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape138-236" transform="translate(635.816 -182.517)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape138-242" transform="translate(646.594 -177.455)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'412'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape140-239" transform="translate(544.028 -198.415)">
+				<g id="sootblow_svg__shape140-245" transform="translate(554.807 -193.353)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape141-241" transform="translate(539.796 -210.863)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape141-247" transform="translate(550.575 -205.801)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'413'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape143-244" transform="translate(576.963 -198.415)">
+				<g id="sootblow_svg__shape143-250" transform="translate(587.742 -193.353)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape144-246" transform="translate(572.732 -210.863)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape144-252" transform="translate(583.51 -205.801)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'414'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape146-249" transform="translate(608.144 -198.415)">
+				<g id="sootblow_svg__shape146-255" transform="translate(618.923 -193.353)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape147-251" transform="translate(603.913 -210.863)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape147-257" transform="translate(614.691 -205.801)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'415'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape149-254" transform="translate(640.069 -198.415)">
+				<g id="sootblow_svg__shape149-260" transform="translate(650.848 -193.353)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape150-256" transform="translate(635.838 -210.863)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape150-262" transform="translate(646.616 -205.801)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'416'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape152-259" transform="translate(543.984 -226.761)">
+				<g id="sootblow_svg__shape152-265" transform="translate(554.762 -221.7)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape153-261" transform="translate(539.752 -239.21)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape153-267" transform="translate(550.531 -234.148)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'417'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape155-264" transform="translate(576.919 -226.761)">
+				<g id="sootblow_svg__shape155-270" transform="translate(587.697 -221.7)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape156-266" transform="translate(572.687 -239.21)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape156-272" transform="translate(583.466 -234.148)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'418'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape158-269" transform="translate(608.1 -226.761)">
+				<g id="sootblow_svg__shape158-275" transform="translate(618.878 -221.7)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape159-271" transform="translate(603.868 -239.21)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape159-277" transform="translate(614.647 -234.148)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'419'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape161-274" transform="translate(640.025 -226.761)">
+				<g id="sootblow_svg__shape161-280" transform="translate(650.804 -221.7)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape162-276" transform="translate(635.793 -239.21)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape162-282" transform="translate(646.572 -234.148)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'420'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape164-279" transform="translate(544.09 -70.856)">
+				<g id="sootblow_svg__shape164-285" transform="translate(554.869 -65.794)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape165-281" transform="translate(539.859 -83.304)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape165-287" transform="translate(550.637 -78.242)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'401'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape167-284" transform="translate(577.025 -70.856)">
+				<g id="sootblow_svg__shape167-290" transform="translate(587.804 -65.794)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape168-286" transform="translate(572.794 -83.304)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape168-292" transform="translate(583.572 -78.242)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'402'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape170-289" transform="translate(608.207 -70.856)">
+				<g id="sootblow_svg__shape170-295" transform="translate(618.985 -65.794)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape171-291" transform="translate(603.975 -83.304)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape171-297" transform="translate(614.753 -78.242)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'403'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape173-294" transform="translate(640.132 -70.856)">
+				<g id="sootblow_svg__shape173-300" transform="translate(650.91 -65.794)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape174-296" transform="translate(635.9 -83.304)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape174-302" transform="translate(646.678 -78.242)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'404'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape181-299" transform="translate(833.293 -144.721)">
-					<path d="M0 453.54h10.47" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape181-305" transform="translate(842.577 -139.659)">
+					<path d="M0 453.54h11.96" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape515-302" transform="translate(348.961 -141.684)">
+				<g id="sootblow_svg__shape515-308" transform="translate(359.739 -136.622)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape516-304" transform="translate(344.729 -154.132)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape516-310" transform="translate(355.507 -149.07)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'105'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape518-307" transform="translate(368.474 -141.684)">
+				<g id="sootblow_svg__shape518-313" transform="translate(379.253 -136.622)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape519-309" transform="translate(364.242 -154.132)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape519-315" transform="translate(375.021 -149.07)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'106'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape521-312" transform="translate(388.671 -141.684)">
+				<g id="sootblow_svg__shape521-318" transform="translate(399.449 -136.622)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape522-314" transform="translate(384.439 -154.132)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape522-320" transform="translate(395.217 -149.07)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'107'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape524-317" transform="translate(408.144 -141.684)">
+				<g id="sootblow_svg__shape524-323" transform="translate(418.922 -136.622)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape525-319" transform="translate(403.912 -154.132)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape525-325" transform="translate(414.69 -149.07)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'108'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape527-322" transform="translate(348.916 -170.031)">
+				<g id="sootblow_svg__shape527-328" transform="translate(359.695 -164.969)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape528-324" transform="translate(344.685 -182.479)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape528-330" transform="translate(355.463 -177.417)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'109'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape530-327" transform="translate(368.43 -170.031)">
+				<g id="sootblow_svg__shape530-333" transform="translate(379.208 -164.969)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape531-329" transform="translate(364.198 -182.479)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape531-335" transform="translate(374.977 -177.417)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'110'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape533-332" transform="translate(388.626 -170.031)">
+				<g id="sootblow_svg__shape533-338" transform="translate(399.405 -164.969)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape534-334" transform="translate(384.395 -182.479)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape534-340" transform="translate(395.173 -177.417)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'111'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape536-337" transform="translate(408.099 -170.031)">
+				<g id="sootblow_svg__shape536-343" transform="translate(418.878 -164.969)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape537-339" transform="translate(403.868 -182.479)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape537-345" transform="translate(414.646 -177.417)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'112'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape539-342" transform="translate(348.938 -198.377)">
+				<g id="sootblow_svg__shape539-348" transform="translate(359.717 -193.315)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape540-344" transform="translate(344.707 -210.825)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape540-350" transform="translate(355.485 -205.763)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'113'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape542-347" transform="translate(368.452 -198.377)">
+				<g id="sootblow_svg__shape542-353" transform="translate(379.23 -193.315)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape543-349" transform="translate(364.22 -210.825)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape543-355" transform="translate(374.999 -205.763)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'114'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape545-352" transform="translate(388.649 -198.377)">
+				<g id="sootblow_svg__shape545-358" transform="translate(399.427 -193.315)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape546-354" transform="translate(384.417 -210.825)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape546-360" transform="translate(395.195 -205.763)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'115'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape548-357" transform="translate(408.121 -198.377)">
+				<g id="sootblow_svg__shape548-363" transform="translate(418.9 -193.315)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape549-359" transform="translate(403.89 -210.825)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape549-365" transform="translate(414.668 -205.763)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'116'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape551-362" transform="translate(348.894 -226.724)">
+				<g id="sootblow_svg__shape551-368" transform="translate(359.673 -221.662)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape552-364" transform="translate(344.662 -239.172)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape552-370" transform="translate(355.441 -234.11)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'117'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape554-367" transform="translate(368.408 -226.724)">
+				<g id="sootblow_svg__shape554-373" transform="translate(379.186 -221.662)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape555-369" transform="translate(364.176 -239.172)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape555-375" transform="translate(374.954 -234.11)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'118'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape557-372" transform="translate(388.604 -226.724)">
+				<g id="sootblow_svg__shape557-378" transform="translate(399.383 -221.662)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape558-374" transform="translate(384.373 -239.172)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape558-380" transform="translate(395.151 -234.11)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'119'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape560-377" transform="translate(408.077 -226.724)">
+				<g id="sootblow_svg__shape560-383" transform="translate(418.856 -221.662)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape561-379" transform="translate(403.845 -239.172)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape561-385" transform="translate(414.624 -234.11)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'120'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape563-382" transform="translate(349.001 -72.524)">
+				<g id="sootblow_svg__shape563-388" transform="translate(359.779 -67.462)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape564-384" transform="translate(344.769 -84.972)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape564-390" transform="translate(355.547 -79.91)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'101'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape566-387" transform="translate(368.514 -72.524)">
+				<g id="sootblow_svg__shape566-393" transform="translate(379.293 -67.462)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape567-389" transform="translate(364.283 -84.972)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape567-395" transform="translate(375.061 -79.91)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'102'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape569-392" transform="translate(388.711 -72.524)">
+				<g id="sootblow_svg__shape569-398" transform="translate(399.489 -67.462)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape570-394" transform="translate(384.479 -84.972)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape570-400" transform="translate(395.257 -79.91)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'103'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape572-397" transform="translate(408.184 -72.524)">
+				<g id="sootblow_svg__shape572-403" transform="translate(418.962 -67.462)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape573-399" transform="translate(403.952 -84.972)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape573-405" transform="translate(414.73 -79.91)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'104'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape579-402" transform="rotate(90 307.586 490.62)">
-					<path d="M0 453.54h204.49" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape579-408" transform="rotate(90 310.444 498.54)">
+					<path d="M0 453.54h204.49" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape580-405" transform="rotate(89.977 347.609 530.675)">
-					<path d="M0 453.54h205" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape580-411" transform="rotate(89.977 350.466 538.597)">
+					<path d="M0 453.54h205" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape581-408" transform="rotate(-179.638 212.236 420.118)">
-					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape581-414" transform="rotate(-179.638 217.633 422.632)">
+					<path d="M0 453.54h80.02" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape582-411" transform="rotate(179.798 212.583 327.73)">
-					<path d="M0 453.54h80.06" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape582-417" transform="rotate(179.798 217.967 330.27)">
+					<path d="M0 453.54h80.06" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape583-414" transform="rotate(180 212.3 318.289)">
-					<path d="M0 453.54h79.94" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape583-420" transform="rotate(180 217.689 320.82)">
+					<path d="M0 453.54h79.94" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape584-417" transform="translate(344.662 -251.021)">
-					<path className="sootblow_svg__st13" d="M0 433.701h80.221v19.843H0z" />
-					<text x={23.33} y={447.22} className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape584-423" transform="translate(355.441 -245.959)">
+					<path className="sootblow_svg__st15" d="M0 433.701h80.221v19.843H0z" />
+					<text x={23.33} y={447.22} className="sootblow_svg__st13">
 						{'FRONT'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape652-420" transform="translate(438.081 -141.598)">
+				<g id="sootblow_svg__shape652-426" transform="translate(448.86 -136.536)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape653-422" transform="translate(433.85 -154.046)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape653-428" transform="translate(444.628 -148.984)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'205'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape655-425" transform="translate(457.595 -141.598)">
+				<g id="sootblow_svg__shape655-431" transform="translate(468.373 -136.536)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape656-427" transform="translate(453.363 -154.046)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape656-433" transform="translate(464.142 -148.984)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'206'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape658-430" transform="translate(477.792 -141.598)">
+				<g id="sootblow_svg__shape658-436" transform="translate(488.57 -136.536)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape659-432" transform="translate(473.56 -154.046)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape659-438" transform="translate(484.338 -148.984)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'207'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape661-435" transform="translate(497.264 -141.598)">
+				<g id="sootblow_svg__shape661-441" transform="translate(508.043 -136.536)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape662-437" transform="translate(493.033 -154.046)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape662-443" transform="translate(503.811 -148.984)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'208'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape664-440" transform="translate(438.037 -169.944)">
+				<g id="sootblow_svg__shape664-446" transform="translate(448.816 -164.882)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape665-442" transform="translate(433.805 -182.392)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape665-448" transform="translate(444.584 -177.331)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'209'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape667-445" transform="translate(457.551 -169.944)">
+				<g id="sootblow_svg__shape667-451" transform="translate(468.329 -164.882)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape668-447" transform="translate(453.319 -182.392)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape668-453" transform="translate(464.097 -177.331)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'210'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape670-450" transform="translate(477.747 -169.944)">
+				<g id="sootblow_svg__shape670-456" transform="translate(488.526 -164.882)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape671-452" transform="translate(473.516 -182.392)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape671-458" transform="translate(484.294 -177.331)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'211'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape673-455" transform="translate(497.22 -169.944)">
+				<g id="sootblow_svg__shape673-461" transform="translate(507.999 -164.882)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape674-457" transform="translate(492.988 -182.392)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape674-463" transform="translate(503.767 -177.331)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'212'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape676-460" transform="translate(438.059 -198.291)">
+				<g id="sootblow_svg__shape676-466" transform="translate(448.838 -193.229)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape677-462" transform="translate(433.828 -210.739)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape677-468" transform="translate(444.606 -205.677)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'213'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape679-465" transform="translate(457.573 -198.291)">
+				<g id="sootblow_svg__shape679-471" transform="translate(468.351 -193.229)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape680-467" transform="translate(453.341 -210.739)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape680-473" transform="translate(464.12 -205.677)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'214'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape682-470" transform="translate(477.769 -198.291)">
+				<g id="sootblow_svg__shape682-476" transform="translate(488.548 -193.229)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape683-472" transform="translate(473.538 -210.739)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape683-478" transform="translate(484.316 -205.677)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'215'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape685-475" transform="translate(497.242 -198.291)">
+				<g id="sootblow_svg__shape685-481" transform="translate(508.021 -193.229)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape686-477" transform="translate(493.011 -210.739)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape686-483" transform="translate(503.789 -205.677)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'216'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape688-480" transform="translate(438.015 -226.637)">
+				<g id="sootblow_svg__shape688-486" transform="translate(448.793 -221.575)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape689-482" transform="translate(433.783 -239.085)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape689-488" transform="translate(444.562 -234.023)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'217'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape691-485" transform="translate(457.529 -226.637)">
+				<g id="sootblow_svg__shape691-491" transform="translate(468.307 -221.575)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape692-487" transform="translate(453.297 -239.085)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape692-493" transform="translate(464.075 -234.023)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'218'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape694-490" transform="translate(477.725 -226.637)">
+				<g id="sootblow_svg__shape694-496" transform="translate(488.504 -221.575)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape695-492" transform="translate(473.493 -239.085)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape695-498" transform="translate(484.272 -234.023)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'219'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape697-495" transform="translate(497.198 -226.637)">
+				<g id="sootblow_svg__shape697-501" transform="translate(507.976 -221.575)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape698-497" transform="translate(492.966 -239.085)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape698-503" transform="translate(503.745 -234.023)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'220'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape700-500" transform="translate(438.121 -72.438)">
+				<g id="sootblow_svg__shape700-506" transform="translate(448.9 -67.376)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape701-502" transform="translate(433.89 -84.886)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape701-508" transform="translate(444.668 -79.824)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'201'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape703-505" transform="translate(457.635 -72.438)">
+				<g id="sootblow_svg__shape703-511" transform="translate(468.414 -67.376)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape704-507" transform="translate(453.403 -84.886)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape704-513" transform="translate(464.182 -79.824)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'202'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape706-510" transform="translate(477.832 -72.438)">
+				<g id="sootblow_svg__shape706-516" transform="translate(488.61 -67.376)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape707-512" transform="translate(473.6 -84.886)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape707-518" transform="translate(484.378 -79.824)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'203'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape709-515" transform="translate(497.304 -72.438)">
+				<g id="sootblow_svg__shape709-521" transform="translate(508.083 -67.376)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape710-517" transform="translate(493.073 -84.886)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape710-523" transform="translate(503.851 -79.824)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'204'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape711-520" transform="rotate(90 352.103 535.224)">
-					<path d="M0 453.54h204.49" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape711-526" transform="rotate(90 354.961 543.144)">
+					<path d="M0 453.54h204.49" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape712-523" transform="rotate(89.977 392.126 575.296)">
-					<path d="M0 453.54h205" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape712-529" transform="rotate(89.977 394.983 583.218)">
+					<path d="M0 453.54h205" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape713-526" transform="rotate(-179.638 256.796 420.02)">
-					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape713-532" transform="rotate(-179.638 262.193 422.534)">
+					<path d="M0 453.54h80.02" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape714-529" transform="rotate(-179.638 256.503 326.981)">
-					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape714-535" transform="rotate(-179.638 261.9 329.495)">
+					<path d="M0 453.54h80.02" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape715-532" transform="rotate(180 256.86 318.332)">
-					<path d="M0 453.54h79.94" className="sootblow_svg__st15" />
+				<g id="sootblow_svg__shape715-538" transform="rotate(180 262.25 320.863)">
+					<path d="M0 453.54h79.94" className="sootblow_svg__st17" />
 				</g>
-				<g id="sootblow_svg__shape716-535" transform="translate(433.783 -250.934)">
-					<path className="sootblow_svg__st13" d="M0 433.701h80.221v19.843H0z" />
-					<text x={27.06} y={447.22} className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape716-541" transform="translate(444.562 -245.872)">
+					<path className="sootblow_svg__st15" d="M0 433.701h80.221v19.843H0z" />
+					<text x={27.06} y={447.22} className="sootblow_svg__st13">
 						{'BACK'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape718-538" transform="translate(405.445 -15.513)">
+				<g id="sootblow_svg__shape727-544" transform="translate(838.203 -118.097)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape719-540" transform="translate(401.214 -27.961)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
-						{'901'}
-					</text>
-				</g>
-				<g id="sootblow_svg__shape727-543" transform="translate(445.13 -15.135)">
-					<path
-						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
-					/>
-				</g>
-				<g id="sootblow_svg__shape728-545" transform="translate(440.899 -27.583)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={4.12} y={452.4} className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape728-546" transform="translate(833.971 -130.545)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
 						{'902'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape729-548" transform="rotate(90 225.531 619.399)">
-					<path d="M0 453.54h51.93" className="sootblow_svg__st15" />
-				</g>
-				<g id="sootblow_svg__shape730-551" transform="rotate(89.91 265.547 659.739)">
-					<path d="M0 453.54h52.44" className="sootblow_svg__st15" />
-				</g>
-				<g id="sootblow_svg__shape731-554" transform="rotate(-179.638 235.69 449.178)">
-					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
-				</g>
-				<g id="sootblow_svg__shape732-557" transform="rotate(-179.638 235.637 432.421)">
-					<path d="M0 453.54h80.02" className="sootblow_svg__st15" />
-				</g>
-				<g id="sootblow_svg__shape733-560" transform="rotate(180 235.662 423.705)">
-					<path d="M0 453.54h79.94" className="sootblow_svg__st15" />
-				</g>
-				<g id="sootblow_svg__shape734-563" transform="translate(391.387 -40.188)">
-					<path className="sootblow_svg__st13" d="M0 433.701h80.221v19.843H0z" />
-					<text x={31.54} y={447.22} className="sootblow_svg__st11">
-						{'A H'}
-					</text>
-				</g>
-				<g id="sootblow_svg__shape735-566" transform="rotate(90 235.63 648.985)">
-					<path d="M0 453.54h32.44" className="sootblow_svg__st15" />
-				</g>
-				<g id="sootblow_svg__shape9-569" transform="translate(498.375 -418.643)">
+				<g id="sootblow_svg__shape9-549" transform="translate(410.463 -384.697)">
 					<path
-						d="M0 438.22a15.322 15.322 0 0130.64 0 15.322 15.322 0 11-30.64 0z"
-						className="sootblow_svg__st10"
+						d="M0 423.78a29.764 29.764 0 0159.53 0 29.764 29.764 0 11-59.53 0z"
+						className="sootblow_svg__st12"
 					/>
 				</g>
-				<g id="sootblow_svg__shape24-571" transform="translate(496.843 -426.61)">
-					<path className="sootblow_svg__st13" d="M0 438.834h33.708v14.709H0z" />
-					<text x={10.41} y={449.79} className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape24-551" transform="translate(423.373 -407.106)">
+					<path className="sootblow_svg__st15" d="M0 438.834h33.708v14.709H0z" />
+					<text x={10.41} y={449.79} className="sootblow_svg__st13">
 						{'SD'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape741-574" transform="matrix(-1 0 0 1 187.695 -344.564)">
-					<path className="sootblow_svg__st3" d="M0 378.898h90.401v74.646H0z" />
+				<g id="sootblow_svg__shape741-554" transform="matrix(-1 0 0 1 198.473 -339.502)">
+					<path className="sootblow_svg__st5" d="M0 378.898h90.401v74.646H0z" />
 				</g>
-				<g id="sootblow_svg__shape742-577" transform="rotate(180 97.131 280.817)">
+				<g id="sootblow_svg__shape742-557" transform="rotate(180 102.521 283.348)">
 					<path
 						d="M0 453.54h93.29L0 410.64v42.9z"
-						fill="url(#sootblow_svg__grad0-580)"
+						fill="url(#sootblow_svg__grad0-560)"
 						strokeLinecap="round"
 						strokeLinejoin="round"
 						strokeWidth={0.24}
 					/>
 				</g>
-				<g id="sootblow_svg__shape743-581" transform="matrix(0 1 1 0 -117.113 34.334)">
-					<path className="sootblow_svg__st5" d="M0 300.879h347.954v152.664H0z" />
+				<g id="sootblow_svg__shape743-561" transform="matrix(0 1 1 0 -106.335 39.396)">
+					<path className="sootblow_svg__st7" d="M0 300.879h347.954v152.664H0z" />
 				</g>
-				<g id="sootblow_svg__shape744-584" transform="matrix(-1 0 0 1 111.926 -116.375)">
-					<path className="sootblow_svg__st6" d="M0 150.709h85.631v302.835H0z" />
+				<g id="sootblow_svg__shape744-564" transform="matrix(-1 0 0 1 122.705 -111.313)">
+					<path className="sootblow_svg__st8" d="M0 150.709h85.631v302.835H0z" />
 				</g>
-				<g id="sootblow_svg__shape745-587" transform="matrix(1 0 0 -1 183.766 834.649)">
-					<path d="M0 453.54h152.66l-42.11-56.69H42.11L0 453.54z" className="sootblow_svg__st7" />
+				<g id="sootblow_svg__shape745-567" transform="matrix(1 0 0 -1 194.545 839.711)">
+					<path d="M0 453.54h152.66l-42.11-56.69H42.11L0 453.54z" className="sootblow_svg__st9" />
 				</g>
-				<g id="sootblow_svg__shape746-590" transform="matrix(0 -1 -1 0 634.959 180.04)">
-					<path d="M33.71 453.54l-16.86-36.06L0 453.54h33.71z" className="sootblow_svg__st8" />
+				<g id="sootblow_svg__shape746-570" transform="matrix(0 -1 -1 0 645.737 185.102)">
+					<path d="M33.71 453.54l-16.86-36.06L0 453.54h33.71z" className="sootblow_svg__st10" />
 				</g>
-				<g id="sootblow_svg__shape747-592" transform="scale(-1 1) rotate(26.565 506.25 -152.253)">
-					<path d="M0 453.54h37.69" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape747-572" transform="scale(-1 1) rotate(26.565 490.14 -172.55)">
+					<path d="M0 453.54h37.69" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape748-595" transform="scale(1 -1) rotate(-25.374 -1202.637 -78.385)">
-					<path d="M0 453.54h116.82" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape748-575" transform="scale(1 -1) rotate(-25.374 -1208.49 -104.855)">
+					<path d="M0 453.54h116.82" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape749-598" transform="matrix(0 1 1 0 -117.113 34.334)">
-					<path d="M0 453.54h347.95" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape749-578" transform="matrix(0 1 1 0 -106.335 39.396)">
+					<path d="M0 453.54h347.95" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape750-601" transform="matrix(0 1 1 0 -427.248 34.334)">
-					<path d="M0 453.54h274.49" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape750-581" transform="matrix(0 1 1 0 -416.47 39.396)">
+					<path d="M0 453.54h274.49" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape751-604" transform="scale(-1 1) rotate(52.815 -96.466 79.157)">
-					<path d="M0 453.54h69.68" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape751-584" transform="scale(-1 1) rotate(52.815 -106.952 70.835)">
+					<path d="M0 453.54h69.68" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape752-607" transform="scale(1 -1) rotate(-52.815 -749.73 -149.41)">
-					<path d="M0 453.54h69.68" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape752-587" transform="scale(1 -1) rotate(-52.815 -749.438 -162.793)">
+					<path d="M0 453.54h69.68" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape753-610" transform="matrix(-1 0 0 1 294.317 -15.745)">
-					<path d="M0 453.54h68.44" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape753-590" transform="matrix(-1 0 0 1 305.096 -10.683)">
+					<path d="M0 453.54h68.44" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape754-613" transform="matrix(1 0 0 -1 26.295 487.877)">
-					<path d="M0 453.54h310.14" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape754-593" transform="matrix(1 0 0 -1 37.073 492.939)">
+					<path d="M0 453.54h310.14" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape755-616" transform="matrix(0 1 1 0 -269.777 180.04)">
-					<path d="M0 453.54h165.48" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape755-596" transform="matrix(0 1 1 0 -258.999 185.102)">
+					<path d="M0 453.54h165.48" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape756-619" transform="matrix(0 1 1 0 -269.777 341.893)">
-					<path d="M0 453.54h40.39" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape756-599" transform="matrix(0 1 1 0 -258.999 346.955)">
+					<path d="M0 453.54h40.39" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape757-622" transform="matrix(-1 0 0 1 112.493 -116.375)">
-					<path d="M0 453.54h99.03" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape757-602" transform="matrix(-1 0 0 1 123.271 -111.313)">
+					<path d="M0 453.54h99.03" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape758-625" transform="matrix(-1 0 0 1 95.667 -150.676)">
-					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
-					<text x={-45.84} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape758-605" transform="matrix(-1 0 0 1 106.446 -145.614)">
+					<path className="sootblow_svg__st12" d="M0 439.3h59.528v14.243H0z" />
+					<text x={-45.84} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st13">
 						{'P. ECO'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape759-628" transform="scale(1 -1) rotate(-89.855 -228.09 114.103)">
-					<path d="M0 453.54h224.04" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape759-608" transform="scale(1 -1) rotate(-89.855 -225.238 106.17)">
+					<path d="M0 453.54h224.04" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape760-631" transform="matrix(-1 0 0 1 95.667 -194.168)">
-					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
-					<text x={-45.49} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape760-611" transform="matrix(-1 0 0 1 106.446 -189.106)">
+					<path className="sootblow_svg__st12" d="M0 439.3h59.528v14.243H0z" />
+					<text x={-45.49} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st13">
 						{'S. ECO'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape762-634" transform="matrix(-1 0 0 1 87.467 -170.589)">
+				<g id="sootblow_svg__shape762-614" transform="matrix(-1 0 0 1 98.245 -165.527)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape763-636" transform="matrix(-1 0 0 1 91.699 -183.037)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape763-616" transform="matrix(-1 0 0 1 102.477 -177.975)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'504'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape765-639" transform="matrix(-1 0 0 1 57.987 -170.589)">
+				<g id="sootblow_svg__shape765-619" transform="matrix(-1 0 0 1 68.765 -165.527)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape766-641" transform="matrix(-1 0 0 1 62.218 -183.037)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape766-621" transform="matrix(-1 0 0 1 72.997 -177.975)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'503'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape768-644" transform="matrix(-1 0 0 1 87.467 -214.133)">
+				<g id="sootblow_svg__shape768-624" transform="matrix(-1 0 0 1 98.245 -209.072)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape769-646" transform="matrix(-1 0 0 1 91.699 -226.581)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape769-626" transform="matrix(-1 0 0 1 102.477 -221.52)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'502'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape771-649" transform="matrix(-1 0 0 1 57.987 -214.133)">
+				<g id="sootblow_svg__shape771-629" transform="matrix(-1 0 0 1 68.765 -209.072)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape772-651" transform="matrix(-1 0 0 1 62.218 -226.581)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape772-631" transform="matrix(-1 0 0 1 72.997 -221.52)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'501'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape773-654" transform="matrix(-1 0 0 1 95.667 -237.256)">
-					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
-					<text x={-47.68} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape773-634" transform="matrix(-1 0 0 1 106.446 -232.194)">
+					<path className="sootblow_svg__st12" d="M0 439.3h59.528v14.243H0z" />
+					<text x={-47.68} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st13">
 						{'P. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape774-657" transform="matrix(-1 0 0 1 95.667 -281.813)">
-					<path className="sootblow_svg__st10" d="M0 439.3h59.528v14.243H0z" />
-					<text x={-47.33} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st11">
+				<g id="sootblow_svg__shape774-637" transform="matrix(-1 0 0 1 106.446 -276.751)">
+					<path className="sootblow_svg__st12" d="M0 439.3h59.528v14.243H0z" />
+					<text x={-47.33} y={450.02} transform="scale(-1 1)" className="sootblow_svg__st13">
 						{'S. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape776-660" transform="matrix(-1 0 0 1 87.467 -258.639)">
+				<g id="sootblow_svg__shape776-640" transform="matrix(-1 0 0 1 98.245 -253.577)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape777-662" transform="matrix(-1 0 0 1 91.699 -271.087)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape777-642" transform="matrix(-1 0 0 1 102.477 -266.025)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'713'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape779-665" transform="matrix(-1 0 0 1 57.987 -258.639)">
+				<g id="sootblow_svg__shape779-645" transform="matrix(-1 0 0 1 68.765 -253.577)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape780-667" transform="matrix(-1 0 0 1 62.218 -271.087)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape780-647" transform="matrix(-1 0 0 1 72.997 -266.025)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'712'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape782-670" transform="matrix(-1 0 0 1 76.8 -302.352)">
+				<g id="sootblow_svg__shape782-650" transform="matrix(-1 0 0 1 87.578 -297.29)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape783-672" transform="matrix(-1 0 0 1 81.032 -314.8)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape783-652" transform="matrix(-1 0 0 1 91.81 -309.738)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'711'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape785-675" transform="matrix(-1 0 0 1 52.317 -302.352)">
+				<g id="sootblow_svg__shape785-655" transform="matrix(-1 0 0 1 63.096 -297.29)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape786-677" transform="matrix(-1 0 0 1 56.55 -314.8)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape786-657" transform="matrix(-1 0 0 1 67.328 -309.738)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'710'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape788-680" transform="matrix(-1 0 0 1 91.699 -324.85)">
-					<path className="sootblow_svg__st10" d="M0 372.037h15.412v81.506H0z" />
+				<g id="sootblow_svg__shape788-660" transform="matrix(-1 0 0 1 102.477 -319.788)">
+					<path className="sootblow_svg__st12" d="M0 372.037h15.412v81.506H0z" />
 				</g>
-				<g id="sootblow_svg__shape789-682" transform="matrix(-1 0 0 1 91.699 -324.85)">
-					<path className="sootblow_svg__st13" d="M0 372.037h15.412v81.506H0z" />
+				<g id="sootblow_svg__shape789-662" transform="matrix(-1 0 0 1 102.477 -319.788)">
+					<path className="sootblow_svg__st15" d="M0 372.037h15.412v81.506H0z" />
 					<text
 						x={-7.71}
 						y={388.39}
 						writingMode="tb-rl"
 						transform="scale(-1 1)"
-						className="sootblow_svg__st11"
+						className="sootblow_svg__st13"
 					>
 						{'VER. LTSH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape791-685" transform="matrix(-1 0 0 1 108.545 -316.217)">
+				<g id="sootblow_svg__shape791-665" transform="matrix(-1 0 0 1 119.323 -311.156)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape792-687" transform="matrix(-1 0 0 1 112.777 -328.665)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape792-667" transform="matrix(-1 0 0 1 123.555 -323.604)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'709'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape794-690" transform="matrix(-1 0 0 1 129.501 -351.085)">
-					<path className="sootblow_svg__st10" d="M0 391.797h15.412v61.747H0z" />
+				<g id="sootblow_svg__shape794-670" transform="matrix(-1 0 0 1 140.279 -346.023)">
+					<path className="sootblow_svg__st12" d="M0 391.797h15.412v61.747H0z" />
 				</g>
-				<g id="sootblow_svg__shape795-692" transform="matrix(-1 0 0 1 129.501 -351.085)">
-					<path className="sootblow_svg__st13" d="M0 391.797h15.412v61.747H0z" />
+				<g id="sootblow_svg__shape795-672" transform="matrix(-1 0 0 1 140.279 -346.023)">
+					<path className="sootblow_svg__st15" d="M0 391.797h15.412v61.747H0z" />
 					<text
 						x={-7.71}
 						y={399.17}
 						writingMode="tb-rl"
 						transform="scale(-1 1)"
-						className="sootblow_svg__st11"
+						className="sootblow_svg__st13"
 					>
 						{'FINAL SH.'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape797-695" transform="matrix(-1 0 0 1 167.59 -339.323)">
-					<path className="sootblow_svg__st10" d="M0 377.73h15.412v75.813H0z" />
+				<g id="sootblow_svg__shape797-675" transform="matrix(-1 0 0 1 178.368 -334.261)">
+					<path className="sootblow_svg__st12" d="M0 377.73h15.412v75.813H0z" />
 				</g>
-				<g id="sootblow_svg__shape798-697" transform="matrix(-1 0 0 1 167.59 -339.323)">
-					<path className="sootblow_svg__st13" d="M0 377.73h15.412v75.813H0z" />
+				<g id="sootblow_svg__shape798-677" transform="matrix(-1 0 0 1 178.368 -334.261)">
+					<path className="sootblow_svg__st15" d="M0 377.73h15.412v75.813H0z" />
 					<text
 						x={-7.71}
 						y={391.63}
 						writingMode="tb-rl"
 						transform="scale(-1 1)"
-						className="sootblow_svg__st11"
+						className="sootblow_svg__st13"
 					>
 						{'FINAL RH.'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape800-700" transform="matrix(-1 0 0 1 210.109 -319.997)">
-					<path className="sootblow_svg__st10" d="M0 362.018h15.412v91.525H0z" />
+				<g id="sootblow_svg__shape800-680" transform="matrix(-1 0 0 1 220.888 -314.935)">
+					<path className="sootblow_svg__st12" d="M0 362.018h15.412v91.525H0z" />
 				</g>
-				<g id="sootblow_svg__shape801-702" transform="matrix(-1 0 0 1 210.109 -319.997)">
-					<path className="sootblow_svg__st13" d="M0 362.018h15.412v91.525H0z" />
+				<g id="sootblow_svg__shape801-682" transform="matrix(-1 0 0 1 220.888 -314.935)">
+					<path className="sootblow_svg__st15" d="M0 362.018h15.412v91.525H0z" />
 					<text
 						x={-7.71}
 						y={384.32}
 						writingMode="tb-rl"
 						transform="scale(-1 1)"
-						className="sootblow_svg__st11"
+						className="sootblow_svg__st13"
 					>
 						{'RH PEND.'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape802-705" transform="matrix(-1 0 0 1 258.383 -285.036)">
-					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				<g id="sootblow_svg__shape802-685" transform="matrix(-1 0 0 1 269.161 -279.974)">
+					<path className="sootblow_svg__st12" d="M0 327.874h20.409v125.669H0z" />
 				</g>
-				<g id="sootblow_svg__shape803-707" transform="matrix(-1 0 0 1 258.54 -268.973)">
-					<path className="sootblow_svg__st13" d="M0 311.811h20.409v141.732H0z" />
+				<g id="sootblow_svg__shape803-687" transform="matrix(-1 0 0 1 269.319 -263.911)">
+					<path className="sootblow_svg__st15" d="M0 311.811h20.409v141.732H0z" />
 					<text
 						x={-10.2}
 						y={356.01}
 						writingMode="tb-rl"
 						transform="scale(-1 1)"
-						className="sootblow_svg__st11"
+						className="sootblow_svg__st13"
 					>
 						{'PLATEN SH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape805-710" transform="matrix(-1 0 0 1 329.813 -284.938)">
-					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				<g id="sootblow_svg__shape805-690" transform="matrix(-1 0 0 1 340.592 -279.876)">
+					<path className="sootblow_svg__st12" d="M0 327.874h20.409v125.669H0z" />
 				</g>
-				<g id="sootblow_svg__shape806-712" transform="matrix(-1 0 0 1 329.686 -284.938)">
-					<path className="sootblow_svg__st13" d="M0 327.874h20.282v125.669H0z" />
+				<g id="sootblow_svg__shape806-692" transform="matrix(-1 0 0 1 340.464 -279.876)">
+					<path className="sootblow_svg__st15" d="M0 327.874h20.282v125.669H0z" />
 					<text
 						x={-10.14}
 						y={364.2}
 						writingMode="tb-rl"
 						transform="scale(-1 1)"
-						className="sootblow_svg__st11"
+						className="sootblow_svg__st13"
 					>
 						{'PANELS SH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape808-715" transform="matrix(-1 0 0 1 306.383 -284.938)">
-					<path className="sootblow_svg__st10" d="M0 327.874h20.409v125.669H0z" />
+				<g id="sootblow_svg__shape808-695" transform="matrix(-1 0 0 1 317.161 -279.876)">
+					<path className="sootblow_svg__st12" d="M0 327.874h20.409v125.669H0z" />
 				</g>
-				<g id="sootblow_svg__shape809-717" transform="matrix(-1 0 0 1 306.255 -284.938)">
-					<path className="sootblow_svg__st13" d="M0 327.874h20.282v125.669H0z" />
+				<g id="sootblow_svg__shape809-697" transform="matrix(-1 0 0 1 317.034 -279.876)">
+					<path className="sootblow_svg__st15" d="M0 327.874h20.282v125.669H0z" />
 					<text
 						x={-10.14}
 						y={364.2}
 						writingMode="tb-rl"
 						transform="scale(-1 1)"
-						className="sootblow_svg__st11"
+						className="sootblow_svg__st13"
 					>
 						{'PANELS SH'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape811-720" transform="matrix(-1 0 0 1 278.34 -325.023)">
+				<g id="sootblow_svg__shape811-700" transform="matrix(-1 0 0 1 289.118 -319.961)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape812-722" transform="matrix(-1 0 0 1 282.572 -337.471)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape812-702" transform="matrix(-1 0 0 1 293.35 -332.41)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'701'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape814-725" transform="matrix(-1 0 0 1 230.788 -319.997)">
+				<g id="sootblow_svg__shape814-705" transform="matrix(-1 0 0 1 241.567 -314.935)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape815-727" transform="matrix(-1 0 0 1 235.02 -332.445)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape815-707" transform="matrix(-1 0 0 1 245.798 -327.383)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'704'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape817-730" transform="matrix(-1 0 0 1 230.718 -357.155)">
+				<g id="sootblow_svg__shape817-710" transform="matrix(-1 0 0 1 241.496 -352.093)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape818-732" transform="matrix(-1 0 0 1 234.95 -369.603)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape818-712" transform="matrix(-1 0 0 1 245.728 -364.541)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'703'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape820-735" transform="matrix(-1 0 0 1 230.788 -393.698)">
+				<g id="sootblow_svg__shape820-715" transform="matrix(-1 0 0 1 241.567 -388.636)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape821-737" transform="matrix(-1 0 0 1 235.02 -406.146)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape821-717" transform="matrix(-1 0 0 1 245.798 -401.084)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'702'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape823-740" transform="matrix(-1 0 0 1 187.561 -348.343)">
+				<g id="sootblow_svg__shape823-720" transform="matrix(-1 0 0 1 198.34 -343.282)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape824-742" transform="matrix(-1 0 0 1 191.793 -360.791)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape824-722" transform="matrix(-1 0 0 1 202.571 -355.73)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'706'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape826-745" transform="matrix(-1 0 0 1 187.631 -384.886)">
+				<g id="sootblow_svg__shape826-725" transform="matrix(-1 0 0 1 198.41 -379.824)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape827-747" transform="matrix(-1 0 0 1 191.863 -397.334)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape827-727" transform="matrix(-1 0 0 1 202.642 -392.272)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'705'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape829-750" transform="matrix(-1 0 0 1 146.777 -354.628)">
+				<g id="sootblow_svg__shape829-730" transform="matrix(-1 0 0 1 157.556 -349.566)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape830-752" transform="matrix(-1 0 0 1 151.009 -367.076)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape830-732" transform="matrix(-1 0 0 1 161.788 -362.015)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'708'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape832-755" transform="matrix(-1 0 0 1 146.848 -391.171)">
+				<g id="sootblow_svg__shape832-735" transform="matrix(-1 0 0 1 157.626 -386.109)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape833-757" transform="matrix(-1 0 0 1 151.079 -403.619)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape833-737" transform="matrix(-1 0 0 1 161.858 -398.557)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'707'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape835-760" transform="matrix(-1 0 0 1 314.043 -141.722)">
+				<g id="sootblow_svg__shape835-740" transform="matrix(-1 0 0 1 324.822 -136.66)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape836-762" transform="matrix(-1 0 0 1 318.275 -154.17)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape836-742" transform="matrix(-1 0 0 1 329.054 -149.108)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'308'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape838-765" transform="matrix(-1 0 0 1 281.108 -141.722)">
+				<g id="sootblow_svg__shape838-745" transform="matrix(-1 0 0 1 291.887 -136.66)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape839-767" transform="matrix(-1 0 0 1 285.34 -154.17)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape839-747" transform="matrix(-1 0 0 1 296.118 -149.108)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'307'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape841-770" transform="matrix(-1 0 0 1 249.927 -141.722)">
+				<g id="sootblow_svg__shape841-750" transform="matrix(-1 0 0 1 260.706 -136.66)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape842-772" transform="matrix(-1 0 0 1 254.159 -154.17)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape842-752" transform="matrix(-1 0 0 1 264.937 -149.108)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'306'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape844-775" transform="matrix(-1 0 0 1 218.002 -141.722)">
+				<g id="sootblow_svg__shape844-755" transform="matrix(-1 0 0 1 228.781 -136.66)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape845-777" transform="matrix(-1 0 0 1 222.234 -154.17)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape845-757" transform="matrix(-1 0 0 1 233.012 -149.108)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'305'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape847-780" transform="matrix(-1 0 0 1 314.088 -170.069)">
+				<g id="sootblow_svg__shape847-760" transform="matrix(-1 0 0 1 324.866 -165.007)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape848-782" transform="matrix(-1 0 0 1 318.319 -182.517)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape848-762" transform="matrix(-1 0 0 1 329.098 -177.455)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'312'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape850-785" transform="matrix(-1 0 0 1 281.153 -170.069)">
+				<g id="sootblow_svg__shape850-765" transform="matrix(-1 0 0 1 291.931 -165.007)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape851-787" transform="matrix(-1 0 0 1 285.384 -182.517)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape851-767" transform="matrix(-1 0 0 1 296.163 -177.455)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'311'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape853-790" transform="matrix(-1 0 0 1 249.972 -170.069)">
+				<g id="sootblow_svg__shape853-770" transform="matrix(-1 0 0 1 260.75 -165.007)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape854-792" transform="matrix(-1 0 0 1 254.203 -182.517)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape854-772" transform="matrix(-1 0 0 1 264.982 -177.455)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'310'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape856-795" transform="matrix(-1 0 0 1 218.047 -170.069)">
+				<g id="sootblow_svg__shape856-775" transform="matrix(-1 0 0 1 228.825 -165.007)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape857-797" transform="matrix(-1 0 0 1 222.278 -182.517)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape857-777" transform="matrix(-1 0 0 1 233.057 -177.455)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'309'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape859-800" transform="matrix(-1 0 0 1 314.066 -198.415)">
+				<g id="sootblow_svg__shape859-780" transform="matrix(-1 0 0 1 324.844 -193.353)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape860-802" transform="matrix(-1 0 0 1 318.297 -210.863)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape860-782" transform="matrix(-1 0 0 1 329.076 -205.801)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'316'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape862-805" transform="matrix(-1 0 0 1 281.13 -198.415)">
+				<g id="sootblow_svg__shape862-785" transform="matrix(-1 0 0 1 291.909 -193.353)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape863-807" transform="matrix(-1 0 0 1 285.362 -210.863)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape863-787" transform="matrix(-1 0 0 1 296.141 -205.801)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'315'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape865-810" transform="matrix(-1 0 0 1 249.949 -198.415)">
+				<g id="sootblow_svg__shape865-790" transform="matrix(-1 0 0 1 260.728 -193.353)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape866-812" transform="matrix(-1 0 0 1 254.181 -210.863)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape866-792" transform="matrix(-1 0 0 1 264.96 -205.801)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'314'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape868-815" transform="matrix(-1 0 0 1 218.024 -198.415)">
+				<g id="sootblow_svg__shape868-795" transform="matrix(-1 0 0 1 228.803 -193.353)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape869-817" transform="matrix(-1 0 0 1 222.256 -210.863)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape869-797" transform="matrix(-1 0 0 1 233.035 -205.801)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'313'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape871-820" transform="matrix(-1 0 0 1 314.11 -226.761)">
+				<g id="sootblow_svg__shape871-800" transform="matrix(-1 0 0 1 324.888 -221.7)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape872-822" transform="matrix(-1 0 0 1 318.342 -239.21)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape872-802" transform="matrix(-1 0 0 1 329.12 -234.148)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'320'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape874-825" transform="matrix(-1 0 0 1 281.175 -226.761)">
+				<g id="sootblow_svg__shape874-805" transform="matrix(-1 0 0 1 291.953 -221.7)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape875-827" transform="matrix(-1 0 0 1 285.406 -239.21)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape875-807" transform="matrix(-1 0 0 1 296.185 -234.148)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'319'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape877-830" transform="matrix(-1 0 0 1 249.994 -226.761)">
+				<g id="sootblow_svg__shape877-810" transform="matrix(-1 0 0 1 260.772 -221.7)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape878-832" transform="matrix(-1 0 0 1 254.225 -239.21)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape878-812" transform="matrix(-1 0 0 1 265.004 -234.148)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'318'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape880-835" transform="matrix(-1 0 0 1 218.069 -226.761)">
+				<g id="sootblow_svg__shape880-815" transform="matrix(-1 0 0 1 228.847 -221.7)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape881-837" transform="matrix(-1 0 0 1 222.3 -239.21)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape881-817" transform="matrix(-1 0 0 1 233.079 -234.148)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'317'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape883-840" transform="matrix(-1 0 0 1 314.003 -70.856)">
+				<g id="sootblow_svg__shape883-820" transform="matrix(-1 0 0 1 324.782 -65.794)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape884-842" transform="matrix(-1 0 0 1 318.235 -83.304)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape884-822" transform="matrix(-1 0 0 1 329.014 -78.242)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'304'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape886-845" transform="matrix(-1 0 0 1 281.068 -70.856)">
+				<g id="sootblow_svg__shape886-825" transform="matrix(-1 0 0 1 291.847 -65.794)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape887-847" transform="matrix(-1 0 0 1 285.3 -83.304)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape887-827" transform="matrix(-1 0 0 1 296.078 -78.242)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'303'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape889-850" transform="matrix(-1 0 0 1 249.887 -70.856)">
+				<g id="sootblow_svg__shape889-830" transform="matrix(-1 0 0 1 260.666 -65.794)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape890-852" transform="matrix(-1 0 0 1 254.119 -83.304)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape890-832" transform="matrix(-1 0 0 1 264.897 -78.242)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'302'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape892-855" transform="matrix(-1 0 0 1 217.962 -70.856)">
+				<g id="sootblow_svg__shape892-835" transform="matrix(-1 0 0 1 228.741 -65.794)">
 					<path
 						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
-						fill={props.colorid201}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape893-857" transform="matrix(-1 0 0 1 222.194 -83.304)">
-					<path className="sootblow_svg__st13" d="M0 446.457h20.409v7.087H0z" />
-					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st14">
+				<g id="sootblow_svg__shape893-837" transform="matrix(-1 0 0 1 232.972 -78.242)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={-16.29} y={452.4} transform="scale(-1 1)" className="sootblow_svg__st16">
 						{'301'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape894-860" transform="matrix(-1 0 0 1 24.801 -144.721)">
-					<path d="M0 453.54h10.47" className="sootblow_svg__st9" />
+				<g id="sootblow_svg__shape894-840" transform="matrix(-1 0 0 1 37.073 -139.659)">
+					<path d="M0 453.54h11.96" className="sootblow_svg__st11" />
 				</g>
-				<g id="sootblow_svg__shape896-863" transform="matrix(-1 0 0 1 359.719 -418.643)">
-					<path
-						d="M0 438.22a15.322 15.322 0 0130.64 0 15.322 15.322 0 11-30.64 0z"
-						className="sootblow_svg__st10"
-					/>
-				</g>
-				<g id="sootblow_svg__shape897-865" transform="matrix(-1 0 0 1 361.251 -426.61)">
-					<path className="sootblow_svg__st13" d="M0 438.834h33.708v14.709H0z" />
-					<text x={-23.3} y={449.79} transform="scale(-1 1)" className="sootblow_svg__st11">
-						{'SD'}
-					</text>
-				</g>
-				<g id="sootblow_svg__shape1041-868" transform="translate(15.565 -36.18)">
+				<g id="sootblow_svg__shape1041-843" transform="translate(26.343 -31.118)">
 					<path
 						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
 						fill="red"
@@ -2041,13 +1900,13 @@ const SvgSootblowTjAwarAwar = props => {
 						strokeLinejoin="round"
 					/>
 				</g>
-				<g id="sootblow_svg__shape1042-870" transform="translate(22.278 -37.533)">
-					<path className="sootblow_svg__st13" d="M0 444.685h65.906v8.858H0z" />
-					<text x={14.65} y={452.11} className="sootblow_svg__st18">
+				<g id="sootblow_svg__shape1042-845" transform="translate(33.056 -32.47)">
+					<path className="sootblow_svg__st15" d="M0 444.685h65.906v8.858H0z" />
+					<text x={14.65} y={452.11} className="sootblow_svg__st20">
 						{'RETRACT'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape1043-873" transform="translate(15.565 -14.546)">
+				<g id="sootblow_svg__shape1043-848" transform="translate(26.343 -9.485)">
 					<path
 						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
 						fill="#00b050"
@@ -2056,13 +1915,13 @@ const SvgSootblowTjAwarAwar = props => {
 						strokeLinejoin="round"
 					/>
 				</g>
-				<g id="sootblow_svg__shape1044-875" transform="translate(24.758 -16.273)">
-					<path className="sootblow_svg__st13" d="M0 444.685h65.906v8.858H0z" />
-					<text x={12.92} y={452.11} className="sootblow_svg__st18">
+				<g id="sootblow_svg__shape1044-850" transform="translate(35.537 -11.21)">
+					<path className="sootblow_svg__st15" d="M0 444.685h65.906v8.858H0z" />
+					<text x={12.92} y={452.11} className="sootblow_svg__st20">
 						{'ADVANCE'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape1045-878" transform="translate(86.43 -36.18)">
+				<g id="sootblow_svg__shape1045-853" transform="translate(97.21 -31.118)">
 					<path
 						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
 						fill="#bfbfbf"
@@ -2071,28 +1930,63 @@ const SvgSootblowTjAwarAwar = props => {
 						strokeLinejoin="round"
 					/>
 				</g>
-				<g id="sootblow_svg__shape1046-880" transform="translate(90.876 -38.93)">
-					<path className="sootblow_svg__st13" d="M0 444.685h80.221v8.858H0z" />
-					<text x={17.65} y={452.11} className="sootblow_svg__st18">
+				<g id="sootblow_svg__shape1046-855" transform="translate(101.655 -33.868)">
+					<path className="sootblow_svg__st15" d="M0 444.685h80.221v8.858H0z" />
+					<text x={17.65} y={452.11} className="sootblow_svg__st20">
 						{'START FAIL'}
 					</text>
 				</g>
-				<g id="sootblow_svg__shape1047-883" transform="translate(86.804 -14.546)">
+				<g id="sootblow_svg__shape1047-858" transform="translate(97.582 -9.485)">
 					<path
 						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
-						fill={'#fff000'}
-						stroke={'#000'}
+						className="sootblow_svg__st14"
 					/>
 				</g>
-				<g id="sootblow_svg__shape1048-885" transform="translate(102.64 -17.113)">
-					<path className="sootblow_svg__st13" d="M0 444.685h80.221v8.858H0z" />
-					<text x={5.53} y={452.11} className="sootblow_svg__st18">
+				<g id="sootblow_svg__shape1048-860" transform="translate(113.419 -12.051)">
+					<path className="sootblow_svg__st15" d="M0 444.685h80.221v8.858H0z" />
+					<text x={5.53} y={452.11} className="sootblow_svg__st20">
 						{'READY/STANDBY'}
+					</text>
+				</g>
+				<g id="sootblow_svg__shape1051-863" transform="translate(855.503 -102.655)">
+					<path className="sootblow_svg__st12" d="M0 410.642h15.412v42.901H0z" />
+				</g>
+				<g id="sootblow_svg__shape1052-865" transform="rotate(-90 376.644 -40.727)">
+					<path className="sootblow_svg__st15" d="M0 438.132h15.412v15.412H0z" />
+					<text x={14.91} y={442.37} writingMode="tb-rl" className="sootblow_svg__st13">
+						{'A'}
+						<tspan dx="-1.2em" y="36.844em" className="sootblow_svg__st23">
+							{'H'}
+						</tspan>
+					</text>
+				</g>
+				<g id="sootblow_svg__shape1057-869" transform="translate(7.826 -104.19)">
+					<path className="sootblow_svg__st12" d="M0 410.642h15.412v42.901H0z" />
+				</g>
+				<g id="sootblow_svg__shape1058-871" transform="rotate(-90 -47.962 382.344)">
+					<path className="sootblow_svg__st15" d="M0 438.132h15.412v15.412H0z" />
+					<text x={14.91} y={442.37} writingMode="tb-rl" className="sootblow_svg__st13">
+						{'A'}
+						<tspan dx="-1.2em" y="36.844em" className="sootblow_svg__st23">
+							{'H'}
+						</tspan>
+					</text>
+				</g>
+				<g id="sootblow_svg__shape718-875" transform="translate(26.649 -118.232)">
+					<path
+						d="M0 447.57a5.973 5.973 0 0111.95 0 5.973 5.973 0 11-11.95 0z"
+						className="sootblow_svg__st14"
+					/>
+				</g>
+				<g id="sootblow_svg__shape719-877" transform="translate(22.417 -130.68)">
+					<path className="sootblow_svg__st15" d="M0 446.457h20.409v7.087H0z" />
+					<text x={4.12} y={452.4} className="sootblow_svg__st16">
+						{'901'}
 					</text>
 				</g>
 			</g>
 		</svg>
 	);
-};
+}
 
 export default SvgSootblowTjAwarAwar;

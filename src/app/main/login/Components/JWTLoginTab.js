@@ -12,6 +12,8 @@ function JWTLoginTab(props) {
 	const dispatch = useDispatch();
 	const login = useSelector(({ auth }) => auth.login);
 
+	console.log('login', login);
+
 	const [isFormValid, setIsFormValid] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -104,10 +106,10 @@ function JWTLoginTab(props) {
 					color="primary"
 					className="w-full mx-auto mt-16 normal-case"
 					aria-label="LOG IN"
-					disabled={!isFormValid}
+					disabled={!isFormValid || login.loading}
 					value="legacy"
 				>
-					Login
+					{login.loading ? 'Please Wait' : 'Login'}
 				</Button>
 			</Formsy>
 		</div>

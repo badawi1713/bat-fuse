@@ -13,9 +13,9 @@ import {
 	Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import React, { useEffect } from 'react';
 import { ArrowBack } from '@material-ui/icons';
+import clsx from 'clsx';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -63,6 +63,18 @@ const createO2ControlBiasData = (parameter, value) => {
 	return { parameter, value };
 };
 
+const createSecondaryAirData = (parameter, value) => {
+	return { parameter, value };
+};
+
+// const createPrimaryAirControl = (parameter, value) => {
+// 	return { parameter, value };
+// };
+
+// const createLoad = (parameter, value) => {
+// 	return { parameter, value };
+// };
+
 const o2ControlBiasData = [
 	createO2ControlBiasData('Bias', 100),
 	createO2ControlBiasData('Current', 200),
@@ -71,6 +83,16 @@ const o2ControlBiasData = [
 	createO2ControlBiasData('O2 L', 500)
 ];
 
+const secondaryAirData = [
+	createSecondaryAirData('Bias', 0),
+	createSecondaryAirData('Current', 0),
+	createSecondaryAirData('Set Point', 0),
+	createSecondaryAirData('Windbox Delta Pressure R', 0),
+	createSecondaryAirData('Windbox Delta Pressure L', 0)
+];
+
+// const primaryAirControlData = [createPrimaryAirControl('', 0)];
+
 const createBurnerTiltData = (parameter, value) => {
 	return { parameter, value };
 };
@@ -78,11 +100,11 @@ const createBurnerTiltData = (parameter, value) => {
 const Combustion = () => {
 	const classes = useStyles();
 
-	const [masterControlStatus, setMasterControlStatus] = React.useState(false);
-	const [burnerTiltData, setBurnerTiltData] = React.useState([
+	const [masterControlStatus, setMasterControlStatus] = useState(false);
+	const [burnerTiltData, setBurnerTiltData] = useState([
 		createBurnerTiltData('Bias', Number(Math.random()).toFixed(2)),
 		createBurnerTiltData('Current', Number(Math.random()).toFixed(2)),
-		createBurnerTiltData('Demand', Number(Math.random()).toFixed(2)),
+		createBurnerTiltData('Set Point', Number(Math.random()).toFixed(2)),
 		createBurnerTiltData('Final SH Temperature', Number(Math.random()).toFixed(2)),
 		createBurnerTiltData('RH2 Temperature', Number(Math.random()).toFixed(2))
 	]);
@@ -199,7 +221,7 @@ const Combustion = () => {
 									variant="contained"
 									className={clsx('text-8 cursor-default', classes.statusButtonOff)}
 								>
-									Ready
+									Ready {/* NOT READY - MERAH*/}
 								</Button>
 							</Grid>
 						</Grid>
@@ -215,12 +237,12 @@ const Combustion = () => {
 								<Typography className="text-11">Manipulated Variable</Typography>
 							</Grid>
 							<Grid item container spacing={1}>
-								<Grid item xs={12} md={6}>
+								<Grid item xs={12} md={4}>
 									<TableContainer component={Paper} square>
 										<Table className={classes.table} size="small" aria-label="a dense table">
 											<TableHead>
 												<TableRow>
-													<TableCell className="text-10 py-6">O2 Control Bias</TableCell>
+													<TableCell className="text-10 py-6">O2 Control</TableCell>
 													<TableCell align="right" className="text-10 py-6">
 														Value
 													</TableCell>
@@ -241,7 +263,7 @@ const Combustion = () => {
 										</Table>
 									</TableContainer>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid item xs={12} md={4}>
 									<TableContainer component={Paper} square>
 										<Table className={classes.table} size="small" aria-label="a dense table">
 											<TableHead>
@@ -254,41 +276,6 @@ const Combustion = () => {
 											</TableHead>
 											<TableBody>
 												{burnerTiltData.map(row => (
-													<TableRow key={row.parameter}>
-														<TableCell component="th" scope="row" className="text-8 py-8">
-															{row.parameter}
-														</TableCell>
-														<TableCell align="right" className="text-8 py-8">
-															{row.value}
-														</TableCell>
-													</TableRow>
-												))}
-											</TableBody>
-										</Table>
-									</TableContainer>
-								</Grid>
-							</Grid>
-						</Grid>
-					</Grid>
-					<Grid item xs={12} className="p-0">
-						<Grid container spacing={1}>
-							<Grid item xs={12}>
-								<Typography className="text-11">Control Variable</Typography>
-							</Grid>
-							<Grid item container spacing={1}>
-								<Grid item xs={12} md={4}>
-									<TableContainer component={Paper} square>
-										<Table className={classes.table} size="small" aria-label="a dense table">
-											<TableHead>
-												<TableRow>
-													<TableCell className="text-10 py-6">Primary Air Control</TableCell>
-													<TableCell align="right" className="text-10 py-6">
-														Value
-													</TableCell>
-												</TableRow>
-											</TableHead>
-											<TableBody>
-												{o2ControlBiasData.map(row => (
 													<TableRow key={row.parameter}>
 														<TableCell component="th" scope="row" className="text-8 py-8">
 															{row.parameter}
@@ -316,7 +303,7 @@ const Combustion = () => {
 												</TableRow>
 											</TableHead>
 											<TableBody>
-												{burnerTiltData.map(row => (
+												{secondaryAirData.map(row => (
 													<TableRow key={row.parameter}>
 														<TableCell component="th" scope="row" className="text-8 py-8">
 															{row.parameter}
@@ -330,31 +317,102 @@ const Combustion = () => {
 										</Table>
 									</TableContainer>
 								</Grid>
-								<Grid item xs={12} md={4}>
-									<TableContainer component={Paper} square>
-										<Table className={classes.table} size="small" aria-label="a dense table">
-											<TableHead>
-												<TableRow>
-													<TableCell className="text-10 py-6">Load (MW)</TableCell>
-													<TableCell align="right" className="text-10 py-6">
-														Value
-													</TableCell>
-												</TableRow>
-											</TableHead>
-											<TableBody>
-												{burnerTiltData.map(row => (
-													<TableRow key={row.parameter}>
-														<TableCell component="th" scope="row" className="text-8 py-8">
-															{row.parameter}
-														</TableCell>
-														<TableCell align="right" className="text-8 py-8">
-															{row.value}
+							</Grid>
+						</Grid>
+					</Grid>
+					<Grid item xs={12} className="p-0">
+						<Grid container spacing={1}>
+							<Grid item md={8}>
+								<Grid item xs={12}>
+									<Typography className="text-11 mb-8">O2 Trend Chart</Typography>
+								</Grid>
+								<Grid item container>
+									<Grid item xs={12}>
+										<Paper className="p-8 h-full" square>
+											<Typography>Chart</Typography>
+										</Paper>
+									</Grid>
+								</Grid>
+							</Grid>
+							<Grid item md={4} container>
+								<Grid item xs={12} className="mb-8">
+									<Typography className="text-11">Constraints Variable</Typography>
+								</Grid>
+								<Grid item container xs={12}>
+									<Grid item xs={12} md={6}>
+										<TableContainer component={Paper} square>
+											<Table className={classes.table} size="small" aria-label="a dense table">
+												<TableHead>
+													<TableRow>
+														<TableCell className="text-10 py-6">Parameter</TableCell>
+														<TableCell align="right" className="text-10 py-6">
+															Status
 														</TableCell>
 													</TableRow>
-												))}
-											</TableBody>
-										</Table>
-									</TableContainer>
+												</TableHead>
+												<TableBody>
+													{secondaryAirData.map(row => (
+														<TableRow key={row.parameter}>
+															<TableCell
+																component="th"
+																scope="row"
+																className="text-8 py-8"
+															>
+																{row.parameter}
+															</TableCell>
+															<TableCell align="right" className="text-8 py-8">
+																<Button
+																	className={clsx(
+																		'text-6 p-0',
+																		classes.statusButtonOn
+																	)}
+																>
+																	Not Ready
+																</Button>
+															</TableCell>
+														</TableRow>
+													))}
+												</TableBody>
+											</Table>
+										</TableContainer>
+									</Grid>
+									<Grid item xs={12} md={6}>
+										<TableContainer component={Paper} square>
+											<Table className={classes.table} size="small" aria-label="a dense table">
+												<TableHead>
+													<TableRow>
+														<TableCell className="text-10 py-6">Parameter</TableCell>
+														<TableCell align="right" className="text-10 py-6">
+															Status
+														</TableCell>
+													</TableRow>
+												</TableHead>
+												<TableBody>
+													{secondaryAirData.map(row => (
+														<TableRow key={row.parameter}>
+															<TableCell
+																component="th"
+																scope="row"
+																className="text-8 py-8"
+															>
+																{row.parameter}
+															</TableCell>
+															<TableCell align="right" className="text-8 py-8">
+																<Button
+																	className={clsx(
+																		'text-6 p-0',
+																		classes.statusButtonOff
+																	)}
+																>
+																	Ready
+																</Button>
+															</TableCell>
+														</TableRow>
+													))}
+												</TableBody>
+											</Table>
+										</TableContainer>
+									</Grid>
 								</Grid>
 							</Grid>
 						</Grid>
