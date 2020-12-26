@@ -251,7 +251,7 @@ const Sootblow = () => {
 					<Grid item xs={12} md={9} className="md:h-full p-0">
 						<Paper className="md:h-full py-5 px-10 my-0" square>
 							<center>
-								<SvgSootblowTjAwarAwar colorid201={colorId201.color} width="90%" height="100%" />
+								<SvgSootblowTjAwarAwar colorid201={colorId201.color} width="92%" height="100%" />
 							</center>
 						</Paper>
 					</Grid>

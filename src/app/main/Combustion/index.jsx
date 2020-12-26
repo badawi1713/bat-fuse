@@ -17,6 +17,7 @@ import { ArrowBack } from '@material-ui/icons';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { O2TrendChart } from './Components';
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%'
@@ -321,24 +322,24 @@ const Combustion = () => {
 						</Grid>
 					</Grid>
 					<Grid item xs={12} className="p-0">
-						<Grid container spacing={1}>
-							<Grid item md={8}>
+						<Grid container spacing={1} className="h-full">
+							<Grid item xs={12} md={8} className="h-full">
 								<Grid item xs={12}>
 									<Typography className="text-11 mb-8">O2 Trend Chart</Typography>
 								</Grid>
-								<Grid item container>
-									<Grid item xs={12}>
+								<Grid item xs={12} container className="h-full">
+									<Grid item xs={12} className="h-full">
 										<Paper className="p-8 h-full" square>
-											<Typography>Chart</Typography>
+											<O2TrendChart />
 										</Paper>
 									</Grid>
 								</Grid>
 							</Grid>
-							<Grid item md={4} container>
-								<Grid item xs={12} className="mb-8">
+							<Grid item md={4} container className="h-full">
+								<Grid item xs={12} className="mb-8 h-full">
 									<Typography className="text-11">Constraints Variable</Typography>
 								</Grid>
-								<Grid item container xs={12}>
+								<Grid item container xs={12} className="h-full">
 									<Grid item xs={12} md={6}>
 										<TableContainer component={Paper} square>
 											<Table className={classes.table} size="small" aria-label="a dense table">
