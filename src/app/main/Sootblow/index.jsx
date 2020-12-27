@@ -13,11 +13,13 @@ import {
 	Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { ArrowBack } from '@material-ui/icons';
 import clsx from 'clsx';
 import React, { useEffect } from 'react';
-import { ArrowBack } from '@material-ui/icons';
+import { shallowEqual, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
+
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%'
@@ -60,56 +62,34 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const createParameterData = (parameter, value) => {
-	return { parameter, value };
+const createParameterData = (label, value) => {
+	return { label, value };
 };
 
-const createSequenceData = (sequence, value) => {
-	return { sequence, value };
+const createSequenceData = (label, value) => {
+	return { label, value };
 };
 
 const Sootblow = () => {
 	const classes = useStyles();
 
+	const { sootblowData } = useSelector(
+		({ sootblowReducer: { sootblowData } }) => ({
+			sootblowData
+		}),
+		shallowEqual
+	);
+
 	const [masterControlStatus, setMasterControlStatus] = React.useState(false);
 
-	const [sequenceData, setSequenceData] = React.useState([
-		createSequenceData('Sequence-1', 2),
-		createSequenceData('Sequence-2', 3),
-		createSequenceData('Sequence-3', 0),
-		createSequenceData('Sequence-4', 6),
-		createSequenceData('Sequence-5', 7),
-		createSequenceData('Sequence-6', 8),
-		createSequenceData('Sequence-7', 9),
-		createSequenceData('Sequence-8', 0),
-		createSequenceData('Sequence-9', 0)
-	]);
+	const [sequenceData, setSequenceData] = React.useState([]);
 
-	const [parameterData, setParameterData] = React.useState([
-		createParameterData('Parameter Description 1', 100),
-		createParameterData('Parameter Description 2', 200),
-		createParameterData('Parameter Description 3', 300),
-		createParameterData('Parameter Description 4', 400),
-		createParameterData('Parameter Description 5', 500),
-		createParameterData('Parameter Description 6', 600),
-		createParameterData('Parameter Description 7', 700),
-		createParameterData('Parameter Description 8', 800),
-		createParameterData('Parameter Description 9', 900)
-	]);
+	const [parameterData, setParameterData] = React.useState([]);
 
-	const [colorId201, setColorId201] = React.useState({ value: 0, color: '#fff000' });
+	const colorId101 = React.useState('#ff0000');
 
 	useEffect(() => {
 		const allTableValueHandler = setInterval(() => {
-			const { value } = colorId201;
-			const color =
-				value === 0
-					? '#bfbfbf'
-					: value >= 1 && value < 4
-					? '#ff0000'
-					: value >= 4 && value < 7
-					? '#fff000'
-					: '#00b050';
 			setSequenceData([
 				createSequenceData('Sequence-1', Math.floor(Math.random() * 10)),
 				createSequenceData('Sequence-2', Math.floor(Math.random() * 10)),
@@ -132,14 +112,10 @@ const Sootblow = () => {
 				createParameterData('Parameter Description 8', Number(Math.random()).toFixed(2)),
 				createParameterData('Parameter Description 9', Number(Math.random()).toFixed(2))
 			]);
-			setColorId201({
-				value: Math.floor(Math.random() * 10),
-				color: color
-			});
 		}, 15000);
 
 		return () => clearInterval(allTableValueHandler); //This is important
-	}, [colorId201]);
+	}, []);
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -251,7 +227,7 @@ const Sootblow = () => {
 					<Grid item xs={12} md={9} className="md:h-full p-0">
 						<Paper className="md:h-full py-5 px-10 my-0" square>
 							<center>
-								<SvgSootblowTjAwarAwar colorid201={colorId201.color} width="92%" height="100%" />
+								<SvgSootblowTjAwarAwar colorid101={colorId101} width="92%" height="100%" />
 							</center>
 						</Paper>
 					</Grid>
@@ -268,10 +244,10 @@ const Sootblow = () => {
 										</TableRow>
 									</TableHead>
 									<TableBody>
-										{parameterData.map(row => (
-											<TableRow key={row.parameter}>
+										{parameterData.map((row, index) => (
+											<TableRow key={index}>
 												<TableCell component="th" scope="row" className="text-8 py-4">
-													{row.parameter}
+													{row.label}
 												</TableCell>
 												<TableCell align="right" className="text-8 py-4">
 													{row.value}
@@ -294,10 +270,10 @@ const Sootblow = () => {
 										</TableRow>
 									</TableHead>
 									<TableBody>
-										{sequenceData.map(row => (
-											<TableRow key={row.sequence}>
+										{sequenceData.map((row, index) => (
+											<TableRow key={index}>
 												<TableCell component="th" scope="row" className="text-8 py-4">
-													{row.sequence}
+													{row.label}
 												</TableCell>
 												<TableCell align="right" className="text-8 py-4">
 													{row.value}

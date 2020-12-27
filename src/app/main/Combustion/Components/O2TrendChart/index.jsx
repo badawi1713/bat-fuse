@@ -86,11 +86,10 @@ const dataSource = {
 		paletteColors: '#00ff37',
 		style: {
 			text: {
-				fill: '#fff'
+				fill: '#fff',
+				'font-size': 9
 			},
-			'text:hover': {
-				fill: '#ff0000'
-			},
+
 			canvas: {
 				'fill-opacity': 0
 			},
