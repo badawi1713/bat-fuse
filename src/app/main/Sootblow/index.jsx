@@ -67,8 +67,8 @@ const createParameterData = (label, value) => {
 	return { label, value };
 };
 
-const createSequenceData = (label, value) => {
-	return { label, value };
+const createSequenceData = (label, value, description) => {
+	return { label, value, description };
 };
 
 const Sootblow = () => {
@@ -99,7 +99,9 @@ const Sootblow = () => {
 	}, [dispatch]);
 
 	const sequenceData =
-		(sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value))) || [];
+		(sootblowData &&
+			sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description))) ||
+		[];
 	const parameterData =
 		(sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value))) || [];
 

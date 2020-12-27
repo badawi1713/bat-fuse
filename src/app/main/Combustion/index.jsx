@@ -68,10 +68,6 @@ const createSecondaryAirData = (parameter, value) => {
 	return { parameter, value };
 };
 
-const createTableData = (label, value) => {
-	return { label, value };
-};
-
 // const createPrimaryAirControl = (parameter, value) => {
 // 	return { parameter, value };
 // };
@@ -96,18 +92,18 @@ const secondaryAirData = [
 	createSecondaryAirData('Windbox Delta Pressure L', 0)
 ];
 
-const firstConstraints = [
-	createTableData('Constraints 1', 0),
-	createTableData('Constraints 2', 0),
-	createTableData('Constraints 3', 0),
-	createTableData('Constraints 4', 0),
-	createTableData('Constraints 5', 0),
-	createTableData('Constraints 6', 0),
-	createTableData('Constraints 7', 0),
-	createTableData('Constraints 8', 0),
-	createTableData('Constraints 9', 0),
-	createTableData('Constraints 10', 0)
-];
+// const firstConstraints = [
+// 	createTableData('Constraints 1', 0),
+// 	createTableData('Constraints 2', 0),
+// 	createTableData('Constraints 3', 0),
+// 	createTableData('Constraints 4', 0),
+// 	createTableData('Constraints 5', 0),
+// 	createTableData('Constraints 6', 0),
+// 	createTableData('Constraints 7', 0),
+// 	createTableData('Constraints 8', 0),
+// 	createTableData('Constraints 9', 0),
+// 	createTableData('Constraints 10', 0)
+// ];
 
 // const primaryAirControlData = [createPrimaryAirControl('', 0)];
 
