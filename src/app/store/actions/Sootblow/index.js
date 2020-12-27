@@ -1,6 +1,7 @@
 import { errorcallback } from '../../global';
 import Axios from 'axios';
 import { GET_SOOTBLOW_DATA_SUCCESS } from 'app/store/constants';
+import jwtService from 'app/services/jwtService';
 
 export const getSootblowData = () => {
 	return async dispatch => {

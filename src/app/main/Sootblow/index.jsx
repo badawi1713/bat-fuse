@@ -14,9 +14,10 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack } from '@material-ui/icons';
+import { getSootblowData } from 'app/store/actions';
 import clsx from 'clsx';
 import React, { useEffect } from 'react';
-import { shallowEqual, useSelector } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
 
@@ -72,6 +73,7 @@ const createSequenceData = (label, value) => {
 
 const Sootblow = () => {
 	const classes = useStyles();
+	const dispatch = useDispatch();
 
 	const { sootblowData } = useSelector(
 		({ sootblowReducer: { sootblowData } }) => ({
@@ -82,40 +84,24 @@ const Sootblow = () => {
 
 	const [masterControlStatus, setMasterControlStatus] = React.useState(false);
 
-	const [sequenceData, setSequenceData] = React.useState([]);
-
-	const [parameterData, setParameterData] = React.useState([]);
-
-	const colorId101 = React.useState('#ff0000');
+	useEffect(() => {
+		dispatch(getSootblowData());
+		// eslint-disable-next-line
+	}, []);
 
 	useEffect(() => {
 		const allTableValueHandler = setInterval(() => {
-			setSequenceData([
-				createSequenceData('Sequence-1', Math.floor(Math.random() * 10)),
-				createSequenceData('Sequence-2', Math.floor(Math.random() * 10)),
-				createSequenceData('Sequence-3', Math.floor(Math.random() * 10)),
-				createSequenceData('Sequence-4', Math.floor(Math.random() * 10)),
-				createSequenceData('Sequence-5', Math.floor(Math.random() * 10)),
-				createSequenceData('Sequence-6', Math.floor(Math.random() * 10)),
-				createSequenceData('Sequence-7', Math.floor(Math.random() * 10)),
-				createSequenceData('Sequence-8', Math.floor(Math.random() * 10)),
-				createSequenceData('Sequence-9', Math.floor(Math.random() * 10))
-			]);
-			setParameterData([
-				createParameterData('Parameter Description 1', Number(Math.random()).toFixed(2)),
-				createParameterData('Parameter Description 2', Number(Math.random()).toFixed(2)),
-				createParameterData('Parameter Description 3', Number(Math.random()).toFixed(2)),
-				createParameterData('Parameter Description 4', Number(Math.random()).toFixed(2)),
-				createParameterData('Parameter Description 5', Number(Math.random()).toFixed(2)),
-				createParameterData('Parameter Description 6', Number(Math.random()).toFixed(2)),
-				createParameterData('Parameter Description 7', Number(Math.random()).toFixed(2)),
-				createParameterData('Parameter Description 8', Number(Math.random()).toFixed(2)),
-				createParameterData('Parameter Description 9', Number(Math.random()).toFixed(2))
-			]);
-		}, 15000);
+			dispatch(getSootblowData());
+		}, 2000);
 
 		return () => clearInterval(allTableValueHandler); //This is important
-	}, []);
+		// eslint-disable-next-line
+	}, [dispatch]);
+
+	const sequenceData =
+		(sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value))) || [];
+	const parameterData =
+		(sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value))) || [];
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -227,7 +213,7 @@ const Sootblow = () => {
 					<Grid item xs={12} md={9} className="md:h-full p-0">
 						<Paper className="md:h-full py-5 px-10 my-0" square>
 							<center>
-								<SvgSootblowTjAwarAwar colorid101={colorId101} width="92%" height="100%" />
+								<SvgSootblowTjAwarAwar width="92%" height="100%" />
 							</center>
 						</Paper>
 					</Grid>
@@ -264,8 +250,11 @@ const Sootblow = () => {
 									<TableHead>
 										<TableRow>
 											<TableCell className="text-10 py-0">Sequences</TableCell>
-											<TableCell align="right" className="text-10 py-0">
+											<TableCell align="center" className="text-10 py-0">
 												Zone
+											</TableCell>
+											<TableCell align="right" className="text-10 py-0">
+												Info
 											</TableCell>
 										</TableRow>
 									</TableHead>
@@ -275,8 +264,11 @@ const Sootblow = () => {
 												<TableCell component="th" scope="row" className="text-8 py-4">
 													{row.label}
 												</TableCell>
-												<TableCell align="right" className="text-8 py-4">
+												<TableCell align="center" className="text-8 py-4">
 													{row.value}
+												</TableCell>
+												<TableCell align="right" className="text-8 py-4">
+													{row.description}
 												</TableCell>
 											</TableRow>
 										))}

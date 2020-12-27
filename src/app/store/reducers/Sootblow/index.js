@@ -7,7 +7,10 @@ const initialState = {
 const sootblowReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case GET_SOOTBLOW_DATA_SUCCESS:
-			return Object.assign({}, state, action.payload);
+			return {
+				...state,
+				sootblowData: action.payload.data
+			};
 		default:
 			return {
 				state
