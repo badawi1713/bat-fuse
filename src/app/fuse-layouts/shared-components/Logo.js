@@ -34,7 +34,7 @@ function Logo() {
 			<img className="logo-icon" src="assets/images/logos/logo-pjb.svg" alt="logo" />
 			<Typography className="text-12 font-bold mx-10 font-light logo-text" color="inherit">
 				BOILER AUTO TUNING <br />
-				PLTU TANJUNG AWAR-AWAR (UNIT 1)
+				PLTU TANJUNG AWAR-AWAR (UNIT 2)
 			</Typography>
 		</div>
 	);
