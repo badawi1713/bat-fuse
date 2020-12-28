@@ -1,22 +1,10 @@
-import { errorcallback } from '../../global';
-import Axios from 'axios';
 import { GET_SOOTBLOW_DATA_SUCCESS } from 'app/store/constants';
-import jwtService from 'app/services/jwtService';
+import { ApiGetRequest } from '../../api-configs';
+import { errorcallback } from '../../global';
 
 export const getSootblowData = () => {
 	return async dispatch => {
-		const response = await Axios.get('http://192.168.1.143:8081/service/bat/sootblow/indicator', {
-			headers: {
-				Accept: 'application/json',
-				'Access-Control-Allow-Origin': 'Authorization',
-				'Content-Type': 'application/json',
-				'X-Requested-With': 'XMLHttpRequest',
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			},
-			mode: 'no-cors',
-			credentials: true,
-			crossdomain: true
-		});
+		const response = await ApiGetRequest('/service/bat/sootblow/indicator', dispatch);
 		if (response.error) {
 			errorcallback(dispatch, response.error);
 		} else {

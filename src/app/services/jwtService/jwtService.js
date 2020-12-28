@@ -62,11 +62,20 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithEmailAndPassword = (username, password) => {
 		return new Promise((resolve, reject) => {
 			axios
-				.post(`https://icore-tools.ptpjb.com/service/identity/auth`, {
+				.post(`http://10.7.1.110:8081/service/bat/auth`, {
 					data: {
 						username,
 						password
-					}
+					},
+					headers: {
+						Accept: 'application/json',
+						'Access-Control-Allow-Origin': 'Authorization',
+						'Content-Type': 'application/json',
+						'X-Requested-With': 'XMLHttpRequest'
+					},
+					mode: 'no-cors',
+					credentials: true,
+					crossdomain: true
 				})
 				.then(
 					response => {
@@ -93,10 +102,17 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithToken = () => {
 		return new Promise((resolve, reject) => {
 			axios
-				.get(`https://icore-tools.ptpjb.com/service/identity/validate/access-token`, {
+				.get(`http://10.7.1.110:8081/service/bat/validate/access-token`, {
 					headers: {
-						Authorization: `Bearer ${this.getAccessToken()}`
-					}
+						Authorization: `Bearer ${this.getAccessToken()}`,
+						Accept: 'application/json',
+						'Access-Control-Allow-Origin': 'Authorization',
+						'Content-Type': 'application/json',
+						'X-Requested-With': 'XMLHttpRequest'
+					},
+					mode: 'no-cors',
+					credentials: true,
+					crossdomain: true
 				})
 				.then(response => {
 					if (response.data.object.user) {
