@@ -91,7 +91,7 @@ const Sootblow = () => {
 	useEffect(() => {
 		const allTableValueHandler = setInterval(() => {
 			dispatch(getSootblowData());
-		}, 2000);
+		}, 10000);
 
 		return () => clearInterval(allTableValueHandler); //This is important
 		// eslint-disable-next-line
