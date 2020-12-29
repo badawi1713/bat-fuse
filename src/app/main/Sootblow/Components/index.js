@@ -1,6 +1,6 @@
 import MainLeftSchema from './MainLeftSchema';
 import MainRightSchema from './MainRightSchema';
 import MainBottomSchema from './MainBottomSchema';
-import SvgSootblowTjAwarAwar from './SootblowSchema/SvgSootblowTjAwarAwar';
+import SvgSootblowTenayan from './SootblowSchema/SvgSootblowTenayan';
 
-export { MainLeftSchema, MainRightSchema, MainBottomSchema, SvgSootblowTjAwarAwar };
+export { MainLeftSchema, MainRightSchema, MainBottomSchema, SvgSootblowTenayan };

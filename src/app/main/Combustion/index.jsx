@@ -148,7 +148,7 @@ const Combustion = () => {
 
 	return (
 		<Container className="py-16 h-full">
-			<Grid container spacing={1}>
+			<Grid container spacing={1} className="h-full">
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
 					<Grid item container xs={12} md={3} spacing={2} alignItems="center">
