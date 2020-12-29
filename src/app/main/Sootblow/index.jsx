@@ -99,11 +99,9 @@ const Sootblow = () => {
 	}, [dispatch]);
 
 	const sequenceData =
-		(sootblowData &&
-			sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description))) ||
-		[];
+		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
 	const parameterData =
-		(sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value))) || [];
+		sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value));
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -223,7 +221,7 @@ const Sootblow = () => {
 								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
 									<Typography className="text-8">Loading ... </Typography>
 								</Paper>
-							) : parameterData.length !== 0 ? (
+							) : parameterData && parameterData.length !== 0 ? (
 								<TableContainer component={Paper} className="md:h-full" square>
 									<Table className={classes.table} size="small" aria-label="a dense table">
 										<TableHead>
@@ -255,11 +253,7 @@ const Sootblow = () => {
 							)}
 						</Grid>
 						<Grid item className="w-full">
-							{!sequenceData ? (
-								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
-									<Typography className="text-8">Loading ... </Typography>
-								</Paper>
-							) : sequenceData.length !== 0 ? (
+							{sequenceData && sequenceData.length !== 0 ? (
 								<TableContainer component={Paper} className="md:h-full" square>
 									<Table className={classes.table} size="small" aria-label="a dense table">
 										<TableHead>
