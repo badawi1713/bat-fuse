@@ -115,7 +115,7 @@ const Sootblow = () => {
 
 	return (
 		<Container className="py-16 h-full">
-			<Grid container spacing={1}>
+			<Grid container spacing={1} className="h-full">
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
 					<Grid item container xs={12} md={3} spacing={2} alignItems="center">
@@ -213,10 +213,8 @@ const Sootblow = () => {
 				{/* Main Content */}
 				<Grid item container xs={12} justify="space-between" className="w-full" alignItems="center" spacing={1}>
 					<Grid item xs={12} md={9} className="md:h-full p-0">
-						<Paper className="md:h-full py-5 px-10 my-0" square>
-							<center>
-								<SvgSootblowTjAwarAwar width="92%" height="100%" />
-							</center>
+						<Paper className="md:h-full py-5 px-10 my-0 flex justify-center aligns-center" square>
+							<SvgSootblowTjAwarAwar width="92%" height="100%" />
 						</Paper>
 					</Grid>
 					<Grid item xs={12} md={3} container className="md:h-full w-full p-0">
