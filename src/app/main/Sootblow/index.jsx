@@ -86,13 +86,12 @@ const Sootblow = () => {
 
 	useEffect(() => {
 		dispatch(getSootblowData());
-		// eslint-disable-next-line
-	}, []);
+	}, [dispatch]);
 
 	useEffect(() => {
 		const allTableValueHandler = setInterval(() => {
 			dispatch(getSootblowData());
-		}, 2000);
+		}, 10000);
 
 		return () => clearInterval(allTableValueHandler); //This is important
 		// eslint-disable-next-line
@@ -233,16 +232,17 @@ const Sootblow = () => {
 											</TableRow>
 										</TableHead>
 										<TableBody>
-											{parameterData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell component="th" scope="row" className="text-8 py-4">
-														{row.label}
-													</TableCell>
-													<TableCell align="right" className="text-8 py-4">
-														{row.value}
-													</TableCell>
-												</TableRow>
-											))}
+											{parameterData &&
+												parameterData.map((row, index) => (
+													<TableRow key={index}>
+														<TableCell component="th" scope="row" className="text-8 py-4">
+															{row.label}
+														</TableCell>
+														<TableCell align="right" className="text-8 py-4">
+															{row.value}
+														</TableCell>
+													</TableRow>
+												))}
 										</TableBody>
 									</Table>
 								</TableContainer>
@@ -253,7 +253,11 @@ const Sootblow = () => {
 							)}
 						</Grid>
 						<Grid item className="w-full">
-							{sequenceData && sequenceData.length !== 0 ? (
+							{!sequenceData ? (
+								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
+									<Typography className="text-8">Loading ... </Typography>
+								</Paper>
+							) : sequenceData && sequenceData.length !== 0 ? (
 								<TableContainer component={Paper} className="md:h-full" square>
 									<Table className={classes.table} size="small" aria-label="a dense table">
 										<TableHead>
@@ -268,19 +272,20 @@ const Sootblow = () => {
 											</TableRow>
 										</TableHead>
 										<TableBody>
-											{sequenceData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell component="th" scope="row" className="text-8 py-4">
-														{row.label}
-													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
-														{row.value}
-													</TableCell>
-													<TableCell align="right" className="text-8 py-4">
-														{row.value === 0 ? '-' : row.description}
-													</TableCell>
-												</TableRow>
-											))}
+											{sequenceData &&
+												sequenceData.map((row, index) => (
+													<TableRow key={index}>
+														<TableCell component="th" scope="row" className="text-8 py-4">
+															{row.label}
+														</TableCell>
+														<TableCell align="center" className="text-8 py-4">
+															{row.value}
+														</TableCell>
+														<TableCell align="right" className="text-8 py-4">
+															{row.value === 0 ? '-' : row.description}
+														</TableCell>
+													</TableRow>
+												))}
 										</TableBody>
 									</Table>
 								</TableContainer>
