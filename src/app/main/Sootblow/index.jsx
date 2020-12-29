@@ -88,16 +88,14 @@ const Sootblow = () => {
 	useEffect(() => {
 		const allTableValueHandler = setInterval(() => {
 			dispatch(getSootblowData());
-		}, 2000);
+		}, 10000);
 
 		return () => clearInterval(allTableValueHandler); //This is important
 		// eslint-disable-next-line
 	}, [dispatch]);
 
 	const sequenceData =
-		(sootblowData &&
-			sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description))) ||
-		[];
+		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -213,20 +211,32 @@ const Sootblow = () => {
 					</Grid>
 					<Grid item xs={12} md={3} container className="md:h-full p-0">
 						<Grid item className="w-full mb-8">
-							<Paper
-								className="w-full h-full p-16 flex md:flex-col md:justify-center items-center flex-row justify-between "
-								square
-							>
-								<Typography className="text-12 text-center md:text-20 mb-2">Timer</Typography>
-								<Typography className="text-10 text-center md:text-18">300 s</Typography>
-							</Paper>
+							{!sootblowData ? (
+								<Paper
+									className="w-full h-full p-16 md:p-12 flex md:flex-col items-center flex-row justify-center "
+									square
+								>
+									<Typography className="text-8 text-center ">Loading ... </Typography>
+								</Paper>
+							) : (
+								<Paper
+									className="w-full h-full p-16 md:p-12 flex md:flex-col md:justify-between items-center flex-row justify-between "
+									square
+								>
+									<Typography className="text-12 text-center ">Timer</Typography>
+									<Typography className="text-12 text-center md:text-24 text-blue-300">
+										{sootblowData && sootblowData.parameter && sootblowData.parameter[0].value}
+									</Typography>
+									<Typography className="hidden md:block" />
+								</Paper>
+							)}
 						</Grid>
 						<Grid item className="w-full">
 							{!sequenceData ? (
 								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
 									<Typography className="text-8">Loading ... </Typography>
 								</Paper>
-							) : sequenceData.length !== 0 ? (
+							) : sequenceData && sequenceData.length !== 0 ? (
 								<TableContainer component={Paper} className="md:h-full" square>
 									<Table className={classes.table} size="small" aria-label="a dense table">
 										<TableHead>
@@ -235,21 +245,22 @@ const Sootblow = () => {
 													Zone
 												</TableCell>
 												<TableCell align="center" className="text-12 py-auto">
-													Info
+													Code Area
 												</TableCell>
 											</TableRow>
 										</TableHead>
 										<TableBody>
-											{sequenceData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell align="center" scope="row" className="text-10 py-6">
-														{row.label}
-													</TableCell>
-													<TableCell align="center" className="text-10 py-6">
-														{row.value === 0 ? '-' : row.description}
-													</TableCell>
-												</TableRow>
-											))}
+											{sequenceData &&
+												sequenceData.map((row, index) => (
+													<TableRow key={index}>
+														<TableCell align="center" scope="row" className="text-10 py-6">
+															{row.value}
+														</TableCell>
+														<TableCell align="center" className="text-10 py-6">
+															{row.description}
+														</TableCell>
+													</TableRow>
+												))}
 										</TableBody>
 									</Table>
 								</TableContainer>
