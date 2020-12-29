@@ -1,6 +1,43 @@
 import * as React from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
 
-function SvgSootblowTenayan(props) {
+const SvgSootblowTenayan = props => {
+	const { sootblowData } = useSelector(
+		({ sootblowReducer: { sootblowData } }) => ({
+			sootblowData
+		}),
+		shallowEqual
+	);
+
+	const indicatorC01 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C01) || '#FFF000';
+	const indicatorC02 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C02) || '#FFF000';
+	const indicatorC03 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C03) || '#FFF000';
+	const indicatorC04 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C04) || '#FFF000';
+
+	const indicatorEL01 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL01) || '#FFF000';
+	const indicatorEL02 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL02) || '#FFF000';
+	const indicatorEL03 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL03) || '#FFF000';
+	const indicatorEL04 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL04) || '#FFF000';
+	const indicatorEL05 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL05) || '#FFF000';
+
+	const indicatorEL06 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL06) || '#FFF000';
+	const indicatorEL07 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL07) || '#FFF000';
+	const indicatorEL08 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL08) || '#FFF000';
+	const indicatorEL09 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL09) || '#FFF000';
+	const indicatorEL10 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL10) || '#FFF000';
+
+	const indicatorEL11 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL11) || '#FFF000';
+	const indicatorEL12 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL12) || '#FFF000';
+	const indicatorEL13 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL13) || '#FFF000';
+	const indicatorEL14 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL14) || '#FFF000';
+	const indicatorEL15 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL15) || '#FFF000';
+
+	const indicatorEL16 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL16) || '#FFF000';
+	const indicatorEL17 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL17) || '#FFF000';
+	const indicatorEL18 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL18) || '#FFF000';
+	const indicatorEL19 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL19) || '#FFF000';
+	const indicatorEL20 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL20) || '#FFF000';
+
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -360,7 +397,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape265-166" transform="translate(625.561 -318.761)">
 					<path
 						d="M0 335.06a5.102 5.102 0 0110.2 0 5.102 5.102 0 11-10.2 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorC02}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape266-168" transform="translate(620.889 -329.329)">
@@ -381,7 +419,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape271-176" transform="translate(625.973 -289.675)">
 					<path
 						d="M0 335.06a5.102 5.102 0 1110.2 0 5.102 5.102 0 01-10.2 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorC04}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape272-178" transform="translate(620.889 -300.243)">
@@ -402,7 +441,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape275-186" transform="translate(626.528 -260.382)">
 					<path
 						d="M0 335.06a5.102 5.102 0 1110.2 0 5.102 5.102 0 01-10.2 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL02}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape276-188" transform="translate(621.922 -270.95)">
@@ -414,7 +454,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape279-191" transform="translate(626.528 -231.638)">
 					<path
 						d="M0 335.06a5.102 5.102 0 0110.2 0 5.102 5.102 0 11-10.2 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL04}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape280-193" transform="translate(621.722 -242.205)">
@@ -435,7 +476,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape283-201" transform="translate(628.474 -204.945)">
 					<path
 						d="M0 335.55a4.609 4.609 0 019.22 0 4.609 4.609 0 11-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL08}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape284-203" transform="translate(623.174 -214.525)">
@@ -456,7 +498,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape287-211" transform="translate(629.433 -175.931)">
 					<path
 						d="M0 335.55a4.609 4.609 0 119.22 0 4.609 4.609 0 01-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL12}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape288-213" transform="translate(624.216 -185.512)">
@@ -477,7 +520,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape291-221" transform="translate(629.433 -147.585)">
 					<path
 						d="M0 335.55a4.609 4.609 0 119.22 0 4.609 4.609 0 01-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL16}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape292-223" transform="translate(624.3 -157.166)">
@@ -489,7 +533,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape293-226" transform="translate(586.061 -204.945)">
 					<path
 						d="M0 335.55a4.609 4.609 0 019.22 0 4.609 4.609 0 11-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL06}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape294-228" transform="translate(580.838 -214.525)">
@@ -501,7 +546,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape295-231" transform="translate(586.061 -175.931)">
 					<path
 						d="M0 335.55a4.609 4.609 0 019.22 0 4.609 4.609 0 11-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL10}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape296-233" transform="translate(580.754 -185.512)">
@@ -513,7 +559,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape297-236" transform="translate(586.061 -147.585)">
 					<path
 						d="M0 335.55a4.609 4.609 0 019.22 0 4.609 4.609 0 11-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL14}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape298-238" transform="translate(580.754 -157.166)">
@@ -525,7 +572,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape299-241" transform="translate(629.433 -119.239)">
 					<path
 						d="M0 335.55a4.609 4.609 0 119.22 0 4.609 4.609 0 01-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL20}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape300-243" transform="translate(624.216 -128.819)">
@@ -537,7 +585,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape301-246" transform="translate(586.061 -119.239)">
 					<path
 						d="M0 335.55a4.609 4.609 0 019.22 0 4.609 4.609 0 11-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL18}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape302-248" transform="translate(580.754 -128.819)">
@@ -739,7 +788,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape352-382" transform="matrix(-1 0 0 1 53.562 -319.953)">
 					<path
 						d="M0 335.65a4.506 4.506 0 119.01 0 4.506 4.506 0 01-9.01 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorC01}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape353-384" transform="matrix(-1 0 0 1 58.984 -329.329)">
@@ -760,7 +810,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape356-392" transform="matrix(-1 0 0 1 53.15 -290.868)">
 					<path
 						d="M0 335.65a4.506 4.506 0 019.01 0 4.506 4.506 0 11-9.01 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorC03}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape357-394" transform="matrix(-1 0 0 1 58.655 -300.243)">
@@ -781,7 +832,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape360-402" transform="matrix(-1 0 0 1 52.55 -261.62)">
 					<path
 						d="M0 335.67a4.484 4.484 0 118.97 0 4.484 4.484 0 01-8.97 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL01}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape361-404" transform="matrix(-1 0 0 1 58.1 -270.95)">
@@ -793,7 +845,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape362-407" transform="matrix(-1 0 0 1 52.55 -232.875)">
 					<path
 						d="M0 335.67a4.484 4.484 0 118.97 0 4.484 4.484 0 01-8.97 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL03}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape363-409" transform="matrix(-1 0 0 1 58.017 -242.205)">
@@ -814,7 +867,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape366-417" transform="matrix(-1 0 0 1 51.59 -205.196)">
 					<path
 						d="M0 335.67a4.484 4.484 0 118.97 0 4.484 4.484 0 01-8.97 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL05}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape367-419" transform="matrix(-1 0 0 1 57.058 -214.525)">
@@ -835,7 +889,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape370-427" transform="matrix(-1 0 0 1 51.59 -175.223)">
 					<path
 						d="M0 335.19a4.963 4.963 0 119.93 0 4.963 4.963 0 01-9.93 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL09}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape371-429" transform="matrix(-1 0 0 1 56.599 -185.512)">
@@ -856,7 +911,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape374-437" transform="matrix(-1 0 0 1 51.024 -147.443)">
 					<path
 						d="M0 335.48a4.68 4.68 0 019.36 0 4.68 4.68 0 11-9.36 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL13}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape375-439" transform="matrix(-1 0 0 1 56.265 -157.166)">
@@ -868,7 +924,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape376-442" transform="matrix(-1 0 0 1 94.254 -204.948)">
 					<path
 						d="M0 335.55a4.607 4.607 0 119.21 0 4.607 4.607 0 11-9.21 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL07}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape377-444" transform="matrix(-1 0 0 1 99.728 -214.525)">
@@ -880,7 +937,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape378-447" transform="matrix(-1 0 0 1 94.254 -175.935)">
 					<path
 						d="M0 335.55a4.607 4.607 0 119.21 0 4.607 4.607 0 01-9.21 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL11}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape379-449" transform="matrix(-1 0 0 1 99.56 -185.512)">
@@ -892,7 +950,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape380-452" transform="matrix(-1 0 0 1 94.254 -147.585)">
 					<path
 						d="M0 335.55a4.609 4.609 0 119.22 0 4.609 4.609 0 01-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL15}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape381-454" transform="matrix(-1 0 0 1 99.728 -157.166)">
@@ -904,7 +963,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape382-457" transform="matrix(-1 0 0 1 51.024 -119.097)">
 					<path
 						d="M0 335.48a4.68 4.68 0 019.36 0 4.68 4.68 0 11-9.36 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL17}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape383-459" transform="matrix(-1 0 0 1 56.349 -128.819)">
@@ -916,7 +976,8 @@ function SvgSootblowTenayan(props) {
 				<g id="sootblow-tenayan_svg__shape384-462" transform="matrix(-1 0 0 1 94.254 -119.239)">
 					<path
 						d="M0 335.55a4.609 4.609 0 019.22 0 4.609 4.609 0 11-9.22 0z"
-						className="sootblow-tenayan_svg__st19"
+						stroke={'#000'}
+						fill={indicatorEL19}
 					/>
 				</g>
 				<g id="sootblow-tenayan_svg__shape385-464" transform="matrix(-1 0 0 1 99.56 -128.819)">
@@ -928,6 +989,6 @@ function SvgSootblowTenayan(props) {
 			</g>
 		</svg>
 	);
-}
+};
 
 export default SvgSootblowTenayan;

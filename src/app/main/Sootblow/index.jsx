@@ -63,10 +63,6 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const createParameterData = (label, value) => {
-	return { label, value };
-};
-
 const createSequenceData = (label, value, description) => {
 	return { label, value, description };
 };
@@ -102,8 +98,6 @@ const Sootblow = () => {
 		(sootblowData &&
 			sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description))) ||
 		[];
-	const parameterData =
-		(sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value))) || [];
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -217,42 +211,15 @@ const Sootblow = () => {
 							<SvgSootblowTenayan width="92%" height="100%" />
 						</Paper>
 					</Grid>
-					<Grid item xs={12} md={3} container className="md:h-full w-full p-0">
+					<Grid item xs={12} md={3} container className="md:h-full p-0">
 						<Grid item className="w-full mb-8">
-							{!parameterData ? (
-								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
-									<Typography className="text-8">Loading ... </Typography>
-								</Paper>
-							) : parameterData.length !== 0 ? (
-								<TableContainer component={Paper} className="md:h-full" square>
-									<Table className={classes.table} size="small" aria-label="a dense table">
-										<TableHead>
-											<TableRow>
-												<TableCell className="text-10 py-auto">Parameter</TableCell>
-												<TableCell align="right" className="text-10 py-auto">
-													Value
-												</TableCell>
-											</TableRow>
-										</TableHead>
-										<TableBody>
-											{parameterData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell component="th" scope="row" className="text-8 py-4">
-														{row.label}
-													</TableCell>
-													<TableCell align="right" className="text-8 py-4">
-														{row.value}
-													</TableCell>
-												</TableRow>
-											))}
-										</TableBody>
-									</Table>
-								</TableContainer>
-							) : (
-								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
-									<Typography className="text-8">Table is empty</Typography>
-								</Paper>
-							)}
+							<Paper
+								className="w-full h-full p-16 flex md:flex-col md:justify-center items-center flex-row justify-between "
+								square
+							>
+								<Typography className="text-12 text-center md:text-20 mb-2">Timer</Typography>
+								<Typography className="text-10 text-center md:text-18">300 s</Typography>
+							</Paper>
 						</Grid>
 						<Grid item className="w-full">
 							{!sequenceData ? (
@@ -264,11 +231,10 @@ const Sootblow = () => {
 									<Table className={classes.table} size="small" aria-label="a dense table">
 										<TableHead>
 											<TableRow>
-												<TableCell className="text-10 py-auto">Sequences</TableCell>
-												<TableCell align="center" className="text-10 py-auto">
+												<TableCell align="center" className="text-12 py-auto">
 													Zone
 												</TableCell>
-												<TableCell align="right" className="text-10 py-auto">
+												<TableCell align="center" className="text-12 py-auto">
 													Info
 												</TableCell>
 											</TableRow>
@@ -276,13 +242,10 @@ const Sootblow = () => {
 										<TableBody>
 											{sequenceData.map((row, index) => (
 												<TableRow key={index}>
-													<TableCell component="th" scope="row" className="text-8 py-4">
+													<TableCell align="center" scope="row" className="text-10 py-6">
 														{row.label}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
-														{row.value}
-													</TableCell>
-													<TableCell align="right" className="text-8 py-4">
+													<TableCell align="center" className="text-10 py-6">
 														{row.value === 0 ? '-' : row.description}
 													</TableCell>
 												</TableRow>
