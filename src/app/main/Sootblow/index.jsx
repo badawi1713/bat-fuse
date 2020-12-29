@@ -228,8 +228,8 @@ const Sootblow = () => {
 									<Table className={classes.table} size="small" aria-label="a dense table">
 										<TableHead>
 											<TableRow>
-												<TableCell className="text-10 py-0">Parameter</TableCell>
-												<TableCell align="right" className="text-10 py-0">
+												<TableCell className="text-10 py-auto">Parameter</TableCell>
+												<TableCell align="right" className="text-10 py-auto">
 													Value
 												</TableCell>
 											</TableRow>
@@ -264,11 +264,11 @@ const Sootblow = () => {
 									<Table className={classes.table} size="small" aria-label="a dense table">
 										<TableHead>
 											<TableRow>
-												<TableCell className="text-10 py-0">Sequences</TableCell>
-												<TableCell align="center" className="text-10 py-0">
+												<TableCell className="text-10 py-auto">Sequences</TableCell>
+												<TableCell align="center" className="text-10 py-auto">
 													Zone
 												</TableCell>
-												<TableCell align="right" className="text-10 py-0">
+												<TableCell align="right" className="text-10 py-auto">
 													Info
 												</TableCell>
 											</TableRow>
