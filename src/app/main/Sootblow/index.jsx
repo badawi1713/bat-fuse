@@ -102,6 +102,8 @@ const Sootblow = () => {
 	const parameterData =
 		sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value));
 
+	const recommendationTime = sootblowData && sootblowData.sequence[0] && sootblowData.sequence[0].recommendationTime;
+
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
 	};
@@ -112,7 +114,7 @@ const Sootblow = () => {
 
 	return (
 		<Container className="py-16 h-full">
-			<Grid container spacing={1} className="h-full">
+			<Grid container justify="space-evenly" className="h-full">
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
 					<Grid item container xs={12} md={3} spacing={2} alignItems="center">
@@ -207,11 +209,19 @@ const Sootblow = () => {
 				</Grid>
 				{/* Top Section */}
 
+				{/* Last Recommendation Section*/}
+
+				<Grid item xs={12}>
+					<Typography className="text-8 my-4">Last Recommendation Time: {recommendationTime}</Typography>
+				</Grid>
+
+				{/* Last Recommendation Section*/}
+
 				{/* Main Content */}
 				<Grid item container xs={12} justify="space-between" className="w-full" alignItems="center" spacing={1}>
 					<Grid item xs={12} md={9} className="md:h-full p-0">
-						<Paper className="md:h-full py-5 px-10 my-0 flex justify-center aligns-center" square>
-							<SvgSootblowTjAwarAwar width="92%" height="100%" />
+						<Paper className="md:h-full w-full pt-8 m-0 m-auto flex justify-center aligns-center" square>
+							<SvgSootblowTjAwarAwar width="90%" height="98%" />
 						</Paper>
 					</Grid>
 					<Grid item xs={12} md={3} container className="md:h-full w-full p-0">
