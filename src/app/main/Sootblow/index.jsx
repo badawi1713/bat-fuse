@@ -254,7 +254,7 @@ const Sootblow = () => {
 												sequenceData.map((row, index) => (
 													<TableRow key={index}>
 														<TableCell align="center" scope="row" className="text-10 py-6">
-															{row.value}
+															{row.label}
 														</TableCell>
 														<TableCell align="center" className="text-10 py-6">
 															{row.description}
