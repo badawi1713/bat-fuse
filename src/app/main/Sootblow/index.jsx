@@ -203,7 +203,7 @@ const Sootblow = () => {
 				{/* Top Section */}
 
 				{/* Main Content */}
-				<Grid item container xs={12} justify="space-between" className="w-full" alignItems="center" spacing={1}>
+				<Grid item container xs={12} justify="space-between" className="w-full" spacing={1}>
 					<Grid item xs={12} md={9} className="md:h-full p-0">
 						<Paper className="md:h-full py-5 px-10 my-0 flex justify-center aligns-center" square>
 							<SvgSootblowTenayan width="92%" height="100%" />

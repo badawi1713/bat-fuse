@@ -9,34 +9,34 @@ const SvgSootblowTenayan = props => {
 		shallowEqual
 	);
 
-	const indicatorC01 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C01) || '#FFF000';
-	const indicatorC02 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C02) || '#FFF000';
-	const indicatorC03 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C03) || '#FFF000';
-	const indicatorC04 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C04) || '#FFF000';
+	const indicatorC01 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C01) || '#00B050';
+	const indicatorC02 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C02) || '#00B050';
+	const indicatorC03 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C03) || '#00B050';
+	const indicatorC04 = (sootblowData && sootblowData.indicator && sootblowData.indicator.C04) || '#00B050';
 
-	const indicatorEL01 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL01) || '#FFF000';
-	const indicatorEL02 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL02) || '#FFF000';
-	const indicatorEL03 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL03) || '#FFF000';
-	const indicatorEL04 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL04) || '#FFF000';
-	const indicatorEL05 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL05) || '#FFF000';
+	const indicatorEL01 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL01) || '#00B050';
+	const indicatorEL02 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL02) || '#00B050';
+	const indicatorEL03 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL03) || '#00B050';
+	const indicatorEL04 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL04) || '#00B050';
+	const indicatorEL05 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL05) || '#00B050';
 
-	const indicatorEL06 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL06) || '#FFF000';
-	const indicatorEL07 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL07) || '#FFF000';
-	const indicatorEL08 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL08) || '#FFF000';
-	const indicatorEL09 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL09) || '#FFF000';
-	const indicatorEL10 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL10) || '#FFF000';
+	const indicatorEL06 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL06) || '#00B050';
+	const indicatorEL07 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL07) || '#00B050';
+	const indicatorEL08 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL08) || '#00B050';
+	const indicatorEL09 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL09) || '#00B050';
+	const indicatorEL10 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL10) || '#00B050';
 
-	const indicatorEL11 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL11) || '#FFF000';
-	const indicatorEL12 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL12) || '#FFF000';
-	const indicatorEL13 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL13) || '#FFF000';
-	const indicatorEL14 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL14) || '#FFF000';
-	const indicatorEL15 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL15) || '#FFF000';
+	const indicatorEL11 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL11) || '#00B050';
+	const indicatorEL12 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL12) || '#00B050';
+	const indicatorEL13 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL13) || '#00B050';
+	const indicatorEL14 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL14) || '#00B050';
+	const indicatorEL15 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL15) || '#00B050';
 
-	const indicatorEL16 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL16) || '#FFF000';
-	const indicatorEL17 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL17) || '#FFF000';
-	const indicatorEL18 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL18) || '#FFF000';
-	const indicatorEL19 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL19) || '#FFF000';
-	const indicatorEL20 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL20) || '#FFF000';
+	const indicatorEL16 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL16) || '#00B050';
+	const indicatorEL17 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL17) || '#00B050';
+	const indicatorEL18 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL18) || '#00B050';
+	const indicatorEL19 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL19) || '#00B050';
+	const indicatorEL20 = (sootblowData && sootblowData.indicator && sootblowData.indicator.EL20) || '#00B050';
 
 	return (
 		<svg
@@ -349,7 +349,7 @@ const SvgSootblowTenayan = props => {
 				<g id="sootblow-tenayan_svg__shape258-148" transform="translate(13.463 -40.986)">
 					<path className="sootblow-tenayan_svg__st8" d="M0 331.299h65.906v8.858H0z" />
 					<text x={14.65} y={338.73} className="sootblow-tenayan_svg__st16">
-						{'RETRACT'}
+						{'RUNNING'}
 					</text>
 				</g>
 				<g id="sootblow-tenayan_svg__shape259-151" transform="translate(6.75 -18)">
@@ -364,7 +364,7 @@ const SvgSootblowTenayan = props => {
 				<g id="sootblow-tenayan_svg__shape260-153" transform="translate(15.943 -19.726)">
 					<path className="sootblow-tenayan_svg__st8" d="M0 331.299h65.906v8.858H0z" />
 					<text x={12.92} y={338.73} className="sootblow-tenayan_svg__st16">
-						{'INSERT'}
+						{'STOP'}
 					</text>
 				</g>
 				<g id="sootblow-tenayan_svg__shape261-156" transform="translate(77.615 -39.633)">
