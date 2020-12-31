@@ -97,6 +97,8 @@ const Sootblow = () => {
 	const sequenceData =
 		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
 
+	const recommendationTime = sootblowData && sootblowData.sequence[0] && sootblowData.sequence[0].recommendationTime;
+
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
 	};
@@ -107,7 +109,7 @@ const Sootblow = () => {
 
 	return (
 		<Container className="py-16 h-full">
-			<Grid container spacing={1} className="h-full">
+			<Grid container className="h-full">
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
 					<Grid item container xs={12} md={3} spacing={2} alignItems="center">
@@ -201,6 +203,14 @@ const Sootblow = () => {
 					</Grid>
 				</Grid>
 				{/* Top Section */}
+
+				{/* Last Recommendation Section */}
+				<Grid item xs={12}>
+					<Typography className="text-8 my-8">
+						Last Recommendation Time: {!recommendationTime ? '-' : recommendationTime}
+					</Typography>
+				</Grid>
+				{/* Last Recommendation Section */}
 
 				{/* Main Content */}
 				<Grid item container xs={12} justify="space-between" className="w-full" spacing={1}>
