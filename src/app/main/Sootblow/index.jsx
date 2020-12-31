@@ -97,6 +97,8 @@ const Sootblow = () => {
 	const sequenceData =
 		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
 
+	const recommendationTime = sootblowData && sootblowData.sequence[0] && sootblowData.sequence[0].recommendationTime;
+
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
 	};
@@ -107,7 +109,7 @@ const Sootblow = () => {
 
 	return (
 		<Container className="py-16 h-full">
-			<Grid container spacing={1} className="h-full">
+			<Grid container className="h-full">
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
 					<Grid item container xs={12} md={3} spacing={2} alignItems="center">
@@ -202,6 +204,12 @@ const Sootblow = () => {
 				</Grid>
 				{/* Top Section */}
 
+				{/* Last Recommendation Section */}
+				<Grid item xs={12}>
+					<Typography className="text-8 my-8">Last Recommendation Time: {recommendationTime}</Typography>
+				</Grid>
+				{/* Last Recommendation Section */}
+
 				{/* Main Content */}
 				<Grid item container xs={12} justify="space-between" className="w-full" spacing={1}>
 					<Grid item xs={12} md={9} className="md:h-full p-0">
@@ -209,69 +217,66 @@ const Sootblow = () => {
 							<SvgSootblowTenayan width="92%" height="100%" />
 						</Paper>
 					</Grid>
-					<Grid item xs={12} md={3} className="p-0 max-h-full">
-						<Grid container className="max-h-full">
-							<Grid item className="w-full mb-8">
-								{!sootblowData ? (
-									<Paper
-										className="w-full p-16 md:py-20 flex md:flex-col items-center flex-row justify-center "
-										square
-									>
-										<Typography className="text-8 text-center">Loading ... </Typography>
-									</Paper>
-								) : (
-									<Paper className="w-full p-12 flex flex-col justify-between items-center " square>
-										<Typography className="text-12 text-center mb-20">Timer</Typography>
-										<Typography className="text-16 text-center md:text-24 text-blue-300">
-											{sootblowData && sootblowData.parameter && sootblowData.parameter[0].value}
-										</Typography>
-										<Typography className="block mt-20" />
-									</Paper>
-								)}
-							</Grid>
-							<Grid item className="w-full max-h-full">
-								{!sequenceData ? (
-									<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
-										<Typography className="text-8">Loading ... </Typography>
-									</Paper>
-								) : sequenceData && sequenceData.length !== 0 ? (
-									<TableContainer component={Paper} className="max-h-full" square>
-										<Table className={classes.table} size="small" aria-label="a dense table">
-											<TableHead>
-												<TableRow>
-													<TableCell align="center" className="text-12 py-auto">
-														Zone
-													</TableCell>
-													<TableCell align="center" className="text-12 py-auto">
-														Code Area
-													</TableCell>
-												</TableRow>
-											</TableHead>
-											<TableBody>
-												{sequenceData &&
-													sequenceData.map((row, index) => (
-														<TableRow key={index}>
-															<TableCell
-																align="center"
-																scope="row"
-																className="text-10 py-6"
-															>
-																{row.label}
-															</TableCell>
-															<TableCell align="center" className="text-10 py-6">
-																{row.description}
-															</TableCell>
-														</TableRow>
-													))}
-											</TableBody>
-										</Table>
-									</TableContainer>
-								) : (
-									<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
-										<Typography className="text-8">Table is empty</Typography>
-									</Paper>
-								)}
-							</Grid>
+					<Grid item xs={12} md={3} container className="md:h-full p-0">
+						<Grid item className="w-full mb-8">
+							{!sootblowData ? (
+								<Paper
+									className="w-full h-full p-16 md:p-12 flex md:flex-col items-center flex-row justify-center "
+									square
+								>
+									<Typography className="text-8 text-center ">Loading ... </Typography>
+								</Paper>
+							) : (
+								<Paper
+									className="w-full h-full p-16 md:p-12 flex md:flex-col md:justify-between items-center flex-row justify-between "
+									square
+								>
+									<Typography className="text-12 text-center ">Timer</Typography>
+									<Typography className="text-12 text-center md:text-24 text-blue-300">
+										{sootblowData && sootblowData.parameter && sootblowData.parameter[0].value}
+									</Typography>
+									<Typography className="hidden md:block" />
+								</Paper>
+							)}
+						</Grid>
+						<Grid item className="w-full">
+							{!sequenceData ? (
+								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
+									<Typography className="text-8">Loading ... </Typography>
+								</Paper>
+							) : sequenceData && sequenceData.length !== 0 ? (
+								<TableContainer component={Paper} className="md:h-full" square>
+									<Table className={classes.table} size="small" aria-label="a dense table">
+										<TableHead>
+											<TableRow>
+												<TableCell align="center" className="text-12 py-auto">
+													Zone
+												</TableCell>
+												<TableCell align="center" className="text-12 py-auto">
+													Code Area
+												</TableCell>
+											</TableRow>
+										</TableHead>
+										<TableBody>
+											{sequenceData &&
+												sequenceData.map((row, index) => (
+													<TableRow key={index}>
+														<TableCell align="center" scope="row" className="text-10 py-6">
+															{row.description}
+														</TableCell>
+														<TableCell align="center" className="text-10 py-6">
+															{row.label}
+														</TableCell>
+													</TableRow>
+												))}
+										</TableBody>
+									</Table>
+								</TableContainer>
+							) : (
+								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
+									<Typography className="text-8">Table is empty</Typography>
+								</Paper>
+							)}
 						</Grid>
 					</Grid>
 				</Grid>
