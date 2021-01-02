@@ -62,12 +62,12 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const createParameterData = (label, value) => {
-	return { label, value };
-};
-
 const createSequenceData = (label, value, description) => {
 	return { label, value, description };
+};
+
+const createParameterData = (label, value) => {
+	return { label, value };
 };
 
 const Sootblow = () => {
@@ -100,21 +100,6 @@ const Sootblow = () => {
 		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
 	const parameterData =
 		sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value));
-	// [
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100),
-	// 	createParameterData('label', 100)
-	// ];
-
 	const recommendationTime = sootblowData && sootblowData.sequence[0] && sootblowData.sequence[0].recommendationTime;
 
 	const handleMasterControlOn = () => {
@@ -126,7 +111,7 @@ const Sootblow = () => {
 	};
 
 	return (
-		<div className="py-16 h-full container px-0 mx-24">
+		<div className="my-16 h-full container px-0 mx-24">
 			<Grid container className="h-full">
 				{/* Top Section */}
 				<Grid container alignItems="center" justify="space-between">
@@ -238,15 +223,18 @@ const Sootblow = () => {
 						className="md:h-full w-full m-auto py-8 flex justify-center aligns-center md:col-span-3"
 						square
 					>
-						<SvgSootblowTjAwarAwar width="84%" height="100%" />
+						<SvgSootblowTjAwarAwar width="80%" height="100%" />
 					</Paper>
-					<div className="grid gap-8 w-full">
+					<div className="grid md:grid-rows-2 gap-8 w-full ">
 						{!parameterData ? (
-							<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
+							<Paper
+								className="md:h-full md:row-span-2 flex justify-center items-center py-4 md:p-0"
+								square
+							>
 								<Typography className="text-8">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
-							<TableContainer className={clsx(classes.container, ' row-span-1')} component={Paper} square>
+							<TableContainer className={clsx('overflow-auto md:row-span-2')} component={Paper} square>
 								<Table size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
@@ -272,16 +260,19 @@ const Sootblow = () => {
 								</Table>
 							</TableContainer>
 						) : (
-							<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
+							<Paper
+								className="md:h-full md:row-span-2 flex justify-center items-center py-4 md:p-0"
+								square
+							>
 								<Typography className="text-8">Table is empty</Typography>
 							</Paper>
 						)}
 						{!sequenceData ? (
-							<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
+							<Paper className="md:h-full flex justify-center items-center py-4" square>
 								<Typography className="text-8">Loading ... </Typography>
 							</Paper>
 						) : sequenceData && sequenceData.length !== 0 ? (
-							<TableContainer component={Paper} className="md:h-full" square>
+							<TableContainer component={Paper} className="md:h-full md:mb-0 mb-8 " square>
 								<Table className={classes.table} size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
@@ -313,7 +304,7 @@ const Sootblow = () => {
 								</Table>
 							</TableContainer>
 						) : (
-							<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
+							<Paper className="md:h-full flex justify-center items-center py-4 " square>
 								<Typography className="text-8">Table is empty</Typography>
 							</Paper>
 						)}
