@@ -1,12 +1,12 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
-import { Button, Container, Grid, Hidden, Typography } from '@material-ui/core';
+import { Button, Grid, Hidden, Typography } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/index.css';
 
 const Home = () => {
 	return (
-		<Container className="py-16 h-full">
+		<div className="py-16 h-full container px-0 lg:px-24">
 			<Hidden smDown>
 				<FuseAnimate animation="transition.slideUpIn" delay={200}>
 					<Grid container spacing={2} className="pt-16 h-full">
@@ -56,7 +56,7 @@ const Home = () => {
 					</Grid>
 				</FuseAnimate>
 			</Hidden>
-		</Container>
+		</div>
 	);
 };
 
