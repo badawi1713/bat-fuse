@@ -6,7 +6,7 @@ import './styles/index.css';
 
 const Home = () => {
 	return (
-		<Container className="py-16 h-full">
+		<div className="my-16 h-full container px-0 mx-24">
 			<Hidden smDown>
 				<FuseAnimate animation="transition.slideUpIn" delay={200}>
 					<Grid container spacing={2} className="pt-16 h-full">
@@ -56,7 +56,7 @@ const Home = () => {
 					</Grid>
 				</FuseAnimate>
 			</Hidden>
-		</Container>
+		</div>
 	);
 };
 
