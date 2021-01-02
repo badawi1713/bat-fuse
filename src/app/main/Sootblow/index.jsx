@@ -126,7 +126,7 @@ const Sootblow = () => {
 	};
 
 	return (
-		<div className="py-16 h-full container px-0 lg:px-24">
+		<div className="py-16 h-full container px-0 mx-24">
 			<Grid container className="h-full">
 				{/* Top Section */}
 				<Grid container alignItems="center" justify="space-between">
