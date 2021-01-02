@@ -1,5 +1,5 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
-import { Button, Container, Grid, Hidden, Typography } from '@material-ui/core';
+import { Button, Grid, Hidden, Typography } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/index.css';
