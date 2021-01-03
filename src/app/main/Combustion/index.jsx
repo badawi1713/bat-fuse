@@ -1,7 +1,6 @@
 import {
 	Button,
 	ButtonGroup,
-	Container,
 	Grid,
 	Paper,
 	Table,
@@ -147,7 +146,7 @@ const Combustion = () => {
 	};
 
 	return (
-		<Container className="py-16 h-full">
+		<div className="my-16 h-full container px-0 mx-24">
 			<Grid container spacing={1} className="h-full">
 				{/* Top Section */}
 				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
@@ -434,7 +433,7 @@ const Combustion = () => {
 				</Grid>
 				{/* Main Content */}
 			</Grid>
-		</Container>
+		</div>
 	);
 };
 
