@@ -108,95 +108,105 @@ const Sootblow = () => {
 
 	return (
 		<div className="my-16 h-full container px-0 mx-24">
-			<Grid container className="h-full">
+			<Grid container className="h-full" direction="column">
 				{/* Top Section */}
-				<Grid container alignItems="center" justify="space-between">
-					<Grid item container xs={12} md={3} alignItems="center">
-						<Grid item className="mr-8">
-							<Link to="/home">
-								<ArrowBack color="action" fontSize="small" />
-							</Link>
-						</Grid>
-						<Grid item>
-							<Typography className="text-11">SOOTBLOW OPTIMIZATION</Typography>
-						</Grid>
-					</Grid>
-					<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
-						<Grid
-							className="mb-8 md:mb-0"
-							item
-							container
-							direction="column"
-							alignItems="center"
-							xs={12}
-							md={3}
-						>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Operation Control</Typography>
+				<Grid item className="flex-initial">
+					<Grid container alignItems="center" justify="space-between">
+						<Grid item container xs={12} md={3} alignItems="center">
+							<Grid item className="mr-8">
+								<Link to="/home">
+									<ArrowBack color="action" fontSize="small" />
+								</Link>
 							</Grid>
-							<Grid item className="w-full">
-								<Button
-									disableFocusRipple
-									disableRipple
-									disableTouchRipple
-									fullWidth
-									variant="contained"
-									className={clsx('text-8 cursor-default', classes.statusButtonOn)}
-								>
-									MANUAL
-								</Button>
+							<Grid item>
+								<Typography className="text-11">SOOTBLOW OPTIMIZATION</Typography>
 							</Grid>
 						</Grid>
-						<Grid
-							className="mb-8 md:ml-8 md:mb-0"
-							item
-							container
-							direction="column"
-							alignItems="center"
-							xs={12}
-							md={3}
-						>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Master Control</Typography>
-							</Grid>
-							<Grid item className="w-full">
-								<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+						<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
+							<Grid
+								className="mb-8 md:mb-0"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Operation Control</Typography>
+								</Grid>
+								<Grid item className="w-full">
 									<Button
-										onClick={handleMasterControlOn}
-										className={clsx(
-											'text-8',
-											masterControlStatus ? classes.statusButtonOff : 'primary'
-										)}
+										disableFocusRipple
+										disableRipple
+										disableTouchRipple
+										fullWidth
+										variant="contained"
+										className={clsx('text-8 cursor-default', classes.statusButtonOn)}
 									>
-										ON
+										MANUAL
 									</Button>
+								</Grid>
+							</Grid>
+							<Grid
+								className="mb-8 md:ml-8 md:mb-0"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Master Control</Typography>
+								</Grid>
+								<Grid item className="w-full">
+									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+										<Button
+											onClick={handleMasterControlOn}
+											className={clsx(
+												'text-8',
+												masterControlStatus ? classes.statusButtonOff : 'primary'
+											)}
+										>
+											ON
+										</Button>
+										<Button
+											onClick={handleMasterControlOff}
+											className={clsx(
+												'text-8',
+												masterControlStatus ? 'primary' : classes.statusButtonOn
+											)}
+										>
+											OFF
+										</Button>
+									</ButtonGroup>
+								</Grid>
+							</Grid>
+							<Grid
+								className="md:ml-8"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Safe Guard</Typography>
+								</Grid>
+								<Grid item className="w-full">
 									<Button
-										onClick={handleMasterControlOff}
-										className={clsx(
-											'text-8',
-											masterControlStatus ? 'primary' : classes.statusButtonOn
-										)}
+										disableFocusRipple
+										disableRipple
+										disableTouchRipple
+										fullWidth
+										variant="contained"
+										className={clsx('text-8 cursor-default', classes.statusButtonOff)}
 									>
-										OFF
+										Ready
 									</Button>
-								</ButtonGroup>
-							</Grid>
-						</Grid>
-						<Grid className="md:ml-8" item container direction="column" alignItems="center" xs={12} md={3}>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Safe Guard</Typography>
-							</Grid>
-							<Grid item className="w-full">
-								<Button
-									disableFocusRipple
-									disableRipple
-									disableTouchRipple
-									fullWidth
-									variant="contained"
-									className={clsx('text-8 cursor-default', classes.statusButtonOff)}
-								>
-									Ready
-								</Button>
+								</Grid>
 							</Grid>
 						</Grid>
 					</Grid>
@@ -205,84 +215,90 @@ const Sootblow = () => {
 
 				{/* Last Recommendation Section*/}
 
-				<Grid item xs={12}>
+				<Grid item className="flex-initial">
 					<Typography className="text-8 my-8 md:my-4">
-						Last Recommendation Time: {recommendationTime}
+						Last Recommendation Time: {!recommendationTime ? '-' : recommendationTime}
 					</Typography>
 				</Grid>
 
 				{/* Last Recommendation Section*/}
 
 				{/* Main Content */}
-				<div className="w-full grid md:grid-cols-4 gap-8">
-					<Paper
-						className="md:h-full w-full m-auto py-8 flex justify-center aligns-center md:col-span-3"
-						square
-					>
-						<SvgSootblowTenayan width="90%" height="100%" />
-					</Paper>
-					<div className="grid md:grid-rows-3 gap-8 w-full">
-						{!parameterData ? (
-							<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
-								<Typography className="text-8">Loading ... </Typography>
-							</Paper>
-						) : (
-							<Paper className="md:h-full flex flex-col justify-between items-center py-8" square>
-								<Typography className="text-20 text-blue">Timer</Typography>
-								<Typography className="text-18">{parameterData}</Typography>
+				<Grid item className="flex-1">
+					<div className="w-full h-full grid md:grid-cols-4 gap-8">
+						<Paper
+							className="md:h-full w-full m-auto py-8 flex justify-center aligns-center md:col-span-3"
+							square
+						>
+							<SvgSootblowTenayan width="86%" height="100%" />
+						</Paper>
+						<div className="grid md:grid-rows-3 gap-8 w-full">
+							{!parameterData ? (
+								<Paper className="md:h-full flex justify-center items-center py-4 md:p-0" square>
+									<Typography className="text-8">Loading ... </Typography>
+								</Paper>
+							) : (
+								<Paper className="md:h-full flex flex-col justify-between items-center py-8" square>
+									<Typography className="text-20 text-blue">Timer</Typography>
+									<Typography className="text-18">{parameterData}</Typography>
 
-								<Typography className="text-16"></Typography>
-							</Paper>
-						)}
-						{!sequenceData ? (
-							<Paper
-								className="md:h-full flex justify-center md:row-span-2 items-center py-4 md:p-0"
-								square
-							>
-								<Typography className="text-8">Loading ... </Typography>
-							</Paper>
-						) : sequenceData && sequenceData.length !== 0 ? (
-							<TableContainer component={Paper} className="md:h-full md:row-span-2 md:mb-0 mb-8 " square>
-								<Table className={classes.table} size="small" aria-label="a dense table">
-									<TableHead>
-										<TableRow>
-											<TableCell className="text-10 py-auto">Sequences</TableCell>
-											<TableCell align="center" className="text-10 py-auto">
-												Zone
-											</TableCell>
-											<TableCell align="right" className="text-10 py-auto">
-												Info
-											</TableCell>
-										</TableRow>
-									</TableHead>
-									<TableBody>
-										{sequenceData &&
-											sequenceData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell component="th" scope="row" className="text-8 py-4">
-														{row.label}
-													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
-														{row.value}
-													</TableCell>
-													<TableCell align="right" className="text-8 py-4">
-														{row.value === 0 ? '-' : row.description}
-													</TableCell>
-												</TableRow>
-											))}
-									</TableBody>
-								</Table>
-							</TableContainer>
-						) : (
-							<Paper
-								className="md:h-full md:row-span-2 flex justify-center items-center py-4 md:p-0"
-								square
-							>
-								<Typography className="text-8">Table is empty</Typography>
-							</Paper>
-						)}
+									<Typography className="text-16"></Typography>
+								</Paper>
+							)}
+							{!sequenceData ? (
+								<Paper
+									className="md:h-full flex justify-center md:row-span-2 items-center py-4 md:p-0"
+									square
+								>
+									<Typography className="text-8">Loading ... </Typography>
+								</Paper>
+							) : sequenceData && sequenceData.length !== 0 ? (
+								<TableContainer
+									component={Paper}
+									className="md:h-full md:row-span-2 md:mb-0 mb-8 "
+									square
+								>
+									<Table className={classes.table} size="small" aria-label="a dense table">
+										<TableHead>
+											<TableRow>
+												<TableCell className="text-10 py-auto">Sequences</TableCell>
+												<TableCell align="center" className="text-10 py-auto">
+													Zone
+												</TableCell>
+												<TableCell align="right" className="text-10 py-auto">
+													Info
+												</TableCell>
+											</TableRow>
+										</TableHead>
+										<TableBody>
+											{sequenceData &&
+												sequenceData.map((row, index) => (
+													<TableRow key={index}>
+														<TableCell component="th" scope="row" className="text-8 py-4">
+															{row.label}
+														</TableCell>
+														<TableCell align="center" className="text-8 py-4">
+															{row.value}
+														</TableCell>
+														<TableCell align="right" className="text-8 py-4">
+															{row.value === 0 ? '-' : row.description}
+														</TableCell>
+													</TableRow>
+												))}
+										</TableBody>
+									</Table>
+								</TableContainer>
+							) : (
+								<Paper
+									className="md:h-full md:row-span-2 flex justify-center items-center py-4 md:p-0"
+									square
+								>
+									<Typography className="text-8">Table is empty</Typography>
+								</Paper>
+							)}
+						</div>
 					</div>
-				</div>
+				</Grid>
 				{/* Main Content */}
 			</Grid>
 		</div>
