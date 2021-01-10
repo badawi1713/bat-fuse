@@ -42,16 +42,16 @@ const useStyles = makeStyles(theme => ({
 	},
 	statusButtonOn: {
 		color: '#FFF',
-		backgroundColor: '#FA0000',
+		backgroundColor: '#3D9140',
 		'&:hover': {
-			backgroundColor: '#bd291e'
+			backgroundColor: '#327835'
 		}
 	},
 	statusButtonOff: {
 		color: '#FFF',
-		backgroundColor: '#3D9140',
+		backgroundColor: '#FA0000',
 		'&:hover': {
-			backgroundColor: '#327835'
+			backgroundColor: '#bd291e'
 		}
 	},
 	container: {
@@ -81,11 +81,14 @@ const Sootblow = () => {
 		shallowEqual
 	);
 
-	const [masterControlStatus, setMasterControlStatus] = React.useState(false);
+	const masterControl = sootblowData && sootblowData.control[2] && sootblowData.control[2].value;
+
+	const [masterControlStatus, setMasterControlStatus] = React.useState(masterControl && masterControl);
 
 	useEffect(() => {
 		dispatch(getSootblowData());
-	}, [dispatch]);
+		setMasterControlStatus(masterControl && masterControl);
+	}, [dispatch, masterControl]);
 
 	useEffect(() => {
 		const allTableValueHandler = setInterval(() => {
@@ -100,107 +103,136 @@ const Sootblow = () => {
 		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
 	const parameterData =
 		sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value));
-	const recommendationTime = sootblowData && sootblowData.sequence[0] && sootblowData.sequence[0].recommendationTime;
+	const recommendationTime = sootblowData && sootblowData.control[3] && sootblowData.control[3].value;
+	const operationControlStatus = sootblowData && sootblowData.control[1] && sootblowData.control[1].value;
+	const safeGuardStatus = sootblowData && sootblowData.control[0] && sootblowData.control[0].value;
 
 	const handleMasterControlOn = () => {
-		setMasterControlStatus(true);
+		setMasterControlStatus(1);
 	};
 
 	const handleMasterControlOff = () => {
-		setMasterControlStatus(false);
+		setMasterControlStatus(0);
 	};
 
 	return (
-		<div className="my-16 h-full container px-0 mx-24">
-			<Grid container className="h-full">
+		<div className="h-full px-24 py-16 ">
+			<Grid container className="md:flex-col flex-row h-full">
 				{/* Top Section */}
-				<Grid container alignItems="center" justify="space-between">
-					<Grid item container xs={12} md={3} alignItems="center">
-						<Grid item className="mr-8">
-							<Link to="/home">
-								<ArrowBack color="action" fontSize="small" />
-							</Link>
-						</Grid>
-						<Grid item>
-							<Typography className="text-11">SOOTBLOW OPTIMIZATION</Typography>
-						</Grid>
-					</Grid>
-					<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
+				<Grid item className="md:flex-initial w-full">
+					<Grid container alignItems="center" justify="space-between">
 						<Grid
-							className="mb-8 md:mb-0"
 							item
 							container
-							direction="column"
-							alignItems="center"
 							xs={12}
 							md={3}
-						>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Operation Control</Typography>
-							</Grid>
-							<Grid item className="w-full">
-								<Button
-									disableFocusRipple
-									disableRipple
-									disableTouchRipple
-									fullWidth
-									variant="contained"
-									className={clsx('text-8 cursor-default', classes.statusButtonOn)}
-								>
-									MANUAL
-								</Button>
-							</Grid>
-						</Grid>
-						<Grid
-							className="mb-8 md:ml-8 md:mb-0"
-							item
-							container
-							direction="column"
+							className="justify-between md:justify-start mb-8 md:mb-0"
 							alignItems="center"
-							xs={12}
-							md={3}
 						>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Master Control</Typography>
+							<Grid item className="md:mr-8">
+								<Link to="/home">
+									<ArrowBack color="action" fontSize="small" />
+								</Link>
 							</Grid>
-							<Grid item className="w-full">
-								<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
-									<Button
-										onClick={handleMasterControlOn}
-										className={clsx(
-											'text-8',
-											masterControlStatus ? classes.statusButtonOff : 'primary'
-										)}
-									>
-										ON
-									</Button>
-									<Button
-										onClick={handleMasterControlOff}
-										className={clsx(
-											'text-8',
-											masterControlStatus ? 'primary' : classes.statusButtonOn
-										)}
-									>
-										OFF
-									</Button>
-								</ButtonGroup>
+							<Grid item>
+								<Typography className="text-11">SOOTBLOW OPTIMIZATION</Typography>
 							</Grid>
 						</Grid>
-						<Grid className="md:ml-8" item container direction="column" alignItems="center" xs={12} md={3}>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Safe Guard</Typography>
+						<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
+							<Grid
+								className="mb-8 md:mb-0"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Operation Control</Typography>
+								</Grid>
+								<Grid item className="w-full">
+									<Button
+										disableFocusRipple
+										disableRipple
+										disableTouchRipple
+										fullWidth
+										variant="contained"
+										className={clsx(
+											'text-8 cursor-default',
+											operationControlStatus && operationControlStatus
+												? classes.statusButtonOn
+												: classes.statusButtonOff
+										)}
+									>
+										{operationControlStatus && operationControlStatus ? 'AUTO' : 'MANUAL'}
+									</Button>
+								</Grid>
 							</Grid>
-							<Grid item className="w-full">
-								<Button
-									disableFocusRipple
-									disableRipple
-									disableTouchRipple
-									fullWidth
-									variant="contained"
-									className={clsx('text-8 cursor-default', classes.statusButtonOff)}
-								>
-									Ready
-								</Button>
+							<Grid
+								className="mb-8 md:ml-8 md:mb-0"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Master Control</Typography>
+								</Grid>
+								<Grid item className="w-full">
+									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+										<Button
+											onClick={handleMasterControlOn}
+											className={clsx(
+												'text-8',
+												masterControlStatus ? classes.statusButtonOn : 'primary'
+											)}
+										>
+											ON
+										</Button>
+										<Button
+											onClick={handleMasterControlOff}
+											className={clsx(
+												'text-8',
+												masterControlStatus ? 'primary' : classes.statusButtonOff
+											)}
+										>
+											OFF
+										</Button>
+									</ButtonGroup>
+								</Grid>
+							</Grid>
+							<Grid
+								className="md:ml-8"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Safe Guard</Typography>
+								</Grid>
+								<Grid item className="w-full">
+									<Button
+										disableFocusRipple
+										disableRipple
+										disableTouchRipple
+										fullWidth
+										variant="contained"
+										className={clsx(
+											'text-8 cursor-default',
+											safeGuardStatus && safeGuardStatus
+												? classes.statusButtonOn
+												: classes.statusButtonOff
+										)}
+									>
+										{safeGuardStatus && safeGuardStatus ? 'READY' : 'NOT READY'}
+									</Button>
+								</Grid>
 							</Grid>
 						</Grid>
 					</Grid>
@@ -209,37 +241,37 @@ const Sootblow = () => {
 
 				{/* Last Recommendation Section*/}
 
-				<Grid item xs={12}>
-					<Typography className="text-8 my-8 md:my-4">
-						Last Recommendation Time: {recommendationTime}
+				<Grid item className="flex-initial w-full">
+					<Typography className="text-10 my-8">
+						<span className="text-light-blue-300">Last Recommendation Time</span> :{' '}
+						{!recommendationTime ? '-' : recommendationTime}
 					</Typography>
 				</Grid>
 
 				{/* Last Recommendation Section*/}
 
 				{/* Main Content */}
-				<div className="w-full grid md:grid-cols-4 gap-8">
-					<Paper
-						className="md:h-full w-full m-auto py-8 flex justify-center aligns-center md:col-span-3"
-						square
-					>
-						<SvgSootblowTjAwarAwar width="80%" height="100%" />
+				<Grid item className="flex-1 flex md:flex-row flex-col w-full md:h-1/2 ">
+					<Paper className="md:w-3/4 w-full h-full flex justify-center md:mr-8 p-20" square>
+						<SvgSootblowTjAwarAwar width="100%" height="100%" />
 					</Paper>
-					<div className="grid md:grid-rows-2 gap-8 w-full ">
+					<div className="flex flex-col justify-between flex-1">
 						{!parameterData ? (
 							<Paper
-								className="md:h-full md:row-span-2 flex justify-center items-center py-4 md:p-0"
+								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
 								<Typography className="text-8">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
-							<TableContainer className={clsx('overflow-auto md:row-span-2')} component={Paper} square>
+							<TableContainer className="flex-1 mt-8 mb-8 md:mt-0" component={Paper} square>
 								<Table size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell className="text-10 py-auto">Parameter</TableCell>
-											<TableCell align="right" className="text-10 py-auto">
+											<TableCell className="text-10 py-auto text-light-blue-300">
+												Parameter
+											</TableCell>
+											<TableCell align="right" className="text-10 py-auto text-light-blue-300">
 												Value
 											</TableCell>
 										</TableRow>
@@ -261,26 +293,28 @@ const Sootblow = () => {
 							</TableContainer>
 						) : (
 							<Paper
-								className="md:h-full md:row-span-2 flex justify-center items-center py-4 md:p-0"
+								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">Table is empty</Typography>
+								<Typography className="text-8">No Parameter to Show</Typography>
 							</Paper>
 						)}
 						{!sequenceData ? (
-							<Paper className="md:h-full flex justify-center items-center py-4" square>
+							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
 								<Typography className="text-8">Loading ... </Typography>
 							</Paper>
 						) : sequenceData && sequenceData.length !== 0 ? (
-							<TableContainer component={Paper} className="md:h-full md:mb-0 mb-8 " square>
+							<TableContainer component={Paper} className="h-auto mb-8 md:mb-0" square>
 								<Table className={classes.table} size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell className="text-10 py-auto">Sequences</TableCell>
-											<TableCell align="center" className="text-10 py-auto">
+											<TableCell className="text-10 py-auto text-light-blue-300">
+												Sequences
+											</TableCell>
+											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
 												Zone
 											</TableCell>
-											<TableCell align="right" className="text-10 py-auto">
+											<TableCell align="right" className="text-10 py-auto text-light-blue-300">
 												Info
 											</TableCell>
 										</TableRow>
@@ -304,12 +338,12 @@ const Sootblow = () => {
 								</Table>
 							</TableContainer>
 						) : (
-							<Paper className="md:h-full flex justify-center items-center py-4 " square>
-								<Typography className="text-8">Table is empty</Typography>
+							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
+								<Typography className="text-8">No Recommendation</Typography>
 							</Paper>
 						)}
 					</div>
-				</div>
+				</Grid>
 				{/* Main Content */}
 			</Grid>
 		</div>
