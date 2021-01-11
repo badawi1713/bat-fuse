@@ -78,6 +78,10 @@ const schemaFetch = [
 const dataSource = {
 	/*  time navigator */
 	chart: {
+		chartLeftMargin: '0',
+		chartTopMargin: '0',
+		chartRightMargin: '0',
+		chartBottomMargin: '0',
 		bgColor: '#000',
 		bgAlpha: '0',
 		showLegend: 0,
@@ -138,8 +142,7 @@ export default class O2TrendChart extends React.Component {
 				type: 'timeseries',
 				renderAt: 'container',
 				width: '100%',
-				height: 184,
-
+				height: 160,
 				dataSource
 			}
 		};
@@ -164,8 +167,6 @@ export default class O2TrendChart extends React.Component {
 	}
 
 	render() {
-		return (
-			<div>{this.state.timeseriesDs.dataSource.data ? <ReactFC {...this.state.timeseriesDs} /> : 'Loading'}</div>
-		);
+		return <>{this.state.timeseriesDs.dataSource.data ? <ReactFC {...this.state.timeseriesDs} /> : 'Loading'}</>;
 	}
 }

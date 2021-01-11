@@ -1,22 +1,13 @@
-import {
-	Button,
-	ButtonGroup,
-	Grid,
-	Paper,
-	Table,
-	TableBody,
-	TableCell,
-	TableContainer,
-	TableHead,
-	TableRow,
-	Typography
-} from '@material-ui/core';
+import { Button, ButtonGroup, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack } from '@material-ui/icons';
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { O2TrendChart } from './Components';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { getSootblowData } from 'app/store/actions';
+
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%'
@@ -39,16 +30,16 @@ const useStyles = makeStyles(theme => ({
 	},
 	statusButtonOn: {
 		color: '#FFF',
-		backgroundColor: '#FA0000',
+		backgroundColor: '#3D9140',
 		'&:hover': {
-			backgroundColor: '#bd291e'
+			backgroundColor: '#327835'
 		}
 	},
 	statusButtonOff: {
 		color: '#FFF',
-		backgroundColor: '#3D9140',
+		backgroundColor: '#FA0000',
 		'&:hover': {
-			backgroundColor: '#327835'
+			backgroundColor: '#bd291e'
 		}
 	},
 	container: {
@@ -59,83 +50,33 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const createO2ControlBiasData = (parameter, value) => {
-	return { parameter, value };
-};
-
-const createSecondaryAirData = (parameter, value) => {
-	return { parameter, value };
-};
-
-// const createPrimaryAirControl = (parameter, value) => {
-// 	return { parameter, value };
-// };
-
-// const createLoad = (parameter, value) => {
-// 	return { parameter, value };
-// };
-
-const o2ControlBiasData = [
-	createO2ControlBiasData('Bias', 100),
-	createO2ControlBiasData('Current', 200),
-	createO2ControlBiasData('Set Point', 300),
-	createO2ControlBiasData('O2 R', 400),
-	createO2ControlBiasData('O2 L', 500)
-];
-
-const secondaryAirData = [
-	createSecondaryAirData('Bias', 0),
-	createSecondaryAirData('Current', 0),
-	createSecondaryAirData('Set Point', 0),
-	createSecondaryAirData('Windbox Delta Pressure R', 0),
-	createSecondaryAirData('Windbox Delta Pressure L', 0)
-];
-
-// const firstConstraints = [
-// 	createTableData('Constraints 1', 0),
-// 	createTableData('Constraints 2', 0),
-// 	createTableData('Constraints 3', 0),
-// 	createTableData('Constraints 4', 0),
-// 	createTableData('Constraints 5', 0),
-// 	createTableData('Constraints 6', 0),
-// 	createTableData('Constraints 7', 0),
-// 	createTableData('Constraints 8', 0),
-// 	createTableData('Constraints 9', 0),
-// 	createTableData('Constraints 10', 0)
-// ];
-
-// const primaryAirControlData = [createPrimaryAirControl('', 0)];
-
-const createBurnerTiltData = (parameter, value) => {
-	return { parameter, value };
-};
-
 const Combustion = () => {
 	const classes = useStyles();
+	const dispatch = useDispatch();
+
+	const { sootblowData } = useSelector(
+		({ sootblowReducer: { sootblowData } }) => ({
+			sootblowData
+		}),
+		shallowEqual
+	);
 
 	const [masterControlStatus, setMasterControlStatus] = useState(false);
-	const [burnerTiltData, setBurnerTiltData] = useState([
-		createBurnerTiltData('Bias', Number(Math.random()).toFixed(2)),
-		createBurnerTiltData('Current', Number(Math.random()).toFixed(2)),
-		createBurnerTiltData('Set Point', Number(Math.random()).toFixed(2)),
-		createBurnerTiltData('Final SH Temperature', Number(Math.random()).toFixed(2)),
-		createBurnerTiltData('RH2 Temperature', Number(Math.random()).toFixed(2))
-	]);
 
 	useEffect(() => {
-		const changeValue = () => {
-			setInterval(() => {
-				setBurnerTiltData([
-					createBurnerTiltData('Bias', Number(Math.random()).toFixed(2)),
-					createBurnerTiltData('Current', Number(Math.random()).toFixed(2)),
-					createBurnerTiltData('Demand', Number(Math.random()).toFixed(2)),
-					createBurnerTiltData('Final SH Temperature', Number(Math.random()).toFixed(2)),
-					createBurnerTiltData('RH2 Temperature', Number(Math.random()).toFixed(2))
-				]);
-			}, 5000);
-		};
-		return () => clearInterval(changeValue);
-	}, []);
+		dispatch(getSootblowData());
+	}, [dispatch]);
+
+	useEffect(() => {
+		const allTableValueHandler = setInterval(() => {
+			dispatch(getSootblowData());
+		}, 10000);
+
+		return () => clearInterval(allTableValueHandler); //This is important
+		// eslint-disable-next-line
+	}, [dispatch]);
+
+	const recommendationTime = sootblowData && sootblowData.control[3] && sootblowData.control[3].value;
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -146,96 +87,113 @@ const Combustion = () => {
 	};
 
 	return (
-		<div className="my-16 h-full container px-0 mx-24">
-			<Grid container spacing={1} className="h-full">
+		<div className="h-full px-24 py-16 ">
+			<Grid container className="md:flex-col flex-row h-full">
 				{/* Top Section */}
-				<Grid item container xs={12} alignItems="center" justify="space-between" spacing={1}>
-					<Grid item container xs={12} md={3} spacing={2} alignItems="center">
-						<Grid item>
-							<Link to="/home">
-								<ArrowBack color="action" fontSize="small" />
-							</Link>
-						</Grid>
-						<Grid item>
-							<Typography className="text-11">COMBUSTION OPTIMIZATION</Typography>
-						</Grid>
-					</Grid>
-					<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
+				<Grid item className="flex-initial w-full">
+					<Grid container alignItems="center" justify="space-between">
 						<Grid
-							className="mb-8 md:mb-0"
 							item
 							container
-							direction="column"
-							alignItems="center"
 							xs={12}
 							md={3}
-						>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Operation Control</Typography>
-							</Grid>
-							<Grid item className="w-full">
-								<Button
-									disableFocusRipple
-									disableRipple
-									disableTouchRipple
-									fullWidth
-									variant="contained"
-									className={clsx('text-8 cursor-default', classes.statusButtonOn)}
-								>
-									MANUAL
-								</Button>
-							</Grid>
-						</Grid>
-						<Grid
-							className="mb-8 md:ml-8 md:mb-0"
-							item
-							container
-							direction="column"
+							className="justify-between md:justify-start mb-4 md:mb-0"
 							alignItems="center"
-							xs={12}
-							md={3}
 						>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Master Control</Typography>
+							<Grid item className="md:mr-8">
+								<Link to="/home">
+									<ArrowBack color="action" fontSize="small" />
+								</Link>
 							</Grid>
-							<Grid item className="w-full">
-								<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
-									<Button
-										onClick={handleMasterControlOn}
-										className={clsx(
-											'text-8',
-											masterControlStatus ? classes.statusButtonOff : 'primary'
-										)}
-									>
-										ON
-									</Button>
-									<Button
-										onClick={handleMasterControlOff}
-										className={clsx(
-											'text-8',
-											masterControlStatus ? 'primary' : classes.statusButtonOn
-										)}
-									>
-										OFF
-									</Button>
-								</ButtonGroup>
+							<Grid item>
+								<Typography className="text-11">COMBUSTION OPTIMIZATION</Typography>
 							</Grid>
 						</Grid>
-						<Grid className="md:ml-8" item container direction="column" alignItems="center" xs={12} md={3}>
-							<Grid item className="w-full">
-								<Typography className="text-center text-10">Safe Guard</Typography>
+						<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
+							<Grid
+								className="mb-4 md:mb-0"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Operation Control</Typography>
+								</Grid>
+								<Grid item className="w-full">
+									<Button
+										disableFocusRipple
+										disableRipple
+										disableTouchRipple
+										fullWidth
+										variant="contained"
+										className={clsx('text-8 cursor-default', classes.statusButtonOff)}
+									>
+										MANUAL
+									</Button>
+								</Grid>
 							</Grid>
-							<Grid item className="w-full">
-								<Button
-									disableFocusRipple
-									disableRipple
-									disableTouchRipple
-									fullWidth
-									variant="contained"
-									className={clsx('text-8 cursor-default', classes.statusButtonOff)}
-								>
-									Ready {/* NOT READY - MERAH*/}
-								</Button>
+							<Grid
+								className="mb-4 md:ml-8 md:mb-0"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Master Control</Typography>
+								</Grid>
+								<Grid item className="w-full">
+									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+										<Button
+											onClick={handleMasterControlOn}
+											className={clsx(
+												'text-8',
+												masterControlStatus ? classes.statusButtonOn : 'primary'
+											)}
+										>
+											ON
+										</Button>
+										<Button
+											onClick={handleMasterControlOff}
+											className={clsx(
+												'text-8',
+												masterControlStatus ? 'primary' : classes.statusButtonOff
+											)}
+										>
+											OFF
+										</Button>
+									</ButtonGroup>
+								</Grid>
+							</Grid>
+							<Grid
+								className="md:ml-8"
+								item
+								container
+								direction="column"
+								alignItems="center"
+								xs={12}
+								md={3}
+							>
+								<Grid item className="w-full">
+									<Typography className="text-center text-10">Safe Guard</Typography>
+								</Grid>
+								<Grid item className="w-full">
+									<Button
+										disableFocusRipple
+										disableRipple
+										disableTouchRipple
+										fullWidth
+										variant="contained"
+										className={clsx('text-8 cursor-default', classes.statusButtonOn)}
+									>
+										Ready
+									</Button>
+								</Grid>
 							</Grid>
 						</Grid>
 					</Grid>
@@ -243,193 +201,248 @@ const Combustion = () => {
 				{/* Top Section */}
 
 				{/* Main Content */}
-				<Grid item container xs={12} justify="space-between" className="w-full" alignItems="center" spacing={1}>
-					<Grid item xs={12} className="p- mb-8">
-						<Grid container spacing={1}>
-							<Grid item xs={12}>
-								<Typography className="text-11">Manipulated Variable</Typography>
-							</Grid>
-							<Grid item container spacing={1}>
-								<Grid item xs={12} md={4}>
-									<TableContainer component={Paper} square>
-										<Table className={classes.table} size="small" aria-label="a dense table">
-											<TableHead>
-												<TableRow>
-													<TableCell className="text-10 py-6">O2 Control</TableCell>
-													<TableCell align="right" className="text-10 py-6">
-														Value
-													</TableCell>
-												</TableRow>
-											</TableHead>
-											<TableBody>
-												{o2ControlBiasData.map(row => (
-													<TableRow key={row.parameter}>
-														<TableCell component="th" scope="row" className="text-8 py-8">
-															{row.parameter}
-														</TableCell>
-														<TableCell align="right" className="text-8 py-8">
-															{row.value}
-														</TableCell>
-													</TableRow>
-												))}
-											</TableBody>
-										</Table>
-									</TableContainer>
-								</Grid>
-								<Grid item xs={12} md={4}>
-									<TableContainer component={Paper} square>
-										<Table className={classes.table} size="small" aria-label="a dense table">
-											<TableHead>
-												<TableRow>
-													<TableCell className="text-10 py-6">Burner Tilt</TableCell>
-													<TableCell align="right" className="text-10 py-6">
-														Value
-													</TableCell>
-												</TableRow>
-											</TableHead>
-											<TableBody>
-												{burnerTiltData.map(row => (
-													<TableRow key={row.parameter}>
-														<TableCell component="th" scope="row" className="text-8 py-8">
-															{row.parameter}
-														</TableCell>
-														<TableCell align="right" className="text-8 py-8">
-															{row.value}
-														</TableCell>
-													</TableRow>
-												))}
-											</TableBody>
-										</Table>
-									</TableContainer>
-								</Grid>
-								<Grid item xs={12} md={4}>
-									<TableContainer component={Paper} square>
-										<Table className={classes.table} size="small" aria-label="a dense table">
-											<TableHead>
-												<TableRow>
-													<TableCell className="text-10 py-6">
-														Secondary Air Control
-													</TableCell>
-													<TableCell align="right" className="text-10 py-6">
-														Value
-													</TableCell>
-												</TableRow>
-											</TableHead>
-											<TableBody>
-												{secondaryAirData.map(row => (
-													<TableRow key={row.parameter}>
-														<TableCell component="th" scope="row" className="text-8 py-8">
-															{row.parameter}
-														</TableCell>
-														<TableCell align="right" className="text-8 py-8">
-															{row.value}
-														</TableCell>
-													</TableRow>
-												))}
-											</TableBody>
-										</Table>
-									</TableContainer>
-								</Grid>
-							</Grid>
-						</Grid>
-					</Grid>
-					<Grid item xs={12} className="p-0">
-						<Grid container spacing={1} className="h-full">
-							<Grid item xs={12} md={8} className="h-full">
-								<Grid item xs={12}>
-									<Typography className="text-11 mb-8">O2 Trend Chart</Typography>
-								</Grid>
-								<Grid item xs={12} container className="h-full">
-									<Grid item xs={12} className="h-full">
-										<Paper className="p-8 h-full" square>
-											<O2TrendChart />
-										</Paper>
+				<Grid item className="flex-1 h-full flex flex-col w-full md:h-1/2 py-8 md:pb-0">
+					<div className="flex md:flex-row flex-col w-full flex-1 md:flex-initial md:h-3/5 mb-8">
+						<div className="flex flex-col flex-1 mb-8 md:mb-0 md:mr-8">
+							<Typography className="text-10 mb-4 flex-initial">Last Recommendation Time</Typography>
+							<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
+								<div>
+									<p className="text-9 font-semibold text-light-blue-300">
+										{!recommendationTime ? '-' : recommendationTime}
+									</p>
+								</div>
+							</Paper>
+							<Typography className="text-10 my-4 flex-initial">Message</Typography>
+							<Paper square className="flex justify-around flex-col flex-1 p-8">
+								<div>
+									<p className="text-9 font-semibold text-grey-100 text-center">
+										No Messages to Display
+									</p>
+								</div>
+							</Paper>
+						</div>
+						<div className="flex-1 flex flex-col justify-between">
+							<Typography className="text-10 mb-4 flex-initial">Manipulated Variables</Typography>
+							<Paper className="flex flex-col flex-1 justify-around p-8" square>
+								<div className="mb-4">
+									<p className="text-10 font-semibold text-light-blue-300 mb-1">
+										O<sub>2</sub> Control
+									</p>
+									<Grid container>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold">Current</Typography>
+											<Typography className="text-8 font-semibold">Recommended Bias</Typography>
+										</Grid>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+										</Grid>
 									</Grid>
+								</div>
+								<div className="mb-4">
+									<p className="text-10 font-semibold text-light-blue-300 mb-1">
+										Secondary Air Flow (Tonnes/Hour)
+									</p>
+									<Grid container>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold">Current</Typography>
+											<Typography className="text-8 font-semibold">Recommended Bias</Typography>
+										</Grid>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+										</Grid>
+									</Grid>
+								</div>
+								<div className="mb-4">
+									<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+										Burner Tilt Position
+									</Typography>
+									<Grid container>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold">Current</Typography>
+											<Typography className="text-8 font-semibold">Recommended Bias</Typography>
+										</Grid>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+										</Grid>
+									</Grid>
+								</div>
+								<div className="mb-4">
+									<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+										Fuel-to-Air Ratio
+									</Typography>
+									<Grid container>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold">Current</Typography>
+											<Typography className="text-8 font-semibold">Resulting Change</Typography>
+										</Grid>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+										</Grid>
+									</Grid>
+								</div>
+								<div>
+									<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+										Secondary-to-Primary Air Ratio
+									</Typography>
+									<Grid container>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold">Current</Typography>
+											<Typography className="text-8 font-semibold">Resulting Change</Typography>
+										</Grid>
+										<Grid item xs={6}>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+											<Typography className="text-8 font-semibold text-right">10</Typography>
+										</Grid>
+									</Grid>
+								</div>
+							</Paper>
+						</div>
+						<div className="flex flex-col flex-1 my-4 md:my-0 md:mx-8">
+							<Typography className="text-10 mb-4 flex-initial">Monitored Disturbances</Typography>
+							<Paper square className="flex justify-around flex-col flex-1 p-8">
+								<Grid item>
+									<Typography className="text-8 font-semibold text-light-blue-300">
+										Primary Air Flow (Tonnes/Hour)
+									</Typography>
+								</Grid>
+								<Grid item>
+									<Typography className="text-8 font-semibold my-4 md:my-0 text-light-blue-300">
+										Gross Production Rating (MW)
+									</Typography>
+								</Grid>
+								<Grid item>
+									<Typography className="text-8 font-semibold text-light-blue-300">
+										Coal HHV (Joule)
+									</Typography>
+								</Grid>
+							</Paper>
+							<Typography className="text-10 my-4 flex-initial">Optimality Parameters</Typography>
+							<Paper square className="flex justify-around flex-col flex-1 p-8">
+								<div>
+									<p className="text-10 font-semibold text-light-blue-300">Excess Air Oxygen (%)</p>
+									<Grid container>
+										<Grid item xs={12}>
+											<Typography className="text-8 font-semibold">Outlet A</Typography>
+											<Typography className="text-8 font-semibold">Outlet B</Typography>
+										</Grid>
+									</Grid>
+								</div>
+								<div>
+									<p className="text-10 font-semibold mt-8 md:mt-0 text-light-blue-300">
+										Efficiency Change
+									</p>
+									<Grid container>
+										<Grid item xs={12}>
+											<Typography className="text-8 font-semibold">Target / Realized</Typography>
+										</Grid>
+									</Grid>
+								</div>
+							</Paper>
+						</div>
+						<div className="flex-1 flex flex-col justify-between">
+							<Typography className="text-10 mb-4 flex-initial">Constraints</Typography>
+							<Paper className="flex flex-col flex-1 justify-around p-8" square>
+								<div>
+									<p className="text-10 font-semibold text-light-blue-300 mb-1">
+										Excess Air Oxygen (Ref: Min. 2%)
+									</p>
+									<Grid container>
+										<Grid item xs={12}>
+											<Typography className="text-8 font-semibold">Outlet A</Typography>
+											<Typography className="text-8 font-semibold">Outlet B</Typography>
+										</Grid>
+									</Grid>
+								</div>
+								<div className="my-4 md:my-0">
+									<Typography className="text-10 font-semibold text-light-blue-300 mb-1 mb-1">
+										Windbox-to-Furnace Diff. Press. (Ref: Min. 70 mmwc)
+									</Typography>
+									<Grid container>
+										<Grid item xs={12}>
+											<Typography className="text-8 font-semibold">
+												Pressure Difference
+											</Typography>
+										</Grid>
+									</Grid>
+								</div>
+								<div className="mb-4 md:mb-0">
+									<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+										Furnace Pressure (Ref: Max. -3 mmwc)
+									</Typography>
+									<Grid container>
+										<Grid item xs={12}>
+											<Typography className="text-8 font-semibold">Furnace A</Typography>
+											<Typography className="text-8 font-semibold">Furnace B</Typography>
+											<Typography className="text-8 font-semibold">Furnace C</Typography>
+										</Grid>
+									</Grid>
+								</div>
+								<div>
+									<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+										Mill Outlet Temperature (Ref: 50-70 °C)
+									</Typography>
+									<Grid container spacing={2}>
+										<Grid container item xs={6} justify="space-between">
+											<Grid item>
+												<Typography className="text-8 font-semibold">Mill A</Typography>
+												<Typography className="text-8 font-semibold">Mill B</Typography>
+												<Typography className="text-8 font-semibold">Mill C</Typography>
+											</Grid>
+											<Grid item>
+												<Typography className="text-8 font-semibold">55</Typography>
+												<Typography className="text-8 font-semibold">50</Typography>
+												<Typography className="text-8 font-semibold">60</Typography>
+											</Grid>
+										</Grid>
+										<Grid container item xs={6} justify="space-between">
+											<Grid item>
+												<Typography className="text-8 font-semibold">Mill D</Typography>
+												<Typography className="text-8 font-semibold">Mill E</Typography>
+												<Typography className="text-8 font-semibold">Mill F</Typography>
+											</Grid>
+											<Grid item>
+												<Typography className="text-8 font-semibold">55</Typography>
+												<Typography className="text-8 font-semibold">66</Typography>
+												<Typography className="text-8 font-semibold">60</Typography>
+											</Grid>
+										</Grid>
+									</Grid>
+								</div>
+							</Paper>
+						</div>
+					</div>
+					<div className="flex md:flex-row flex-col w-full md:flex-1">
+						<div className="md:flex-inital md:w-3/4 md:mr-8 flex flex-col">
+							<Typography className="text-10 mb-4 flex-initial">Oxygen Trend Chart</Typography>
+							<Grid
+								container
+								component={Paper}
+								direction="column"
+								justify="center"
+								square
+								className="w-full h-full"
+							>
+								<Grid item className="w-full h-full flex flex-col flex-1 justify-center">
+									<O2TrendChart />
 								</Grid>
 							</Grid>
-							<Grid item md={4} container className="h-full">
-								<Grid item xs={12} className="mb-8 h-full">
-									<Typography className="text-11">Constraints Variable</Typography>
-								</Grid>
-								<Grid item container xs={12} className="h-full">
-									<Grid item xs={12} md={6}>
-										<TableContainer component={Paper} square>
-											<Table className={classes.table} size="small" aria-label="a dense table">
-												<TableHead>
-													<TableRow>
-														<TableCell className="text-10 py-6">Parameter</TableCell>
-														<TableCell align="right" className="text-10 py-6">
-															Status
-														</TableCell>
-													</TableRow>
-												</TableHead>
-												<TableBody>
-													{secondaryAirData.map(row => (
-														<TableRow key={row.parameter}>
-															<TableCell
-																component="th"
-																scope="row"
-																className="text-8 py-8"
-															>
-																{row.parameter}
-															</TableCell>
-															<TableCell align="right" className="text-8 py-8">
-																<Button
-																	className={clsx(
-																		'text-6 p-0',
-																		classes.statusButtonOn
-																	)}
-																>
-																	Not Ready
-																</Button>
-															</TableCell>
-														</TableRow>
-													))}
-												</TableBody>
-											</Table>
-										</TableContainer>
-									</Grid>
-									<Grid item xs={12} md={6}>
-										<TableContainer component={Paper} square>
-											<Table className={classes.table} size="small" aria-label="a dense table">
-												<TableHead>
-													<TableRow>
-														<TableCell className="text-10 py-6">Parameter</TableCell>
-														<TableCell align="right" className="text-10 py-6">
-															Status
-														</TableCell>
-													</TableRow>
-												</TableHead>
-												<TableBody>
-													{secondaryAirData.map(row => (
-														<TableRow key={row.parameter}>
-															<TableCell
-																component="th"
-																scope="row"
-																className="text-8 py-8"
-															>
-																{row.parameter}
-															</TableCell>
-															<TableCell align="right" className="text-8 py-8">
-																<Button
-																	className={clsx(
-																		'text-6 p-0',
-																		classes.statusButtonOff
-																	)}
-																>
-																	Ready
-																</Button>
-															</TableCell>
-														</TableRow>
-													))}
-												</TableBody>
-											</Table>
-										</TableContainer>
-									</Grid>
-								</Grid>
-							</Grid>
-						</Grid>
-					</Grid>
+						</div>
+						<div className="flex flex-col flex-1 my-4 md:my-0">
+							<Typography className="text-10 mb-4 flex-initial">Alarms</Typography>
+							<Paper square className="w-full flex flex-col flex-1 p-8 justify-center md:justify-around">
+								<Typography className="text-10 mb-4 flex-initial text-light-blue-300">
+									Furnace Pressure Low Alarm
+								</Typography>
+								<Typography className="text-10 mb-4 flex-initial text-light-blue-300">
+									Furnace Pressure Low Alarm
+								</Typography>
+							</Paper>
+						</div>
+					</div>
 				</Grid>
 				{/* Main Content */}
 			</Grid>
