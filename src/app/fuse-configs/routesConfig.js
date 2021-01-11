@@ -2,7 +2,7 @@ import FuseUtils from '@fuse/utils';
 import appsConfigs from 'app/main/apps/appsConfigs';
 import authRoleExamplesConfigs from 'app/main/auth/authRoleExamplesConfigs';
 import CallbackConfig from 'app/main/callback/CallbackConfig';
-import DocumentationConfig from 'app/main/documentation/DocumentationConfig';
+// import DocumentationConfig from 'app/main/documentation/DocumentationConfig';
 import SootblowConfig from 'app/main/Sootblow/SootblowConfig';
 import HomeConfig from 'app/main/Home/HomeConfig';
 import LoginConfig from 'app/main/Login/LoginConfig';
@@ -19,7 +19,7 @@ const routeConfigs = [
 	...pagesConfigs,
 	...authRoleExamplesConfigs,
 	UserInterfaceConfig,
-	DocumentationConfig,
+	// DocumentationConfig,
 	HomeConfig,
 	SootblowConfig,
 	CombustionConfig,
