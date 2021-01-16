@@ -2,7 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import auth from 'app/auth/store';
 import fuse from './fuse';
 import i18n from './i18nSlice';
-import { sootblowReducer } from './reducers';
+import { sootblowReducer, combustionReducer } from './reducers';
 
 const createReducer = asyncReducers =>
 	combineReducers({
@@ -10,6 +10,7 @@ const createReducer = asyncReducers =>
 		fuse,
 		i18n,
 		sootblowReducer,
+		combustionReducer,
 		...asyncReducers
 	});
 

@@ -1,3 +1,4 @@
 import { getSootblowData } from './Sootblow';
+import { getCombustionTimestamp, getCombustionConstraints } from './Combustion';
 
-export { getSootblowData };
+export { getSootblowData, getCombustionTimestamp, getCombustionConstraints };

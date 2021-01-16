@@ -1,74 +1,60 @@
-const createTableData = (label, value) => {
-	return { label, value };
+const {
+	GET_COMBUSTION_TIMESTAMP_FAILED,
+	GET_COMBUSTION_TIMESTAMP_REQUEST,
+	GET_COMBUSTION_TIMESTAMP_SUCCESS,
+	GET_COMBUSTION_CONSTRAINTS_FAILED,
+	GET_COMBUSTION_CONSTRAINTS_REQUEST,
+	GET_COMBUSTION_CONSTRAINTS_SUCCESS
+} = require('app/store/constants');
+
+const initialState = {
+	combustionTimestamp: {},
+	constrainst: [],
+	loading: false,
+	error: false
 };
 
-const o2ControlData = [
-	{
-		label: 'Bias',
-		value: '0'
-	},
-	{
-		label: 'Current',
-		value: '0'
-	},
-	{
-		label: 'Set Point',
-		value: '0'
-	},
-	{
-		label: 'O2 R',
-		value: '0'
-	},
-	{
-		label: 'O2 L',
-		value: '0'
+const combustionReducer = (state = initialState, action) => {
+	switch (action.type) {
+		case GET_COMBUSTION_TIMESTAMP_REQUEST:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_COMBUSTION_TIMESTAMP_SUCCESS:
+			return {
+				...state,
+				combustionTimestamp: action.payload.data,
+				loading: false
+			};
+		case GET_COMBUSTION_TIMESTAMP_FAILED:
+			return {
+				...state,
+				error: action.payload.error,
+				loading: false
+			};
+		case GET_COMBUSTION_CONSTRAINTS_REQUEST:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_COMBUSTION_CONSTRAINTS_SUCCESS:
+			return {
+				...state,
+				constrainst: action.payload.data,
+				loading: false
+			};
+		case GET_COMBUSTION_CONSTRAINTS_FAILED:
+			return {
+				...state,
+				error: action.payload.error,
+				loading: false
+			};
+		default:
+			return {
+				state
+			};
 	}
-];
+};
 
-const burnerTiltData = [
-	{
-		label: 'Bias',
-		value: '0'
-	},
-	{
-		label: 'Current',
-		value: '0'
-	},
-	{
-		label: 'Set Point',
-		value: '0'
-	},
-	{
-		label: 'Final SH Temperature',
-		value: '0'
-	},
-	{
-		label: 'RH2 SH Temperature',
-		value: '0'
-	}
-];
-
-const secondaryAirControlData = [
-	{
-		label: 'Bias',
-		value: '0'
-	},
-	{
-		label: 'Current',
-		value: '0'
-	},
-	{
-		label: 'Set Point',
-		value: '0'
-	},
-	{
-		label: 'Windbox Delta Pressure R',
-		value: '0'
-	},
-	{
-		label: 'Windbox Delta Pressure L',
-		value: '0'
-	}
-];
-
-const initialState = {};
+export default combustionReducer;
