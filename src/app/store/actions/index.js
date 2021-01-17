@@ -1,4 +1,19 @@
+import {
+	getCombustionConstraints,
+	getCombustionDisturbances,
+	getCombustionMVCurrent,
+	getCombustionO2Chart,
+	getCombustionRecommendationTime,
+	getCombustionSensorsTime
+} from './Combustion';
 import { getSootblowData } from './Sootblow';
-import { getCombustionTimestamp, getCombustionConstraints } from './Combustion';
 
-export { getSootblowData, getCombustionTimestamp, getCombustionConstraints };
+export {
+	getSootblowData,
+	getCombustionRecommendationTime,
+	getCombustionConstraints,
+	getCombustionDisturbances,
+	getCombustionSensorsTime,
+	getCombustionMVCurrent,
+	getCombustionO2Chart
+};

@@ -1,7 +1,13 @@
 import { Button, ButtonGroup, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack } from '@material-ui/icons';
-import { getCombustionConstraints, getCombustionTimestamp } from 'app/store/actions';
+import {
+	getCombustionConstraints,
+	getCombustionDisturbances,
+	getCombustionMVCurrent,
+	getCombustionO2Chart,
+	getCombustionRecommendationTime
+} from 'app/store/actions';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -56,14 +62,23 @@ const Combustion = () => {
 
 	const [masterControlStatus, setMasterControlStatus] = useState(false);
 
-	const combustionTimestamp = useSelector(state => state.combustionReducer.combustionTimestamp);
+	const combustionRecommendationTime = useSelector(state => state.combustionReducer.combustionRecommendationTime);
 	const combustionConstraints = useSelector(state => state.combustionReducer.constrainst);
-	const recommendationTime = combustionTimestamp && combustionTimestamp;
+	const combustionDisturbances = useSelector(state => state.combustionReducer.disturbances);
+	const combustionMVCurrent = useSelector(state => state.combustionReducer.mvCurrent);
+	const combustionO2Chart = useSelector(state => state.combustionReducer.o2Chart);
+	const recommendationTime = combustionRecommendationTime && combustionRecommendationTime;
 	const constraints = combustionConstraints && combustionConstraints[0];
+	const disturbances = combustionDisturbances && combustionDisturbances[0];
+	const mvCurrent = combustionMVCurrent && combustionMVCurrent[0];
+	const o2Chart = combustionO2Chart && combustionO2Chart;
 
 	useEffect(() => {
-		dispatch(getCombustionTimestamp());
+		dispatch(getCombustionRecommendationTime());
+		dispatch(getCombustionO2Chart());
 		dispatch(getCombustionConstraints(recommendationTime));
+		dispatch(getCombustionDisturbances(recommendationTime));
+		dispatch(getCombustionMVCurrent(recommendationTime));
 	}, [dispatch, recommendationTime]);
 
 	const handleMasterControlOn = () => {
@@ -199,6 +214,12 @@ const Combustion = () => {
 									</Typography>
 									<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
 										<div>
+											<p className="text-9 font-semibold text-light-blue-300">-</p>
+										</div>
+									</Paper>
+									<Typography className="text-10 my-4 flex-initial">Last Sensors Time</Typography>
+									<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
+										<div>
 											<p className="text-9 font-semibold text-light-blue-300">
 												{!recommendationTime ? '-' : recommendationTime}
 											</p>
@@ -229,10 +250,16 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{mvCurrent
+															? !mvCurrent && mvCurrent.oxygen_control
+																? '-'
+																: Number(mvCurrent && mvCurrent.oxygen_control).toFixed(
+																		2
+																  )
+															: '-'}
 													</Typography>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -250,10 +277,16 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{mvCurrent
+															? !mvCurrent && mvCurrent.secondary_air_flow
+																? '-'
+																: Number(
+																		mvCurrent && mvCurrent.secondary_air_flow
+																  ).toFixed(2)
+															: '-'}
 													</Typography>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -271,10 +304,16 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{mvCurrent
+															? !mvCurrent && mvCurrent.burner_tilt_pos
+																? '-'
+																: Number(
+																		mvCurrent && mvCurrent.burner_tilt_pos
+																  ).toFixed(2)
+															: '-'}
 													</Typography>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -292,10 +331,16 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{mvCurrent
+															? !mvCurrent && mvCurrent.fuel_to_air_ratio
+																? '-'
+																: Number(
+																		mvCurrent && mvCurrent.fuel_to_air_ratio
+																  ).toFixed(2)
+															: '-'}
 													</Typography>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -313,10 +358,16 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{mvCurrent
+															? !mvCurrent && mvCurrent.sa_to_pa_ratio
+																? '-'
+																: Number(mvCurrent && mvCurrent.sa_to_pa_ratio).toFixed(
+																		2
+																  )
+															: '-'}
 													</Typography>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -346,9 +397,36 @@ const Combustion = () => {
 														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 font-semibold">55</Typography>
-														<Typography className="text-8 font-semibold">50</Typography>
-														<Typography className="text-8 font-semibold">60</Typography>
+														<Typography className="text-8 font-semibold">
+															{disturbances
+																? !disturbances && disturbances.primary_air_flow_a
+																	? '-'
+																	: Number(
+																			disturbances &&
+																				disturbances.primary_air_flow_a
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 font-semibold">
+															{disturbances
+																? !disturbances && disturbances.primary_air_flow_b
+																	? '-'
+																	: Number(
+																			disturbances &&
+																				disturbances.primary_air_flow_b
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 font-semibold">
+															{disturbances
+																? !disturbances && disturbances.primary_air_flow_c
+																	? '-'
+																	: Number(
+																			disturbances &&
+																				disturbances.primary_air_flow_c
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
 													</Grid>
 												</Grid>
 												<Grid container item xs={6} justify="space-between">
@@ -364,9 +442,36 @@ const Combustion = () => {
 														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 font-semibold">55</Typography>
-														<Typography className="text-8 font-semibold">66</Typography>
-														<Typography className="text-8 font-semibold">60</Typography>
+														<Typography className="text-8 font-semibold">
+															{disturbances
+																? !disturbances && disturbances.primary_air_flow_d
+																	? '-'
+																	: Number(
+																			disturbances &&
+																				disturbances.primary_air_flow_d
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 font-semibold">
+															{disturbances
+																? !disturbances && disturbances.primary_air_flow_e
+																	? '-'
+																	: Number(
+																			disturbances &&
+																				disturbances.primary_air_flow_e
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 font-semibold">
+															{disturbances
+																? !disturbances && disturbances.primary_air_flow_f
+																	? '-'
+																	: Number(
+																			disturbances &&
+																				disturbances.primary_air_flow_f
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
 													</Grid>
 												</Grid>
 											</Grid>
@@ -381,7 +486,14 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{disturbances
+															? !disturbances && disturbances.gross_production_rating
+																? '-'
+																: Number(
+																		disturbances &&
+																			disturbances.gross_production_rating
+																  ).toFixed(2)
+															: '-'}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -396,7 +508,11 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{disturbances
+															? !disturbances && disturbances.gross_production_rating
+																? '-'
+																: disturbances && disturbances.coal_hhv
+															: '-'}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -414,7 +530,7 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
@@ -422,7 +538,7 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -439,7 +555,7 @@ const Combustion = () => {
 												</Grid>
 												<Grid item xs={6}>
 													<Typography className="text-8 font-semibold text-right">
-														10
+														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 											</Grid>
@@ -447,7 +563,7 @@ const Combustion = () => {
 									</Paper>
 								</div>
 							</div>
-							<div className="flex md:flex-row flex-col flex-1 mr-8">
+							<div className="flex md:flex-row flex-col flex-1 md:mr-8">
 								<div className="md:flex-inital w-full flex flex-col">
 									<Typography className="text-10 mb-4 flex-initial">Oxygen Trend Chart</Typography>
 									<Grid
@@ -459,7 +575,7 @@ const Combustion = () => {
 										className="w-full h-full"
 									>
 										<Grid item className="w-full h-full flex flex-col flex-1 justify-center">
-											<O2TrendChart />
+											<O2TrendChart data={o2Chart && o2Chart} />
 										</Grid>
 									</Grid>
 								</div>
@@ -481,7 +597,7 @@ const Combustion = () => {
 												{constraints
 													? !constraints && constraints.excess_outlet_a
 														? '-'
-														: constraints && constraints.excess_outlet_a
+														: Number(constraints && constraints.excess_outlet_a).toFixed(2)
 													: '-'}
 											</Typography>
 										</Grid>
@@ -493,7 +609,7 @@ const Combustion = () => {
 												{constraints
 													? !constraints && constraints.excess_outlet_b
 														? '-'
-														: constraints && constraints.excess_outlet_b
+														: Number(constraints && constraints.excess_outlet_b).toFixed(2)
 													: '-'}
 											</Typography>
 										</Grid>
@@ -519,28 +635,36 @@ const Combustion = () => {
 												{constraints
 													? !constraints && constraints.windbox_pressure_left_hp
 														? '-'
-														: constraints && constraints.windbox_pressure_left_hp
+														: Number(
+																constraints && constraints.windbox_pressure_left_hp
+														  ).toFixed(2)
 													: '-'}
 											</Typography>
 											<Typography className="text-8 font-semibold text-right">
 												{constraints
 													? !constraints && constraints.windbox_pressure_left_lp
 														? '-'
-														: constraints && constraints.windbox_pressure_left_lp
+														: Number(
+																constraints && constraints.windbox_pressure_left_lp
+														  ).toFixed(2)
 													: '-'}
 											</Typography>
 											<Typography className="text-8 font-semibold text-right">
 												{constraints
 													? !constraints && constraints.windbox_pressure_right_hp
 														? '-'
-														: constraints && constraints.windbox_pressure_right_hp
+														: Number(
+																constraints && constraints.windbox_pressure_right_hp
+														  ).toFixed(2)
 													: '-'}
 											</Typography>
 											<Typography className="text-8 font-semibold text-right">
 												{constraints
 													? !constraints && constraints.windbox_pressure_right_lp
 														? '-'
-														: constraints && constraints.windbox_pressure_right_lp
+														: Number(
+																constraints && constraints.windbox_pressure_right_lp
+														  ).toFixed(2)
 													: '-'}
 											</Typography>
 										</Grid>

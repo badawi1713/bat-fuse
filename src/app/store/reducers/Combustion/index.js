@@ -1,33 +1,46 @@
 const {
-	GET_COMBUSTION_TIMESTAMP_FAILED,
-	GET_COMBUSTION_TIMESTAMP_REQUEST,
-	GET_COMBUSTION_TIMESTAMP_SUCCESS,
+	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_FAILED,
+	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_REQUEST,
+	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_SUCCESS,
 	GET_COMBUSTION_CONSTRAINTS_FAILED,
 	GET_COMBUSTION_CONSTRAINTS_REQUEST,
-	GET_COMBUSTION_CONSTRAINTS_SUCCESS
+	GET_COMBUSTION_CONSTRAINTS_SUCCESS,
+	GET_COMBUSTION_DISTURBANCES_REQUEST,
+	GET_COMBUSTION_DISTURBANCES_SUCCESS,
+	GET_COMBUSTION_DISTURBANCES_FAILED,
+	GET_COMBUSTION_MV_CURRENT_REQUEST,
+	GET_COMBUSTION_MV_CURRENT_SUCCESS,
+	GET_COMBUSTION_MV_CURRENT_FAILED,
+	GET_COMBUSTION_O2_CHART_REQUEST,
+	GET_COMBUSTION_O2_CHART_SUCCESS,
+	GET_COMBUSTION_O2_CHART_FAILED
 } = require('app/store/constants');
 
 const initialState = {
-	combustionTimestamp: {},
+	combustionRecommendationTime: {},
+	combustionSensorsTime: {},
 	constrainst: [],
+	disturbances: [],
+	mvCurrent: [],
+	o2Chart: [],
 	loading: false,
 	error: false
 };
 
 const combustionReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case GET_COMBUSTION_TIMESTAMP_REQUEST:
+		case GET_COMBUSTION_LAST_RECOMMENDATION_TIME_REQUEST:
 			return {
 				...state,
 				loading: true
 			};
-		case GET_COMBUSTION_TIMESTAMP_SUCCESS:
+		case GET_COMBUSTION_LAST_RECOMMENDATION_TIME_SUCCESS:
 			return {
 				...state,
-				combustionTimestamp: action.payload.data,
+				combustionRecommendationTime: action.payload.data,
 				loading: false
 			};
-		case GET_COMBUSTION_TIMESTAMP_FAILED:
+		case GET_COMBUSTION_LAST_RECOMMENDATION_TIME_FAILED:
 			return {
 				...state,
 				error: action.payload.error,
@@ -45,6 +58,57 @@ const combustionReducer = (state = initialState, action) => {
 				loading: false
 			};
 		case GET_COMBUSTION_CONSTRAINTS_FAILED:
+			return {
+				...state,
+				error: action.payload.error,
+				loading: false
+			};
+		case GET_COMBUSTION_DISTURBANCES_REQUEST:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_COMBUSTION_DISTURBANCES_SUCCESS:
+			return {
+				...state,
+				disturbances: action.payload.data,
+				loading: false
+			};
+		case GET_COMBUSTION_DISTURBANCES_FAILED:
+			return {
+				...state,
+				error: action.payload.error,
+				loading: false
+			};
+		case GET_COMBUSTION_MV_CURRENT_REQUEST:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_COMBUSTION_MV_CURRENT_SUCCESS:
+			return {
+				...state,
+				mvCurrent: action.payload.data,
+				loading: false
+			};
+		case GET_COMBUSTION_MV_CURRENT_FAILED:
+			return {
+				...state,
+				error: action.payload.error,
+				loading: false
+			};
+		case GET_COMBUSTION_O2_CHART_REQUEST:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_COMBUSTION_O2_CHART_SUCCESS:
+			return {
+				...state,
+				o2Chart: action.payload.data,
+				loading: false
+			};
+		case GET_COMBUSTION_O2_CHART_FAILED:
 			return {
 				...state,
 				error: action.payload.error,

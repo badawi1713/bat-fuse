@@ -1,31 +1,56 @@
-import {
-	GET_COMBUSTION_TIMESTAMP_REQUEST,
-	GET_COMBUSTION_TIMESTAMP_SUCCESS,
-	GET_COMBUSTION_TIMESTAMP_FAILED,
-	GET_COMBUSTION_CONSTRAINTS_REQUEST,
-	GET_COMBUSTION_CONSTRAINTS_SUCCESS,
-	GET_COMBUSTION_CONSTRAINTS_FAILED
-} from 'app/store/constants';
 // import { ApiGetRequest } from '../../api-configs';
 // import { errorcallback } from '../../global';
 import jwtService from 'app/services/jwtService';
+import {
+	GET_COMBUSTION_CONSTRAINTS_FAILED,
+	GET_COMBUSTION_CONSTRAINTS_REQUEST,
+	GET_COMBUSTION_CONSTRAINTS_SUCCESS,
+	GET_COMBUSTION_DISTURBANCES_FAILED,
+	GET_COMBUSTION_DISTURBANCES_REQUEST,
+	GET_COMBUSTION_DISTURBANCES_SUCCESS,
+	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_FAILED,
+	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_REQUEST,
+	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_SUCCESS,
+	GET_COMBUSTION_LAST_SENSORS_TIME_FAILED,
+	GET_COMBUSTION_LAST_SENSORS_TIME_REQUEST,
+	GET_COMBUSTION_LAST_SENSORS_TIME_SUCCESS,
+	GET_COMBUSTION_MV_CURRENT_REQUEST,
+	GET_COMBUSTION_MV_CURRENT_SUCCESS,
+	GET_COMBUSTION_MV_CURRENT_FAILED,
+	GET_COMBUSTION_O2_CHART_REQUEST,
+	GET_COMBUSTION_O2_CHART_SUCCESS,
+	GET_COMBUSTION_O2_CHART_FAILED
+} from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
-
 import Axios from 'axios';
 
 const baseURL = 'http://10.7.1.117:8080';
 
-const getCombustionTimestampRequest = () => ({
-	type: GET_COMBUSTION_TIMESTAMP_REQUEST
+const getCombustionRecommendationTimeRequest = () => ({
+	type: GET_COMBUSTION_LAST_RECOMMENDATION_TIME_REQUEST
 });
 
-const getCombustionTimestampSuccess = data => ({
-	type: GET_COMBUSTION_TIMESTAMP_SUCCESS,
+const getCombustionRecommendationTimeSuccess = data => ({
+	type: GET_COMBUSTION_LAST_RECOMMENDATION_TIME_SUCCESS,
 	payload: { data }
 });
 
-const getCombustionTimestampFailed = error => ({
-	type: GET_COMBUSTION_TIMESTAMP_FAILED,
+const getCombustionRecommendationTimeFailed = error => ({
+	type: GET_COMBUSTION_LAST_RECOMMENDATION_TIME_FAILED,
+	payload: { error }
+});
+
+const getCombustionSensorsTimeRequest = () => ({
+	type: GET_COMBUSTION_LAST_SENSORS_TIME_REQUEST
+});
+
+const getCombustionSensorsTimeSuccess = data => ({
+	type: GET_COMBUSTION_LAST_SENSORS_TIME_SUCCESS,
+	payload: { data }
+});
+
+const getCombustioSensorsTimeFailed = error => ({
+	type: GET_COMBUSTION_LAST_SENSORS_TIME_FAILED,
 	payload: { error }
 });
 
@@ -43,19 +68,84 @@ const getCombustionConstraintsFailed = error => ({
 	payload: { error }
 });
 
-export const getCombustionTimestamp = () => {
+const getCombustionDisturbancesRequest = () => ({
+	type: GET_COMBUSTION_DISTURBANCES_REQUEST
+});
+
+const getCombustionDisturbancesSuccess = data => ({
+	type: GET_COMBUSTION_DISTURBANCES_SUCCESS,
+	payload: { data }
+});
+
+const getCombustionDisturbancesFailed = error => ({
+	type: GET_COMBUSTION_DISTURBANCES_FAILED,
+	payload: { error }
+});
+
+const getCombustionMVCurrentRequest = () => ({
+	type: GET_COMBUSTION_MV_CURRENT_REQUEST
+});
+
+const getCombustionMVCurrentSuccess = data => ({
+	type: GET_COMBUSTION_MV_CURRENT_SUCCESS,
+	payload: { data }
+});
+
+const getCombustionMVCurrentFailed = error => ({
+	type: GET_COMBUSTION_MV_CURRENT_FAILED,
+	payload: { error }
+});
+
+const getCombustionO2ChartRequest = () => ({
+	type: GET_COMBUSTION_O2_CHART_REQUEST
+});
+
+const getCombustionO2ChartSuccess = data => ({
+	type: GET_COMBUSTION_O2_CHART_SUCCESS,
+	payload: { data }
+});
+
+const getCombustionO2ChartFailed = error => ({
+	type: GET_COMBUSTION_O2_CHART_FAILED,
+	payload: { error }
+});
+
+export const getCombustionRecommendationTime = () => {
 	return async dispatch => {
-		await dispatch(getCombustionTimestampRequest);
+		await dispatch(getCombustionRecommendationTimeRequest);
 		await Axios.get(`${baseURL}/getMaxTS`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
 		})
 			.then(response => {
-				dispatch(getCombustionTimestampSuccess(response.data.last_update));
+				dispatch(getCombustionRecommendationTimeSuccess(response.data.last_update));
 			})
 			.catch(error => {
-				dispatch(getCombustionTimestampFailed(error.message));
+				dispatch(getCombustionRecommendationTimeFailed(error.message));
+				dispatch(
+					showMessage({
+						message: error.message,
+						variant: 'error'
+					})
+				);
+			});
+	};
+};
+
+export const getCombustionSensorsTime = () => {
+	return async dispatch => {
+		await dispatch(getCombustionSensorsTimeRequest);
+		await Axios.get(`${baseURL}/getMaxTS`, {
+			headers: {
+				Authorization: `Bearer ${jwtService.getAccessToken()}`
+			}
+		})
+			.then(response => {
+				dispatch(getCombustionSensorsTimeSuccess(response.data.last_update));
+			})
+			.catch(error => {
+				dispatch(getCombustioSensorsTimeFailed(error.message));
 				dispatch(
 					showMessage({
 						message: error.message,
@@ -75,11 +165,79 @@ export const getCombustionConstraints = timestamp => {
 			}
 		})
 			.then(response => {
-				console.log('response', response.data);
 				dispatch(getCombustionConstraintsSuccess(response.data));
 			})
 			.catch(error => {
 				dispatch(getCombustionConstraintsFailed(error.message));
+				dispatch(
+					showMessage({
+						message: error.message,
+						variant: 'error'
+					})
+				);
+			});
+	};
+};
+
+export const getCombustionDisturbances = timestamp => {
+	return async dispatch => {
+		await dispatch(getCombustionDisturbancesRequest);
+		await Axios.get(`${baseURL}/getDisturbances?last_update=${timestamp}`, {
+			headers: {
+				Authorization: `Bearer ${jwtService.getAccessToken()}`
+			}
+		})
+			.then(response => {
+				dispatch(getCombustionDisturbancesSuccess(response.data));
+			})
+			.catch(error => {
+				dispatch(getCombustionDisturbancesFailed(error.message));
+				dispatch(
+					showMessage({
+						message: error.message,
+						variant: 'error'
+					})
+				);
+			});
+	};
+};
+
+export const getCombustionO2Chart = () => {
+	return async dispatch => {
+		await dispatch(getCombustionO2ChartRequest);
+		await Axios.get(`${baseURL}/getO2Day`, {
+			headers: {
+				Authorization: `Bearer ${jwtService.getAccessToken()}`
+			}
+		})
+			.then(response => {
+				dispatch(getCombustionO2ChartSuccess(JSON.parse(response.data)));
+			})
+			.catch(error => {
+				dispatch(getCombustionO2ChartFailed(error.message));
+				dispatch(
+					showMessage({
+						message: error.message,
+						variant: 'error'
+					})
+				);
+			});
+	};
+};
+
+export const getCombustionMVCurrent = timestamp => {
+	return async dispatch => {
+		await dispatch(getCombustionMVCurrentRequest);
+		await Axios.get(`${baseURL}/getMVCurrent?last_update=${timestamp}`, {
+			headers: {
+				Authorization: `Bearer ${jwtService.getAccessToken()}`
+			}
+		})
+			.then(response => {
+				dispatch(getCombustionMVCurrentSuccess(response.data));
+			})
+			.catch(error => {
+				dispatch(getCombustionMVCurrentFailed(error.message));
 				dispatch(
 					showMessage({
 						message: error.message,
