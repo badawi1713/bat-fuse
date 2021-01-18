@@ -6,7 +6,8 @@ import {
 	getCombustionDisturbances,
 	getCombustionMVCurrent,
 	getCombustionO2Chart,
-	getCombustionRecommendationTime
+	getCombustionRecommendationTime,
+	getCombustionConstraintsLimit
 } from 'app/store/actions';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
@@ -64,11 +65,14 @@ const Combustion = () => {
 
 	const combustionRecommendationTime = useSelector(state => state.combustionReducer.combustionRecommendationTime);
 	const combustionConstraints = useSelector(state => state.combustionReducer.constrainst);
+	const combustionConstraintsLimit = useSelector(state => state.combustionReducer.constraintLimit);
 	const combustionDisturbances = useSelector(state => state.combustionReducer.disturbances);
 	const combustionMVCurrent = useSelector(state => state.combustionReducer.mvCurrent);
 	const combustionO2Chart = useSelector(state => state.combustionReducer.o2Chart);
+
 	const recommendationTime = combustionRecommendationTime && combustionRecommendationTime;
 	const constraints = combustionConstraints && combustionConstraints[0];
+	const constraintLimit = combustionConstraintsLimit && combustionConstraintsLimit;
 	const disturbances = combustionDisturbances && combustionDisturbances[0];
 	const mvCurrent = combustionMVCurrent && combustionMVCurrent[0];
 	const o2Chart = combustionO2Chart && combustionO2Chart;
@@ -77,6 +81,7 @@ const Combustion = () => {
 		dispatch(getCombustionRecommendationTime());
 		dispatch(getCombustionO2Chart());
 		dispatch(getCombustionConstraints(recommendationTime));
+		dispatch(getCombustionConstraintsLimit());
 		dispatch(getCombustionDisturbances(recommendationTime));
 		dispatch(getCombustionMVCurrent(recommendationTime));
 	}, [dispatch, recommendationTime]);
@@ -592,7 +597,13 @@ const Combustion = () => {
 							<Paper className="flex flex-col flex-1 justify-around md:justify-start p-8" square>
 								<div>
 									<p className="text-10 font-semibold text-light-blue-300 mb-1">
-										Excess Air Oxygen (Ref: Min. 2%)
+										Excess Air Oxygen (Ref: Min.{' '}
+										{constraintLimit
+											? !constraintLimit && constraintLimit[0] && constraintLimit[0].value
+												? '-'
+												: constraintLimit && constraintLimit[0] && constraintLimit[0].value
+											: '-'}
+										%)
 									</p>
 									<Grid container>
 										<Grid item xs={6}>
@@ -623,7 +634,13 @@ const Combustion = () => {
 								</div>
 								<div className="my-4 ">
 									<Typography className="text-10 font-semibold text-light-blue-300 mb-1 mb-1">
-										Windbox-to-Furnace Diff. Press. (Ref: Min. 70 mmwc)
+										Windbox-to-Furnace Diff. Press. (Ref: Min.{' '}
+										{constraintLimit
+											? !constraintLimit && constraintLimit[4] && constraintLimit[4].value
+												? '-'
+												: constraintLimit && constraintLimit[4] && constraintLimit[4].value
+											: '-'}{' '}
+										mmwc)
 									</Typography>
 									<Grid container>
 										<Grid item xs={6}>
@@ -658,7 +675,13 @@ const Combustion = () => {
 								</div>
 								<div className="mb-4">
 									<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
-										Furnace Pressure (Ref: Max. -3 mmwc)
+										Furnace Pressure (Ref: Max.{' '}
+										{constraintLimit
+											? !constraintLimit && constraintLimit[1] && constraintLimit[1].value
+												? '-'
+												: constraintLimit && constraintLimit[1] && constraintLimit[1].value
+											: '-'}{' '}
+										mmwc)
 									</Typography>
 									<Grid container>
 										<Grid item xs={6}>
@@ -707,7 +730,19 @@ const Combustion = () => {
 								</div>
 								<div>
 									<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
-										Mill Outlet Temperature (Ref: 50-70 °C)
+										Mill Outlet Temperature (Ref:{' '}
+										{constraintLimit
+											? !constraintLimit && constraintLimit[2] && constraintLimit[2].value
+												? '0'
+												: constraintLimit && constraintLimit[2] && constraintLimit[2].value
+											: ''}
+										-
+										{constraintLimit
+											? !constraintLimit && constraintLimit[3] && constraintLimit[3].value
+												? '0'
+												: constraintLimit && constraintLimit[3] && constraintLimit[3].value
+											: ''}{' '}
+										°C)
 									</Typography>
 									<Grid container spacing={2}>
 										<Grid container item xs={6} justify="space-between">

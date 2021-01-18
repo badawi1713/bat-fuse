@@ -1,5 +1,6 @@
 import {
 	getCombustionConstraints,
+	getCombustionConstraintsLimit,
 	getCombustionDisturbances,
 	getCombustionMVCurrent,
 	getCombustionO2Chart,
@@ -12,6 +13,7 @@ export {
 	getSootblowData,
 	getCombustionRecommendationTime,
 	getCombustionConstraints,
+	getCombustionConstraintsLimit,
 	getCombustionDisturbances,
 	getCombustionSensorsTime,
 	getCombustionMVCurrent,

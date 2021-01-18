@@ -19,7 +19,10 @@ import {
 	GET_COMBUSTION_MV_CURRENT_FAILED,
 	GET_COMBUSTION_O2_CHART_REQUEST,
 	GET_COMBUSTION_O2_CHART_SUCCESS,
-	GET_COMBUSTION_O2_CHART_FAILED
+	GET_COMBUSTION_O2_CHART_FAILED,
+	GET_COMBUSTION_CONSTRAINTS_LIMIT_REQUEST,
+	GET_COMBUSTION_CONSTRAINTS_LIMIT_SUCCESS,
+	GET_COMBUSTION_CONSTRAINTS_LIMIT_FAILED
 } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import Axios from 'axios';
@@ -49,7 +52,7 @@ const getCombustionSensorsTimeSuccess = data => ({
 	payload: { data }
 });
 
-const getCombustioSensorsTimeFailed = error => ({
+const getCombustionSensorsTimeFailed = error => ({
 	type: GET_COMBUSTION_LAST_SENSORS_TIME_FAILED,
 	payload: { error }
 });
@@ -65,6 +68,20 @@ const getCombustionConstraintsSuccess = data => ({
 
 const getCombustionConstraintsFailed = error => ({
 	type: GET_COMBUSTION_CONSTRAINTS_FAILED,
+	payload: { error }
+});
+
+const getCombustionConstraintsLimitRequest = () => ({
+	type: GET_COMBUSTION_CONSTRAINTS_LIMIT_REQUEST
+});
+
+const getCombustionConstraintsLimitSuccess = data => ({
+	type: GET_COMBUSTION_CONSTRAINTS_LIMIT_SUCCESS,
+	payload: { data }
+});
+
+const getCombustionConstraintsLimitFailed = error => ({
+	type: GET_COMBUSTION_CONSTRAINTS_LIMIT_FAILED,
 	payload: { error }
 });
 
@@ -145,7 +162,7 @@ export const getCombustionSensorsTime = () => {
 				dispatch(getCombustionSensorsTimeSuccess(response.data.last_update));
 			})
 			.catch(error => {
-				dispatch(getCombustioSensorsTimeFailed(error.message));
+				dispatch(getCombustionSensorsTimeFailed(error.message));
 				dispatch(
 					showMessage({
 						message: error.message,
@@ -169,6 +186,29 @@ export const getCombustionConstraints = timestamp => {
 			})
 			.catch(error => {
 				dispatch(getCombustionConstraintsFailed(error.message));
+				dispatch(
+					showMessage({
+						message: error.message,
+						variant: 'error'
+					})
+				);
+			});
+	};
+};
+
+export const getCombustionConstraintsLimit = () => {
+	return async dispatch => {
+		await dispatch(getCombustionConstraintsLimitRequest);
+		await Axios.get(`${baseURL}/getConstraintsLimit`, {
+			headers: {
+				Authorization: `Bearer ${jwtService.getAccessToken()}`
+			}
+		})
+			.then(response => {
+				dispatch(getCombustionConstraintsLimitSuccess(response.data));
+			})
+			.catch(error => {
+				dispatch(getCombustionConstraintsLimitFailed(error.message));
 				dispatch(
 					showMessage({
 						message: error.message,

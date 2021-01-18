@@ -5,6 +5,9 @@ const {
 	GET_COMBUSTION_CONSTRAINTS_FAILED,
 	GET_COMBUSTION_CONSTRAINTS_REQUEST,
 	GET_COMBUSTION_CONSTRAINTS_SUCCESS,
+	GET_COMBUSTION_CONSTRAINTS_LIMIT_REQUEST,
+	GET_COMBUSTION_CONSTRAINTS_LIMIT_SUCCESS,
+	GET_COMBUSTION_CONSTRAINTS_LIMIT_FAILED,
 	GET_COMBUSTION_DISTURBANCES_REQUEST,
 	GET_COMBUSTION_DISTURBANCES_SUCCESS,
 	GET_COMBUSTION_DISTURBANCES_FAILED,
@@ -20,6 +23,7 @@ const initialState = {
 	combustionRecommendationTime: {},
 	combustionSensorsTime: {},
 	constrainst: [],
+	constraintLimit: [],
 	disturbances: [],
 	mvCurrent: [],
 	o2Chart: [],
@@ -62,6 +66,23 @@ const combustionReducer = (state = initialState, action) => {
 				...state,
 				error: action.payload.error,
 				loading: false
+			};
+		case GET_COMBUSTION_CONSTRAINTS_LIMIT_REQUEST:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_COMBUSTION_CONSTRAINTS_LIMIT_SUCCESS:
+			return {
+				...state,
+				loading: false,
+				constraintLimit: action.payload.data
+			};
+		case GET_COMBUSTION_CONSTRAINTS_LIMIT_FAILED:
+			return {
+				...state,
+				loading: false,
+				error: action.payload.error
 			};
 		case GET_COMBUSTION_DISTURBANCES_REQUEST:
 			return {
