@@ -39,17 +39,17 @@ const Home = () => {
 			<Hidden mdUp>
 				<FuseAnimate animation="transition.slideUpIn" delay={200}>
 					<Grid container spacing={2} alignItems="center">
-						<Grid item xs={12} md={6}>
+						<Grid item xs={12}>
 							<Link to="/combustion">
 								<Button fullWidth variant="outlined" style={{ height: '40vh' }}>
-									<Typography variant="h6">Combustion Optimization</Typography>
+									<Typography className="text-24">Combustion Optimization</Typography>
 								</Button>
 							</Link>
 						</Grid>
-						<Grid item xs={12} md={6}>
+						<Grid item xs={12}>
 							<Link to="/sootblow">
 								<Button fullWidth variant="outlined" style={{ height: '40vh' }}>
-									<Typography variant="h6">Sootblow Optimization</Typography>
+									<Typography className="text-24">Sootblow Optimization</Typography>
 								</Button>
 							</Link>
 						</Grid>

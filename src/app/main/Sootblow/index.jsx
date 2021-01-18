@@ -266,7 +266,7 @@ const Sootblow = () => {
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/5 mt-8 mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
+								className="flex-1 md:flex-initial md:h-1/5 mt-8 md:mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
 								square
 							>
 								<Typography className="text-16 md:text-11 text-light-blue-300">

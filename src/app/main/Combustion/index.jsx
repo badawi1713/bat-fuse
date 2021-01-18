@@ -575,7 +575,13 @@ const Combustion = () => {
 										className="w-full h-full"
 									>
 										<Grid item className="w-full h-full flex flex-col flex-1 justify-center">
-											<O2TrendChart data={o2Chart && o2Chart} />
+											{o2Chart ? (
+												<O2TrendChart data={o2Chart && o2Chart} />
+											) : (
+												<p className="text-center text-10">
+													Something went wrong, try again later
+												</p>
+											)}
 										</Grid>
 									</Grid>
 								</div>
@@ -621,49 +627,29 @@ const Combustion = () => {
 									</Typography>
 									<Grid container>
 										<Grid item xs={6}>
-											<Typography className="text-8 font-semibold">Pressure Left (HP)</Typography>
-											<Typography className="text-8 font-semibold">Pressure Left (LP)</Typography>
 											<Typography className="text-8 font-semibold">
-												Pressure Right (HP)
+												Pressure Difference (HP)
 											</Typography>
 											<Typography className="text-8 font-semibold">
-												Pressure Right (LP)
+												Pressure Difference (LP)
 											</Typography>
 										</Grid>
 										<Grid item xs={6}>
 											<Typography className="text-8 font-semibold text-right">
 												{constraints
-													? !constraints && constraints.windbox_pressure_left_hp
+													? !constraints && constraints.windbox_pressure_hp
 														? '-'
 														: Number(
-																constraints && constraints.windbox_pressure_left_hp
+																constraints && constraints.windbox_pressure_hp
 														  ).toFixed(2)
 													: '-'}
 											</Typography>
 											<Typography className="text-8 font-semibold text-right">
 												{constraints
-													? !constraints && constraints.windbox_pressure_left_lp
+													? !constraints && constraints.windbox_pressure_lp
 														? '-'
 														: Number(
-																constraints && constraints.windbox_pressure_left_lp
-														  ).toFixed(2)
-													: '-'}
-											</Typography>
-											<Typography className="text-8 font-semibold text-right">
-												{constraints
-													? !constraints && constraints.windbox_pressure_right_hp
-														? '-'
-														: Number(
-																constraints && constraints.windbox_pressure_right_hp
-														  ).toFixed(2)
-													: '-'}
-											</Typography>
-											<Typography className="text-8 font-semibold text-right">
-												{constraints
-													? !constraints && constraints.windbox_pressure_right_lp
-														? '-'
-														: Number(
-																constraints && constraints.windbox_pressure_right_lp
+																constraints && constraints.windbox_pressure_lp
 														  ).toFixed(2)
 													: '-'}
 											</Typography>
