@@ -17,6 +17,9 @@ import {
 	GET_COMBUSTION_MV_CURRENT_REQUEST,
 	GET_COMBUSTION_MV_CURRENT_SUCCESS,
 	GET_COMBUSTION_MV_CURRENT_FAILED,
+	GET_COMBUSTION_MV_BIAS_REQUEST,
+	GET_COMBUSTION_MV_BIAS_SUCCESS,
+	GET_COMBUSTION_MV_BIAS_FAILED,
 	GET_COMBUSTION_O2_CHART_REQUEST,
 	GET_COMBUSTION_O2_CHART_SUCCESS,
 	GET_COMBUSTION_O2_CHART_FAILED,
@@ -113,6 +116,20 @@ const getCombustionMVCurrentFailed = error => ({
 	payload: { error }
 });
 
+const getCombustionMVBiasRequest = () => ({
+	type: GET_COMBUSTION_MV_BIAS_REQUEST
+});
+
+const getCombustionMVBiasSuccess = data => ({
+	type: GET_COMBUSTION_MV_BIAS_SUCCESS,
+	payload: { data }
+});
+
+const getCombustionMVBiasFailed = error => ({
+	type: GET_COMBUSTION_MV_BIAS_FAILED,
+	payload: { error }
+});
+
 const getCombustionO2ChartRequest = () => ({
 	type: GET_COMBUSTION_O2_CHART_REQUEST
 });
@@ -130,7 +147,7 @@ const getCombustionO2ChartFailed = error => ({
 export const getCombustionRecommendationTime = () => {
 	return async dispatch => {
 		await dispatch(getCombustionRecommendationTimeRequest);
-		await Axios.get(`${baseURL}/getMaxTS`, {
+		await Axios.get(`${baseURL}/getMaxTR`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
@@ -278,6 +295,29 @@ export const getCombustionMVCurrent = timestamp => {
 			})
 			.catch(error => {
 				dispatch(getCombustionMVCurrentFailed(error.message));
+				dispatch(
+					showMessage({
+						message: error.message,
+						variant: 'error'
+					})
+				);
+			});
+	};
+};
+
+export const getCombustionMVBias = () => {
+	return async dispatch => {
+		await dispatch(getCombustionMVBiasRequest);
+		await Axios.get(`${baseURL}/getMVBias`, {
+			headers: {
+				Authorization: `Bearer ${jwtService.getAccessToken()}`
+			}
+		})
+			.then(response => {
+				dispatch(getCombustionMVBiasSuccess(response.data));
+			})
+			.catch(error => {
+				dispatch(getCombustionMVBiasFailed(error.message));
 				dispatch(
 					showMessage({
 						message: error.message,

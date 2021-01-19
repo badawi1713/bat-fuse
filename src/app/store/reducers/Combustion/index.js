@@ -2,6 +2,9 @@ const {
 	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_FAILED,
 	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_REQUEST,
 	GET_COMBUSTION_LAST_RECOMMENDATION_TIME_SUCCESS,
+	GET_COMBUSTION_LAST_SENSORS_TIME_REQUEST,
+	GET_COMBUSTION_LAST_SENSORS_TIME_SUCCESS,
+	GET_COMBUSTION_LAST_SENSORS_TIME_FAILED,
 	GET_COMBUSTION_CONSTRAINTS_FAILED,
 	GET_COMBUSTION_CONSTRAINTS_REQUEST,
 	GET_COMBUSTION_CONSTRAINTS_SUCCESS,
@@ -14,6 +17,9 @@ const {
 	GET_COMBUSTION_MV_CURRENT_REQUEST,
 	GET_COMBUSTION_MV_CURRENT_SUCCESS,
 	GET_COMBUSTION_MV_CURRENT_FAILED,
+	GET_COMBUSTION_MV_BIAS_REQUEST,
+	GET_COMBUSTION_MV_BIAS_SUCCESS,
+	GET_COMBUSTION_MV_BIAS_FAILED,
 	GET_COMBUSTION_O2_CHART_REQUEST,
 	GET_COMBUSTION_O2_CHART_SUCCESS,
 	GET_COMBUSTION_O2_CHART_FAILED
@@ -26,6 +32,7 @@ const initialState = {
 	constraintLimit: [],
 	disturbances: [],
 	mvCurrent: [],
+	mvBias: [],
 	o2Chart: [],
 	loading: false,
 	error: false
@@ -45,6 +52,23 @@ const combustionReducer = (state = initialState, action) => {
 				loading: false
 			};
 		case GET_COMBUSTION_LAST_RECOMMENDATION_TIME_FAILED:
+			return {
+				...state,
+				error: action.payload.error,
+				loading: false
+			};
+		case GET_COMBUSTION_LAST_SENSORS_TIME_REQUEST:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_COMBUSTION_LAST_SENSORS_TIME_SUCCESS:
+			return {
+				...state,
+				combustionSensorsTime: action.payload.data,
+				loading: false
+			};
+		case GET_COMBUSTION_LAST_SENSORS_TIME_FAILED:
 			return {
 				...state,
 				error: action.payload.error,
@@ -113,6 +137,23 @@ const combustionReducer = (state = initialState, action) => {
 				loading: false
 			};
 		case GET_COMBUSTION_MV_CURRENT_FAILED:
+			return {
+				...state,
+				error: action.payload.error,
+				loading: false
+			};
+		case GET_COMBUSTION_MV_BIAS_REQUEST:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_COMBUSTION_MV_BIAS_SUCCESS:
+			return {
+				...state,
+				mvBias: action.payload.data,
+				loading: false
+			};
+		case GET_COMBUSTION_MV_BIAS_FAILED:
 			return {
 				...state,
 				error: action.payload.error,

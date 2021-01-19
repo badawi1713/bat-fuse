@@ -1,7 +1,9 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
-import { Button, Grid, Hidden, Typography } from '@material-ui/core';
+import { Button, Grid, Hidden, Paper, Typography } from '@material-ui/core';
+import { ArrowUpward } from '@material-ui/icons';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Chart } from './Components';
 import './styles/index.css';
 
 const Home = () => {
@@ -9,28 +11,77 @@ const Home = () => {
 		<div className="py-16 h-full container px-0 mx-24">
 			<Hidden smDown>
 				<FuseAnimate animation="transition.slideUpIn" delay={200}>
-					<Grid container spacing={2} className="pt-16 h-full">
-						<Grid item xs={12} md={6}>
-							<Link to="/combustion">
-								<Button fullWidth variant="outlined" className="h-full">
-									<Grid container justify="center" alignItems="center">
-										<Grid item>
-											<Typography variant="h4">Combustion Optimization</Typography>
+					<Grid container spacing={1} className="pt-10 h-full">
+						<Grid item container className="flex-initial" spacing={1}>
+							<Grid item xs={12} md={6}>
+								<Link to="/combustion">
+									<Button fullWidth variant="outlined" className="h-full">
+										<Grid container justify="center" alignItems="center">
+											<Grid item>
+												<Typography variant="h5">Combustion Optimization</Typography>
+											</Grid>
 										</Grid>
-									</Grid>
-								</Button>
-							</Link>
+									</Button>
+								</Link>
+							</Grid>
+							<Grid item xs={12} md={6}>
+								<Link to="/sootblow">
+									<Button fullWidth variant="outlined" className="h-full">
+										<Grid container justify="center" alignItems="center">
+											<Grid item>
+												<Typography variant="h5">Sootblow Optimization</Typography>
+											</Grid>
+										</Grid>
+									</Button>
+								</Link>
+							</Grid>
 						</Grid>
-						<Grid item xs={12} md={6}>
-							<Link to="/sootblow">
-								<Button fullWidth variant="outlined" className="h-full">
-									<Grid container justify="center" alignItems="center">
-										<Grid item>
-											<Typography variant="h4">Sootblow Optimization</Typography>
-										</Grid>
+						<Grid item className="flex-1">
+							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
+								<Grid container className="w-full h-full">
+									<Grid item className="w-4/5 h-full mr-8 flex flex-col justify-center">
+										<Typography className="text-center uppercase">
+											BAT Efficiency Improvement Dashboard
+										</Typography>
+										<Chart />
 									</Grid>
-								</Button>
-							</Link>
+									<Grid item className="flex flex-col flex-1">
+										<div className="flex-1 flex">
+											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
+												<Typography className="text-center text-14">
+													Current Efficiency
+												</Typography>
+												<Typography className=" text-center text-36 text-light-green-A700 font-semibold">
+													73%
+												</Typography>
+												<div />
+											</Paper>
+										</div>
+										<div className="flex-1 flex my-8">
+											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
+												<Typography className="text-center text-14">
+													Efficiency Improvement
+												</Typography>
+												<Typography className="flex items-center justify-center text-center text-36 text-light-green-A700 font-semibold">
+													0.7% <ArrowUpward className="ml-4" fontSize="large" />
+												</Typography>
+												<div />
+											</Paper>
+										</div>
+										<div className="flex-1 flex">
+											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
+												<Typography className="text-center text-14">
+													Efficiency Baseline
+												</Typography>
+												<Typography className=" text-center text-36 text-blue font-semibold">
+													73.2%
+												</Typography>
+												<div />
+											</Paper>
+										</div>
+									</Grid>
+								</Grid>
+							</Paper>
 						</Grid>
 					</Grid>
 				</FuseAnimate>
@@ -39,19 +90,66 @@ const Home = () => {
 			<Hidden mdUp>
 				<FuseAnimate animation="transition.slideUpIn" delay={200}>
 					<Grid container spacing={2} alignItems="center">
-						<Grid item xs={12}>
+						<Grid item xs={6}>
 							<Link to="/combustion">
 								<Button fullWidth variant="outlined" style={{ height: '40vh' }}>
 									<Typography className="text-24">Combustion Optimization</Typography>
 								</Button>
 							</Link>
 						</Grid>
-						<Grid item xs={12}>
+						<Grid item xs={6}>
 							<Link to="/sootblow">
 								<Button fullWidth variant="outlined" style={{ height: '40vh' }}>
 									<Typography className="text-24">Sootblow Optimization</Typography>
 								</Button>
 							</Link>
+						</Grid>
+						<Grid item xs={12}>
+							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
+								<Grid container className="w-full h-full">
+									<Grid item className="w-full h-full mr-8 flex flex-col justify-center">
+										<Typography className="text-center uppercase">
+											BAT Efficiency Improvement Dashboard
+										</Typography>
+										<Chart />
+									</Grid>
+									<Grid item className="flex flex-1">
+										<div className="flex-1 flex">
+											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
+												<Typography className="text-center text-12">
+													Current Efficiency
+												</Typography>
+												<Typography className=" text-center text-32 text-light-green-A700 font-semibold">
+													73%
+												</Typography>
+												<div />
+											</Paper>
+										</div>
+										<div className="flex-1 flex mx-8">
+											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
+												<Typography className="text-center text-12">
+													Efficiency Improvement
+												</Typography>
+												<Typography className="flex items-center justify-center text-center text-32 text-light-green-A700 font-semibold">
+													0.7% <ArrowUpward className="ml-4" />
+												</Typography>
+												<div />
+											</Paper>
+										</div>
+										<div className="flex-1 flex">
+											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
+												<Typography className="text-center text-12">
+													Efficiency Baseline
+												</Typography>
+												<Typography className=" text-center text-32 text-blue font-semibold">
+													73.2%
+												</Typography>
+												<div />
+											</Paper>
+										</div>
+									</Grid>
+								</Grid>
+							</Paper>
 						</Grid>
 					</Grid>
 				</FuseAnimate>

@@ -3,6 +3,7 @@ import {
 	getCombustionConstraintsLimit,
 	getCombustionDisturbances,
 	getCombustionMVCurrent,
+	getCombustionMVBias,
 	getCombustionO2Chart,
 	getCombustionRecommendationTime,
 	getCombustionSensorsTime
@@ -17,5 +18,6 @@ export {
 	getCombustionDisturbances,
 	getCombustionSensorsTime,
 	getCombustionMVCurrent,
+	getCombustionMVBias,
 	getCombustionO2Chart
 };

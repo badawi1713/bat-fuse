@@ -98,7 +98,12 @@ export default class O2TrendChart extends React.Component {
 					yaxis: [
 						{
 							id: 1,
-							plot: 'Oxygen Control',
+							plot: [
+								{
+									value: 'Oxygen Control',
+									connectNullData: true
+								}
+							],
 							title: '%',
 							orientation: 'left',
 							plottype: 'smooth-line'
