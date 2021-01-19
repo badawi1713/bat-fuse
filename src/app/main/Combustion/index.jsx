@@ -197,9 +197,13 @@ const Combustion = () => {
 										disableTouchRipple
 										fullWidth
 										variant="contained"
-										className={clsx('text-8 cursor-default', classes.statusButtonOn)}
+										className={
+											constraints && constraints.constraints_messages === ''
+												? clsx('text-8 cursor-default', classes.statusButtonOn)
+												: clsx('text-8 cursor-default', classes.statusButtonOff)
+										}
 									>
-										Ready
+										{constraints && constraints.constraints_messages === '' ? 'Ready' : 'Not Ready'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -233,9 +237,21 @@ const Combustion = () => {
 									<Typography className="text-10 my-4 flex-initial">Message</Typography>
 									<Paper square className="flex justify-around flex-col flex-1 p-8">
 										<div>
-											<p className="text-9 font-semibold text-grey-100 text-center">
-												No Messages to Display
-											</p>
+											{constraints ? (
+												constraints && constraints.constraints_messages === '' ? (
+													<p className="text-9 font-semibold text-grey-100 text-center">
+														No messages to display.
+													</p>
+												) : (
+													<p className="text-11 font-semibold text-light-blue-300 text-center">
+														{constraints && constraints.constraints_messages}
+													</p>
+												)
+											) : (
+												<p className="text-9 font-semibold text-grey-100 text-center">
+													Loading
+												</p>
+											)}
 										</div>
 									</Paper>
 								</div>
@@ -580,13 +596,7 @@ const Combustion = () => {
 										className="w-full h-full"
 									>
 										<Grid item className="w-full h-full flex flex-col flex-1 justify-center">
-											{o2Chart ? (
-												<O2TrendChart data={o2Chart && o2Chart} />
-											) : (
-												<p className="text-center text-10">
-													Something went wrong, try again later
-												</p>
-											)}
+											<O2TrendChart data={o2Chart} />
 										</Grid>
 									</Grid>
 								</div>
