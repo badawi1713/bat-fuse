@@ -90,17 +90,17 @@ const Home = () => {
 			<Hidden mdUp>
 				<FuseAnimate animation="transition.slideUpIn" delay={200}>
 					<Grid container spacing={2} alignItems="center">
-						<Grid item xs={6}>
+						<Grid item xs={12}>
 							<Link to="/combustion">
-								<Button fullWidth variant="outlined" style={{ height: '40vh' }}>
-									<Typography className="text-24">Combustion Optimization</Typography>
+								<Button fullWidth variant="outlined">
+									<Typography className="text-18">Combustion Optimization</Typography>
 								</Button>
 							</Link>
 						</Grid>
-						<Grid item xs={6}>
+						<Grid item xs={12}>
 							<Link to="/sootblow">
-								<Button fullWidth variant="outlined" style={{ height: '40vh' }}>
-									<Typography className="text-24">Sootblow Optimization</Typography>
+								<Button fullWidth variant="outlined">
+									<Typography className="text-18">Sootblow Optimization</Typography>
 								</Button>
 							</Link>
 						</Grid>
@@ -108,7 +108,7 @@ const Home = () => {
 							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
 								<Grid container className="w-full h-full">
 									<Grid item className="w-full h-full mr-8 flex flex-col justify-center">
-										<Typography className="text-center uppercase">
+										<Typography className="text-center text-12 uppercase">
 											BAT Efficiency Improvement Dashboard
 										</Typography>
 										<Chart />
@@ -116,10 +116,10 @@ const Home = () => {
 									<Grid item className="flex flex-1">
 										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
-												<Typography className="text-center text-12">
+												<Typography className="text-center text-10">
 													Current Efficiency
 												</Typography>
-												<Typography className=" text-center text-32 text-light-green-A700 font-semibold">
+												<Typography className=" text-center text-24 text-light-green-A700 font-semibold">
 													73%
 												</Typography>
 												<div />
@@ -127,10 +127,10 @@ const Home = () => {
 										</div>
 										<div className="flex-1 flex mx-8">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
-												<Typography className="text-center text-12">
+												<Typography className="text-center text-10">
 													Efficiency Improvement
 												</Typography>
-												<Typography className="flex items-center justify-center text-center text-32 text-light-green-A700 font-semibold">
+												<Typography className="flex items-center justify-center text-center text-24 text-light-green-A700 font-semibold">
 													0.7% <ArrowUpward className="ml-4" />
 												</Typography>
 												<div />
@@ -138,10 +138,10 @@ const Home = () => {
 										</div>
 										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
-												<Typography className="text-center text-12">
+												<Typography className="text-center text-10">
 													Efficiency Baseline
 												</Typography>
-												<Typography className=" text-center text-32 text-blue font-semibold">
+												<Typography className=" text-center text-24 text-blue font-semibold">
 													73.2%
 												</Typography>
 												<div />

@@ -87,12 +87,12 @@ const Combustion = () => {
 		dispatch(getCombustionRecommendationTime());
 		dispatch(getCombustionSensorsTime());
 		dispatch(getCombustionO2Chart());
-		dispatch(getCombustionConstraints(recommendationTime));
+		dispatch(getCombustionConstraints(sensorTime));
 		dispatch(getCombustionConstraintsLimit());
-		dispatch(getCombustionDisturbances(recommendationTime));
-		dispatch(getCombustionMVCurrent(recommendationTime));
+		dispatch(getCombustionDisturbances(sensorTime));
+		dispatch(getCombustionMVCurrent(sensorTime));
 		dispatch(getCombustionMVBias());
-	}, [dispatch, recommendationTime]);
+	}, [dispatch, sensorTime]);
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
@@ -254,12 +254,13 @@ const Combustion = () => {
 													</p>
 												) : (
 													<p className="text-12 font-semibold text-red-600 text-center">
-														{constraints && constraints.constraints_messages}
+														{constraints &&
+															constraints.constraints_messages.split(',').join(', ')}
 													</p>
 												)
 											) : (
 												<p className="text-9 font-semibold text-grey-100 text-center">
-													No messages to display.
+													Loading
 												</p>
 											)}
 										</div>
@@ -665,7 +666,7 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div className="my-4 ">
-											<Typography className="text-10 font-semibold text-light-blue-300 mb-1 mb-1">
+											<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
 												Windbox-to-Furnace Diff. Press. (Ref: Min.{' '}
 												{constraintLimit
 													? !constraintLimit && constraintLimit[4] && constraintLimit[4].value
