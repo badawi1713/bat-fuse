@@ -152,8 +152,8 @@ const dataSource = {
 			],
 			orientation: 'right',
 			plottype: 'line',
-			min: '0',
-			max: '0.9'
+			min: '0.0',
+			max: '1.0'
 		},
 		{
 			id: 3,
@@ -166,8 +166,8 @@ const dataSource = {
 
 			orientation: 'right',
 			plottype: 'line',
-			min: '0',
-			max: '0.9'
+			min: '0.0',
+			max: '1.0'
 		}
 	]
 };

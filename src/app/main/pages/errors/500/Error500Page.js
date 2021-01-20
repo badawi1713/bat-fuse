@@ -1,7 +1,6 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Error500Page() {
 	return (
@@ -24,10 +23,6 @@ function Error500Page() {
 						Just kidding, looks like we have an internal issue, please try again in couple minutes
 					</Typography>
 				</FuseAnimate>
-
-				<Link className="font-medium" to="/apps/dashboards/project">
-					Report this problem
-				</Link>
 			</div>
 		</div>
 	);

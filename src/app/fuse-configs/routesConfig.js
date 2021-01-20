@@ -1,25 +1,19 @@
 import FuseUtils from '@fuse/utils';
-import appsConfigs from 'app/main/apps/appsConfigs';
 import authRoleExamplesConfigs from 'app/main/auth/authRoleExamplesConfigs';
 import CallbackConfig from 'app/main/callback/CallbackConfig';
-// import DocumentationConfig from 'app/main/documentation/DocumentationConfig';
-import SootblowConfig from 'app/main/Sootblow/SootblowConfig';
+import CombustionConfig from 'app/main/Combustion/CombustionConfig';
 import HomeConfig from 'app/main/Home/HomeConfig';
 import LoginConfig from 'app/main/Login/LoginConfig';
-import CombustionConfig from 'app/main/Combustion/CombustionConfig';
 import LogoutConfig from 'app/main/logout/LogoutConfig';
 import pagesConfigs from 'app/main/pages/pagesConfigs';
 import RegisterConfig from 'app/main/register/RegisterConfig';
-import UserInterfaceConfig from 'app/main/user-interface/UserInterfaceConfig';
+import SootblowConfig from 'app/main/Sootblow/SootblowConfig';
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 const routeConfigs = [
-	...appsConfigs,
 	...pagesConfigs,
 	...authRoleExamplesConfigs,
-	UserInterfaceConfig,
-	// DocumentationConfig,
 	HomeConfig,
 	SootblowConfig,
 	CombustionConfig,
@@ -41,7 +35,7 @@ const routes = [
 		component: () => <Redirect to="/home" />
 	},
 	{
-		component: () => <Redirect to="/pages/errors/error-404" />
+		component: () => <Redirect to="/errors/error-404" />
 	}
 ];
 
