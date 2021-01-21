@@ -102,6 +102,7 @@ const Sootblow = () => {
 	const recommendationTime = sootblowData && sootblowData.control[3] && sootblowData.control[3].value;
 	const operationControlStatus = sootblowData && sootblowData.control[1] && sootblowData.control[1].value;
 	const safeGuardStatus = sootblowData && sootblowData.control[0] && sootblowData.control[0].value;
+	const runningStatus = sootblowData && sootblowData.control[4] && sootblowData.control[4].value;
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(1);
@@ -149,12 +150,12 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-8 cursor-default',
-											operationControlStatus && operationControlStatus
+											operationControlStatus && operationControlStatus === '1'
 												? classes.statusButtonOn
 												: classes.statusButtonOff
 										)}
 									>
-										{operationControlStatus && operationControlStatus ? 'AUTO' : 'MANUAL'}
+										{operationControlStatus && operationControlStatus === '1' ? 'AUTO' : 'MANUAL'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -176,7 +177,7 @@ const Sootblow = () => {
 											onClick={handleMasterControlOn}
 											className={clsx(
 												'text-8',
-												masterControlStatus && masterControlStatus
+												masterControlStatus && masterControlStatus === '1'
 													? classes.statusButtonOn
 													: 'primary'
 											)}
@@ -187,7 +188,7 @@ const Sootblow = () => {
 											onClick={handleMasterControlOff}
 											className={clsx(
 												'text-8',
-												masterControlStatus && masterControlStatus
+												masterControlStatus && masterControlStatus === '1'
 													? 'primary'
 													: classes.statusButtonOff
 											)}
@@ -218,12 +219,12 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-8 cursor-default',
-											safeGuardStatus && safeGuardStatus
+											safeGuardStatus && safeGuardStatus === '1'
 												? classes.statusButtonOn
 												: classes.statusButtonOff
 										)}
 									>
-										{safeGuardStatus && safeGuardStatus ? 'READY' : 'NOT READY'}
+										{safeGuardStatus && safeGuardStatus === '1' ? 'READY' : 'NOT READY'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -258,11 +259,45 @@ const Sootblow = () => {
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/4 mt-8 mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
+								className="flex-1 md:flex-initial md:h-1/5 mt-8 mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
 								square
 							>
-								<Typography className="text-16 md:text-20 text-light-blue-300">Timer</Typography>
-								<Typography className="text- 14 md:text-18">{parameterData}</Typography>
+								<Typography className="text-16 md:text-11 text-light-blue-300">
+									Running Status
+								</Typography>
+								<Typography
+									className={
+										runningStatus === '1'
+											? `text-14 md:text-18 text-orange-600`
+											: `text-14 md:text-18 text-green-300`
+									}
+								>
+									{runningStatus === '1' ? 'Running' : 'Stand By'}
+								</Typography>
+								<div />
+							</Paper>
+						) : (
+							<Paper
+								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
+								square
+							>
+								<Typography className="text-8">-</Typography>
+							</Paper>
+						)}
+						{!parameterData ? (
+							<Paper
+								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
+								square
+							>
+								<Typography className="text-8">Loading ... </Typography>
+							</Paper>
+						) : parameterData && parameterData.length !== 0 ? (
+							<Paper
+								className="flex-1 md:flex-initial md:h-1/5 mt-8 mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
+								square
+							>
+								<Typography className="text-16 md:text-11 text-light-blue-300">Timer</Typography>
+								<Typography className="text-14 md:text-18">{parameterData}</Typography>
 								<div />
 							</Paper>
 						) : (

@@ -53,7 +53,6 @@ export function ApiGetUploadFile(url, data = {}, callbackUpload = () => {}) {
 }
 
 export function ApiPostMultipart(url, data = {}) {
-	console.log(data, 'data multipart sennd');
 	return Api.post(url, data, {
 		headers: {
 			'Content-Type': 'multipart/form-data'

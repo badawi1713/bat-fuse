@@ -12,6 +12,8 @@ function JWTLoginTab(props) {
 	const dispatch = useDispatch();
 	const login = useSelector(({ auth }) => auth.login);
 
+	console.log('login', login);
+
 	const [isFormValid, setIsFormValid] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
 

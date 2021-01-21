@@ -62,7 +62,7 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithEmailAndPassword = (username, password) => {
 		return new Promise((resolve, reject) => {
 			axios
-				.post(`${process.env.REACT_APP_API_URL}/service/bat/auth`, {
+				.post(`http://10.7.1.110:8083/service/bat/auth`, {
 					data: {
 						username,
 						password
@@ -102,7 +102,7 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithToken = () => {
 		return new Promise((resolve, reject) => {
 			axios
-				.get(`${process.env.REACT_APP_API_URL}/service/bat/validate/access-token`, {
+				.get(`http://10.7.1.110:8083/service/bat/validate/access-token`, {
 					headers: {
 						Authorization: `Bearer ${this.getAccessToken()}`,
 						Accept: 'application/json',
