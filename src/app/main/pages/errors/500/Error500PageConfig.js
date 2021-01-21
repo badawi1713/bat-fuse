@@ -8,7 +8,7 @@ const Error500PageConfig = {
 	},
 	routes: [
 		{
-			path: '/pages/errors/error-500',
+			path: '/errors/error-500',
 			component: React.lazy(() => import('./Error500Page'))
 		}
 	]

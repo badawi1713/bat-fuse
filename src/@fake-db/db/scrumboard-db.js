@@ -477,7 +477,7 @@ const scrumboardDB = {
 				{
 					id: '36027j1930450d8bf7b10158',
 					name: 'John Doe',
-					avatar: 'assets/images/avatars/Velazquez.jpg'
+					avatar: 'assets/images/avatars/profile.jpg'
 				}
 			],
 			labels: [
@@ -663,7 +663,7 @@ const scrumboardDB = {
 				{
 					id: '36027j1930450d8bf7b10158',
 					name: 'John Doe',
-					avatar: 'assets/images/avatars/Velazquez.jpg'
+					avatar: 'assets/images/avatars/profile.jpg'
 				}
 			],
 			labels: [

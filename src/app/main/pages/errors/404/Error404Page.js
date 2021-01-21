@@ -1,7 +1,7 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
-import Icon from '@material-ui/core/Icon';
-import Input from '@material-ui/core/Input';
-import Paper from '@material-ui/core/Paper';
+// import Icon from '@material-ui/core/Icon';
+// import Input from '@material-ui/core/Input';
+// import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ function Error404Page() {
 					</Typography>
 				</FuseAnimate>
 
-				<Paper className="flex items-center w-full h-56 p-16 mt-48 mb-16" elevation={1}>
+				{/* <Paper className="flex items-center w-full h-56 p-16 mt-48 mb-16" elevation={1}>
 					<Icon color="action">search</Icon>
 					<Input
 						placeholder="Search for anything"
@@ -33,10 +33,10 @@ function Error404Page() {
 							'aria-label': 'Search'
 						}}
 					/>
-				</Paper>
+				</Paper> */}
 
-				<Link className="font-medium" to="/apps/dashboards/project">
-					Go back to dashboard
+				<Link className="font-medium" to="/">
+					Go back to home
 				</Link>
 			</div>
 		</div>
