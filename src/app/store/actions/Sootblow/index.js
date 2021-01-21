@@ -2,6 +2,7 @@ import { GET_SOOTBLOW_DATA_REQUEST, GET_SOOTBLOW_DATA_SUCCESS, GET_SOOTBLOW_DATA
 // import { ApiGetRequest } from '../../api-configs';
 // import { errorcallback } from '../../global';
 import jwtService from 'app/services/jwtService';
+import { showMessage } from 'app/store/fuse/messageSlice';
 
 import Axios from 'axios';
 
@@ -34,6 +35,11 @@ export const getSootblowData = () => {
 			})
 			.catch(error => {
 				dispatch(getSootblowDataError(error.message));
+				dispatch(
+					showMessage({
+						message: error.message
+					})
+				);
 			});
 	};
 };
