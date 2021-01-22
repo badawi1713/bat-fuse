@@ -305,10 +305,10 @@ export const getCombustionMVCurrent = timestamp => {
 	};
 };
 
-export const getCombustionMVBias = () => {
+export const getCombustionMVBias = timestamp => {
 	return async dispatch => {
 		await dispatch(getCombustionMVBiasRequest);
-		await Axios.get(`${baseURL}/getMVBias`, {
+		await Axios.get(`${baseURL}/getMVBias?last_update=${timestamp}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}

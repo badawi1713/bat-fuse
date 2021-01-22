@@ -91,8 +91,11 @@ const Combustion = () => {
 		dispatch(getCombustionConstraintsLimit());
 		dispatch(getCombustionDisturbances(sensorTime));
 		dispatch(getCombustionMVCurrent(sensorTime));
-		dispatch(getCombustionMVBias());
 	}, [dispatch, sensorTime]);
+
+	useEffect(() => {
+		dispatch(getCombustionMVBias(recommendationTime));
+	}, [dispatch, recommendationTime]);
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);
