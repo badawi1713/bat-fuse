@@ -6,7 +6,6 @@ import HomeConfig from 'app/main/Home/HomeConfig';
 import LoginConfig from 'app/main/Login/LoginConfig';
 import LogoutConfig from 'app/main/logout/LogoutConfig';
 import pagesConfigs from 'app/main/pages/pagesConfigs';
-import RegisterConfig from 'app/main/register/RegisterConfig';
 import SootblowConfig from 'app/main/Sootblow/SootblowConfig';
 import React from 'react';
 import { Redirect } from 'react-router-dom';
@@ -19,7 +18,6 @@ const routeConfigs = [
 	CombustionConfig,
 	LogoutConfig,
 	LoginConfig,
-	RegisterConfig,
 	LogoutConfig,
 	CallbackConfig
 ];

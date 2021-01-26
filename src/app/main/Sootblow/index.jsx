@@ -109,11 +109,11 @@ const Sootblow = () => {
 	const runningStatus = sootblowData && sootblowData.control[4] && sootblowData.control[4].value;
 
 	const handleMasterControlOn = () => {
-		setMasterControlStatus(1);
+		setMasterControlStatus('1');
 	};
 
 	const handleMasterControlOff = () => {
-		setMasterControlStatus(0);
+		setMasterControlStatus('0');
 	};
 
 	return (

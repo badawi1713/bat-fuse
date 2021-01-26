@@ -1,6 +1,5 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
 import { Button, Grid, Hidden, Paper, Typography } from '@material-ui/core';
-import { ArrowUpward } from '@material-ui/icons';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Chart } from './Components';
@@ -40,8 +39,8 @@ const Home = () => {
 							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
 								<Grid container className="w-full h-full">
 									<Grid item className="w-4/5 h-full mr-8 flex flex-col justify-center">
-										<Typography className="text-center uppercase">
-											BAT Efficiency Improvement Dashboard
+										<Typography className="text-center text-16 uppercase">
+											Boiler Efficiency Improvement
 										</Typography>
 										<Chart />
 									</Grid>
@@ -52,7 +51,7 @@ const Home = () => {
 													Current Efficiency
 												</Typography>
 												<Typography className=" text-center text-36 text-light-green-A700 font-semibold">
-													73%
+													73.9%
 												</Typography>
 												<div />
 											</Paper>
@@ -63,7 +62,7 @@ const Home = () => {
 													Efficiency Improvement
 												</Typography>
 												<Typography className="flex items-center justify-center text-center text-36 text-light-green-A700 font-semibold">
-													0.7% <ArrowUpward className="ml-4" fontSize="large" />
+													0.7%
 												</Typography>
 												<div />
 											</Paper>
@@ -131,7 +130,7 @@ const Home = () => {
 													Efficiency Improvement
 												</Typography>
 												<Typography className="flex items-center justify-center text-center text-24 text-light-green-A700 font-semibold">
-													0.7% <ArrowUpward className="ml-4" />
+													0.7%
 												</Typography>
 												<div />
 											</Paper>
