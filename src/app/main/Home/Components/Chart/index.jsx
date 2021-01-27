@@ -70,17 +70,17 @@ const schemaFetch = [
 	},
 	{
 		id: 1,
-		name: 'Efficiency',
+		name: 'Boiler Efficiency',
 		type: 'number'
 	},
 	{
 		id: 2,
-		name: 'Sootblow Optimization',
+		name: 'Sootblow Optimization Running',
 		type: 'number'
 	},
 	{
 		id: 3,
-		name: 'Combustion Optimization',
+		name: 'Combustion Optimization Running',
 		type: 'number'
 	}
 ];
@@ -131,7 +131,7 @@ const dataSource = {
 			id: 1,
 			plot: [
 				{
-					value: 'Efficiency',
+					value: 'Boiler Efficiency',
 					connectNullData: true
 				}
 			],
@@ -146,7 +146,7 @@ const dataSource = {
 			id: 2,
 			plot: [
 				{
-					value: 'Sootblow Optimization',
+					value: 'Sootblow Optimization Running',
 					connectNullData: true
 				}
 			],
@@ -159,11 +159,10 @@ const dataSource = {
 			id: 3,
 			plot: [
 				{
-					value: 'Combustion Optimization',
+					value: 'Combustion Optimization Running',
 					connectNullData: true
 				}
 			],
-
 			orientation: 'right',
 			plottype: 'line',
 			min: '0.0',

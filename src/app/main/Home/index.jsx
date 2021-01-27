@@ -1,21 +1,59 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
-import { Button, Grid, Hidden, Paper, Typography } from '@material-ui/core';
-import { ArrowUpward } from '@material-ui/icons';
-import React from 'react';
+import { Button, Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core';
+import { getSootblowData } from 'app/store/actions';
+import clsx from 'clsx';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Chart } from './Components';
 import './styles/index.css';
 
+const useStyles = makeStyles(() => ({
+	statusButtonOn: {
+		color: '#FFF',
+		backgroundColor: '#3D9140',
+		'&:hover': {
+			backgroundColor: '#327835'
+		}
+	},
+	statusButtonOff: {
+		color: '#FFF',
+		backgroundColor: '#FA0000',
+		'&:hover': {
+			backgroundColor: '#bd291e'
+		}
+	}
+}));
+
 const Home = () => {
+	const classes = useStyles();
+	const dispatch = useDispatch();
+	const sootblowData = useSelector(state => state.sootblowReducer.sootblowData);
+
+	useEffect(() => {
+		dispatch(getSootblowData());
+	}, [dispatch]);
+
+	const masterControl =
+		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
+	const operationControlStatus =
+		sootblowData && sootblowData.control && sootblowData.control[1] && sootblowData.control[1].value;
+	const safeGuardStatus =
+		sootblowData && sootblowData.control && sootblowData.control[0] && sootblowData.control[0].value;
+
 	return (
 		<div className="py-16 h-full container px-0 mx-24">
 			<Hidden smDown>
 				<FuseAnimate animation="transition.slideUpIn" delay={200}>
-					<Grid container spacing={1} className="pt-10 h-full">
+					<Grid container direction="column" spacing={1} className="pt-10 h-full">
 						<Grid item container className="flex-initial" spacing={1}>
 							<Grid item xs={12} md={6}>
 								<Link to="/combustion">
-									<Button fullWidth variant="outlined" className="h-full">
+									<Button
+										fullWidth
+										variant="outlined"
+										className={clsx('h-full', classes.statusButtonOff)}
+									>
 										<Grid container justify="center" alignItems="center">
 											<Grid item>
 												<Typography variant="h5">Combustion Optimization</Typography>
@@ -26,7 +64,17 @@ const Home = () => {
 							</Grid>
 							<Grid item xs={12} md={6}>
 								<Link to="/sootblow">
-									<Button fullWidth variant="outlined" className="h-full">
+									<Button
+										fullWidth
+										variant="outlined"
+										className={
+											operationControlStatus === '1' &&
+											safeGuardStatus === '1' &&
+											masterControl === '1'
+												? clsx('h-full', classes.statusButtonOn)
+												: clsx('h-full', classes.statusButtonOff)
+										}
+									>
 										<Grid container justify="center" alignItems="center">
 											<Grid item>
 												<Typography variant="h5">Sootblow Optimization</Typography>
@@ -40,8 +88,8 @@ const Home = () => {
 							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
 								<Grid container className="w-full h-full">
 									<Grid item className="w-4/5 h-full mr-8 flex flex-col justify-center">
-										<Typography className="text-center uppercase">
-											BAT Efficiency Improvement Dashboard
+										<Typography className="text-center text-16 uppercase">
+											Boiler Efficiency Improvement
 										</Typography>
 										<Chart />
 									</Grid>
@@ -52,7 +100,7 @@ const Home = () => {
 													Current Efficiency
 												</Typography>
 												<Typography className=" text-center text-36 text-light-green-A700 font-semibold">
-													73%
+													83.9%
 												</Typography>
 												<div />
 											</Paper>
@@ -63,7 +111,7 @@ const Home = () => {
 													Efficiency Improvement
 												</Typography>
 												<Typography className="flex items-center justify-center text-center text-36 text-light-green-A700 font-semibold">
-													0.7% <ArrowUpward className="ml-4" fontSize="large" />
+													0.7%
 												</Typography>
 												<div />
 											</Paper>
@@ -74,7 +122,7 @@ const Home = () => {
 													Efficiency Baseline
 												</Typography>
 												<Typography className=" text-center text-36 text-blue font-semibold">
-													73.2%
+													83.2%
 												</Typography>
 												<div />
 											</Paper>
@@ -92,15 +140,37 @@ const Home = () => {
 					<Grid container spacing={2} alignItems="center">
 						<Grid item xs={12}>
 							<Link to="/combustion">
-								<Button fullWidth variant="outlined">
-									<Typography className="text-18">Combustion Optimization</Typography>
+								<Button
+									fullWidth
+									variant="outlined"
+									className={clsx('h-full', classes.statusButtonOff)}
+								>
+									<Grid container justify="center" alignItems="center">
+										<Grid item>
+											<Typography className="text-18">Combustion Optimization</Typography>
+										</Grid>
+									</Grid>
 								</Button>
 							</Link>
 						</Grid>
 						<Grid item xs={12}>
 							<Link to="/sootblow">
-								<Button fullWidth variant="outlined">
-									<Typography className="text-18">Sootblow Optimization</Typography>
+								<Button
+									fullWidth
+									variant="outlined"
+									className={
+										operationControlStatus === '1' &&
+										safeGuardStatus === '1' &&
+										masterControl === '1'
+											? clsx('h-full', classes.statusButtonOn)
+											: clsx('h-full', classes.statusButtonOff)
+									}
+								>
+									<Grid container justify="center" alignItems="center">
+										<Grid item>
+											<Typography className="text-18">Sootblow Optimization</Typography>
+										</Grid>
+									</Grid>
 								</Button>
 							</Link>
 						</Grid>
@@ -120,7 +190,7 @@ const Home = () => {
 													Current Efficiency
 												</Typography>
 												<Typography className=" text-center text-24 text-light-green-A700 font-semibold">
-													73%
+													83%
 												</Typography>
 												<div />
 											</Paper>
@@ -131,7 +201,7 @@ const Home = () => {
 													Efficiency Improvement
 												</Typography>
 												<Typography className="flex items-center justify-center text-center text-24 text-light-green-A700 font-semibold">
-													0.7% <ArrowUpward className="ml-4" />
+													8.7%
 												</Typography>
 												<div />
 											</Paper>
@@ -142,7 +212,7 @@ const Home = () => {
 													Efficiency Baseline
 												</Typography>
 												<Typography className=" text-center text-24 text-blue font-semibold">
-													73.2%
+													83.2%
 												</Typography>
 												<div />
 											</Paper>
