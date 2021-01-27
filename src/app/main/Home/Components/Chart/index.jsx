@@ -140,7 +140,21 @@ const dataSource = {
 			plottype: 'smooth-line',
 			format: {
 				suffix: ' %'
-			}
+			},
+			referenceLine: [
+				{
+					label: 'Boiler Efficiency',
+					value: `83.2`,
+					style: {
+						marker: {
+							'stroke-dasharray': '4 1',
+							fill: '#fb8c00',
+							stroke: '#fb8c00',
+							'stroke-width': '2'
+						}
+					}
+				}
+			]
 		},
 		{
 			id: 2,
@@ -151,9 +165,13 @@ const dataSource = {
 				}
 			],
 			orientation: 'right',
-			plottype: 'line',
-			min: '0.0',
-			max: '1.0'
+			plottype: 'step-line',
+			min: '0',
+			max: '1',
+			format: {
+				defaultFormat: 0,
+				round: '0'
+			}
 		},
 		{
 			id: 3,
@@ -164,9 +182,13 @@ const dataSource = {
 				}
 			],
 			orientation: 'right',
-			plottype: 'line',
+			plottype: 'step-line',
 			min: '0.0',
-			max: '1.0'
+			max: '1.0',
+			format: {
+				defaultFormat: 0,
+				round: '0'
+			}
 		}
 	]
 };
