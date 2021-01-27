@@ -74,8 +74,8 @@ const Combustion = () => {
 	const combustionMVBias = useSelector(state => state.combustionReducer.mvBias);
 	const combustionO2Chart = useSelector(state => state.combustionReducer.o2Chart);
 
-	const recommendationTime = combustionRecommendationTime && combustionRecommendationTime;
-	const sensorTime = combustionSensorTime && combustionSensorTime;
+	const recommendationTime = combustionRecommendationTime;
+	const sensorTime = combustionSensorTime;
 	const constraints = combustionConstraints && combustionConstraints[0];
 	const constraintLimit = combustionConstraintsLimit && combustionConstraintsLimit;
 	const disturbances = combustionDisturbances && combustionDisturbances[0];
@@ -104,6 +104,8 @@ const Combustion = () => {
 	const handleMasterControlOff = () => {
 		setMasterControlStatus(false);
 	};
+
+	console.log('test', recommendationTime);
 
 	return (
 		<div className="h-full px-24 py-16 ">
@@ -235,7 +237,7 @@ const Combustion = () => {
 									<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
 										<div>
 											<p className="text-9 font-semibold text-light-blue-300">
-												{!recommendationTime ? '-' : recommendationTime}
+												{recommendationTime.length === 0 ? '-' : recommendationTime}
 											</p>
 										</div>
 									</Paper>
@@ -243,7 +245,7 @@ const Combustion = () => {
 									<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
 										<div>
 											<p className="text-9 font-semibold text-light-blue-300">
-												{!sensorTime ? '-' : sensorTime}
+												{sensorTime.length === 0 ? '-' : sensorTime}
 											</p>
 										</div>
 									</Paper>
