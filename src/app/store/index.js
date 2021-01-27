@@ -1,43 +1,30 @@
-import { configureStore } from '@reduxjs/toolkit';
+import * as reduxModule from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import createReducer from './rootReducer';
+import thunk from 'redux-thunk';
 
-if (process.env.NODE_ENV === 'development' && module.hot) {
-	module.hot.accept('./rootReducer', () => {
-		const newRootReducer = require('./rootReducer').default;
-		store.replaceReducer(newRootReducer.createReducer());
-	});
-}
+/*
+Fix for Firefox redux dev tools extension
+https://github.com/zalmoxisus/redux-devtools-instrument/pull/19#issuecomment-400637274
+ */
+reduxModule.__DO_NOT_USE__ActionTypes.REPLACE = '@@redux/INIT';
 
-const middlewares = [];
+const composeEnhancers =
+	process.env.NODE_ENV !== 'production' && typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+		? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+				// Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+		  })
+		: compose;
 
-if (process.env.NODE_ENV === 'development') {
-	const { logger } = require(`redux-logger`);
+const enhancer = composeEnhancers(applyMiddleware(thunk));
 
-	middlewares.push(logger);
-}
-
-const store = configureStore({
-	reducer: createReducer(),
-	middleware: getDefaultMiddleware =>
-		getDefaultMiddleware({
-			immutableCheck: false,
-			serializableCheck: {
-				ignoredActions: [
-					'dialog/openDialog',
-					'dialog/closeDialog',
-					'message/showMessage',
-					'message/hideMessage'
-				]
-			}
-		}).concat(middlewares),
-	devTools: process.env.NODE_ENV === 'development'
-});
+const store = createStore(createReducer(), enhancer);
 
 store.asyncReducers = {};
 
 export const injectReducer = (key, reducer) => {
 	if (store.asyncReducers[key]) {
-		return false;
+		return;
 	}
 	store.asyncReducers[key] = reducer;
 	store.replaceReducer(createReducer(store.asyncReducers));

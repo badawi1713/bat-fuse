@@ -77,7 +77,8 @@ const Sootblow = () => {
 		shallowEqual
 	);
 
-	const masterControl = sootblowData && sootblowData.control[2] && sootblowData.control[2].value;
+	const masterControl =
+		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
 
 	const [masterControlStatus, setMasterControlStatus] = React.useState(0);
 
@@ -96,20 +97,27 @@ const Sootblow = () => {
 	}, [dispatch]);
 
 	const sequenceData =
-		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
-	const parameterData = sootblowData && sootblowData.parameter[0] && sootblowData.parameter[0].value;
+		sootblowData &&
+		sootblowData.sequence &&
+		sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
+	const parameterData =
+		sootblowData && sootblowData.parameter && sootblowData.parameter[0] && sootblowData.parameter[0].value;
 
-	const recommendationTime = sootblowData && sootblowData.control[3] && sootblowData.control[3].value;
-	const operationControlStatus = sootblowData && sootblowData.control[1] && sootblowData.control[1].value;
-	const safeGuardStatus = sootblowData && sootblowData.control[0] && sootblowData.control[0].value;
-	const runningStatus = sootblowData && sootblowData.control[4] && sootblowData.control[4].value;
+	const recommendationTime =
+		sootblowData && sootblowData.control && sootblowData.control[3] && sootblowData.control[3].value;
+	const operationControlStatus =
+		sootblowData && sootblowData.control && sootblowData.control[1] && sootblowData.control[1].value;
+	const safeGuardStatus =
+		sootblowData && sootblowData.control && sootblowData.control[0] && sootblowData.control[0].value;
+	const runningStatus =
+		sootblowData && sootblowData.control && sootblowData.control[4] && sootblowData.control[4].value;
 
 	const handleMasterControlOn = () => {
-		setMasterControlStatus(1);
+		setMasterControlStatus('1');
 	};
 
 	const handleMasterControlOff = () => {
-		setMasterControlStatus(0);
+		setMasterControlStatus('0');
 	};
 
 	return (
