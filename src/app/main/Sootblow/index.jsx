@@ -1,7 +1,11 @@
 import {
 	Button,
 	ButtonGroup,
+	Dialog,
+	DialogActions,
+	DialogContent,
 	Grid,
+	IconButton,
 	Paper,
 	Table,
 	TableBody,
@@ -9,14 +13,15 @@ import {
 	TableContainer,
 	TableHead,
 	TableRow,
+	TextField,
 	Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { ArrowBack } from '@material-ui/icons';
+import { ArrowBack, Build } from '@material-ui/icons';
 import { getSootblowData } from 'app/store/actions';
 import clsx from 'clsx';
 import React, { useEffect } from 'react';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
 
@@ -54,11 +59,21 @@ const useStyles = makeStyles(theme => ({
 			backgroundColor: '#bd291e'
 		}
 	},
+	saveButton: {
+		backgroundColor: '#1976d2',
+		color: '#FFF',
+		'&:hover': {
+			backgroundColor: '#21619e'
+		}
+	},
 	container: {
 		maxHeight: 200
 	},
 	defaultButton: {
 		padding: '0px 8px'
+	},
+	placeholder: {
+		fontSize: '12px'
 	}
 }));
 
@@ -74,16 +89,12 @@ const Sootblow = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
-	const { sootblowData } = useSelector(
-		({ sootblowReducer: { sootblowData } }) => ({
-			sootblowData
-		}),
-		shallowEqual
-	);
-
-	const masterControl = sootblowData && sootblowData.control[2] && sootblowData.control[2].value;
+	const sootblowData = useSelector(state => state.sootblowReducer.sootblowData);
+	const masterControl =
+		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
 
 	const [masterControlStatus, setMasterControlStatus] = React.useState(masterControl && masterControl);
+	const [open, setOpen] = React.useState(false);
 
 	useEffect(() => {
 		dispatch(getSootblowData());
@@ -91,22 +102,26 @@ const Sootblow = () => {
 	}, [dispatch, masterControl]);
 
 	useEffect(() => {
-		const allTableValueHandler = setInterval(() => {
-			dispatch(getSootblowData());
-		}, 10000);
-
-		return () => clearInterval(allTableValueHandler); //This is important
-		// eslint-disable-next-line
+		dispatch(getSootblowData());
 	}, [dispatch]);
 
 	const sequenceData =
-		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
+		sootblowData &&
+		sootblowData.sequence &&
+		sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
 	const parameterData =
-		sootblowData && sootblowData.parameter.map(item => createParameterData(item.label, item.value));
-	const recommendationTime = sootblowData && sootblowData.control[3] && sootblowData.control[3].value;
-	const operationControlStatus = sootblowData && sootblowData.control[1] && sootblowData.control[1].value;
-	const safeGuardStatus = sootblowData && sootblowData.control[0] && sootblowData.control[0].value;
-	const runningStatus = sootblowData && sootblowData.control[4] && sootblowData.control[4].value;
+		sootblowData &&
+		sootblowData.parameter &&
+		sootblowData.parameter.map(item => createParameterData(item.label, item.value));
+
+	const recommendationTime =
+		sootblowData && sootblowData.control && sootblowData.control[3] && sootblowData.control[3].value;
+	const operationControlStatus =
+		sootblowData && sootblowData.control && sootblowData.control[1] && sootblowData.control[1].value;
+	const safeGuardStatus =
+		sootblowData && sootblowData.control && sootblowData.control[0] && sootblowData.control[0].value;
+	const sootblowStatus =
+		sootblowData && sootblowData.control && sootblowData.control[4] && sootblowData.control[4].value;
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus('1');
@@ -114,6 +129,14 @@ const Sootblow = () => {
 
 	const handleMasterControlOff = () => {
 		setMasterControlStatus('0');
+	};
+
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
 	};
 
 	return (
@@ -253,7 +276,7 @@ const Sootblow = () => {
 
 				{/* Main Content */}
 				<Grid item className="flex-1 flex md:flex-row flex-col w-full md:h-1/2 ">
-					<Paper className="md:w-3/4 w-full h-full flex justify-center md:mr-8 p-20" square>
+					<Paper className="md:w-8/12 w-full h-full flex justify-center md:mr-8 p-20" square>
 						<SvgSootblowTjAwarAwar width="100%" height="100%" />
 					</Paper>
 					<div className="flex flex-col justify-between flex-1">
@@ -266,20 +289,20 @@ const Sootblow = () => {
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/5 mt-8 mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
+								className="flex-1 md:flex-initial md:h-1/5 mt-8 md:mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
 								square
 							>
 								<Typography className="text-16 md:text-11 text-light-blue-300">
-									Running Status
+									Sootblow Running
 								</Typography>
 								<Typography
 									className={
-										runningStatus === '1'
+										sootblowStatus === '1'
 											? `text-14 md:text-18 text-orange-600`
 											: `text-14 md:text-18 text-green-300`
 									}
 								>
-									{runningStatus === '1' ? 'Running' : 'Stand By'}
+									{sootblowStatus === '1' ? 'Running' : 'Stand By'}
 								</Typography>
 								<div />
 							</Paper>
@@ -304,11 +327,14 @@ const Sootblow = () => {
 								<Table size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
 												Parameter
 											</TableCell>
-											<TableCell align="right" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
 												Value
+											</TableCell>
+											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+												Modify
 											</TableCell>
 										</TableRow>
 									</TableHead>
@@ -316,11 +342,16 @@ const Sootblow = () => {
 										{parameterData &&
 											parameterData.map((row, index) => (
 												<TableRow key={index}>
-													<TableCell component="th" scope="row" className="text-8 py-4">
+													<TableCell align="center" className="text-8 py-4">
 														{row.label}
 													</TableCell>
-													<TableCell align="right" className="text-8 py-4">
+													<TableCell align="center" className="text-8 py-4">
 														{row.value}
+													</TableCell>
+													<TableCell align="center" className="py-4">
+														<IconButton onClick={handleClickOpen} size="small">
+															<Build className="text-14" />
+														</IconButton>
 													</TableCell>
 												</TableRow>
 											))}
@@ -344,14 +375,17 @@ const Sootblow = () => {
 								<Table className={classes.table} size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell className="text-10 py-auto text-light-blue-300">
-												Sequences
-											</TableCell>
 											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
 												Zone
 											</TableCell>
-											<TableCell align="right" className="text-10 py-auto text-light-blue-300">
-												Info
+											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+												Area
+											</TableCell>
+											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+												Zone Code
+											</TableCell>
+											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+												Execution Status
 											</TableCell>
 										</TableRow>
 									</TableHead>
@@ -359,14 +393,22 @@ const Sootblow = () => {
 										{sequenceData &&
 											sequenceData.map((row, index) => (
 												<TableRow key={index}>
-													<TableCell component="th" scope="row" className="text-8 py-4">
+													<TableCell
+														component="th"
+														scope="row"
+														align="center"
+														className="text-8 py-4"
+													>
 														{row.label}
 													</TableCell>
 													<TableCell align="center" className="text-8 py-4">
 														{row.value}
 													</TableCell>
-													<TableCell align="right" className="text-8 py-4">
+													<TableCell align="center" className="text-8 py-4">
 														{row.value === 0 ? '-' : row.description}
+													</TableCell>
+													<TableCell align="center" className="text-8 py-4">
+														-
 													</TableCell>
 												</TableRow>
 											))}
@@ -382,6 +424,44 @@ const Sootblow = () => {
 				</Grid>
 				{/* Main Content */}
 			</Grid>
+			<Dialog open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+				<Typography className="text-16 m-24" id="responsive-dialog-title">
+					{'Modify this parameter?'}
+				</Typography>
+				<DialogContent>
+					<Grid container spacing={1}>
+						<Grid container alignItems="center" item xs={12}>
+							<Grid item xs={3} className="text-12">
+								Parameter
+							</Grid>
+							<Grid item xs={9}>
+								<TextField className="text-12" variant="outlined" fullWidth size="small" />
+							</Grid>
+						</Grid>
+						<Grid container alignItems="center" item xs={12}>
+							<Grid item xs={3} className="text-12">
+								Value
+							</Grid>
+							<Grid item xs={9}>
+								<TextField variant="outlined" className="text-12" fullWidth size="small" />
+							</Grid>
+						</Grid>
+					</Grid>
+				</DialogContent>
+				<DialogActions className="p-24">
+					<Button autoFocus onClick={handleClose} variant="outlined" className="text-12">
+						Cancel
+					</Button>
+					<Button
+						onClick={handleClose}
+						variant="contained"
+						autoFocus
+						className={clsx(classes.saveButton, 'text-12')}
+					>
+						Save
+					</Button>
+				</DialogActions>
+			</Dialog>
 		</div>
 	);
 };
