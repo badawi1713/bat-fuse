@@ -121,7 +121,7 @@ const Home = () => {
 												<Typography className="text-center text-14">
 													Efficiency Baseline
 												</Typography>
-												<Typography className=" text-center text-36 text-blue font-semibold">
+												<Typography className=" text-center text-36 text-orange-600 font-semibold">
 													83.2%
 												</Typography>
 												<div />
@@ -140,15 +140,37 @@ const Home = () => {
 					<Grid container spacing={2} alignItems="center">
 						<Grid item xs={12}>
 							<Link to="/combustion">
-								<Button fullWidth variant="outlined">
-									<Typography className="text-18">Combustion Optimization</Typography>
+								<Button
+									fullWidth
+									variant="outlined"
+									className={clsx('h-full', classes.statusButtonOff)}
+								>
+									<Grid container justify="center" alignItems="center">
+										<Grid item>
+											<Typography className="text-18">Combustion Optimization</Typography>
+										</Grid>
+									</Grid>
 								</Button>
 							</Link>
 						</Grid>
 						<Grid item xs={12}>
 							<Link to="/sootblow">
-								<Button fullWidth variant="outlined">
-									<Typography className="text-18">Sootblow Optimization</Typography>
+								<Button
+									fullWidth
+									variant="outlined"
+									className={
+										operationControlStatus === '1' &&
+										safeGuardStatus === '1' &&
+										masterControl === '1'
+											? clsx('h-full', classes.statusButtonOn)
+											: clsx('h-full', classes.statusButtonOff)
+									}
+								>
+									<Grid container justify="center" alignItems="center">
+										<Grid item>
+											<Typography className="text-18">Sootblow Optimization</Typography>
+										</Grid>
+									</Grid>
 								</Button>
 							</Link>
 						</Grid>
@@ -189,7 +211,7 @@ const Home = () => {
 												<Typography className="text-center text-10">
 													Efficiency Baseline
 												</Typography>
-												<Typography className=" text-center text-24 text-blue font-semibold">
+												<Typography className=" text-center text-24 text-orange-600 font-semibold">
 													83.2%
 												</Typography>
 												<div />
