@@ -173,7 +173,7 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Operation Control</Typography>
+									<Typography className="text-center text-12">Operation Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Button
@@ -183,7 +183,7 @@ const Sootblow = () => {
 										fullWidth
 										variant="contained"
 										className={clsx(
-											'text-8 cursor-default',
+											'text-10 cursor-default',
 											operationControlStatus && operationControlStatus === '1'
 												? classes.statusButtonOn
 												: classes.statusButtonOff
@@ -203,14 +203,14 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Master Control</Typography>
+									<Typography className="text-center text-12">Master Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
 										<Button
 											onClick={handleMasterControlOn}
 											className={clsx(
-												'text-8',
+												'text-10',
 												masterControlStatus === '1' ? classes.statusButtonOn : 'primary'
 											)}
 										>
@@ -219,7 +219,7 @@ const Sootblow = () => {
 										<Button
 											onClick={handleMasterControlOff}
 											className={clsx(
-												'text-8',
+												'text-10',
 												masterControlStatus === '1' ? 'primary' : classes.statusButtonOff
 											)}
 										>
@@ -238,7 +238,7 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Safe Guard</Typography>
+									<Typography className="text-center text-12">Safe Guard</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Button
@@ -248,7 +248,7 @@ const Sootblow = () => {
 										fullWidth
 										variant="contained"
 										className={clsx(
-											'text-8 cursor-default',
+											'text-10 cursor-default',
 											safeGuardStatus && safeGuardStatus === '1'
 												? classes.statusButtonOn
 												: classes.statusButtonOff
@@ -266,7 +266,7 @@ const Sootblow = () => {
 				{/* Last Recommendation Section*/}
 
 				<Grid item className="flex-initial w-full">
-					<Typography className="text-10 my-8">
+					<Typography className="text-12 my-8">
 						<span className="text-light-blue-300">Last Recommendation Time</span> :{' '}
 						{!recommendationTime ? '-' : recommendationTime}
 					</Typography>
@@ -285,14 +285,14 @@ const Sootblow = () => {
 								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">Loading ... </Typography>
+								<Typography className="text-10">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
 								className="flex-1 md:flex-initial md:h-1/5 mt-8 md:mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
 								square
 							>
-								<Typography className="text-16 md:text-11 text-light-blue-300">
+								<Typography className="text-16 md:text-12 text-light-blue-300">
 									Sootblow Running
 								</Typography>
 								<Typography
@@ -302,7 +302,7 @@ const Sootblow = () => {
 											: `text-14 md:text-18 text-green-300`
 									}
 								>
-									{sootblowStatus === '1' ? 'Running' : 'Stand By'}
+									{sootblowStatus === '1' ? 'Running' : 'Standby'}
 								</Typography>
 								<div />
 							</Paper>
@@ -311,7 +311,7 @@ const Sootblow = () => {
 								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">-</Typography>
+								<Typography className="text-10">-</Typography>
 							</Paper>
 						)}
 
@@ -320,20 +320,20 @@ const Sootblow = () => {
 								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">Loading ... </Typography>
+								<Typography className="text-10">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<TableContainer className="flex-1 mt-8 mb-8 md:mt-0" component={Paper} square>
 								<Table size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Parameter
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Value
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Modify
 											</TableCell>
 										</TableRow>
@@ -342,10 +342,10 @@ const Sootblow = () => {
 										{parameterData &&
 											parameterData.map((row, index) => (
 												<TableRow key={index}>
-													<TableCell align="center" className="text-8 py-4">
+													<TableCell align="center" className="text-10 py-4">
 														{row.label}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
+													<TableCell align="center" className="text-10 py-4">
 														{row.value}
 													</TableCell>
 													<TableCell align="center" className="py-4">
@@ -363,28 +363,28 @@ const Sootblow = () => {
 								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">No Parameter to Show</Typography>
+								<Typography className="text-10">No Parameter to Show</Typography>
 							</Paper>
 						)}
 						{!sequenceData ? (
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
-								<Typography className="text-8">Loading ... </Typography>
+								<Typography className="text-10">Loading ... </Typography>
 							</Paper>
 						) : sequenceData && sequenceData.length !== 0 ? (
-							<TableContainer component={Paper} className="h-auto mb-8 md:mb-0" square>
+							<TableContainer component={Paper} className="flex-1 mb-8 md:mb-0" square>
 								<Table className={classes.table} size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Zone
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Area
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Zone Code
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Execution Status
 											</TableCell>
 										</TableRow>
@@ -397,17 +397,17 @@ const Sootblow = () => {
 														component="th"
 														scope="row"
 														align="center"
-														className="text-8 py-4"
+														className="text-10 py-4"
 													>
 														{row.label}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
+													<TableCell align="center" className="text-10 py-4">
 														{row.value}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
+													<TableCell align="center" className="text-10 py-4">
 														{row.value === 0 ? '-' : row.description}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
+													<TableCell align="center" className="text-10 py-4">
 														-
 													</TableCell>
 												</TableRow>
@@ -417,7 +417,7 @@ const Sootblow = () => {
 							</TableContainer>
 						) : (
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
-								<Typography className="text-8">No Recommendation</Typography>
+								<Typography className="text-10">No Recommendation</Typography>
 							</Paper>
 						)}
 					</div>
@@ -426,24 +426,24 @@ const Sootblow = () => {
 			</Grid>
 			<Dialog open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
 				<Typography className="text-16 m-24" id="responsive-dialog-title">
-					{'Modify this parameter?'}
+					{"Modify this parameter's value?"}
 				</Typography>
 				<DialogContent>
 					<Grid container spacing={1}>
 						<Grid container alignItems="center" item xs={12}>
-							<Grid item xs={3} className="text-12">
+							<Grid item xs={3} className="text-14 text-light-blue-300">
 								Parameter
 							</Grid>
-							<Grid item xs={9}>
-								<TextField className="text-12" variant="outlined" fullWidth size="small" />
+							<Grid item xs={9} className="text-14">
+								Parameter's name.
 							</Grid>
 						</Grid>
 						<Grid container alignItems="center" item xs={12}>
-							<Grid item xs={3} className="text-12">
+							<Grid item xs={3} className="text-14 text-light-blue-300">
 								Value
 							</Grid>
 							<Grid item xs={9}>
-								<TextField variant="outlined" className="text-12" fullWidth size="small" />
+								<TextField variant="standard" fullWidth size="small" />
 							</Grid>
 						</Grid>
 					</Grid>
