@@ -17,8 +17,8 @@ import {
 	Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { ArrowBack, Build } from '@material-ui/icons';
-import { getSootblowData } from 'app/store/actions';
+import { ArrowBack, Build, HourglassEmpty, FlashOn, CheckCircle, Cancel, Redo } from '@material-ui/icons';
+import { getSootblowData, getParameterByID } from 'app/store/actions';
 import clsx from 'clsx';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -77,12 +77,12 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const createSequenceData = (label, value, description) => {
-	return { label, value, description };
+const createSequenceData = (zone, area, zoneCode, executionStatus) => {
+	return { zone, area, zoneCode, executionStatus };
 };
 
-const createParameterData = (label, value) => {
-	return { label, value };
+const createParameterData = (label, value, id) => {
+	return { label, value, id };
 };
 
 const Sootblow = () => {
@@ -90,6 +90,7 @@ const Sootblow = () => {
 	const dispatch = useDispatch();
 
 	const sootblowData = useSelector(state => state.sootblowReducer.sootblowData);
+	const parameterDetailData = useSelector(state => state.sootblowReducer.parameterDetailData);
 	const masterControl =
 		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
 
@@ -108,11 +109,13 @@ const Sootblow = () => {
 	const sequenceData =
 		sootblowData &&
 		sootblowData.sequence &&
-		sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
+		sootblowData.sequence.map(item =>
+			createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
+		);
 	const parameterData =
 		sootblowData &&
 		sootblowData.parameter &&
-		sootblowData.parameter.map(item => createParameterData(item.label, item.value));
+		sootblowData.parameter.map(item => createParameterData(item.label, item.value, item.id));
 
 	const recommendationTime =
 		sootblowData && sootblowData.control && sootblowData.control[3] && sootblowData.control[3].value;
@@ -138,6 +141,22 @@ const Sootblow = () => {
 	const handleClose = () => {
 		setOpen(false);
 	};
+
+	const renderExecutionStatusIcon = value => {
+		if (value === 0) {
+			return <HourglassEmpty fontSize="small" className="text-grey-600" />;
+		} else if (value === 1) {
+			return <FlashOn fontSize="small" className="text-orange-600" />;
+		} else if (value === 2) {
+			return <CheckCircle fontSize="small" className="text-green-600" />;
+		} else if (value === 3) {
+			return <Cancel fontSize="small" className="text-red-600" />;
+		} else {
+			return <Redo fontSize="small" className="text-blue-600" />;
+		}
+	};
+
+	console.log('data detail', parameterDetailData);
 
 	return (
 		<div className="h-full px-24 py-16 ">
@@ -173,7 +192,7 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Operation Control</Typography>
+									<Typography className="text-center text-12">Operation Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Button
@@ -183,7 +202,7 @@ const Sootblow = () => {
 										fullWidth
 										variant="contained"
 										className={clsx(
-											'text-8 cursor-default',
+											'text-10 cursor-default',
 											operationControlStatus && operationControlStatus === '1'
 												? classes.statusButtonOn
 												: classes.statusButtonOff
@@ -203,14 +222,14 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Master Control</Typography>
+									<Typography className="text-center text-12">Master Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
 										<Button
 											onClick={handleMasterControlOn}
 											className={clsx(
-												'text-8',
+												'text-10',
 												masterControlStatus === '1' ? classes.statusButtonOn : 'primary'
 											)}
 										>
@@ -219,7 +238,7 @@ const Sootblow = () => {
 										<Button
 											onClick={handleMasterControlOff}
 											className={clsx(
-												'text-8',
+												'text-10',
 												masterControlStatus === '1' ? 'primary' : classes.statusButtonOff
 											)}
 										>
@@ -238,7 +257,7 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Safe Guard</Typography>
+									<Typography className="text-center text-12">Safe Guard</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Button
@@ -248,7 +267,7 @@ const Sootblow = () => {
 										fullWidth
 										variant="contained"
 										className={clsx(
-											'text-8 cursor-default',
+											'text-10 cursor-default',
 											safeGuardStatus && safeGuardStatus === '1'
 												? classes.statusButtonOn
 												: classes.statusButtonOff
@@ -266,7 +285,7 @@ const Sootblow = () => {
 				{/* Last Recommendation Section*/}
 
 				<Grid item className="flex-initial w-full">
-					<Typography className="text-10 my-8">
+					<Typography className="text-12 my-8">
 						<span className="text-light-blue-300">Last Recommendation Time</span> :{' '}
 						{!recommendationTime ? '-' : recommendationTime}
 					</Typography>
@@ -285,14 +304,14 @@ const Sootblow = () => {
 								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">Loading ... </Typography>
+								<Typography className="text-10">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
 								className="flex-1 md:flex-initial md:h-1/5 mt-8 md:mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
 								square
 							>
-								<Typography className="text-16 md:text-11 text-light-blue-300">
+								<Typography className="text-16 md:text-12 text-light-blue-300">
 									Sootblow Running
 								</Typography>
 								<Typography
@@ -302,7 +321,7 @@ const Sootblow = () => {
 											: `text-14 md:text-18 text-green-300`
 									}
 								>
-									{sootblowStatus === '1' ? 'Running' : 'Stand By'}
+									{sootblowStatus === '1' ? 'Running' : 'Standby'}
 								</Typography>
 								<div />
 							</Paper>
@@ -311,7 +330,7 @@ const Sootblow = () => {
 								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">-</Typography>
+								<Typography className="text-10">-</Typography>
 							</Paper>
 						)}
 
@@ -320,20 +339,20 @@ const Sootblow = () => {
 								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">Loading ... </Typography>
+								<Typography className="text-10">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<TableContainer className="flex-1 mt-8 mb-8 md:mt-0" component={Paper} square>
 								<Table size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Parameter
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Value
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Modify
 											</TableCell>
 										</TableRow>
@@ -342,16 +361,26 @@ const Sootblow = () => {
 										{parameterData &&
 											parameterData.map((row, index) => (
 												<TableRow key={index}>
-													<TableCell align="center" className="text-8 py-4">
+													<TableCell align="center" className="text-10 py-4">
 														{row.label}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
+													<TableCell align="center" className="text-10 py-4">
 														{row.value}
 													</TableCell>
 													<TableCell align="center" className="py-4">
-														<IconButton onClick={handleClickOpen} size="small">
-															<Build className="text-14" />
-														</IconButton>
+														{typeof row.value !== 'number' ? (
+															'-'
+														) : (
+															<IconButton
+																onClick={async () => {
+																	await handleClickOpen();
+																	await dispatch(getParameterByID(row.id));
+																}}
+																size="small"
+															>
+																<Build className="text-14" />
+															</IconButton>
+														)}
 													</TableCell>
 												</TableRow>
 											))}
@@ -363,28 +392,28 @@ const Sootblow = () => {
 								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-8">No Parameter to Show</Typography>
+								<Typography className="text-10">No Parameter to Show</Typography>
 							</Paper>
 						)}
 						{!sequenceData ? (
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
-								<Typography className="text-8">Loading ... </Typography>
+								<Typography className="text-10">Loading ... </Typography>
 							</Paper>
 						) : sequenceData && sequenceData.length !== 0 ? (
-							<TableContainer component={Paper} className="h-auto mb-8 md:mb-0" square>
+							<TableContainer component={Paper} className="flex-1 mb-8 md:mb-0" square>
 								<Table className={classes.table} size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Zone
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Area
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Zone Code
 											</TableCell>
-											<TableCell align="center" className="text-10 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
 												Execution Status
 											</TableCell>
 										</TableRow>
@@ -397,18 +426,18 @@ const Sootblow = () => {
 														component="th"
 														scope="row"
 														align="center"
-														className="text-8 py-4"
+														className="text-10 py-4"
 													>
-														{row.label}
+														{row.zone}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
-														{row.value}
+													<TableCell align="center" className="text-10 py-4">
+														{row.area}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
-														{row.value === 0 ? '-' : row.description}
+													<TableCell align="center" className="text-10 py-4">
+														{row.zoneCode}
 													</TableCell>
-													<TableCell align="center" className="text-8 py-4">
-														-
+													<TableCell align="center" className="text-10 py-4">
+														{renderExecutionStatusIcon(row.executionStatus)}
 													</TableCell>
 												</TableRow>
 											))}
@@ -417,7 +446,7 @@ const Sootblow = () => {
 							</TableContainer>
 						) : (
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
-								<Typography className="text-8">No Recommendation</Typography>
+								<Typography className="text-10">No Recommendation</Typography>
 							</Paper>
 						)}
 					</div>
@@ -426,24 +455,29 @@ const Sootblow = () => {
 			</Grid>
 			<Dialog open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
 				<Typography className="text-16 m-24" id="responsive-dialog-title">
-					{'Modify this parameter?'}
+					{"Modify this parameter's value?"}
 				</Typography>
 				<DialogContent>
 					<Grid container spacing={1}>
 						<Grid container alignItems="center" item xs={12}>
-							<Grid item xs={3} className="text-12">
+							<Grid item xs={3} className="text-14 text-light-blue-300">
 								Parameter
 							</Grid>
-							<Grid item xs={9}>
-								<TextField className="text-12" variant="outlined" fullWidth size="small" />
+							<Grid item xs={9} className="text-14">
+								{parameterDetailData.label}
 							</Grid>
 						</Grid>
 						<Grid container alignItems="center" item xs={12}>
-							<Grid item xs={3} className="text-12">
+							<Grid item xs={3} className="text-14 text-light-blue-300">
 								Value
 							</Grid>
 							<Grid item xs={9}>
-								<TextField variant="outlined" className="text-12" fullWidth size="small" />
+								<TextField
+									variant="standard"
+									defaultValue={parameterDetailData.value}
+									fullWidth
+									size="small"
+								/>
 							</Grid>
 						</Grid>
 					</Grid>

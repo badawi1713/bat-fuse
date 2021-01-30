@@ -93,7 +93,7 @@ const Home = () => {
 										</Typography>
 										<Chart />
 									</Grid>
-									<Grid item className="flex flex-col flex-1">
+									<Grid item className="flex flex-col flex-1 space-y-8">
 										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-14">
@@ -105,7 +105,7 @@ const Home = () => {
 												<div />
 											</Paper>
 										</div>
-										<div className="flex-1 flex my-8">
+										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-14">
 													Efficiency Improvement
@@ -183,7 +183,7 @@ const Home = () => {
 										</Typography>
 										<Chart />
 									</Grid>
-									<Grid item className="flex flex-1">
+									<Grid item className="flex flex-1 space-x-8">
 										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-10">
@@ -195,7 +195,7 @@ const Home = () => {
 												<div />
 											</Paper>
 										</div>
-										<div className="flex-1 flex mx-8">
+										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-10">
 													Efficiency Improvement
