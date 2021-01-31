@@ -27,6 +27,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
 import './styles/index.css';
+import { showMessage } from 'app/store/fuse/messageSlice';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -94,6 +95,9 @@ const Sootblow = () => {
 	const dispatch = useDispatch();
 
 	const loading = useSelector(({ sootblowReducer }) => sootblowReducer.loading);
+	const loadingSootblowData = useSelector(({ sootblowReducer }) => sootblowReducer.loadingSootblowData);
+	const errorSootblow = useSelector(({ sootblowReducer }) => sootblowReducer.errorSootblow);
+
 	const sootblowData = useSelector(({ sootblowReducer }) => sootblowReducer.sootblowData);
 	const parameterDetailData = useSelector(({ sootblowReducer }) => sootblowReducer.parameterDetailData);
 	const masterControl =
@@ -104,12 +108,12 @@ const Sootblow = () => {
 	const [parameterValue, setParameterValue] = useState('');
 
 	useEffect(() => {
-		dispatch(getSootblowData());
+		dispatch(getSootblowData(true));
 		setMasterControlStatus(masterControl && masterControl);
 	}, [dispatch, masterControl]);
 
 	useEffect(() => {
-		dispatch(getSootblowData());
+		dispatch(getSootblowData(true));
 	}, [dispatch]);
 
 	const sequenceData =
@@ -135,25 +139,43 @@ const Sootblow = () => {
 	const masterControlData = sootblowData && sootblowData.control && sootblowData.control[2];
 
 	const handleMasterControlOn = async () => {
-		await dispatch(
-			updateMasterControl({
-				id: masterControlData && masterControlData.id,
-				label: masterControlData && masterControlData.label,
-				value: '1'
-			})
-		);
-		await dispatch(getSootblowData());
+		if (errorSootblow) {
+			await dispatch(
+				showMessage({
+					message: 'Sorry, something went wrong right now',
+					variant: 'error'
+				})
+			);
+		} else {
+			await dispatch(
+				updateMasterControl({
+					id: masterControlData && masterControlData.id,
+					label: masterControlData && masterControlData.label,
+					value: '1'
+				})
+			);
+			await dispatch(getSootblowData());
+		}
 	};
 
 	const handleMasterControlOff = async () => {
-		await dispatch(
-			updateMasterControl({
-				id: masterControlData && masterControlData.id,
-				label: masterControlData && masterControlData.label,
-				value: '0'
-			})
-		);
-		await dispatch(getSootblowData());
+		if (errorSootblow) {
+			await dispatch(
+				showMessage({
+					message: 'Sorry, something went wrong right now',
+					variant: 'error'
+				})
+			);
+		} else {
+			await dispatch(
+				updateMasterControl({
+					id: masterControlData && masterControlData.id,
+					label: masterControlData && masterControlData.label,
+					value: '0'
+				})
+			);
+			await dispatch(getSootblowData());
+		}
 	};
 
 	const handleClickOpen = () => {
@@ -170,7 +192,13 @@ const Sootblow = () => {
 
 	const updateParameterHandler = async (id, label) => {
 		if (parameterValue === '' || parameterDetailData.value === parameterValue) {
-			await alert('Sorry, value must be changed and cannot be empty.');
+			await dispatch(
+				showMessage({
+					message: 'Sorry, value must be changed and cannot be empty',
+					variant: 'error'
+				})
+			);
+			// await alert('Sorry, value must be changed and cannot be empty.');
 		} else {
 			await dispatch(
 				updateParameterData({
@@ -361,7 +389,7 @@ const Sootblow = () => {
 						<SvgSootblowTjAwarAwar width="100%" height="100%" />
 					</Paper>
 					<div className="flex flex-col justify-between flex-1">
-						{!parameterData ? (
+						{loadingSootblowData ? (
 							<Paper
 								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
@@ -392,11 +420,11 @@ const Sootblow = () => {
 								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
 							>
-								<Typography className="text-10">-</Typography>
+								<Typography className="text-10">Something went wrong</Typography>
 							</Paper>
 						)}
 
-						{!parameterData ? (
+						{loadingSootblowData ? (
 							<Paper
 								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
 								square
@@ -457,7 +485,7 @@ const Sootblow = () => {
 								<Typography className="text-10">No Parameter to Show</Typography>
 							</Paper>
 						)}
-						{!sequenceData ? (
+						{loadingSootblowData ? (
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
 								<Typography className="text-10">Loading ... </Typography>
 							</Paper>
@@ -538,7 +566,7 @@ const Sootblow = () => {
 								</Grid>
 								<Grid item xs={9}>
 									<TextField
-										variant="standard"
+										variant="outlined"
 										defaultValue={parameterDetailData.value}
 										fullWidth
 										size="small"
@@ -550,14 +578,14 @@ const Sootblow = () => {
 					)}
 				</DialogContent>
 				<DialogActions className="p-24">
-					<Button autoFocus onClick={handleClose} variant="outlined" className="text-11">
+					<Button autoFocus onClick={handleClose} variant="outlined" className="text-12 px-6">
 						Cancel
 					</Button>
 					<Button
 						onClick={() => updateParameterHandler(parameterDetailData.id, parameterDetailData.label)}
 						variant="contained"
 						autoFocus
-						className={clsx(classes.saveButton, 'text-12')}
+						className={clsx(classes.saveButton, 'text-12 px-6')}
 					>
 						Save
 					</Button>

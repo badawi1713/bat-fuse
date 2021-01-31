@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
 import auth from 'app/auth/store';
+import { combineReducers } from 'redux';
 import fuse from './fuse';
 import i18n from './i18nSlice';
-import { sootblowReducer, combustionReducer } from './reducers';
+import { combustionReducer, sootblowReducer } from './reducers';
 
 const createReducer = asyncReducers =>
 	combineReducers({

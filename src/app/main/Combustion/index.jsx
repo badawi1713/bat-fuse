@@ -105,8 +105,6 @@ const Combustion = () => {
 		setMasterControlStatus(false);
 	};
 
-	console.log('test', recommendationTime);
-
 	return (
 		<div className="h-full px-24 py-16 ">
 			<Grid container className="md:flex-col flex-row h-full">

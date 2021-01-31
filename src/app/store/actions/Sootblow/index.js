@@ -3,40 +3,49 @@
 import jwtService from 'app/services/jwtService';
 import { SET_SOOTBLOW } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
+
 import Axios from 'axios';
 
 const baseURL = process.env.REACT_APP_API_URL;
 
-export const getSootblowData = () => {
+export const getSootblowData = loading => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/service/bat/sootblow/indicator`, {
+		await dispatch({
+			type: SET_SOOTBLOW,
+			payload: {
+				loadingSootblowData: loading
+			}
+		});
+		await Axios.get(`${baseURL}/service/bat/sootblow/indicator`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			await dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			await dispatch({
-				type: SET_SOOTBLOW,
-				payload: {
-					error: response.error.message,
-					loading: false
-				}
+		})
+			.then(response => {
+				dispatch({
+					type: SET_SOOTBLOW,
+					payload: {
+						sootblowData: response.data.object,
+						loadingSootblowData: false
+					}
+				});
+			})
+			.catch(error => {
+				dispatch(
+					showMessage({
+						message: error.message,
+						variant: 'error'
+					})
+				);
+				dispatch({
+					type: SET_SOOTBLOW,
+					payload: {
+						error: error.message,
+						errorSootblow: true,
+						loadingSootblowData: false
+					}
+				});
 			});
-		} else {
-			await dispatch({
-				type: SET_SOOTBLOW,
-				payload: {
-					sootblowData: response.data.object,
-					loading: false
-				}
-			});
-		}
 	};
 };
 
@@ -53,7 +62,16 @@ export const getParameterByID = id => {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
 		});
-		if (response.error) {
+
+		try {
+			await dispatch({
+				type: SET_SOOTBLOW,
+				payload: {
+					parameterDetailData: response.data.object,
+					loading: false
+				}
+			});
+		} catch (error) {
 			await dispatch(
 				showMessage({
 					message: response.error.message,
@@ -64,14 +82,6 @@ export const getParameterByID = id => {
 				type: SET_SOOTBLOW,
 				payload: {
 					error: response.error.message,
-					loading: false
-				}
-			});
-		} else {
-			await dispatch({
-				type: SET_SOOTBLOW,
-				payload: {
-					parameterDetailData: response.data.object,
 					loading: false
 				}
 			});
@@ -98,7 +108,7 @@ export const updateParameterData = data => {
 				type: SET_SOOTBLOW,
 				payload: {
 					error: response.error.message,
-					loading: false
+					loadingSootblowData: false
 				}
 			});
 		} else {
@@ -145,7 +155,7 @@ export const updateMasterControl = data => {
 						type: SET_SOOTBLOW,
 						payload: {
 							error: error.message,
-							loading: false
+							loadingSootblowData: false
 						}
 					});
 				});
