@@ -122,20 +122,20 @@ const Combustion = () => {
 		createBurnerTiltData('RH2 Temperature', Number(Math.random()).toFixed(2))
 	]);
 
-	useEffect(() => {
-		const changeValue = () => {
-			setInterval(() => {
-				setBurnerTiltData([
-					createBurnerTiltData('Bias', Number(Math.random()).toFixed(2)),
-					createBurnerTiltData('Current', Number(Math.random()).toFixed(2)),
-					createBurnerTiltData('Demand', Number(Math.random()).toFixed(2)),
-					createBurnerTiltData('Final SH Temperature', Number(Math.random()).toFixed(2)),
-					createBurnerTiltData('RH2 Temperature', Number(Math.random()).toFixed(2))
-				]);
-			}, 5000);
-		};
-		return () => clearInterval(changeValue);
-	}, []);
+	// useEffect(() => {
+	// 	const changeValue = () => {
+	// 		setInterval(() => {
+	// 			setBurnerTiltData([
+	// 				createBurnerTiltData('Bias', Number(Math.random()).toFixed(2)),
+	// 				createBurnerTiltData('Current', Number(Math.random()).toFixed(2)),
+	// 				createBurnerTiltData('Demand', Number(Math.random()).toFixed(2)),
+	// 				createBurnerTiltData('Final SH Temperature', Number(Math.random()).toFixed(2)),
+	// 				createBurnerTiltData('RH2 Temperature', Number(Math.random()).toFixed(2))
+	// 			]);
+	// 		}, 5000);
+	// 	};
+	// 	return () => clearInterval(changeValue);
+	// }, []);
 
 	const handleMasterControlOn = () => {
 		setMasterControlStatus(true);

@@ -8,11 +8,13 @@ import {
 	getCombustionRecommendationTime,
 	getCombustionSensorsTime
 } from './Combustion';
-import { getSootblowData, getParameterByID } from './Sootblow';
+import { getSootblowData, getParameterByID, updateParameterData, updateMasterControl } from './Sootblow';
 
 export {
 	getSootblowData,
 	getParameterByID,
+	updateParameterData,
+	updateMasterControl,
 	getCombustionRecommendationTime,
 	getCombustionConstraints,
 	getCombustionConstraintsLimit,

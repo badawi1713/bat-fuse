@@ -87,14 +87,14 @@ const Sootblow = () => {
 		dispatch(getSootblowData());
 	}, [dispatch]);
 
-	useEffect(() => {
-		const allTableValueHandler = setInterval(() => {
-			dispatch(getSootblowData());
-		}, 10000);
+	// useEffect(() => {
+	// 	const allTableValueHandler = setInterval(() => {
+	// 		dispatch(getSootblowData());
+	// 	}, 10000);
 
-		return () => clearInterval(allTableValueHandler); //This is important
-		// eslint-disable-next-line
-	}, [dispatch]);
+	// 	return () => clearInterval(allTableValueHandler); //This is important
+	// 	// eslint-disable-next-line
+	// }, [dispatch]);
 
 	const sequenceData =
 		sootblowData && sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));

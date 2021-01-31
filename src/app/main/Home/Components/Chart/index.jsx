@@ -183,6 +183,7 @@ const dataSource = {
 					connectNullData: true
 				}
 			],
+			title: 'Sootblow & Combustion Optimization Running',
 			orientation: 'right',
 			plottype: 'step-line',
 			min: '0.0',
