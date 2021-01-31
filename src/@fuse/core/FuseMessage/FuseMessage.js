@@ -6,7 +6,7 @@ import SnackbarContent from '@material-ui/core/SnackbarContent';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { hideMessage } from 'app/store/fuse/messageSlice';
 
@@ -44,11 +44,17 @@ function FuseMessage(props) {
 
 	const classes = useStyles();
 
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			dispatch(hideMessage());
+		}, 6000);
+		return () => clearTimeout(timer);
+	});
+
 	return (
 		<Snackbar
 			{...options}
 			open={state}
-			onClose={() => dispatch(hideMessage())}
 			classes={{
 				root: classes.root
 			}}

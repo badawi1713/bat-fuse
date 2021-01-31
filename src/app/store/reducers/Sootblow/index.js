@@ -4,7 +4,9 @@ const initialState = {
 	sootblowData: {},
 	parameterDetailData: {},
 	loading: false,
-	error: {}
+	loadingSootblowData: false,
+	error: '',
+	errorSootblow: false
 };
 
 const sootblowReducer = (state = initialState, action) => {
