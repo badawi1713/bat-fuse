@@ -15,7 +15,8 @@ import {
 	TableRow,
 	TextField,
 	Tooltip,
-	Typography
+	Typography,
+	LinearProgress
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo } from '@material-ui/icons';
@@ -514,15 +515,13 @@ const Sootblow = () => {
 				</Grid>
 				{/* Main Content */}
 			</Grid>
-			<Dialog open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+			<Dialog fullWidth open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
 				<Typography className="text-16 m-24" id="responsive-dialog-title">
 					{"Modify this parameter's value?"}
 				</Typography>
 				<DialogContent>
 					{loading ? (
-						<Typography className="text-14 text-center" id="responsive-dialog-title">
-							Loading ...
-						</Typography>
+						<LinearProgress color="secondary" />
 					) : (
 						<Grid container spacing={1}>
 							<Grid container alignItems="center" item xs={12}>

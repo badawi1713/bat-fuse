@@ -7,7 +7,6 @@ import { submitLogin } from 'app/auth/store/loginSlice';
 import Formsy from 'formsy-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { showMessage } from 'app/store/fuse/messageSlice';
 
 function JWTLoginTab(props) {
 	const dispatch = useDispatch();
@@ -111,14 +110,6 @@ function JWTLoginTab(props) {
 					{login.loading ? 'Please Wait' : 'Login'}
 				</Button>
 			</Formsy>
-			<h1
-				onClick={() => {
-					console.log('why');
-					dispatch(showMessage({ message: 'Test', variant: 'error' }));
-				}}
-			>
-				Show Message
-			</h1>
 		</div>
 	);
 }
