@@ -14,16 +14,19 @@ import {
 	TableHead,
 	TableRow,
 	TextField,
-	Typography
+	Tooltip,
+	Typography,
+	LinearProgress
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { ArrowBack, Build } from '@material-ui/icons';
-import { getSootblowData } from 'app/store/actions';
+import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo } from '@material-ui/icons';
+import { getParameterByID, getSootblowData, updateMasterControl, updateParameterData } from 'app/store/actions';
 import clsx from 'clsx';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
+import './styles/index.css';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -72,29 +75,33 @@ const useStyles = makeStyles(theme => ({
 	defaultButton: {
 		padding: '0px 8px'
 	},
-	placeholder: {
-		fontSize: '12px'
+	errorAlert: {
+		backgroundColor: theme.palette.error.dark,
+		color: theme.palette.getContrastText(theme.palette.error.dark)
 	}
 }));
 
-const createSequenceData = (label, value, description) => {
-	return { label, value, description };
+const createSequenceData = (zone, area, zoneCode, executionStatus) => {
+	return { zone, area, zoneCode, executionStatus };
 };
 
-const createParameterData = (label, value) => {
-	return { label, value };
+const createParameterData = (label, value, id) => {
+	return { label, value, id };
 };
 
 const Sootblow = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
-	const sootblowData = useSelector(state => state.sootblowReducer.sootblowData);
+	const loading = useSelector(({ sootblowReducer }) => sootblowReducer.loading);
+	const sootblowData = useSelector(({ sootblowReducer }) => sootblowReducer.sootblowData);
+	const parameterDetailData = useSelector(({ sootblowReducer }) => sootblowReducer.parameterDetailData);
 	const masterControl =
 		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
 
-	const [masterControlStatus, setMasterControlStatus] = React.useState(masterControl && masterControl);
-	const [open, setOpen] = React.useState(false);
+	const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
+	const [open, setOpen] = useState(false);
+	const [parameterValue, setParameterValue] = useState('');
 
 	useEffect(() => {
 		dispatch(getSootblowData());
@@ -108,11 +115,13 @@ const Sootblow = () => {
 	const sequenceData =
 		sootblowData &&
 		sootblowData.sequence &&
-		sootblowData.sequence.map(item => createSequenceData(item.label, item.value, item.description));
+		sootblowData.sequence.map(item =>
+			createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
+		);
 	const parameterData =
 		sootblowData &&
 		sootblowData.parameter &&
-		sootblowData.parameter.map(item => createParameterData(item.label, item.value));
+		sootblowData.parameter.map(item => createParameterData(item.label, item.value, item.id));
 
 	const recommendationTime =
 		sootblowData && sootblowData.control && sootblowData.control[3] && sootblowData.control[3].value;
@@ -123,12 +132,28 @@ const Sootblow = () => {
 	const sootblowStatus =
 		sootblowData && sootblowData.control && sootblowData.control[4] && sootblowData.control[4].value;
 
-	const handleMasterControlOn = () => {
-		setMasterControlStatus('1');
+	const masterControlData = sootblowData && sootblowData.control && sootblowData.control[2];
+
+	const handleMasterControlOn = async () => {
+		await dispatch(
+			updateMasterControl({
+				id: masterControlData && masterControlData.id,
+				label: masterControlData && masterControlData.label,
+				value: '1'
+			})
+		);
+		await dispatch(getSootblowData());
 	};
 
-	const handleMasterControlOff = () => {
-		setMasterControlStatus('0');
+	const handleMasterControlOff = async () => {
+		await dispatch(
+			updateMasterControl({
+				id: masterControlData && masterControlData.id,
+				label: masterControlData && masterControlData.label,
+				value: '0'
+			})
+		);
+		await dispatch(getSootblowData());
 	};
 
 	const handleClickOpen = () => {
@@ -137,6 +162,62 @@ const Sootblow = () => {
 
 	const handleClose = () => {
 		setOpen(false);
+	};
+
+	const parameterDetailFetch = async id => {
+		await dispatch(getParameterByID(id));
+	};
+
+	const updateParameterHandler = async (id, label) => {
+		if (parameterValue === '' || parameterDetailData.value === parameterValue) {
+			await alert('Sorry, value must be changed and cannot be empty.');
+		} else {
+			await dispatch(
+				updateParameterData({
+					id,
+					label,
+					value: parameterValue
+				})
+			);
+			await handleClose();
+			await dispatch(getSootblowData());
+		}
+	};
+
+	const renderExecutionStatusIcon = value => {
+		if (value === 0) {
+			return (
+				<Tooltip title="Waiting" arrow>
+					<HourglassEmpty fontSize="small" className="text-grey-600" />
+				</Tooltip>
+			);
+		} else if (value === 1) {
+			return (
+				<Tooltip title="Executing" arrow>
+					<FlashOn fontSize="small" className="text-orange-600" />
+				</Tooltip>
+			);
+		} else if (value === 2) {
+			return (
+				<Tooltip title="Success" arrow>
+					<CheckCircle fontSize="small" className="text-green-600" />;
+				</Tooltip>
+			);
+		} else if (value === 3) {
+			return (
+				<Tooltip title="Fail" arrow>
+					<Cancel fontSize="small" className="text-red-600" />
+				</Tooltip>
+			);
+		} else if (value === 4) {
+			return (
+				<Tooltip title="Skip" arrow>
+					<Redo fontSize="small" className="text-blue-600" />
+				</Tooltip>
+			);
+		} else {
+			return '-';
+		}
 	};
 
 	return (
@@ -173,7 +254,7 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-12">Operation Control</Typography>
+									<Typography className="text-center text-11">Operation Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Button
@@ -203,7 +284,7 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-12">Master Control</Typography>
+									<Typography className="text-center text-11">Master Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
@@ -238,7 +319,7 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-12">Safe Guard</Typography>
+									<Typography className="text-center text-11">Safe Guard</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Button
@@ -266,7 +347,7 @@ const Sootblow = () => {
 				{/* Last Recommendation Section*/}
 
 				<Grid item className="flex-initial w-full">
-					<Typography className="text-12 my-8">
+					<Typography className="text-11 my-8">
 						<span className="text-light-blue-300">Last Recommendation Time</span> :{' '}
 						{!recommendationTime ? '-' : recommendationTime}
 					</Typography>
@@ -292,7 +373,7 @@ const Sootblow = () => {
 								className="flex-1 md:flex-initial md:h-1/5 mt-8 md:mb-8 md:mt-0 flex flex-col justify-between items-center py-8"
 								square
 							>
-								<Typography className="text-16 md:text-12 text-light-blue-300">
+								<Typography className="text-16 md:text-11 text-light-blue-300 font-600">
 									Sootblow Running
 								</Typography>
 								<Typography
@@ -324,16 +405,16 @@ const Sootblow = () => {
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<TableContainer className="flex-1 mt-8 mb-8 md:mt-0" component={Paper} square>
-								<Table size="small" aria-label="a dense table">
+								<Table stickyHeader size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-11 py-auto text-light-blue-300">
 												Parameter
 											</TableCell>
-											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-11 py-auto text-light-blue-300">
 												Value
 											</TableCell>
-											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-11 py-auto text-light-blue-300">
 												Modify
 											</TableCell>
 										</TableRow>
@@ -349,9 +430,19 @@ const Sootblow = () => {
 														{row.value}
 													</TableCell>
 													<TableCell align="center" className="py-4">
-														<IconButton onClick={handleClickOpen} size="small">
-															<Build className="text-14" />
-														</IconButton>
+														{typeof row.value !== 'number' ? (
+															'-'
+														) : (
+															<IconButton
+																onClick={async () => {
+																	await handleClickOpen();
+																	await parameterDetailFetch(row.id);
+																}}
+																size="small"
+															>
+																<Build className="text-14" />
+															</IconButton>
+														)}
 													</TableCell>
 												</TableRow>
 											))}
@@ -372,19 +463,19 @@ const Sootblow = () => {
 							</Paper>
 						) : sequenceData && sequenceData.length !== 0 ? (
 							<TableContainer component={Paper} className="flex-1 mb-8 md:mb-0" square>
-								<Table className={classes.table} size="small" aria-label="a dense table">
+								<Table stickyHeader size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
-											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-11 py-auto text-light-blue-300">
 												Zone
 											</TableCell>
-											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-11 py-auto text-light-blue-300">
 												Area
 											</TableCell>
-											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-11 py-auto text-light-blue-300">
 												Zone Code
 											</TableCell>
-											<TableCell align="center" className="text-12 py-auto text-light-blue-300">
+											<TableCell align="center" className="text-11 py-auto text-light-blue-300">
 												Execution Status
 											</TableCell>
 										</TableRow>
@@ -399,16 +490,16 @@ const Sootblow = () => {
 														align="center"
 														className="text-10 py-4"
 													>
-														{row.label}
+														{row.zone}
 													</TableCell>
 													<TableCell align="center" className="text-10 py-4">
-														{row.value}
+														{row.area}
 													</TableCell>
 													<TableCell align="center" className="text-10 py-4">
-														{row.value === 0 ? '-' : row.description}
+														{row.zoneCode}
 													</TableCell>
 													<TableCell align="center" className="text-10 py-4">
-														-
+														{renderExecutionStatusIcon(row.executionStatus)}
 													</TableCell>
 												</TableRow>
 											))}
@@ -424,36 +515,46 @@ const Sootblow = () => {
 				</Grid>
 				{/* Main Content */}
 			</Grid>
-			<Dialog open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+			<Dialog fullWidth open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
 				<Typography className="text-16 m-24" id="responsive-dialog-title">
 					{"Modify this parameter's value?"}
 				</Typography>
 				<DialogContent>
-					<Grid container spacing={1}>
-						<Grid container alignItems="center" item xs={12}>
-							<Grid item xs={3} className="text-14 text-light-blue-300">
-								Parameter
+					{loading ? (
+						<LinearProgress color="secondary" />
+					) : (
+						<Grid container spacing={1}>
+							<Grid container alignItems="center" item xs={12}>
+								<Grid item xs={3} className="text-14 text-light-blue-300">
+									Parameter
+								</Grid>
+								<Grid item xs={9} className="text-14">
+									{parameterDetailData.label}
+								</Grid>
 							</Grid>
-							<Grid item xs={9} className="text-14">
-								Parameter's name.
+							<Grid container alignItems="center" item xs={12}>
+								<Grid item xs={3} className="text-14 text-light-blue-300">
+									Value
+								</Grid>
+								<Grid item xs={9}>
+									<TextField
+										variant="standard"
+										defaultValue={parameterDetailData.value}
+										fullWidth
+										size="small"
+										onChange={e => setParameterValue(e.target.value)}
+									/>
+								</Grid>
 							</Grid>
 						</Grid>
-						<Grid container alignItems="center" item xs={12}>
-							<Grid item xs={3} className="text-14 text-light-blue-300">
-								Value
-							</Grid>
-							<Grid item xs={9}>
-								<TextField variant="standard" fullWidth size="small" />
-							</Grid>
-						</Grid>
-					</Grid>
+					)}
 				</DialogContent>
 				<DialogActions className="p-24">
-					<Button autoFocus onClick={handleClose} variant="outlined" className="text-12">
+					<Button autoFocus onClick={handleClose} variant="outlined" className="text-11">
 						Cancel
 					</Button>
 					<Button
-						onClick={handleClose}
+						onClick={() => updateParameterHandler(parameterDetailData.id, parameterDetailData.label)}
 						variant="contained"
 						autoFocus
 						className={clsx(classes.saveButton, 'text-12')}

@@ -164,6 +164,7 @@ const dataSource = {
 					connectNullData: true
 				}
 			],
+			title: '',
 			orientation: 'right',
 			plottype: 'step-line',
 			min: '0',
@@ -171,7 +172,8 @@ const dataSource = {
 			format: {
 				defaultFormat: 0,
 				round: '0'
-			}
+			},
+			showYAxis: 0
 		},
 		{
 			id: 3,
@@ -181,6 +183,7 @@ const dataSource = {
 					connectNullData: true
 				}
 			],
+			title: 'Sootblow & Combustion Optimization Running',
 			orientation: 'right',
 			plottype: 'step-line',
 			min: '0.0',
