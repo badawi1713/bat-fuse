@@ -101,7 +101,7 @@ const dataSource = {
 		style: {
 			text: {
 				fill: '#fff',
-				'font-size': 9
+				'font-size': 12
 			},
 
 			canvas: {
@@ -155,44 +155,44 @@ const dataSource = {
 					}
 				}
 			]
-		},
-		{
-			id: 2,
-			plot: [
-				{
-					value: 'Sootblow Optimization Running',
-					connectNullData: true
-				}
-			],
-			title: '',
-			orientation: 'right',
-			plottype: 'step-line',
-			min: '0',
-			max: '1',
-			format: {
-				defaultFormat: 0,
-				round: '0'
-			},
-			showYAxis: 0
-		},
-		{
-			id: 3,
-			plot: [
-				{
-					value: 'Combustion Optimization Running',
-					connectNullData: true
-				}
-			],
-			title: 'Sootblow & Combustion Optimization Running',
-			orientation: 'right',
-			plottype: 'step-line',
-			min: '0.0',
-			max: '1.0',
-			format: {
-				defaultFormat: 0,
-				round: '0'
-			}
 		}
+		// {
+		// 	id: 2,
+		// 	plot: [
+		// 		{
+		// 			value: 'Sootblow Optimization Running',
+		// 			connectNullData: true
+		// 		}
+		// 	],
+		// 	title: '',
+		// 	orientation: 'right',
+		// 	plottype: 'step-line',
+		// 	min: '0',
+		// 	max: '1',
+		// 	format: {
+		// 		defaultFormat: 0,
+		// 		round: '0'
+		// 	},
+		// 	showYAxis: 0
+		// },
+		// {
+		// 	id: 3,
+		// 	plot: [
+		// 		{
+		// 			value: 'Combustion Optimization Running',
+		// 			connectNullData: true
+		// 		}
+		// 	],
+		// 	title: 'Sootblow & Combustion Optimization Running',
+		// 	orientation: 'right',
+		// 	plottype: 'step-line',
+		// 	min: '0.0',
+		// 	max: '1.0',
+		// 	format: {
+		// 		defaultFormat: 0,
+		// 		round: '0'
+		// 	}
+		// }
 	]
 };
 
@@ -205,6 +205,7 @@ export default class O2TrendChart extends React.Component {
 				type: 'timeseries',
 				renderAt: 'container',
 				width: '100%',
+				height: '370',
 				dataSource
 			}
 		};
