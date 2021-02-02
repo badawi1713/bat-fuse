@@ -38,7 +38,7 @@ function Login() {
 			)}
 		>
 			<FuseAnimate animation="transition.expandIn">
-				<div className="flex w-full max-w-400 md:max-w-3xl rounded-12 shadow-2xl overflow-hidden">
+				<div className="flex w-full max-w-400 md:max-w-3xl rounded-12 shadow-2xl xl:h-5/6 xl:w-full overflow-hidden">
 					<Card
 						className={clsx(
 							classes.leftSection,
@@ -50,10 +50,14 @@ function Login() {
 						<CardContent className="flex flex-col items-center justify-center w-full pt-96 max-w-320">
 							<FuseAnimate delay={300}>
 								<div className="flex items-center mb-32">
-									<img className="logo-icon w-72" src="assets/images/logos/logo-pjb.svg" alt="logo" />
+									<img
+										className="logo-icon w-72 lg:w-92"
+										src="assets/images/logos/logo-pjb.svg"
+										alt="logo"
+									/>
 									<div className="border-l-1 mx-12 w-1 h-40" />
 									<div>
-										<Typography className="text-24 font-800 logo-text" color="inherit">
+										<Typography className="text-24 lg:text-32 font-800 logo-text" color="inherit">
 											SOKKET
 										</Typography>
 									</div>
@@ -72,14 +76,18 @@ function Login() {
 					>
 						<div className="max-w-320">
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
-								<Typography variant="h3" color="inherit" className="font-800 leading-tight">
+								<Typography color="inherit" className="font-800 leading-tight text-44 lg:text-56">
 									Welcome <br />
 									to SOKKET <br />
 								</Typography>
 							</FuseAnimate>
 
 							<FuseAnimate delay={500}>
-								<Typography variant="subtitle1" color="inherit" className="mt-32 text-center">
+								<Typography
+									variant="subtitle1"
+									color="inherit"
+									className="mt-32 text-center text-16 lg:text-28"
+								>
 									Boiler Auto Tuning
 								</Typography>
 							</FuseAnimate>
