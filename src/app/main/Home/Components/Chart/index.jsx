@@ -101,7 +101,7 @@ const dataSource = {
 		style: {
 			text: {
 				fill: '#fff',
-				'font-size': 12
+				'font-size': 11
 			},
 
 			canvas: {
@@ -205,7 +205,7 @@ export default class O2TrendChart extends React.Component {
 				type: 'timeseries',
 				renderAt: 'container',
 				width: '100%',
-				height: '370',
+				height: this.props.height || '350',
 				dataSource
 			}
 		};
