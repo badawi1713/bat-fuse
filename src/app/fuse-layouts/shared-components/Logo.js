@@ -6,6 +6,8 @@ import React from 'react';
 const useStyles = makeStyles(theme => ({
 	root: {
 		'& .logo-icon': {
+			width: 60,
+			height: 60,
 			transition: theme.transitions.create(['width', 'height'], {
 				duration: theme.transitions.duration.shortest,
 				easing: theme.transitions.easing.easeInOut

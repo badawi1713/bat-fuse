@@ -372,7 +372,7 @@ const Sootblow = () => {
 
 				{/* Last Recommendation Section*/}
 
-				<Grid item className="flex-initial w-full">
+				<Grid item className="flex-initial w-full md:overflow-hidden">
 					<Typography className="text-11 my-8 xl:text-16">
 						<span className="text-light-blue-300">Last Recommendation Time</span> :{' '}
 						{!recommendationTime ? '-' : recommendationTime}
@@ -382,21 +382,24 @@ const Sootblow = () => {
 				{/* Last Recommendation Section*/}
 
 				{/* Main Content */}
-				<Grid item className="flex-1 flex md:flex-row flex-col w-full md:h-1/2 ">
+				<Grid
+					item
+					className="flex-1 md:overflow-hidden flex md:flex-row flex-col w-full md:h-1/2 space-y-8 md:space-y-0"
+				>
 					<Paper className="md:w-8/12 w-full h-full flex justify-center md:mr-8 p-20" square>
 						<SvgSootblowTjAwarAwar width="100%" height="100%" />
 					</Paper>
-					<div className="flex flex-col justify-between flex-1">
+					<div className="flex flex-col justify-between flex-1 space-y-8">
 						{loadingSootblowData ? (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
+								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 "
 								square
 							>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/5 mt-8 md:mb-8 md:mt-0 flex flex-col justify-between items-center py-8 xl:py-16"
+								className="flex-1 md:flex-initial md:h-1/5 flex flex-col justify-between items-center py-8 xl:py-16"
 								square
 							>
 								<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
@@ -415,7 +418,7 @@ const Sootblow = () => {
 							</Paper>
 						) : (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
+								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 "
 								square
 							>
 								<Typography className="text-12 xl:text-16">Something went wrong</Typography>
@@ -423,14 +426,11 @@ const Sootblow = () => {
 						)}
 
 						{loadingSootblowData ? (
-							<Paper
-								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
-								square
-							>
+							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
-							<TableContainer className="flex-1 mt-8 mb-8 md:mt-0" component={Paper} square>
+							<TableContainer className="flex-1 " component={Paper} square>
 								<Table stickyHeader size="small" aria-label="a dense table">
 									<TableHead>
 										<TableRow>
@@ -485,10 +485,7 @@ const Sootblow = () => {
 								</Table>
 							</TableContainer>
 						) : (
-							<Paper
-								className="flex-1 flex justify-center items-center py-4 md:p-0 mt-8 mb-8 md:mt-0"
-								square
-							>
+							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
 								<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
 							</Paper>
 						)}

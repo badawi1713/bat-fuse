@@ -66,7 +66,7 @@ const Combustion = () => {
 
 	const [masterControlStatus, setMasterControlStatus] = useState(false);
 
-	const [heightChart, setHeightChart] = useState(0);
+	const [heightChart, setHeightChart] = useState(140);
 
 	const { width, height } = ResizeWindows();
 
@@ -241,7 +241,7 @@ const Combustion = () => {
 				{/* Top Section */}
 
 				{/* Main Content */}
-				<Grid item className="flex-1 h-full flex flex-col w-full md:h-1/2 py-8 md:pb-0">
+				<Grid item className="flex-1 md:overflow-auto h-full flex flex-col w-full md:h-1/2 py-8 md:pb-0">
 					<div className="flex md:flex-row flex-col flex-1">
 						<div className="flex flex-col md:w-full h-full">
 							<div className="flex md:flex-row flex-col w-full flex-1 md:flex-initial md:h-3/5 mb-4">
