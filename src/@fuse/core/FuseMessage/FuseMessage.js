@@ -69,14 +69,24 @@ function FuseMessage(props) {
 			<SnackbarContent
 				className={clsx(classes[options.variant])}
 				message={
-					<div className="flex items-center">
-						{variantIcon[options.variant] && <Icon color="inherit">{variantIcon[options.variant]}</Icon>}
-						<Typography className="mx-8">{options.message}</Typography>
+					<div className="flex items-center text-12 md:text-14 lg:text-16">
+						{variantIcon[options.variant] && (
+							<Icon fontSize="inherit" color="inherit">
+								{variantIcon[options.variant]}
+							</Icon>
+						)}
+						<Typography className="mx-8 text-11 md:text-12 lg:text-14">{options.message}</Typography>
 					</div>
 				}
 				action={[
-					<IconButton key="close" aria-label="Close" color="inherit" onClick={() => dispatch(hideMessage())}>
-						<Icon>close</Icon>
+					<IconButton
+						key="close"
+						aria-label="Close"
+						className=" text-11 md:text-12 lg:text-14"
+						color="inherit"
+						onClick={() => dispatch(hideMessage())}
+					>
+						<Icon fontSize="inherit">close</Icon>
 					</IconButton>
 				]}
 			/>
