@@ -98,7 +98,7 @@ export const getCombustionConstraints = timestamp => {
 			dispatch({
 				type: SET_COMBUSTION,
 				payload: {
-					constrainst: response.data,
+					constraints: response.data,
 					loading: false
 				}
 			});
@@ -113,6 +113,7 @@ export const getCombustionConstraintsLimit = () => {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
 		});
+		console.log(response.data);
 		if (response.error) {
 			dispatch(
 				showMessage({
@@ -131,7 +132,7 @@ export const getCombustionConstraintsLimit = () => {
 			dispatch({
 				type: SET_COMBUSTION,
 				payload: {
-					constrainstLimit: response.data,
+					constraintsLimit: response.data,
 					loading: false
 				}
 			});

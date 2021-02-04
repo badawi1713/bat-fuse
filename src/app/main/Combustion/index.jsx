@@ -72,8 +72,8 @@ const Combustion = () => {
 
 	const combustionRecommendationTime = useSelector(state => state.combustionReducer.combustionRecommendationTime);
 	const combustionSensorTime = useSelector(state => state.combustionReducer.combustionSensorsTime);
-	const combustionConstraints = useSelector(state => state.combustionReducer.constrainst);
-	const combustionConstraintsLimit = useSelector(state => state.combustionReducer.constraintLimit);
+	const combustionConstraints = useSelector(state => state.combustionReducer.constraints);
+	const combustionConstraintsLimit = useSelector(state => state.combustionReducer.constraintsLimit);
 	const combustionDisturbances = useSelector(state => state.combustionReducer.disturbances);
 	const combustionMVCurrent = useSelector(state => state.combustionReducer.mvCurrent);
 	const combustionMVBias = useSelector(state => state.combustionReducer.mvBias);
@@ -483,7 +483,7 @@ const Combustion = () => {
 														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 xl:text-12 font-semibold">
+														<Typography className="text-8 text-right xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_a
 																	? '-'
@@ -493,7 +493,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
+														<Typography className="text-8 text-right xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_b
 																	? '-'
@@ -503,7 +503,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
+														<Typography className="text-8 text-right xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_c
 																	? '-'
@@ -528,7 +528,7 @@ const Combustion = () => {
 														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 xl:text-12 font-semibold">
+														<Typography className="text-8 text-right xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_d
 																	? '-'
@@ -538,7 +538,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
+														<Typography className="text-8 text-right xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_e
 																	? '-'
@@ -548,7 +548,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
+														<Typography className="text-8 text-right xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_f
 																	? '-'
