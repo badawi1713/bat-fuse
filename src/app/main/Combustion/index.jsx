@@ -72,8 +72,8 @@ const Combustion = () => {
 
 	const combustionRecommendationTime = useSelector(state => state.combustionReducer.combustionRecommendationTime);
 	const combustionSensorTime = useSelector(state => state.combustionReducer.combustionSensorsTime);
-	const combustionConstraints = useSelector(state => state.combustionReducer.constrainst);
-	const combustionConstraintsLimit = useSelector(state => state.combustionReducer.constraintLimit);
+	const combustionConstraints = useSelector(state => state.combustionReducer.constraints);
+	const combustionConstraintsLimit = useSelector(state => state.combustionReducer.constraintsLimit);
 	const combustionDisturbances = useSelector(state => state.combustionReducer.disturbances);
 	const combustionMVCurrent = useSelector(state => state.combustionReducer.mvCurrent);
 	const combustionMVBias = useSelector(state => state.combustionReducer.mvBias);
@@ -87,6 +87,8 @@ const Combustion = () => {
 	const mvCurrent = combustionMVCurrent && combustionMVCurrent[0];
 	const mvBias = combustionMVBias && combustionMVBias[0];
 	const o2Chart = combustionO2Chart && combustionO2Chart;
+
+	console.log('limit', combustionConstraintsLimit);
 
 	useEffect(() => {
 		const heightChartHandler = (width, height) => {

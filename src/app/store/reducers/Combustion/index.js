@@ -3,8 +3,8 @@ const { SET_COMBUSTION } = require('app/store/constants');
 const initialState = {
 	combustionRecommendationTime: [],
 	combustionSensorsTime: [],
-	constrainst: [],
-	constraintLimit: [],
+	constraints: [],
+	constraintsLimit: [],
 	disturbances: [],
 	mvCurrent: [],
 	mvBias: [],
