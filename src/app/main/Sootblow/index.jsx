@@ -94,14 +94,11 @@ const Sootblow = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
-	const loading = useSelector(({ sootblowReducer }) => sootblowReducer.loading);
-	const loadingSootblowData = useSelector(({ sootblowReducer }) => sootblowReducer.loadingSootblowData);
-	const errorSootblow = useSelector(({ sootblowReducer }) => sootblowReducer.errorSootblow);
+	const sootblow = useSelector(state => state.sootblowReducer);
 
-	const sootblowData = useSelector(({ sootblowReducer }) => sootblowReducer.sootblowData);
-	const parameterDetailData = useSelector(({ sootblowReducer }) => sootblowReducer.parameterDetailData);
-	const masterControl =
-		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
+	const { loading, loadingSootblowData, errorSootblow, sootblowData, parameterDetailData } = sootblow;
+
+	const masterControl = sootblowData.control[2] && sootblowData.control[2].value;
 
 	const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
 	const [open, setOpen] = useState(false);
@@ -116,27 +113,17 @@ const Sootblow = () => {
 		dispatch(getSootblowData(true));
 	}, [dispatch]);
 
-	const sequenceData =
-		sootblowData &&
-		sootblowData.sequence &&
-		sootblowData.sequence.map(item =>
-			createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
-		);
-	const parameterData =
-		sootblowData &&
-		sootblowData.parameter &&
-		sootblowData.parameter.map(item => createParameterData(item.label, item.value, item.id));
+	const sequenceData = sootblowData.sequence.map(item =>
+		createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
+	);
+	const parameterData = sootblowData.parameter.map(item => createParameterData(item.label, item.value, item.id));
 
-	const recommendationTime =
-		sootblowData && sootblowData.control && sootblowData.control[3] && sootblowData.control[3].value;
-	const operationControlStatus =
-		sootblowData && sootblowData.control && sootblowData.control[1] && sootblowData.control[1].value;
-	const safeGuardStatus =
-		sootblowData && sootblowData.control && sootblowData.control[0] && sootblowData.control[0].value;
-	const sootblowStatus =
-		sootblowData && sootblowData.control && sootblowData.control[4] && sootblowData.control[4].value;
+	const recommendationTime = sootblowData.control[3] && sootblowData.control[3].value;
+	const operationControlStatus = sootblowData.control[1] && sootblowData.control[1].value;
+	const safeGuardStatus = sootblowData.control[0] && sootblowData.control[0].value;
+	const sootblowStatus = sootblowData.control[4] && sootblowData.control[4].value;
 
-	const masterControlData = sootblowData && sootblowData.control && sootblowData.control[2];
+	const masterControlData = sootblowData.control[2];
 
 	const handleMasterControlOn = async () => {
 		if (errorSootblow) {
@@ -149,8 +136,8 @@ const Sootblow = () => {
 		} else {
 			await dispatch(
 				updateMasterControl({
-					id: masterControlData && masterControlData.id,
-					label: masterControlData && masterControlData.label,
+					id: masterControlData.id,
+					label: masterControlData.label,
 					value: '1'
 				})
 			);
@@ -169,8 +156,8 @@ const Sootblow = () => {
 		} else {
 			await dispatch(
 				updateMasterControl({
-					id: masterControlData && masterControlData.id,
-					label: masterControlData && masterControlData.label,
+					id: masterControlData.id,
+					label: masterControlData.label,
 					value: '0'
 				})
 			);
@@ -191,7 +178,7 @@ const Sootblow = () => {
 	};
 
 	const updateParameterHandler = async (id, label) => {
-		if (parameterValue === '' || parameterDetailData.value === parameterValue) {
+		if (!parameterValue || parameterDetailData.value === parameterValue) {
 			await dispatch(
 				showMessage({
 					message: 'Sorry, value must be changed and cannot be empty',
@@ -397,7 +384,7 @@ const Sootblow = () => {
 							>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
-						) : parameterData && parameterData.length !== 0 ? (
+						) : parameterData.length !== 0 ? (
 							<Paper
 								className="flex-1 md:flex-initial md:h-1/5 flex flex-col justify-between items-center py-8 xl:py-16"
 								square
@@ -429,7 +416,7 @@ const Sootblow = () => {
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
-						) : parameterData && parameterData.length !== 0 ? (
+						) : parameterData.length !== 0 ? (
 							<TableContainer className="flex-1 " component={Paper} square>
 								<Table stickyHeader size="small" aria-label="a dense table">
 									<TableHead>
@@ -455,32 +442,31 @@ const Sootblow = () => {
 										</TableRow>
 									</TableHead>
 									<TableBody>
-										{parameterData &&
-											parameterData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{row.label}
-													</TableCell>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{row.value}
-													</TableCell>
-													<TableCell align="center" className="py-4 text-14 xl:text-16">
-														{typeof row.value !== 'number' ? (
-															'-'
-														) : (
-															<IconButton
-																onClick={async () => {
-																	await handleClickOpen();
-																	await parameterDetailFetch(row.id);
-																}}
-																size="small"
-															>
-																<Build className="text-14 xl:text-16" />
-															</IconButton>
-														)}
-													</TableCell>
-												</TableRow>
-											))}
+										{parameterData.map((row, index) => (
+											<TableRow key={index}>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{row.label}
+												</TableCell>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{row.value}
+												</TableCell>
+												<TableCell align="center" className="py-4 text-14 xl:text-16">
+													{typeof row.value !== 'number' ? (
+														'-'
+													) : (
+														<IconButton
+															onClick={async () => {
+																await handleClickOpen();
+																await parameterDetailFetch(row.id);
+															}}
+															size="small"
+														>
+															<Build className="text-14 xl:text-16" />
+														</IconButton>
+													)}
+												</TableCell>
+											</TableRow>
+										))}
 									</TableBody>
 								</Table>
 							</TableContainer>
@@ -493,7 +479,7 @@ const Sootblow = () => {
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
-						) : sequenceData && sequenceData.length !== 0 ? (
+						) : sequenceData.length !== 0 ? (
 							<TableContainer component={Paper} className="flex-1 mb-8 md:mb-0" square>
 								<Table stickyHeader size="small" aria-label="a dense table">
 									<TableHead>
@@ -525,28 +511,27 @@ const Sootblow = () => {
 										</TableRow>
 									</TableHead>
 									<TableBody>
-										{sequenceData &&
-											sequenceData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell
-														component="th"
-														scope="row"
-														align="center"
-														className="text-10 xl:text-14 py-4"
-													>
-														{row.zone}
-													</TableCell>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{row.area}
-													</TableCell>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{row.zoneCode}
-													</TableCell>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{renderExecutionStatusIcon(row.executionStatus)}
-													</TableCell>
-												</TableRow>
-											))}
+										{sequenceData.map((row, index) => (
+											<TableRow key={index}>
+												<TableCell
+													component="th"
+													scope="row"
+													align="center"
+													className="text-10 xl:text-14 py-4"
+												>
+													{row.zone}
+												</TableCell>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{row.area}
+												</TableCell>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{row.zoneCode}
+												</TableCell>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{renderExecutionStatusIcon(row.executionStatus)}
+												</TableCell>
+											</TableRow>
+										))}
 									</TableBody>
 								</Table>
 							</TableContainer>

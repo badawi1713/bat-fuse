@@ -5,7 +5,7 @@ import { SET_COMBUSTION } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import Axios from 'axios';
 
-const baseURL = 'http://10.7.1.117:8080';
+const baseURL = process.env.REACT_APP_API_URL_COMBUSTION;
 
 export const getCombustionRecommendationTime = () => {
 	return async dispatch => {

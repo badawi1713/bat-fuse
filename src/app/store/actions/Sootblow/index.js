@@ -6,7 +6,7 @@ import { showMessage } from 'app/store/fuse/messageSlice';
 
 import Axios from 'axios';
 
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = process.env.REACT_APP_API_URL_SOOTBLOW;
 
 export const getSootblowData = loading => {
 	return async dispatch => {

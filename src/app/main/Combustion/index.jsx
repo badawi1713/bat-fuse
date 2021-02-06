@@ -88,8 +88,6 @@ const Combustion = () => {
 	const mvBias = combustionMVBias && combustionMVBias[0];
 	const o2Chart = combustionO2Chart && combustionO2Chart;
 
-	console.log('limit', combustionConstraintsLimit);
-
 	useEffect(() => {
 		const heightChartHandler = (width, height) => {
 			if (width >= 1920) {
