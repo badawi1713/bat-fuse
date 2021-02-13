@@ -20,7 +20,7 @@ function Error500Page() {
 
 				<FuseAnimate delay={600}>
 					<Typography variant="subtitle1" color="textSecondary" className="mb-48">
-						Looks like we have an internal issue, please try again in couple minutes
+						Looks like we have an internal issue, please try again later
 					</Typography>
 				</FuseAnimate>
 			</div>
