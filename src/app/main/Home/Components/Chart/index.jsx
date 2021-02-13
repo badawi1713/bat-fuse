@@ -210,6 +210,7 @@ export default class O2TrendChart extends React.Component {
 		this.state = {
 			timeseriesDs: {
 				type: 'timeseries',
+				id: 'home-chart',
 				renderAt: 'container',
 				width: '100%',
 				height: this.props.height || '350',
@@ -220,6 +221,21 @@ export default class O2TrendChart extends React.Component {
 
 	async componentDidMount() {
 		await this.onFetchData();
+		await setTimeout(async function () {
+			const getChart = document.getElementById('home-chart');
+
+			if (getChart) {
+				// get all meso-axis
+				const gMexoAxis = await getChart.getElementsByTagName('g');
+				// remove anomaly y-axis and y-line-right
+				let getYaxis = await gMexoAxis[8].getElementsByTagName('g');
+				let getYLine = await gMexoAxis[1].getElementsByTagName('path');
+
+				getYLine[2].style.display = await 'none';
+				getYaxis[16].style.display = await 'none';
+				getYaxis[25].style.display = await 'none';
+			}
+		}, 2000);
 	}
 
 	onFetchData() {

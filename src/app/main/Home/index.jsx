@@ -114,7 +114,7 @@ const Home = () => {
 										<Typography className="text-center text-16 uppercase xl:text-28">
 											Boiler Efficiency Improvement
 										</Typography>
-										<Chart height={heightChart} />
+										<Chart id="home-chart" height={heightChart} />
 									</Grid>
 									<Grid item className="flex flex-col flex-1 space-y-8">
 										<div className="flex-1 flex">
