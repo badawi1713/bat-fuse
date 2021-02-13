@@ -3,10 +3,11 @@
 import jwtService from 'app/services/jwtService';
 import { SET_SOOTBLOW } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
+import history from '@history';
 
 import Axios from 'axios';
 
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = process.env.REACT_APP_API_URL_SOOTBLOW;
 
 export const getSootblowData = loading => {
 	return async dispatch => {
@@ -31,6 +32,15 @@ export const getSootblowData = loading => {
 				});
 			})
 			.catch(error => {
+				if (error.response.status === 500) {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong with the server',
+							variant: 'error'
+						})
+					);
+					history.push({ pathname: '/errors/error-500' });
+				}
 				dispatch(
 					showMessage({
 						message: error.message,
@@ -91,34 +101,59 @@ export const getParameterByID = id => {
 
 export const updateParameterData = data => {
 	return async dispatch => {
-		const response = await Axios.post(`${baseURL}/service/bat/sootblow/parameter`, data, {
+		await Axios.post(`${baseURL}/service/bat/sootblow/parameter`, data, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`,
 				'Content-Type': 'application/json'
 			}
-		});
-		if (response.error) {
-			await dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			await dispatch({
-				type: SET_SOOTBLOW,
-				payload: {
-					error: response.error.message,
-					loadingSootblowData: false
+		})
+			.then(() => {
+				dispatch(
+					showMessage({
+						message: "Parameter's value has been updated",
+						variant: 'success'
+					})
+				);
+				dispatch({
+					type: SET_SOOTBLOW,
+					payload: {
+						loadingParameterUpdate: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.response.status === 500) {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong with the server',
+							variant: 'error'
+						})
+					);
+					dispatch({
+						type: SET_SOOTBLOW,
+						payload: {
+							error: error.message,
+							loadingSootblowData: false,
+							loadingParameterUpdate: false
+						}
+					});
+				} else {
+					dispatch(
+						showMessage({
+							message: error.message,
+							variant: 'error'
+						})
+					);
+					dispatch({
+						type: SET_SOOTBLOW,
+						payload: {
+							error: error.message,
+							loadingSootblowData: false,
+							loadingParameterUpdate: false
+						}
+					});
 				}
 			});
-		} else {
-			await dispatch(
-				showMessage({
-					message: "Parameter's value has been updated",
-					variant: 'success'
-				})
-			);
-		}
 	};
 };
 
@@ -127,6 +162,12 @@ export const updateMasterControl = data => {
 		const {
 			sootblowReducer: { sootblowData }
 		} = getState();
+		dispatch({
+			type: SET_SOOTBLOW,
+			payload: {
+				loadingMasterControl: true
+			}
+		});
 		if (sootblowData.control[2].value === data.value) {
 			return false;
 		} else {
@@ -143,22 +184,47 @@ export const updateMasterControl = data => {
 							variant: 'success'
 						})
 					);
+					dispatch({
+						type: SET_SOOTBLOW,
+						payload: {
+							loadingMasterControl: false
+						}
+					});
 				})
 				.catch(error => {
-					dispatch(
-						showMessage({
-							message: error.message,
-							variant: 'error'
-						})
-					);
+					if (error.response.status === 500) {
+						dispatch(
+							showMessage({
+								message: 'Sorry, something went wrong with the server',
+								variant: 'error'
+							})
+						);
+					} else {
+						dispatch(
+							showMessage({
+								message: error.message,
+								variant: 'error'
+							})
+						);
+					}
 					dispatch({
 						type: SET_SOOTBLOW,
 						payload: {
 							error: error.message,
-							loadingSootblowData: false
+							loadingSootblowData: false,
+							loadingMasterControl: false
 						}
 					});
 				});
 		}
+	};
+};
+
+export const changeSootblow = data => {
+	return async dispatch => {
+		dispatch({
+			type: SET_SOOTBLOW,
+			payload: data
+		});
 	};
 };

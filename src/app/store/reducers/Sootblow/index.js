@@ -5,6 +5,8 @@ const initialState = {
 	parameterDetailData: {},
 	loading: false,
 	loadingSootblowData: false,
+	loadingMasterControl: false,
+	loadingParameterUpdate: false,
 	error: '',
 	errorSootblow: false
 };

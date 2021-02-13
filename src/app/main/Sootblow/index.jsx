@@ -20,7 +20,13 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo } from '@material-ui/icons';
-import { getParameterByID, getSootblowData, updateMasterControl, updateParameterData } from 'app/store/actions';
+import {
+	getParameterByID,
+	getSootblowData,
+	updateMasterControl,
+	updateParameterData,
+	changeSootblow
+} from 'app/store/actions';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -94,12 +100,18 @@ const Sootblow = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
-	const loading = useSelector(({ sootblowReducer }) => sootblowReducer.loading);
-	const loadingSootblowData = useSelector(({ sootblowReducer }) => sootblowReducer.loadingSootblowData);
-	const errorSootblow = useSelector(({ sootblowReducer }) => sootblowReducer.errorSootblow);
+	const sootblowReducer = useSelector(state => state.sootblowReducer);
 
-	const sootblowData = useSelector(({ sootblowReducer }) => sootblowReducer.sootblowData);
-	const parameterDetailData = useSelector(({ sootblowReducer }) => sootblowReducer.parameterDetailData);
+	const {
+		loading,
+		loadingSootblowData,
+		loadingMasterControl,
+		errorSootblow,
+		sootblowData,
+		parameterDetailData,
+		loadingParameterUpdate
+	} = sootblowReducer;
+
 	const masterControl =
 		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
 
@@ -200,6 +212,11 @@ const Sootblow = () => {
 			);
 			// await alert('Sorry, value must be changed and cannot be empty.');
 		} else {
+			await dispatch(
+				changeSootblow({
+					loadingParameterUpdate: true
+				})
+			);
 			await dispatch(
 				updateParameterData({
 					id,
@@ -313,26 +330,37 @@ const Sootblow = () => {
 									<Typography className="text-center text-11 xl:text-16">Master Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
-									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+									{loadingMasterControl ? (
 										<Button
-											onClick={handleMasterControlOn}
-											className={clsx(
-												'text-10 xl:text-16',
-												masterControlStatus === '1' ? classes.statusButtonOn : 'primary'
-											)}
+											fullWidth
+											variant="contained"
+											disabled
+											className={clsx('text-10 xl:text-16')}
 										>
-											ON
+											Updating
 										</Button>
-										<Button
-											onClick={handleMasterControlOff}
-											className={clsx(
-												'text-10 xl:text-16',
-												masterControlStatus === '1' ? 'primary' : classes.statusButtonOff
-											)}
-										>
-											OFF
-										</Button>
-									</ButtonGroup>
+									) : (
+										<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+											<Button
+												onClick={handleMasterControlOn}
+												className={clsx(
+													'text-10 xl:text-16',
+													masterControlStatus === '1' ? classes.statusButtonOn : 'primary'
+												)}
+											>
+												ON
+											</Button>
+											<Button
+												onClick={handleMasterControlOff}
+												className={clsx(
+													'text-10 xl:text-16',
+													masterControlStatus === '1' ? 'primary' : classes.statusButtonOff
+												)}
+											>
+												OFF
+											</Button>
+										</ButtonGroup>
+									)}
 								</Grid>
 							</Grid>
 							<Grid
@@ -559,7 +587,7 @@ const Sootblow = () => {
 				</Grid>
 				{/* Main Content */}
 			</Grid>
-			<Dialog fullWidth open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+			<Dialog fullWidth open={open} aria-labelledby="responsive-dialog-title">
 				<Typography className="text-16 m-24" id="responsive-dialog-title">
 					{"Modify this parameter's value?"}
 				</Typography>
@@ -594,17 +622,25 @@ const Sootblow = () => {
 					)}
 				</DialogContent>
 				<DialogActions className="p-24">
-					<Button autoFocus onClick={handleClose} variant="outlined" className="text-12 px-6">
-						Cancel
-					</Button>
-					<Button
-						onClick={() => updateParameterHandler(parameterDetailData.id, parameterDetailData.label)}
-						variant="contained"
-						autoFocus
-						className={clsx(classes.saveButton, 'text-12 px-6')}
-					>
-						Save
-					</Button>
+					{!loadingParameterUpdate && (
+						<Button autoFocus onClick={handleClose} variant="outlined" className="text-12 px-6">
+							Cancel
+						</Button>
+					)}
+					{loadingParameterUpdate ? (
+						<Button disabled variant="contained" autoFocus className={clsx('text-12 px-6')}>
+							Saving
+						</Button>
+					) : (
+						<Button
+							onClick={() => updateParameterHandler(parameterDetailData.id, parameterDetailData.label)}
+							variant="contained"
+							autoFocus
+							className={clsx(classes.saveButton, 'text-12 px-6')}
+						>
+							Save
+						</Button>
+					)}
 				</DialogActions>
 			</Dialog>
 		</div>
