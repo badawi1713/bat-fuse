@@ -20,7 +20,13 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo } from '@material-ui/icons';
-import { getParameterByID, getSootblowData, updateMasterControl, updateParameterData } from 'app/store/actions';
+import {
+	getParameterByID,
+	getSootblowData,
+	updateMasterControl,
+	updateParameterData,
+	changeSootblow
+} from 'app/store/actions';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -94,9 +100,17 @@ const Sootblow = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
-	const sootblow = useSelector(state => state.sootblowReducer);
+	const sootblowReducer = useSelector(state => state.sootblowReducer);
 
-	const { loading, loadingSootblowData, errorSootblow, sootblowData, parameterDetailData } = sootblow;
+	const {
+		loading,
+		loadingSootblowData,
+		loadingMasterControl,
+		errorSootblow,
+		sootblowData,
+		parameterDetailData,
+		loadingParameterUpdate
+	} = sootblowReducer;
 
 	const masterControl = sootblowData.control[2] && sootblowData.control[2].value;
 
@@ -178,7 +192,7 @@ const Sootblow = () => {
 	};
 
 	const updateParameterHandler = async (id, label) => {
-		if (!parameterValue || parameterDetailData.value === parameterValue) {
+		if (parameterValue === '' || parameterDetailData.value === parameterValue) {
 			await dispatch(
 				showMessage({
 					message: 'Sorry, value must be changed and cannot be empty',
@@ -187,6 +201,11 @@ const Sootblow = () => {
 			);
 			// await alert('Sorry, value must be changed and cannot be empty.');
 		} else {
+			await dispatch(
+				changeSootblow({
+					loadingParameterUpdate: true
+				})
+			);
 			await dispatch(
 				updateParameterData({
 					id,
@@ -300,26 +319,37 @@ const Sootblow = () => {
 									<Typography className="text-center text-11 xl:text-16">Master Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
-									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+									{loadingMasterControl ? (
 										<Button
-											onClick={handleMasterControlOn}
-											className={clsx(
-												'text-10 xl:text-16',
-												masterControlStatus === '1' ? classes.statusButtonOn : 'primary'
-											)}
+											fullWidth
+											variant="contained"
+											disabled
+											className={clsx('text-10 xl:text-16')}
 										>
-											ON
+											Updating
 										</Button>
-										<Button
-											onClick={handleMasterControlOff}
-											className={clsx(
-												'text-10 xl:text-16',
-												masterControlStatus === '1' ? 'primary' : classes.statusButtonOff
-											)}
-										>
-											OFF
-										</Button>
-									</ButtonGroup>
+									) : (
+										<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+											<Button
+												onClick={handleMasterControlOn}
+												className={clsx(
+													'text-10 xl:text-16',
+													masterControlStatus === '1' ? classes.statusButtonOn : 'primary'
+												)}
+											>
+												ON
+											</Button>
+											<Button
+												onClick={handleMasterControlOff}
+												className={clsx(
+													'text-10 xl:text-16',
+													masterControlStatus === '1' ? 'primary' : classes.statusButtonOff
+												)}
+											>
+												OFF
+											</Button>
+										</ButtonGroup>
+									)}
 								</Grid>
 							</Grid>
 							<Grid
@@ -384,7 +414,7 @@ const Sootblow = () => {
 							>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
-						) : parameterData.length !== 0 ? (
+						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
 								className="flex-1 md:flex-initial md:h-1/5 flex flex-col justify-between items-center py-8 xl:py-16"
 								square
@@ -544,7 +574,7 @@ const Sootblow = () => {
 				</Grid>
 				{/* Main Content */}
 			</Grid>
-			<Dialog fullWidth open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+			<Dialog fullWidth open={open} aria-labelledby="responsive-dialog-title">
 				<Typography className="text-16 m-24" id="responsive-dialog-title">
 					{"Modify this parameter's value?"}
 				</Typography>
@@ -579,17 +609,25 @@ const Sootblow = () => {
 					)}
 				</DialogContent>
 				<DialogActions className="p-24">
-					<Button autoFocus onClick={handleClose} variant="outlined" className="text-12 px-6">
-						Cancel
-					</Button>
-					<Button
-						onClick={() => updateParameterHandler(parameterDetailData.id, parameterDetailData.label)}
-						variant="contained"
-						autoFocus
-						className={clsx(classes.saveButton, 'text-12 px-6')}
-					>
-						Save
-					</Button>
+					{!loadingParameterUpdate && (
+						<Button autoFocus onClick={handleClose} variant="outlined" className="text-12 px-6">
+							Cancel
+						</Button>
+					)}
+					{loadingParameterUpdate ? (
+						<Button disabled variant="contained" autoFocus className={clsx('text-12 px-6')}>
+							Saving
+						</Button>
+					) : (
+						<Button
+							onClick={() => updateParameterHandler(parameterDetailData.id, parameterDetailData.label)}
+							variant="contained"
+							autoFocus
+							className={clsx(classes.saveButton, 'text-12 px-6')}
+						>
+							Save
+						</Button>
+					)}
 				</DialogActions>
 			</Dialog>
 		</div>
