@@ -319,7 +319,7 @@ const Sootblow = () => {
 									>
 										{operationControlStatus && operationControlStatus === '1'
 											? 'CONNECTED'
-											: 'NOT CONNECTED'}
+											: 'DISCONNECTED'}
 									</Button>
 								</Grid>
 							</Grid>
