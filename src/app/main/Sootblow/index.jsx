@@ -1,11 +1,11 @@
 import {
 	Button,
-	ButtonGroup,
 	Dialog,
 	DialogActions,
 	DialogContent,
 	Grid,
 	IconButton,
+	LinearProgress,
 	Paper,
 	Table,
 	TableBody,
@@ -15,25 +15,18 @@ import {
 	TableRow,
 	TextField,
 	Tooltip,
-	Typography,
-	LinearProgress
+	Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo } from '@material-ui/icons';
-import {
-	getParameterByID,
-	getSootblowData,
-	updateMasterControl,
-	updateParameterData,
-	changeSootblow
-} from 'app/store/actions';
+import { changeSootblow, getParameterByID, getSootblowData, updateParameterData } from 'app/store/actions';
+import { showMessage } from 'app/store/fuse/messageSlice';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
 import './styles/index.css';
-import { showMessage } from 'app/store/fuse/messageSlice';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -102,93 +95,74 @@ const Sootblow = () => {
 
 	const sootblowReducer = useSelector(state => state.sootblowReducer);
 
-	const {
-		loading,
-		loadingSootblowData,
-		loadingMasterControl,
-		errorSootblow,
-		sootblowData,
-		parameterDetailData,
-		loadingParameterUpdate
-	} = sootblowReducer;
+	const { loading, loadingSootblowData, sootblowData, parameterDetailData, loadingParameterUpdate } = sootblowReducer;
 
-	const masterControl =
-		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
+	const masterControl = sootblowData.control[2] && sootblowData.control[2].value;
 
-	const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
+	// const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
 	const [open, setOpen] = useState(false);
 	const [parameterValue, setParameterValue] = useState('');
 
 	useEffect(() => {
 		dispatch(getSootblowData(true));
-		setMasterControlStatus(masterControl && masterControl);
+		// setMasterControlStatus(masterControl && masterControl);
 	}, [dispatch, masterControl]);
 
 	useEffect(() => {
 		dispatch(getSootblowData(true));
 	}, [dispatch]);
 
-	const sequenceData =
-		sootblowData &&
-		sootblowData.sequence &&
-		sootblowData.sequence.map(item =>
-			createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
-		);
-	const parameterData =
-		sootblowData &&
-		sootblowData.parameter &&
-		sootblowData.parameter.map(item => createParameterData(item.label, item.value, item.id));
+	const sequenceData = sootblowData.sequence.map(item =>
+		createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
+	);
+	const parameterData = sootblowData.parameter.map(item => createParameterData(item.label, item.value, item.id));
 
-	const recommendationTime =
-		sootblowData && sootblowData.control && sootblowData.control[3] && sootblowData.control[3].value;
-	const operationControlStatus =
-		sootblowData && sootblowData.control && sootblowData.control[1] && sootblowData.control[1].value;
-	const safeGuardStatus =
-		sootblowData && sootblowData.control && sootblowData.control[0] && sootblowData.control[0].value;
-	const sootblowStatus =
-		sootblowData && sootblowData.control && sootblowData.control[4] && sootblowData.control[4].value;
+	const recommendationTime = sootblowData.control[3] && sootblowData.control[3].value;
+	const operationControlStatus = sootblowData.control[1] && sootblowData.control[1].value;
+	const safeGuardStatus = sootblowData.control[0] && sootblowData.control[0].value;
+	const sootblowStatus = sootblowData.control[4] && sootblowData.control[4].value;
 
-	const masterControlData = sootblowData && sootblowData.control && sootblowData.control[2];
+	// const masterControlData = sootblowData.control[2];
 
-	const handleMasterControlOn = async () => {
-		if (errorSootblow) {
-			await dispatch(
-				showMessage({
-					message: 'Sorry, something went wrong right now',
-					variant: 'error'
-				})
-			);
-		} else {
-			await dispatch(
-				updateMasterControl({
-					id: masterControlData && masterControlData.id,
-					label: masterControlData && masterControlData.label,
-					value: '1'
-				})
-			);
-			await dispatch(getSootblowData());
-		}
-	};
+	// const handleMasterControlOn = async () => {
+	// 	if (errorSootblow) {
+	// 		await dispatch(
+	// 			showMessage({
+	// 				message: 'Sorry, something went wrong right now',
+	// 				variant: 'error'
+	// 			})
+	// 		);
+	// 	} else {
+	// 		await dispatch(
+	// 			updateMasterControl({
+	// 				id: masterControlData.id,
+	// 				label: masterControlData.label,
+	// 				value: '1'
+	// 			})
+	// 		);
+	// 		await dispatch(getSootblowData());
+	// 	}
+	// };
 
-	const handleMasterControlOff = async () => {
-		if (errorSootblow) {
-			await dispatch(
-				showMessage({
-					message: 'Sorry, something went wrong right now',
-					variant: 'error'
-				})
-			);
-		} else {
-			await dispatch(
-				updateMasterControl({
-					id: masterControlData && masterControlData.id,
-					label: masterControlData && masterControlData.label,
-					value: '0'
-				})
-			);
-			await dispatch(getSootblowData());
-		}
-	};
+	// const handleMasterControlOff = async () => {
+	// 	if (errorSootblow) {
+	// 		await dispatch(
+	// 			showMessage({
+	// 				message: 'Sorry, something went wrong right now',
+	// 				variant: 'error'
+	// 			})
+	// 		);
+	// 	} else {
+	// 		await dispatch(
+	// 			updateMasterControl({
+	// 				id: masterControlData.id,
+	// 				label: masterControlData.label,
+	// 				value: '0'
+	// 			})
+	// 		);
+	// 		await dispatch(getSootblowData());
+	// 	}
+	// };
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -327,40 +301,26 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-11 xl:text-16">Master Control</Typography>
+									<Typography className="text-center text-11 xl:text-16">Watchdog Status</Typography>
 								</Grid>
 								<Grid item className="w-full">
-									{loadingMasterControl ? (
-										<Button
-											fullWidth
-											variant="contained"
-											disabled
-											className={clsx('text-10 xl:text-16')}
-										>
-											Updating
-										</Button>
-									) : (
-										<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
-											<Button
-												onClick={handleMasterControlOn}
-												className={clsx(
-													'text-10 xl:text-16',
-													masterControlStatus === '1' ? classes.statusButtonOn : 'primary'
-												)}
-											>
-												ON
-											</Button>
-											<Button
-												onClick={handleMasterControlOff}
-												className={clsx(
-													'text-10 xl:text-16',
-													masterControlStatus === '1' ? 'primary' : classes.statusButtonOff
-												)}
-											>
-												OFF
-											</Button>
-										</ButtonGroup>
-									)}
+									<Button
+										disableFocusRipple
+										disableRipple
+										disableTouchRipple
+										fullWidth
+										variant="contained"
+										className={clsx(
+											'text-10 cursor-default xl:text-16',
+											operationControlStatus && operationControlStatus === '1'
+												? classes.statusButtonOn
+												: classes.statusButtonOff
+										)}
+									>
+										{operationControlStatus && operationControlStatus === '1'
+											? 'CONNECTED'
+											: 'NOT CONNECTED'}
+									</Button>
 								</Grid>
 							</Grid>
 							<Grid
@@ -457,7 +417,7 @@ const Sootblow = () => {
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
-						) : parameterData && parameterData.length !== 0 ? (
+						) : parameterData.length !== 0 ? (
 							<TableContainer className="flex-1 " component={Paper} square>
 								<Table stickyHeader size="small" aria-label="a dense table">
 									<TableHead>
@@ -483,32 +443,31 @@ const Sootblow = () => {
 										</TableRow>
 									</TableHead>
 									<TableBody>
-										{parameterData &&
-											parameterData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{row.label}
-													</TableCell>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{row.value}
-													</TableCell>
-													<TableCell align="center" className="py-4 text-14 xl:text-16">
-														{typeof row.value !== 'number' ? (
-															'-'
-														) : (
-															<IconButton
-																onClick={async () => {
-																	await handleClickOpen();
-																	await parameterDetailFetch(row.id);
-																}}
-																size="small"
-															>
-																<Build className="text-14 xl:text-16" />
-															</IconButton>
-														)}
-													</TableCell>
-												</TableRow>
-											))}
+										{parameterData.map((row, index) => (
+											<TableRow key={index}>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{row.label}
+												</TableCell>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{row.value}
+												</TableCell>
+												<TableCell align="center" className="py-4 text-14 xl:text-16">
+													{typeof row.value !== 'number' ? (
+														'-'
+													) : (
+														<IconButton
+															onClick={async () => {
+																await handleClickOpen();
+																await parameterDetailFetch(row.id);
+															}}
+															size="small"
+														>
+															<Build className="text-14 xl:text-16" />
+														</IconButton>
+													)}
+												</TableCell>
+											</TableRow>
+										))}
 									</TableBody>
 								</Table>
 							</TableContainer>
@@ -521,7 +480,7 @@ const Sootblow = () => {
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
-						) : sequenceData && sequenceData.length !== 0 ? (
+						) : sequenceData.length !== 0 ? (
 							<TableContainer component={Paper} className="flex-1 mb-8 md:mb-0" square>
 								<Table stickyHeader size="small" aria-label="a dense table">
 									<TableHead>
@@ -553,28 +512,27 @@ const Sootblow = () => {
 										</TableRow>
 									</TableHead>
 									<TableBody>
-										{sequenceData &&
-											sequenceData.map((row, index) => (
-												<TableRow key={index}>
-													<TableCell
-														component="th"
-														scope="row"
-														align="center"
-														className="text-10 xl:text-14 py-4"
-													>
-														{row.zone}
-													</TableCell>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{row.area}
-													</TableCell>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{row.zoneCode}
-													</TableCell>
-													<TableCell align="center" className="text-10 xl:text-14 py-4">
-														{renderExecutionStatusIcon(row.executionStatus)}
-													</TableCell>
-												</TableRow>
-											))}
+										{sequenceData.map((row, index) => (
+											<TableRow key={index}>
+												<TableCell
+													component="th"
+													scope="row"
+													align="center"
+													className="text-10 xl:text-14 py-4"
+												>
+													{row.zone}
+												</TableCell>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{row.area}
+												</TableCell>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{row.zoneCode}
+												</TableCell>
+												<TableCell align="center" className="text-10 xl:text-14 py-4">
+													{renderExecutionStatusIcon(row.executionStatus)}
+												</TableCell>
+											</TableRow>
+										))}
 									</TableBody>
 								</Table>
 							</TableContainer>

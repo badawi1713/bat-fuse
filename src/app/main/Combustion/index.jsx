@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Grid, Paper, Typography } from '@material-ui/core';
+import { Button, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack } from '@material-ui/icons';
 import {
@@ -64,8 +64,6 @@ const Combustion = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
-	const [masterControlStatus, setMasterControlStatus] = useState(false);
-
 	const [heightChart, setHeightChart] = useState(140);
 
 	const { width, height } = ResizeWindows();
@@ -115,14 +113,6 @@ const Combustion = () => {
 	useEffect(() => {
 		dispatch(getCombustionMVBias(recommendationTime));
 	}, [dispatch, recommendationTime]);
-
-	const handleMasterControlOn = () => {
-		setMasterControlStatus(true);
-	};
-
-	const handleMasterControlOff = () => {
-		setMasterControlStatus(false);
-	};
 
 	return (
 		<div className="h-full px-24 py-16 ">
@@ -184,26 +174,21 @@ const Combustion = () => {
 									<Typography className="text-center text-11 xl:text-16">Master Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
-									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+									<Grid item className="w-full">
 										<Button
-											onClick={handleMasterControlOn}
+											disableFocusRipple
+											disableRipple
+											disableTouchRipple
+											fullWidth
+											variant="contained"
 											className={clsx(
-												'text-10 xl:text-16',
-												masterControlStatus ? classes.statusButtonOn : 'primary'
+												'text-10 xl:text-16 cursor-default',
+												classes.statusButtonOff
 											)}
 										>
-											ON
+											DISCONNECTED
 										</Button>
-										<Button
-											onClick={handleMasterControlOff}
-											className={clsx(
-												'text-10 xl:text-16',
-												masterControlStatus ? 'primary' : classes.statusButtonOff
-											)}
-										>
-											OFF
-										</Button>
-									</ButtonGroup>
+									</Grid>
 								</Grid>
 							</Grid>
 							<Grid
@@ -483,7 +468,7 @@ const Combustion = () => {
 														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 text-right xl:text-12 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_a
 																	? '-'
@@ -493,7 +478,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 text-right xl:text-12 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_b
 																	? '-'
@@ -503,7 +488,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 text-right xl:text-12 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_c
 																	? '-'
@@ -528,7 +513,7 @@ const Combustion = () => {
 														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 text-right xl:text-12 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_d
 																	? '-'
@@ -538,7 +523,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 text-right xl:text-12 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_e
 																	? '-'
@@ -548,7 +533,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 text-right xl:text-12 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_f
 																	? '-'
