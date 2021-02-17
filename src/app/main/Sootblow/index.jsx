@@ -1,11 +1,11 @@
 import {
 	Button,
-	ButtonGroup,
 	Dialog,
 	DialogActions,
 	DialogContent,
 	Grid,
 	IconButton,
+	LinearProgress,
 	Paper,
 	Table,
 	TableBody,
@@ -15,25 +15,18 @@ import {
 	TableRow,
 	TextField,
 	Tooltip,
-	Typography,
-	LinearProgress
+	Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo } from '@material-ui/icons';
-import {
-	getParameterByID,
-	getSootblowData,
-	updateMasterControl,
-	updateParameterData,
-	changeSootblow
-} from 'app/store/actions';
+import { changeSootblow, getParameterByID, getSootblowData, updateParameterData } from 'app/store/actions';
+import { showMessage } from 'app/store/fuse/messageSlice';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
 import './styles/index.css';
-import { showMessage } from 'app/store/fuse/messageSlice';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -102,25 +95,17 @@ const Sootblow = () => {
 
 	const sootblowReducer = useSelector(state => state.sootblowReducer);
 
-	const {
-		loading,
-		loadingSootblowData,
-		loadingMasterControl,
-		errorSootblow,
-		sootblowData,
-		parameterDetailData,
-		loadingParameterUpdate
-	} = sootblowReducer;
+	const { loading, loadingSootblowData, sootblowData, parameterDetailData, loadingParameterUpdate } = sootblowReducer;
 
 	const masterControl = sootblowData.control[2] && sootblowData.control[2].value;
 
-	const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
+	// const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
 	const [open, setOpen] = useState(false);
 	const [parameterValue, setParameterValue] = useState('');
 
 	useEffect(() => {
 		dispatch(getSootblowData(true));
-		setMasterControlStatus(masterControl && masterControl);
+		// setMasterControlStatus(masterControl && masterControl);
 	}, [dispatch, masterControl]);
 
 	useEffect(() => {
@@ -137,47 +122,47 @@ const Sootblow = () => {
 	const safeGuardStatus = sootblowData.control[0] && sootblowData.control[0].value;
 	const sootblowStatus = sootblowData.control[4] && sootblowData.control[4].value;
 
-	const masterControlData = sootblowData.control[2];
+	// const masterControlData = sootblowData.control[2];
 
-	const handleMasterControlOn = async () => {
-		if (errorSootblow) {
-			await dispatch(
-				showMessage({
-					message: 'Sorry, something went wrong right now',
-					variant: 'error'
-				})
-			);
-		} else {
-			await dispatch(
-				updateMasterControl({
-					id: masterControlData.id,
-					label: masterControlData.label,
-					value: '1'
-				})
-			);
-			await dispatch(getSootblowData());
-		}
-	};
+	// const handleMasterControlOn = async () => {
+	// 	if (errorSootblow) {
+	// 		await dispatch(
+	// 			showMessage({
+	// 				message: 'Sorry, something went wrong right now',
+	// 				variant: 'error'
+	// 			})
+	// 		);
+	// 	} else {
+	// 		await dispatch(
+	// 			updateMasterControl({
+	// 				id: masterControlData.id,
+	// 				label: masterControlData.label,
+	// 				value: '1'
+	// 			})
+	// 		);
+	// 		await dispatch(getSootblowData());
+	// 	}
+	// };
 
-	const handleMasterControlOff = async () => {
-		if (errorSootblow) {
-			await dispatch(
-				showMessage({
-					message: 'Sorry, something went wrong right now',
-					variant: 'error'
-				})
-			);
-		} else {
-			await dispatch(
-				updateMasterControl({
-					id: masterControlData.id,
-					label: masterControlData.label,
-					value: '0'
-				})
-			);
-			await dispatch(getSootblowData());
-		}
-	};
+	// const handleMasterControlOff = async () => {
+	// 	if (errorSootblow) {
+	// 		await dispatch(
+	// 			showMessage({
+	// 				message: 'Sorry, something went wrong right now',
+	// 				variant: 'error'
+	// 			})
+	// 		);
+	// 	} else {
+	// 		await dispatch(
+	// 			updateMasterControl({
+	// 				id: masterControlData.id,
+	// 				label: masterControlData.label,
+	// 				value: '0'
+	// 			})
+	// 		);
+	// 		await dispatch(getSootblowData());
+	// 	}
+	// };
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -316,40 +301,26 @@ const Sootblow = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-11 xl:text-16">Master Control</Typography>
+									<Typography className="text-center text-11 xl:text-16">Watchdog Status</Typography>
 								</Grid>
 								<Grid item className="w-full">
-									{loadingMasterControl ? (
-										<Button
-											fullWidth
-											variant="contained"
-											disabled
-											className={clsx('text-10 xl:text-16')}
-										>
-											Updating
-										</Button>
-									) : (
-										<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
-											<Button
-												onClick={handleMasterControlOn}
-												className={clsx(
-													'text-10 xl:text-16',
-													masterControlStatus === '1' ? classes.statusButtonOn : 'primary'
-												)}
-											>
-												ON
-											</Button>
-											<Button
-												onClick={handleMasterControlOff}
-												className={clsx(
-													'text-10 xl:text-16',
-													masterControlStatus === '1' ? 'primary' : classes.statusButtonOff
-												)}
-											>
-												OFF
-											</Button>
-										</ButtonGroup>
-									)}
+									<Button
+										disableFocusRipple
+										disableRipple
+										disableTouchRipple
+										fullWidth
+										variant="contained"
+										className={clsx(
+											'text-10 cursor-default xl:text-16',
+											operationControlStatus && operationControlStatus === '1'
+												? classes.statusButtonOn
+												: classes.statusButtonOff
+										)}
+									>
+										{operationControlStatus && operationControlStatus === '1'
+											? 'CONNECTED'
+											: 'NOT CONNECTED'}
+									</Button>
 								</Grid>
 							</Grid>
 							<Grid

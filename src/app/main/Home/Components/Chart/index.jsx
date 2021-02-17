@@ -203,7 +203,7 @@ const dataSource = {
 	]
 };
 
-export default class O2TrendChart extends React.Component {
+export default class Chart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.onFetchData = this.onFetchData.bind(this);
