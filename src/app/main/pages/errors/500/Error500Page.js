@@ -1,7 +1,6 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Error500Page() {
 	return (
@@ -15,19 +14,15 @@ function Error500Page() {
 
 				<FuseAnimate delay={500}>
 					<Typography variant="h5" color="textSecondary" className="mb-16">
-						Well, you broke the internet!
+						Oops something went wrong with the server
 					</Typography>
 				</FuseAnimate>
 
 				<FuseAnimate delay={600}>
 					<Typography variant="subtitle1" color="textSecondary" className="mb-48">
-						Just kidding, looks like we have an internal issue, please try again in couple minutes
+						Looks like we have an internal issue, please try again later
 					</Typography>
 				</FuseAnimate>
-
-				<Link className="font-medium" to="/apps/dashboards/project">
-					Report this problem
-				</Link>
 			</div>
 		</div>
 	);

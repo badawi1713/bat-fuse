@@ -1,17 +1,18 @@
-import { Button, ButtonGroup, Grid, Paper, Typography } from '@material-ui/core';
+import { Button, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ArrowBack } from '@material-ui/icons';
 import {
 	getCombustionConstraints,
+	getCombustionConstraintsLimit,
 	getCombustionDisturbances,
-	getCombustionMVCurrent,
 	getCombustionMVBias,
+	getCombustionMVCurrent,
 	getCombustionO2Chart,
 	getCombustionRecommendationTime,
-	getCombustionSensorsTime,
-	getCombustionConstraintsLimit
+	getCombustionSensorsTime
 } from 'app/store/actions';
 import clsx from 'clsx';
+import { ResizeWindows } from 'helpers';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -63,25 +64,41 @@ const Combustion = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
-	const [masterControlStatus, setMasterControlStatus] = useState(false);
+	const [heightChart, setHeightChart] = useState(140);
+
+	const { width, height } = ResizeWindows();
 
 	const combustionRecommendationTime = useSelector(state => state.combustionReducer.combustionRecommendationTime);
 	const combustionSensorTime = useSelector(state => state.combustionReducer.combustionSensorsTime);
-	const combustionConstraints = useSelector(state => state.combustionReducer.constrainst);
-	const combustionConstraintsLimit = useSelector(state => state.combustionReducer.constraintLimit);
+	const combustionConstraints = useSelector(state => state.combustionReducer.constraints);
+	const combustionConstraintsLimit = useSelector(state => state.combustionReducer.constraintsLimit);
 	const combustionDisturbances = useSelector(state => state.combustionReducer.disturbances);
 	const combustionMVCurrent = useSelector(state => state.combustionReducer.mvCurrent);
 	const combustionMVBias = useSelector(state => state.combustionReducer.mvBias);
 	const combustionO2Chart = useSelector(state => state.combustionReducer.o2Chart);
 
-	const recommendationTime = combustionRecommendationTime && combustionRecommendationTime;
-	const sensorTime = combustionSensorTime && combustionSensorTime;
+	const recommendationTime = combustionRecommendationTime;
+	const sensorTime = combustionSensorTime;
 	const constraints = combustionConstraints && combustionConstraints[0];
 	const constraintLimit = combustionConstraintsLimit && combustionConstraintsLimit;
 	const disturbances = combustionDisturbances && combustionDisturbances[0];
 	const mvCurrent = combustionMVCurrent && combustionMVCurrent[0];
 	const mvBias = combustionMVBias && combustionMVBias[0];
 	const o2Chart = combustionO2Chart && combustionO2Chart;
+
+	useEffect(() => {
+		const heightChartHandler = (width, height) => {
+			if (width >= 1920) {
+				setHeightChart('340');
+			} else if (width >= 1300) {
+				setHeightChart('180');
+			} else {
+				setHeightChart('140');
+			}
+		};
+
+		heightChartHandler(width, height);
+	}, [width, height]);
 
 	useEffect(() => {
 		dispatch(getCombustionRecommendationTime());
@@ -97,14 +114,6 @@ const Combustion = () => {
 		dispatch(getCombustionMVBias(recommendationTime));
 	}, [dispatch, recommendationTime]);
 
-	const handleMasterControlOn = () => {
-		setMasterControlStatus(true);
-	};
-
-	const handleMasterControlOff = () => {
-		setMasterControlStatus(false);
-	};
-
 	return (
 		<div className="h-full px-24 py-16 ">
 			<Grid container className="md:flex-col flex-row h-full">
@@ -119,14 +128,10 @@ const Combustion = () => {
 							className="justify-between md:justify-start mb-4 md:mb-0"
 							alignItems="center"
 						>
-							<Grid item className="md:mr-8">
-								<Link to="/home">
-									<ArrowBack color="action" fontSize="small" />
-								</Link>
-							</Grid>
-							<Grid item>
-								<Typography className="text-11">COMBUSTION OPTIMIZATION</Typography>
-							</Grid>
+							<Link to="/home" className="text-20 xl:text-24 mr-8">
+								<ArrowBack color="action" fontSize="inherit" />
+							</Link>
+							<Typography className="text-center text-11 xl:text-16">COMBUSTION OPTIMIZATION</Typography>
 						</Grid>
 						<Grid item container xs={12} md={9} justify="flex-end" alignItems="center">
 							<Grid
@@ -139,7 +144,9 @@ const Combustion = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Operation Control</Typography>
+									<Typography className="text-center text-11 xl:text-16">
+										Operation Control
+									</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Button
@@ -148,7 +155,7 @@ const Combustion = () => {
 										disableTouchRipple
 										fullWidth
 										variant="contained"
-										className={clsx('text-8 cursor-default', classes.statusButtonOff)}
+										className={clsx('text-10 xl:text-16 cursor-default', classes.statusButtonOff)}
 									>
 										MANUAL
 									</Button>
@@ -164,29 +171,24 @@ const Combustion = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Master Control</Typography>
+									<Typography className="text-center text-11 xl:text-16">Master Control</Typography>
 								</Grid>
 								<Grid item className="w-full">
-									<ButtonGroup fullWidth variant="contained" aria-label="contained button group">
+									<Grid item className="w-full">
 										<Button
-											onClick={handleMasterControlOn}
+											disableFocusRipple
+											disableRipple
+											disableTouchRipple
+											fullWidth
+											variant="contained"
 											className={clsx(
-												'text-8',
-												masterControlStatus ? classes.statusButtonOn : 'primary'
+												'text-10 xl:text-16 cursor-default',
+												classes.statusButtonOff
 											)}
 										>
-											ON
+											DISCONNECTED
 										</Button>
-										<Button
-											onClick={handleMasterControlOff}
-											className={clsx(
-												'text-8',
-												masterControlStatus ? 'primary' : classes.statusButtonOff
-											)}
-										>
-											OFF
-										</Button>
-									</ButtonGroup>
+									</Grid>
 								</Grid>
 							</Grid>
 							<Grid
@@ -199,7 +201,7 @@ const Combustion = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-10">Safe Guard</Typography>
+									<Typography className="text-center text-11 xl:text-16">Safe Guard</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Button
@@ -210,8 +212,8 @@ const Combustion = () => {
 										variant="contained"
 										className={
 											constraints && constraints.constraints_messages === ''
-												? clsx('text-8 cursor-default', classes.statusButtonOn)
-												: clsx('text-8 cursor-default', classes.statusButtonOff)
+												? clsx('text-10 xl:text-16 cursor-default', classes.statusButtonOn)
+												: clsx('text-10 xl:text-16 cursor-default', classes.statusButtonOff)
 										}
 									>
 										{constraints && constraints.constraints_messages === '' ? 'Ready' : 'Not Ready'}
@@ -224,45 +226,47 @@ const Combustion = () => {
 				{/* Top Section */}
 
 				{/* Main Content */}
-				<Grid item className="flex-1 h-full flex flex-col w-full md:h-1/2 py-8 md:pb-0">
+				<Grid item className="flex-1 md:overflow-auto h-full flex flex-col w-full md:h-1/2 py-8 md:pb-0">
 					<div className="flex md:flex-row flex-col flex-1">
 						<div className="flex flex-col md:w-full h-full">
 							<div className="flex md:flex-row flex-col w-full flex-1 md:flex-initial md:h-3/5 mb-4">
 								<div className="flex flex-col flex-1 mb-8 md:mb-0 md:mr-8 ">
-									<Typography className="text-10 mb-4 flex-initial">
+									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
 										Last Recommendation Time
 									</Typography>
 									<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
 										<div>
-											<p className="text-9 font-semibold text-light-blue-300">
-												{!recommendationTime ? '-' : recommendationTime}
+											<p className="text-9 xl:text-16 font-semibold text-light-blue-300">
+												{recommendationTime.length === 0 ? '-' : recommendationTime}
 											</p>
 										</div>
 									</Paper>
-									<Typography className="text-10 my-4 flex-initial">Last Sensors Time</Typography>
+									<Typography className="text-11 xl:text-14 my-4 flex-initial">
+										Last Sensors Time
+									</Typography>
 									<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
 										<div>
-											<p className="text-9 font-semibold text-light-blue-300">
-												{!sensorTime ? '-' : sensorTime}
+											<p className="text-9 xl:text-16 font-semibold text-light-blue-300">
+												{sensorTime.length === 0 ? '-' : sensorTime}
 											</p>
 										</div>
 									</Paper>
-									<Typography className="text-10 my-4 flex-initial">Message</Typography>
+									<Typography className="text-11 xl:text-14 my-4 flex-initial">Message</Typography>
 									<Paper square className="flex justify-around flex-col flex-1 p-8">
 										<div>
 											{constraints ? (
 												constraints && constraints.constraints_messages === '' ? (
-													<p className="text-9 font-semibold text-grey-100 text-center">
+													<p className="text-11 xl:text-16 font-semibold text-grey-100 text-center">
 														No messages to display.
 													</p>
 												) : (
-													<p className="text-12 font-semibold text-red-600 text-center">
+													<p className="text-12 xl:text-16 font-semibold text-red-600 text-center">
 														{constraints &&
 															constraints.constraints_messages.split(',').join(', ')}
 													</p>
 												)
 											) : (
-												<p className="text-9 font-semibold text-grey-100 text-center">
+												<p className="text-11 xl:text-16 font-semibold text-grey-100 text-center">
 													Loading
 												</p>
 											)}
@@ -270,21 +274,25 @@ const Combustion = () => {
 									</Paper>
 								</div>
 								<div className="flex-1 flex flex-col justify-between">
-									<Typography className="text-10 mb-4 flex-initial">Manipulated Variables</Typography>
+									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
+										Manipulated Variables
+									</Typography>
 									<Paper className="flex flex-col flex-1 justify-around p-8" square>
 										<div className="mb-4">
-											<p className="text-10 font-semibold text-light-blue-300 mb-1">
+											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												O<sub>2</sub> Control
 											</p>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Current</Typography>
-													<Typography className="text-8 font-semibold">
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Current
+													</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
 														Recommended Bias
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvCurrent
 															? !mvCurrent && mvCurrent.oxygen_control
 																? '-'
@@ -293,7 +301,7 @@ const Combustion = () => {
 																  )
 															: '-'}
 													</Typography>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvBias
 															? !mvBias && mvBias.oxygen_control
 																? '-'
@@ -304,18 +312,20 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div className="mb-4">
-											<p className="text-10 font-semibold text-light-blue-300 mb-1">
+											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Secondary Air Flow (Tonnes/Hour)
 											</p>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Current</Typography>
-													<Typography className="text-8 font-semibold">
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Current
+													</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
 														Recommended Bias
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvCurrent
 															? !mvCurrent && mvCurrent.secondary_air_flow
 																? '-'
@@ -324,7 +334,7 @@ const Combustion = () => {
 																  ).toFixed(2)
 															: '-'}
 													</Typography>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvBias
 															? !mvBias && mvBias.secondary_air_flow
 																? '-'
@@ -335,18 +345,20 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div className="mb-4">
-											<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Burner Tilt Position
 											</Typography>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Current</Typography>
-													<Typography className="text-8 font-semibold">
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Current
+													</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
 														Recommended Bias
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvCurrent
 															? !mvCurrent && mvCurrent.burner_tilt_pos
 																? '-'
@@ -355,7 +367,7 @@ const Combustion = () => {
 																  ).toFixed(2)
 															: '-'}
 													</Typography>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvBias
 															? !mvBias && mvBias.burner_tilt_pos
 																? '-'
@@ -366,18 +378,20 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div className="mb-4">
-											<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Fuel-to-Air Ratio
 											</Typography>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Current</Typography>
-													<Typography className="text-8 font-semibold">
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Current
+													</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
 														Resulting Change
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvCurrent
 															? !mvCurrent && mvCurrent.fuel_to_air_ratio
 																? '-'
@@ -386,7 +400,7 @@ const Combustion = () => {
 																  ).toFixed(2)
 															: '-'}
 													</Typography>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvBias
 															? !mvBias && mvBias.fuel_to_air_ratio
 																? '-'
@@ -397,18 +411,20 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div>
-											<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Secondary-to-Primary Air Ratio
 											</Typography>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Current</Typography>
-													<Typography className="text-8 font-semibold">
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Current
+													</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
 														Resulting Change
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvCurrent
 															? !mvCurrent && mvCurrent.sa_to_pa_ratio
 																? '-'
@@ -417,7 +433,7 @@ const Combustion = () => {
 																  )
 															: '-'}
 													</Typography>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{mvBias
 															? !mvBias && mvBias.sa_to_pa_ratio
 																? '-'
@@ -430,29 +446,29 @@ const Combustion = () => {
 									</Paper>
 								</div>
 								<div className="flex flex-col flex-1 my-4 md:my-0 md:mx-8">
-									<Typography className="text-10 mb-4 flex-initial mt-8 md:mt-0">
+									<Typography className="text-11 xl:text-14 mb-4 flex-initial mt-8 md:mt-0">
 										Monitored Disturbances
 									</Typography>
 									<Paper square className="flex justify-around flex-col flex-1 p-8">
 										<div className="mb-4">
-											<p className="text-10 font-semibold text-light-blue-300 mb-1">
+											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Primary Air Flow (Tonnes/Hour)
 											</p>
 											<Grid container spacing={2}>
 												<Grid container item xs={6} justify="space-between">
 													<Grid item>
-														<Typography className="text-8 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															P.A Flow A
 														</Typography>
-														<Typography className="text-8 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															P.A Flow B
 														</Typography>
-														<Typography className="text-8 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															P.A Flow C
 														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_a
 																	? '-'
@@ -462,7 +478,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_b
 																	? '-'
@@ -472,7 +488,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_c
 																	? '-'
@@ -486,18 +502,18 @@ const Combustion = () => {
 												</Grid>
 												<Grid container item xs={6} justify="space-between">
 													<Grid item>
-														<Typography className="text-8 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															P.A Flow D
 														</Typography>
-														<Typography className="text-8 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															P.A Flow E
 														</Typography>
-														<Typography className="text-8 font-semibold">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															P.A Flow F
 														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_d
 																	? '-'
@@ -507,7 +523,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_e
 																	? '-'
@@ -517,7 +533,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold">
 															{disturbances
 																? !disturbances && disturbances.primary_air_flow_f
 																	? '-'
@@ -532,15 +548,17 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div className="mb-4">
-											<p className="text-10 font-semibold text-light-blue-300 mb-1">
+											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Gross Production Rating (MW)
 											</p>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Value</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Value
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{disturbances
 															? !disturbances && disturbances.gross_production_rating
 																? '-'
@@ -554,15 +572,17 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div>
-											<p className="text-10 font-semibold text-light-blue-300 mb-1">
+											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Coal HHV (Joule)
 											</p>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Value</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Value
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{disturbances
 															? !disturbances && disturbances.gross_production_rating
 																? '-'
@@ -573,45 +593,49 @@ const Combustion = () => {
 											</Grid>
 										</div>
 									</Paper>
-									<Typography className="text-10 my-4 flex-initial ">
+									<Typography className="text-11 xl:text-14 my-4 flex-initial ">
 										Optimality Parameters
 									</Typography>
 									<Paper square className="flex justify-around flex-col flex-1 p-8">
 										<div className="mb-4">
-											<p className="text-10 font-semibold text-light-blue-300">
+											<p className="text-10 xl:text-14 font-semibold text-light-blue-300">
 												Excess Air Oxygen (%)
 											</p>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Outlet A</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Outlet A
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Outlet B</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Outlet B
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
 											</Grid>
 										</div>
 										<div>
-											<p className="text-10 font-semibold mt-8 md:mt-0 text-light-blue-300">
+											<p className="text-10 xl:text-14 font-semibold mt-8 md:mt-0 text-light-blue-300">
 												Efficiency Change
 											</p>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">
+													<Typography className="text-8 xl:text-12 font-semibold">
 														Target Realized
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{Number(0).toFixed(2)}
 													</Typography>
 												</Grid>
@@ -620,13 +644,15 @@ const Combustion = () => {
 									</Paper>
 								</div>
 								<div className="flex-1 md:w-1/4 md:h-full flex flex-col justify-between mt-8 md:mt-0">
-									<Typography className="text-10 mb-4 flex-initial">Constraints</Typography>
+									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
+										Constraints
+									</Typography>
 									<Paper
 										className="flex flex-col flex-1 justify-around md:justify-between p-8"
 										square
 									>
 										<div>
-											<p className="text-10 font-semibold text-light-blue-300 mb-1">
+											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Excess Air Oxygen (Ref: Min.{' '}
 												{constraintLimit
 													? !constraintLimit && constraintLimit[0] && constraintLimit[0].value
@@ -639,10 +665,12 @@ const Combustion = () => {
 											</p>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Outlet A</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Outlet A
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
 															? !constraints && constraints.excess_outlet_a
 																? '-'
@@ -653,10 +681,12 @@ const Combustion = () => {
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Outlet B</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Outlet B
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
 															? !constraints && constraints.excess_outlet_b
 																? '-'
@@ -669,7 +699,7 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div className="my-4 ">
-											<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Windbox-to-Furnace Diff. Press. (Ref: Min.{' '}
 												{constraintLimit
 													? !constraintLimit && constraintLimit[4] && constraintLimit[4].value
@@ -682,15 +712,15 @@ const Combustion = () => {
 											</Typography>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">
+													<Typography className="text-8 xl:text-12 font-semibold">
 														Pressure Difference (HP)
 													</Typography>
-													<Typography className="text-8 font-semibold">
+													<Typography className="text-8 xl:text-12 font-semibold">
 														Pressure Difference (LP)
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
 															? !constraints && constraints.windbox_pressure_hp
 																? '-'
@@ -699,7 +729,7 @@ const Combustion = () => {
 																  ).toFixed(2)
 															: '-'}
 													</Typography>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
 															? !constraints && constraints.windbox_pressure_lp
 																? '-'
@@ -712,7 +742,7 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div className="mb-4">
-											<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Furnace Pressure (Ref: Max.{' '}
 												{constraintLimit
 													? !constraintLimit && constraintLimit[1] && constraintLimit[1].value
@@ -725,10 +755,12 @@ const Combustion = () => {
 											</Typography>
 											<Grid container>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Furnace A</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Furnace A
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
 															? !constraints && constraints.furnace_pressure_a
 																? '-'
@@ -739,10 +771,12 @@ const Combustion = () => {
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Furnace B</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Furnace B
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
 															? !constraints && constraints.furnace_pressure_b
 																? '-'
@@ -753,10 +787,12 @@ const Combustion = () => {
 													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold">Furnace C</Typography>
+													<Typography className="text-8 xl:text-12 font-semibold">
+														Furnace C
+													</Typography>
 												</Grid>
 												<Grid item xs={6}>
-													<Typography className="text-8 font-semibold text-right">
+													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
 															? !constraints && constraints.furnace_pressure_c
 																? '-'
@@ -769,7 +805,7 @@ const Combustion = () => {
 											</Grid>
 										</div>
 										<div>
-											<Typography className="text-10 font-semibold text-light-blue-300 mb-1">
+											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Mill Outlet Temperature (Ref:{' '}
 												{constraintLimit
 													? !constraintLimit && constraintLimit[2] && constraintLimit[2].value
@@ -791,12 +827,18 @@ const Combustion = () => {
 											<Grid container spacing={2}>
 												<Grid container item xs={6} justify="space-between">
 													<Grid item>
-														<Typography className="text-8 font-semibold">Mill A</Typography>
-														<Typography className="text-8 font-semibold">Mill B</Typography>
-														<Typography className="text-8 font-semibold">Mill C</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Mill A
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Mill B
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Mill C
+														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
 															{constraints
 																? !constraints && constraints.mill_outlet_a
 																	? '-'
@@ -805,7 +847,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
 															{constraints
 																? !constraints && constraints.mill_outlet_b
 																	? '-'
@@ -814,7 +856,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
 															{constraints
 																? !constraints && constraints.mill_outlet_c
 																	? '-'
@@ -827,12 +869,18 @@ const Combustion = () => {
 												</Grid>
 												<Grid container item xs={6} justify="space-between">
 													<Grid item>
-														<Typography className="text-8 font-semibold">Mill D</Typography>
-														<Typography className="text-8 font-semibold">Mill E</Typography>
-														<Typography className="text-8 font-semibold">Mill F</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Mill D
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Mill E
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Mill F
+														</Typography>
 													</Grid>
 													<Grid item>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
 															{constraints
 																? !constraints && constraints.mill_outlet_d
 																	? '-'
@@ -841,7 +889,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
 															{constraints
 																? !constraints && constraints.mill_outlet_e
 																	? '-'
@@ -850,7 +898,7 @@ const Combustion = () => {
 																	  ).toFixed(2)
 																: '-'}
 														</Typography>
-														<Typography className="text-8 font-semibold text-right">
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
 															{constraints
 																? !constraints && constraints.mill_outlet_f
 																	? '-'
@@ -868,7 +916,9 @@ const Combustion = () => {
 							</div>
 							<div className="flex md:flex-row flex-col flex-1 mt-8 md:mt-4">
 								<div className="md:flex-inital w-full flex flex-col">
-									<Typography className="text-10 mb-4 flex-initial">Oxygen Trend Chart</Typography>
+									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
+										Oxygen Trend Chart
+									</Typography>
 									<Grid
 										container
 										component={Paper}
@@ -878,7 +928,7 @@ const Combustion = () => {
 										className="w-full h-full"
 									>
 										<Grid item className="w-full h-full flex flex-col flex-1 justify-center">
-											<O2TrendChart data={o2Chart} />
+											<O2TrendChart data={o2Chart} height={heightChart} />
 										</Grid>
 									</Grid>
 								</div>

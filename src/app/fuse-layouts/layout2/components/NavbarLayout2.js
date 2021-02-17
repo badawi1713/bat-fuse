@@ -5,7 +5,7 @@ import React from 'react';
 
 function NavbarLayout2() {
 	return (
-		<div className="flex flex-auto justify-between items-center w-full h-full container p-0 lg:px-24">
+		<div className="flex flex-auto justify-between items-center w-full h-full container p-0 md:px-24">
 			<div className="flex flex-shrink-0 items-center px-8 mx-16 md:mx-0">
 				<Logo />
 			</div>

@@ -2,7 +2,8 @@ import FuseAnimate from '@fuse/core/FuseAnimate';
 import { Button, Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core';
 import { getSootblowData } from 'app/store/actions';
 import clsx from 'clsx';
-import React, { useEffect } from 'react';
+import { ResizeWindows } from 'helpers';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Chart } from './Components';
@@ -30,9 +31,27 @@ const Home = () => {
 	const dispatch = useDispatch();
 	const sootblowData = useSelector(state => state.sootblowReducer.sootblowData);
 
+	const [heightChart, setHeightChart] = useState('370');
+
+	const { width, height } = ResizeWindows();
+
 	useEffect(() => {
 		dispatch(getSootblowData());
 	}, [dispatch]);
+
+	useEffect(() => {
+		const heightChartHandler = (width, height) => {
+			if (width >= 1920) {
+				setHeightChart('570');
+			} else if (width >= 1300) {
+				setHeightChart('350');
+			} else {
+				setHeightChart('370');
+			}
+		};
+
+		heightChartHandler(width, height);
+	}, [width, height]);
 
 	const masterControl =
 		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
@@ -56,7 +75,9 @@ const Home = () => {
 									>
 										<Grid container justify="center" alignItems="center">
 											<Grid item>
-												<Typography variant="h5">Combustion Optimization</Typography>
+												<Typography className="text-20 lg:text-28">
+													Combustion Optimization
+												</Typography>
 											</Grid>
 										</Grid>
 									</Button>
@@ -77,26 +98,31 @@ const Home = () => {
 									>
 										<Grid container justify="center" alignItems="center">
 											<Grid item>
-												<Typography variant="h5">Sootblow Optimization</Typography>
+												<Typography className="text-20 lg:text-28">
+													Sootblow Optimization
+												</Typography>
 											</Grid>
 										</Grid>
 									</Button>
 								</Link>
 							</Grid>
 						</Grid>
-						<Grid item className="flex-1">
+						<Grid item className="flex-1 overflow-auto">
 							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
 								<Grid container className="w-full h-full">
 									<Grid item className="w-4/5 h-full mr-8 flex flex-col justify-center">
-										<Typography className="text-center text-16 uppercase">
+										<Typography className="text-center text-16 uppercase xl:text-28">
 											Boiler Efficiency Improvement
 										</Typography>
-										<Chart />
+										<Chart id="home-chart" height={heightChart} />
 									</Grid>
-									<Grid item className="flex flex-col flex-1">
+									<Grid item className="flex flex-col flex-1 space-y-8">
 										<div className="flex-1 flex">
-											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
-												<Typography className="text-center text-14">
+											<Paper
+												square
+												className="flex-1 flex flex-col justify-between py-10 xl:py-24"
+											>
+												<Typography className="text-center text-14 xl:text-20">
 													Current Efficiency
 												</Typography>
 												<Typography className=" text-center text-36 text-light-green-A700 font-semibold">
@@ -105,9 +131,12 @@ const Home = () => {
 												<div />
 											</Paper>
 										</div>
-										<div className="flex-1 flex my-8">
-											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
-												<Typography className="text-center text-14">
+										<div className="flex-1 flex">
+											<Paper
+												square
+												className="flex-1 flex flex-col justify-between py-10 xl:py-24"
+											>
+												<Typography className="text-center text-14 xl:text-20">
 													Efficiency Improvement
 												</Typography>
 												<Typography className="flex items-center justify-center text-center text-36 text-light-green-A700 font-semibold">
@@ -117,11 +146,14 @@ const Home = () => {
 											</Paper>
 										</div>
 										<div className="flex-1 flex">
-											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
-												<Typography className="text-center text-14">
+											<Paper
+												square
+												className="flex-1 flex flex-col justify-between py-10 xl:py-24"
+											>
+												<Typography className="text-center text-14 xl:text-20">
 													Efficiency Baseline
 												</Typography>
-												<Typography className=" text-center text-36 text-blue font-semibold">
+												<Typography className=" text-center text-36 text-orange-600 font-semibold">
 													83.2%
 												</Typography>
 												<div />
@@ -183,7 +215,7 @@ const Home = () => {
 										</Typography>
 										<Chart />
 									</Grid>
-									<Grid item className="flex flex-1">
+									<Grid item className="flex flex-1 space-x-8">
 										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-10">
@@ -195,7 +227,7 @@ const Home = () => {
 												<div />
 											</Paper>
 										</div>
-										<div className="flex-1 flex mx-8">
+										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-10">
 													Efficiency Improvement
@@ -211,7 +243,7 @@ const Home = () => {
 												<Typography className="text-center text-10">
 													Efficiency Baseline
 												</Typography>
-												<Typography className=" text-center text-24 text-blue font-semibold">
+												<Typography className=" text-center text-24 text-orange-600 font-semibold">
 													83.2%
 												</Typography>
 												<div />
