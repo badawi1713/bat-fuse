@@ -1,9 +1,18 @@
 import { SET_SOOTBLOW } from 'app/store/constants';
 
 const initialState = {
-	sootblowData: {},
+	sootblowData: {
+		parameter: [],
+		sequence: [],
+		control: []
+	},
+	parameterDetailData: {},
 	loading: false,
-	error: {}
+	loadingSootblowData: false,
+	loadingMasterControl: false,
+	loadingParameterUpdate: false,
+	error: '',
+	errorSootblow: false
 };
 
 const sootblowReducer = (state = initialState, action) => {

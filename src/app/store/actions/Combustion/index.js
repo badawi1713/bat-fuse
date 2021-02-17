@@ -1,272 +1,249 @@
 // import { ApiGetRequest } from '../../api-configs';
 // import { errorcallback } from '../../global';
+import history from '@history';
 import jwtService from 'app/services/jwtService';
 import { SET_COMBUSTION } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import Axios from 'axios';
 
-const baseURL = 'http://10.7.1.117:8081';
+const baseURL = process.env.REACT_APP_API_URL_COMBUSTION;
 
 export const getCombustionRecommendationTime = () => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/getMaxTR`, {
+		Axios.get(`${baseURL}/getMaxTR`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					error: response.error.message,
-					loading: false
+		})
+			.then(response => {
+				dispatch({
+					type: SET_COMBUSTION,
+					payload: {
+						combustionRecommendationTime: response.data.last_update,
+						loading: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.message === "Cannot read property 'status' of undefined") {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong with the server',
+							variant: 'error'
+						})
+					);
+					history.push({ pathname: '/errors/error-500' });
+				} else {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong',
+							variant: 'error'
+						})
+					);
 				}
 			});
-		} else {
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					combustionRecommendationTime: response.data.last_update,
-					loading: false
-				}
-			});
-		}
 	};
 };
 
 export const getCombustionSensorsTime = () => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/getMaxTS`, {
+		Axios.get(`${baseURL}/getMaxTS`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					error: response.error.message,
-					loading: false
+		})
+			.then(response => {
+				dispatch({
+					type: SET_COMBUSTION,
+					payload: {
+						combustionSensorsTime: response.data.last_update,
+						loading: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.message !== "Cannot read property 'status' of undefined") {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong',
+							variant: 'error'
+						})
+					);
 				}
 			});
-		} else {
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					combustionSensorsTime: response.data.last_update,
-					loading: false
-				}
-			});
-		}
 	};
 };
 
 export const getCombustionConstraints = timestamp => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/getConstraints?last_update=${timestamp}`, {
+		Axios.get(`${baseURL}/getConstraints?last_update=${timestamp}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					error: response.error.message,
-					loading: false
+		})
+			.then(response => {
+				dispatch({
+					type: SET_COMBUSTION,
+					payload: {
+						constraints: response.data,
+						loading: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.message !== "Cannot read property 'status' of undefined") {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong',
+							variant: 'error'
+						})
+					);
 				}
 			});
-		} else {
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					constrainst: response.data,
-					loading: false
-				}
-			});
-		}
 	};
 };
 
 export const getCombustionConstraintsLimit = () => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/getConstraintsLimit`, {
+		Axios.get(`${baseURL}/getConstraintsLimit`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					error: response.error.message,
-					loading: false
+		})
+			.then(response => {
+				dispatch({
+					type: SET_COMBUSTION,
+					payload: {
+						constraintsLimit: response.data,
+						loading: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.message !== "Cannot read property 'status' of undefined") {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong',
+							variant: 'error'
+						})
+					);
 				}
 			});
-		} else {
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					constrainstLimit: response.data,
-					loading: false
-				}
-			});
-		}
 	};
 };
 
 export const getCombustionDisturbances = timestamp => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/getDisturbances?last_update=${timestamp}`, {
+		Axios.get(`${baseURL}/getDisturbances?last_update=${timestamp}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					error: response.error.message,
-					loading: false
+		})
+			.then(response => {
+				dispatch({
+					type: SET_COMBUSTION,
+					payload: {
+						disturbances: response.data,
+						loading: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.message !== "Cannot read property 'status' of undefined") {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong',
+							variant: 'error'
+						})
+					);
 				}
 			});
-		} else {
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					disturbances: response.data,
-					loading: false
-				}
-			});
-		}
 	};
 };
 
 export const getCombustionO2Chart = () => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/getO2Day`, {
+		Axios.get(`${baseURL}/getO2Day`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					error: response.error.message,
-					loading: false
+		})
+			.then(response => {
+				dispatch({
+					type: SET_COMBUSTION,
+					payload: {
+						o2Chart: JSON.parse(response.data),
+						loading: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.message !== "Cannot read property 'status' of undefined") {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong',
+							variant: 'error'
+						})
+					);
 				}
 			});
-		} else {
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					o2Chart: JSON.parse(response.data),
-					loading: false
-				}
-			});
-		}
 	};
 };
 
 export const getCombustionMVCurrent = timestamp => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/getMVCurrent?last_update=${timestamp}`, {
+		Axios.get(`${baseURL}/getMVCurrent?last_update=${timestamp}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					error: response.error.message,
-					loading: false
+		})
+			.then(response => {
+				dispatch({
+					type: SET_COMBUSTION,
+					payload: {
+						mvCurrent: response.data,
+						loading: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.message !== "Cannot read property 'status' of undefined") {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong',
+							variant: 'error'
+						})
+					);
 				}
 			});
-		} else {
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					mvCurrent: response.data,
-					loading: false
-				}
-			});
-		}
 	};
 };
 
 export const getCombustionMVBias = timestamp => {
 	return async dispatch => {
-		const response = await Axios.get(`${baseURL}/getMVBias?last_update=${timestamp}`, {
+		Axios.get(`${baseURL}/getMVBias?last_update=${timestamp}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
-		});
-		if (response.error) {
-			dispatch(
-				showMessage({
-					message: response.error.message,
-					variant: 'error'
-				})
-			);
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					error: response.error.message,
-					loading: false
+		})
+			.then(response => {
+				dispatch({
+					type: SET_COMBUSTION,
+					payload: {
+						mvBias: response.data,
+						loading: false
+					}
+				});
+			})
+			.catch(error => {
+				if (error.message !== "Cannot read property 'status' of undefined") {
+					dispatch(
+						showMessage({
+							message: 'Sorry, something went wrong',
+							variant: 'error'
+						})
+					);
 				}
 			});
-		} else {
-			dispatch({
-				type: SET_COMBUSTION,
-				payload: {
-					mvBias: response.data,
-					loading: false
-				}
-			});
-		}
 	};
 };

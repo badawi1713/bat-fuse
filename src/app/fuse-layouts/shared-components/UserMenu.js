@@ -29,10 +29,10 @@ function UserMenu(props) {
 		<>
 			<Button className="min-h-40 min-w-40 mx-16 md:mx-0 px-0 md:px-16 py-0 md:py-6" onClick={userMenuClick}>
 				<div className="hidden md:flex flex-col mx-4 items-end">
-					<Typography component="span" className="normal-case font-bold flex">
+					<Typography component="span" className="normal-case font-bold flex xl:text-16">
 						{user.data.displayName}
 					</Typography>
-					<Typography className="text-11 capitalize" color="textSecondary">
+					<Typography className="text-11 xl:text-14 capitalize" color="textSecondary">
 						{user.role.toString()}
 						{(!user.role || (Array.isArray(user.role) && user.role.length === 0)) && 'Guest'}
 					</Typography>
