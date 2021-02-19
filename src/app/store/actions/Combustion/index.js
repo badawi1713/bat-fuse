@@ -1,6 +1,5 @@
 // import { ApiGetRequest } from '../../api-configs';
 // import { errorcallback } from '../../global';
-import history from '@history';
 import jwtService from 'app/services/jwtService';
 import { SET_COMBUSTION } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
@@ -32,7 +31,7 @@ export const getCombustionRecommendationTime = () => {
 							variant: 'error'
 						})
 					);
-					history.push({ pathname: '/errors/error-500' });
+					// history.push({ pathname: '/errors/error-500' });
 				} else {
 					dispatch(
 						showMessage({
@@ -40,6 +39,12 @@ export const getCombustionRecommendationTime = () => {
 							variant: 'error'
 						})
 					);
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							loading: false
+						}
+					});
 				}
 			});
 	};
@@ -69,6 +74,12 @@ export const getCombustionSensorsTime = () => {
 							variant: 'error'
 						})
 					);
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							loading: false
+						}
+					});
 				}
 			});
 	};
@@ -76,6 +87,12 @@ export const getCombustionSensorsTime = () => {
 
 export const getCombustionConstraints = timestamp => {
 	return async dispatch => {
+		dispatch({
+			type: SET_COMBUSTION,
+			payload: {
+				constraintsLoading: true
+			}
+		});
 		Axios.get(`${baseURL}/getConstraints?last_update=${timestamp}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
@@ -86,7 +103,7 @@ export const getCombustionConstraints = timestamp => {
 					type: SET_COMBUSTION,
 					payload: {
 						constraints: response.data,
-						loading: false
+						constraintsLoading: false
 					}
 				});
 			})
@@ -98,6 +115,21 @@ export const getCombustionConstraints = timestamp => {
 							variant: 'error'
 						})
 					);
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							constraintsLoading: false,
+							constraintsError: true
+						}
+					});
+				} else {
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							constraintsLoading: false,
+							constraintsError: true
+						}
+					});
 				}
 			});
 	};
@@ -127,6 +159,12 @@ export const getCombustionConstraintsLimit = () => {
 							variant: 'error'
 						})
 					);
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							loading: false
+						}
+					});
 				}
 			});
 	};
@@ -156,6 +194,12 @@ export const getCombustionDisturbances = timestamp => {
 							variant: 'error'
 						})
 					);
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							loading: false
+						}
+					});
 				}
 			});
 	};
@@ -163,7 +207,13 @@ export const getCombustionDisturbances = timestamp => {
 
 export const getCombustionO2Chart = () => {
 	return async dispatch => {
-		Axios.get(`${baseURL}/getO2Day`, {
+		await dispatch({
+			type: SET_COMBUSTION,
+			payload: {
+				o2ChartLoading: true
+			}
+		});
+		await Axios.get(`${baseURL}/getO2Day`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
@@ -173,7 +223,7 @@ export const getCombustionO2Chart = () => {
 					type: SET_COMBUSTION,
 					payload: {
 						o2Chart: JSON.parse(response.data),
-						loading: false
+						o2ChartLoading: false
 					}
 				});
 			})
@@ -185,6 +235,21 @@ export const getCombustionO2Chart = () => {
 							variant: 'error'
 						})
 					);
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							o2ChartError: true,
+							o2ChartLoading: false
+						}
+					});
+				} else {
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							o2ChartError: true,
+							o2ChartLoading: false
+						}
+					});
 				}
 			});
 	};
@@ -214,6 +279,12 @@ export const getCombustionMVCurrent = timestamp => {
 							variant: 'error'
 						})
 					);
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							loading: false
+						}
+					});
 				}
 			});
 	};
@@ -243,6 +314,12 @@ export const getCombustionMVBias = timestamp => {
 							variant: 'error'
 						})
 					);
+					dispatch({
+						type: SET_COMBUSTION,
+						payload: {
+							loading: false
+						}
+					});
 				}
 			});
 	};

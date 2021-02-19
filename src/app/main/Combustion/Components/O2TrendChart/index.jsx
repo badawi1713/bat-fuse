@@ -45,7 +45,7 @@ export default class O2TrendChart extends React.Component {
 				type: 'timeseries',
 				renderAt: 'container',
 				width: '100%',
-				height: 160,
+				height: this.props.height,
 				dataFetch: false,
 				schemaFetch: [
 					{
@@ -76,7 +76,7 @@ export default class O2TrendChart extends React.Component {
 						style: {
 							text: {
 								fill: '#fff',
-								'font-size': 9
+								'font-size': 11
 							},
 
 							canvas: {
@@ -132,7 +132,8 @@ export default class O2TrendChart extends React.Component {
 			await this.setState(prevState => ({
 				timeseriesDs: {
 					...prevState.timeseriesDs,
-					dataFetch: this.props.data
+					dataFetch: this.props.data,
+					height: this.props.height
 				}
 			}));
 			await this.onFetchData();
@@ -160,10 +161,12 @@ export default class O2TrendChart extends React.Component {
 	render() {
 		return (
 			<>
-				{this.state.timeseriesDs.dataSource.data ? (
-					<ReactFC {...this.state.timeseriesDs} />
+				{this.props.loading ? (
+					<div className="w-full text-11 xl:text-16 text-center">Loading Chart</div>
+				) : this.props.data.length === 0 ? (
+					<div className="w-full text-11 xl:text-16 text-center">No chart available right now</div>
 				) : (
-					<div className="w-full text-10 text-center">Loading Chart</div>
+					<ReactFC {...this.state.timeseriesDs} />
 				)}
 			</>
 		);

@@ -68,17 +68,24 @@ const Combustion = () => {
 
 	const { width, height } = ResizeWindows();
 
-	const combustionRecommendationTime = useSelector(state => state.combustionReducer.combustionRecommendationTime);
-	const combustionSensorTime = useSelector(state => state.combustionReducer.combustionSensorsTime);
-	const combustionConstraints = useSelector(state => state.combustionReducer.constraints);
-	const combustionConstraintsLimit = useSelector(state => state.combustionReducer.constraintsLimit);
-	const combustionDisturbances = useSelector(state => state.combustionReducer.disturbances);
-	const combustionMVCurrent = useSelector(state => state.combustionReducer.mvCurrent);
-	const combustionMVBias = useSelector(state => state.combustionReducer.mvBias);
-	const combustionO2Chart = useSelector(state => state.combustionReducer.o2Chart);
+	const combustionReducer = useSelector(state => state.combustionReducer);
+
+	const {
+		combustionRecommendationTime,
+		combustionSensorsTime,
+		constraints: combustionConstraints,
+		constraintsError,
+		constraintsLimit: combustionConstraintsLimit,
+		disturbances: combustionDisturbances,
+		mvCurrent: combustionMVCurrent,
+		mvBias: combustionMVBias,
+		o2Chart: combustionO2Chart,
+		o2ChartError,
+		o2ChartLoading
+	} = combustionReducer;
 
 	const recommendationTime = combustionRecommendationTime;
-	const sensorTime = combustionSensorTime;
+	const sensorTime = combustionSensorsTime;
 	const constraints = combustionConstraints && combustionConstraints[0];
 	const constraintLimit = combustionConstraintsLimit && combustionConstraintsLimit;
 	const disturbances = combustionDisturbances && combustionDisturbances[0];
@@ -171,7 +178,7 @@ const Combustion = () => {
 								md={3}
 							>
 								<Grid item className="w-full">
-									<Typography className="text-center text-11 xl:text-16">Master Control</Typography>
+									<Typography className="text-center text-11 xl:text-16">Watchdog Status</Typography>
 								</Grid>
 								<Grid item className="w-full">
 									<Grid item className="w-full">
@@ -241,7 +248,7 @@ const Combustion = () => {
 											</p>
 										</div>
 									</Paper>
-									<Typography className="text-11 xl:text-14 my-4 flex-initial">
+									{/* <Typography className="text-11 xl:text-14 my-4 flex-initial">
 										Last Sensors Time
 									</Typography>
 									<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
@@ -250,7 +257,7 @@ const Combustion = () => {
 												{sensorTime.length === 0 ? '-' : sensorTime}
 											</p>
 										</div>
-									</Paper>
+									</Paper> */}
 									<Typography className="text-11 xl:text-14 my-4 flex-initial">Message</Typography>
 									<Paper square className="flex justify-around flex-col flex-1 p-8">
 										<div>
@@ -265,6 +272,10 @@ const Combustion = () => {
 															constraints.constraints_messages.split(',').join(', ')}
 													</p>
 												)
+											) : constraintsError ? (
+												<p className="text-11 xl:text-16 font-semibold text-grey-100 text-center">
+													Sorry, something went wrong with the server
+												</p>
 											) : (
 												<p className="text-11 xl:text-16 font-semibold text-grey-100 text-center">
 													Loading
@@ -928,7 +939,17 @@ const Combustion = () => {
 										className="w-full h-full"
 									>
 										<Grid item className="w-full h-full flex flex-col flex-1 justify-center">
-											<O2TrendChart data={o2Chart} height={heightChart} />
+											{o2ChartError ? (
+												<div className="w-full text-11 xl:text-16 text-center">
+													Sorry, something went wrong with the server
+												</div>
+											) : (
+												<O2TrendChart
+													data={o2Chart}
+													loading={o2ChartLoading}
+													height={heightChart}
+												/>
+											)}
 										</Grid>
 									</Grid>
 								</div>
