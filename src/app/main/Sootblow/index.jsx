@@ -465,7 +465,9 @@ const Sootblow = () => {
 									aria-controls="panel1a-content"
 									id="panel1a-header"
 								>
-									<Typography className="text-12 xl:text-16">Recommendation</Typography>
+									<Typography className="text-12 xl:text-16 text-light-blue-300">
+										Recommendation
+									</Typography>
 								</AccordionSummary>
 								<AccordionDetails className="p-0 max-h-136">
 									{loadingSootblowData ? (
@@ -545,7 +547,6 @@ const Sootblow = () => {
 											className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
 											square
 										>
-											Dzaky Badawi, [19.02.21 14:11]
 											<Typography className="text-12 xl:text-16">No Recommendation</Typography>
 										</Paper>
 									)}
@@ -557,7 +558,9 @@ const Sootblow = () => {
 									aria-controls="panel2a-content"
 									id="panel2a-header"
 								>
-									<Typography className="text-12 xl:text-16">Operation Parameter Setting</Typography>
+									<Typography className="text-12 xl:text-16 text-light-blue-300">
+										Operation Parameter Settings
+									</Typography>
 								</AccordionSummary>
 								<AccordionDetails className="p-0 max-h-136">
 									{loadingSootblowData ? (
@@ -630,7 +633,6 @@ const Sootblow = () => {
 									) : (
 										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
 											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
-											Dzaky Badawi, [19.02.21 14:11]
 										</Paper>
 									)}
 								</AccordionDetails>
@@ -641,7 +643,9 @@ const Sootblow = () => {
 									aria-controls="panel3a-content"
 									id="panel3a-header"
 								>
-									<Typography className="text-12 xl:text-16">Rules Settings</Typography>
+									<Typography className="text-12 xl:text-16 text-light-blue-300">
+										Rules Settings
+									</Typography>
 								</AccordionSummary>
 								<AccordionDetails className="p-0 max-h-136">
 									{loadingSootblowData ? (
