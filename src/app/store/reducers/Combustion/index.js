@@ -4,11 +4,15 @@ const initialState = {
 	combustionRecommendationTime: [],
 	combustionSensorsTime: [],
 	constraints: [],
+	constraintsLoading: false,
+	constrainstError: false,
 	constraintsLimit: [],
 	disturbances: [],
 	mvCurrent: [],
 	mvBias: [],
 	o2Chart: [],
+	o2ChartLoading: false,
+	o2ChartError: false,
 	loading: false,
 	error: false
 };
