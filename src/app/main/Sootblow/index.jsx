@@ -17,23 +17,68 @@ import {
 	Tooltip,
 	Typography
 } from '@material-ui/core';
+import MuiAccordion from '@material-ui/core/Accordion';
+import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
+import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import { makeStyles } from '@material-ui/core/styles';
-import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo } from '@material-ui/icons';
+import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo, ExpandMore } from '@material-ui/icons';
 import { changeSootblow, getParameterByID, getSootblowData, updateParameterData } from 'app/store/actions';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 import { SvgSootblowTjAwarAwar } from './Components';
 import './styles/index.css';
+
+const Accordion = withStyles({
+	root: {
+		border: '1px solid rgba(0, 0, 0, .125)',
+		boxShadow: 'none',
+		'&:not(:last-child)': {
+			borderBottom: 0
+		},
+		'&:before': {
+			display: 'none'
+		},
+		'&$expanded': {
+			margin: 'auto'
+		}
+	},
+	expanded: {}
+})(MuiAccordion);
+
+const AccordionSummary = withStyles({
+	root: {
+		backgroundColor: 'rgba(0, 0, 0, .03)',
+		borderBottom: '1px solid rgba(0, 0, 0, .125)',
+		marginBottom: -1,
+		minHeight: 56,
+		'&$expanded': {
+			minHeight: 56
+		}
+	},
+	content: {
+		'&$expanded': {
+			margin: '12px 0'
+		}
+	},
+	expanded: {}
+})(MuiAccordionSummary);
+
+const AccordionDetails = withStyles(theme => ({
+	root: {
+		padding: theme.spacing(2)
+	}
+}))(MuiAccordionDetails);
 
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%'
 	},
 	heading: {
-		fontSize: theme.typography.pxToRem(15),
+		// fontSize: theme.typography.pxToRem(15),
 		fontWeight: theme.typography.fontWeightRegular
 	},
 	formControl: {
@@ -377,7 +422,7 @@ const Sootblow = () => {
 					<Paper className="md:w-8/12 w-full h-full flex justify-center md:mr-8 p-20" square>
 						<SvgSootblowTjAwarAwar width="100%" height="100%" />
 					</Paper>
-					<div className="flex flex-col justify-between flex-1 space-y-8">
+					<div className="flex flex-col flex-1 space-y-8">
 						{loadingSootblowData ? (
 							<Paper
 								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 "
@@ -387,7 +432,7 @@ const Sootblow = () => {
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/5 flex flex-col justify-between items-center py-8 xl:py-16"
+								className="flex-1 md:flex-initial md:h-96 flex flex-col justify-between items-center py-8 xl:py-16 overflow-auto"
 								square
 							>
 								<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
@@ -413,134 +458,267 @@ const Sootblow = () => {
 							</Paper>
 						)}
 
-						{loadingSootblowData ? (
-							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
-								<Typography className="text-12 xl:text-16">Loading ... </Typography>
-							</Paper>
-						) : parameterData.length !== 0 ? (
-							<TableContainer className="flex-1 " component={Paper} square>
-								<Table stickyHeader size="small" aria-label="a dense table">
-									<TableHead>
-										<TableRow>
-											<TableCell
-												align="center"
-												className="text-11 xl:text-16 py-auto text-light-blue-300"
-											>
-												Parameter
-											</TableCell>
-											<TableCell
-												align="center"
-												className="text-11 xl:text-16 py-auto text-light-blue-300"
-											>
-												Value
-											</TableCell>
-											<TableCell
-												align="center"
-												className="text-11 xl:text-16 py-auto text-light-blue-300"
-											>
-												Modify
-											</TableCell>
-										</TableRow>
-									</TableHead>
-									<TableBody>
-										{parameterData.map((row, index) => (
-											<TableRow key={index}>
-												<TableCell align="center" className="text-10 xl:text-14 py-4">
-													{row.label}
-												</TableCell>
-												<TableCell align="center" className="text-10 xl:text-14 py-4">
-													{row.value}
-												</TableCell>
-												<TableCell align="center" className="py-4 text-14 xl:text-16">
-													{typeof row.value !== 'number' ? (
-														'-'
-													) : (
-														<IconButton
-															onClick={async () => {
-																await handleClickOpen();
-																await parameterDetailFetch(row.id);
-															}}
-															size="small"
+						<div className="overflow-auto w-full">
+							<Accordion className="py-0" defaultExpanded={true} square>
+								<AccordionSummary
+									expandIcon={<ExpandMore />}
+									aria-controls="panel1a-content"
+									id="panel1a-header"
+								>
+									<Typography className="text-12 xl:text-16">Recommendation</Typography>
+								</AccordionSummary>
+								<AccordionDetails className="p-0 max-h-136">
+									{loadingSootblowData ? (
+										<Paper
+											className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
+											square
+										>
+											<Typography className="text-12 xl:text-16">Loading ... </Typography>
+										</Paper>
+									) : sequenceData.length !== 0 ? (
+										<TableContainer component={Paper} className="flex-1 mb-8 md:mb-0" square>
+											<Table stickyHeader size="small" aria-label="a dense table">
+												<TableHead>
+													<TableRow>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
 														>
-															<Build className="text-14 xl:text-16" />
-														</IconButton>
-													)}
-												</TableCell>
-											</TableRow>
-										))}
-									</TableBody>
-								</Table>
-							</TableContainer>
-						) : (
-							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
-								<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
-							</Paper>
-						)}
-						{loadingSootblowData ? (
-							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
-								<Typography className="text-12 xl:text-16">Loading ... </Typography>
-							</Paper>
-						) : sequenceData.length !== 0 ? (
-							<TableContainer component={Paper} className="flex-1 mb-8 md:mb-0" square>
-								<Table stickyHeader size="small" aria-label="a dense table">
-									<TableHead>
-										<TableRow>
-											<TableCell
-												align="center"
-												className="text-11 xl:text-16 py-auto text-light-blue-300"
-											>
-												Zone
-											</TableCell>
-											<TableCell
-												align="center"
-												className="text-11 xl:text-16 py-auto text-light-blue-300"
-											>
-												Area
-											</TableCell>
-											<TableCell
-												align="center"
-												className="text-11 xl:text-16 py-auto text-light-blue-300"
-											>
-												Zone Code
-											</TableCell>
-											<TableCell
-												align="center"
-												className="text-11 xl:text-16 py-auto text-light-blue-300"
-											>
-												Execution Status
-											</TableCell>
-										</TableRow>
-									</TableHead>
-									<TableBody>
-										{sequenceData.map((row, index) => (
-											<TableRow key={index}>
-												<TableCell
-													component="th"
-													scope="row"
-													align="center"
-													className="text-10 xl:text-14 py-4"
-												>
-													{row.zone}
-												</TableCell>
-												<TableCell align="center" className="text-10 xl:text-14 py-4">
-													{row.area}
-												</TableCell>
-												<TableCell align="center" className="text-10 xl:text-14 py-4">
-													{row.zoneCode}
-												</TableCell>
-												<TableCell align="center" className="text-10 xl:text-14 py-4">
-													{renderExecutionStatusIcon(row.executionStatus)}
-												</TableCell>
-											</TableRow>
-										))}
-									</TableBody>
-								</Table>
-							</TableContainer>
-						) : (
-							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
-								<Typography className="text-12 xl:text-16">No Recommendation</Typography>
-							</Paper>
-						)}
+															Zone
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Area
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Zone Code
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Execution Status
+														</TableCell>
+													</TableRow>
+												</TableHead>
+												<TableBody>
+													{sequenceData.map((row, index) => (
+														<TableRow key={index}>
+															<TableCell
+																component="th"
+																scope="row"
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.zone}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.area}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.zoneCode}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{renderExecutionStatusIcon(row.executionStatus)}
+															</TableCell>
+														</TableRow>
+													))}
+												</TableBody>
+											</Table>
+										</TableContainer>
+									) : (
+										<Paper
+											className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
+											square
+										>
+											Dzaky Badawi, [19.02.21 14:11]
+											<Typography className="text-12 xl:text-16">No Recommendation</Typography>
+										</Paper>
+									)}
+								</AccordionDetails>
+							</Accordion>
+							<Accordion square>
+								<AccordionSummary
+									expandIcon={<ExpandMore />}
+									aria-controls="panel2a-content"
+									id="panel2a-header"
+								>
+									<Typography className="text-12 xl:text-16">Operation Parameter Setting</Typography>
+								</AccordionSummary>
+								<AccordionDetails className="p-0 max-h-136">
+									{loadingSootblowData ? (
+										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
+											<Typography className="text-12 xl:text-16">Loading ... </Typography>
+										</Paper>
+									) : parameterData.length !== 0 ? (
+										<TableContainer className="flex-1 " component={Paper} square>
+											<Table stickyHeader size="small" aria-label="a dense table">
+												<TableHead>
+													<TableRow>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Parameter
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Value
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Modify
+														</TableCell>
+													</TableRow>
+												</TableHead>
+												<TableBody>
+													{parameterData.map((row, index) => (
+														<TableRow key={index}>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.label}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.value}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="py-4 text-14 xl:text-16"
+															>
+																{typeof row.value !== 'number' ? (
+																	'-'
+																) : (
+																	<IconButton
+																		onClick={async () => {
+																			await handleClickOpen();
+																			await parameterDetailFetch(row.id);
+																		}}
+																		size="small"
+																	>
+																		<Build className="text-14 xl:text-16" />
+																	</IconButton>
+																)}
+															</TableCell>
+														</TableRow>
+													))}
+												</TableBody>
+											</Table>
+										</TableContainer>
+									) : (
+										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
+											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
+											Dzaky Badawi, [19.02.21 14:11]
+										</Paper>
+									)}
+								</AccordionDetails>
+							</Accordion>
+							<Accordion square>
+								<AccordionSummary
+									expandIcon={<ExpandMore />}
+									aria-controls="panel3a-content"
+									id="panel3a-header"
+								>
+									<Typography className="text-12 xl:text-16">Rules Settings</Typography>
+								</AccordionSummary>
+								<AccordionDetails className="p-0 max-h-136">
+									{loadingSootblowData ? (
+										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
+											<Typography className="text-12 xl:text-16">Loading ... </Typography>
+										</Paper>
+									) : parameterData.length !== 0 ? (
+										<TableContainer className="flex-1 " component={Paper} square>
+											<Table stickyHeader size="small" aria-label="a dense table">
+												<TableHead>
+													<TableRow>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Parameter
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Value
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Modify
+														</TableCell>
+													</TableRow>
+												</TableHead>
+												<TableBody>
+													{parameterData.map((row, index) => (
+														<TableRow key={index}>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.label}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.value}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="py-4 text-14 xl:text-16"
+															>
+																{typeof row.value !== 'number' ? (
+																	'-'
+																) : (
+																	<IconButton
+																		onClick={async () => {
+																			await handleClickOpen();
+																			await parameterDetailFetch(row.id);
+																		}}
+																		size="small"
+																	>
+																		<Build className="text-14 xl:text-16" />
+																	</IconButton>
+																)}
+															</TableCell>
+														</TableRow>
+													))}
+												</TableBody>
+											</Table>
+										</TableContainer>
+									) : (
+										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
+											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
+										</Paper>
+									)}
+								</AccordionDetails>
+							</Accordion>
+						</div>
 					</div>
 				</Grid>
 				{/* Main Content */}

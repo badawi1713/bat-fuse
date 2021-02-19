@@ -161,10 +161,12 @@ export default class O2TrendChart extends React.Component {
 	render() {
 		return (
 			<>
-				{this.state.timeseriesDs.dataSource.data ? (
-					<ReactFC {...this.state.timeseriesDs} />
+				{this.props.loading ? (
+					<div className="w-full text-11 xl:text-16 text-center">Loading Chart</div>
+				) : this.props.data.length === 0 ? (
+					<div className="w-full text-11 xl:text-16 text-center">No chart available right now</div>
 				) : (
-					<div className="w-full text-10 xl:text-16 text-center">Loading Chart</div>
+					<ReactFC {...this.state.timeseriesDs} />
 				)}
 			</>
 		);
