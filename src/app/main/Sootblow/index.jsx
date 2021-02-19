@@ -286,75 +286,63 @@ const Sootblow = () => {
 						<SvgSootblowTenayan width="100%" height="100%" />
 					</Paper>
 					<div className="flex flex-col justify-between flex-1 space-y-8">
-						{loadingSootblowData ? (
-							<Paper
-								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 "
-								square
-							>
-								<Typography className="text-12 xl:text-16">Loading ... </Typography>
-							</Paper>
-						) : parameterData && parameterData.length !== 0 ? (
-							<Paper
-								className="flex-1 md:flex-initial md:h-1/5 flex flex-col justify-between items-center py-8 xl:py-16"
-								square
-							>
-								<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
-									Sootblow Running
-								</Typography>
-								<Typography
-									className={
-										sootblowStatus === '1'
-											? `text-14 md:text-18 xl:text-28 text-orange-600`
-											: `text-14 md:text-18 xl:text-28 text-green-300`
-									}
+						<div className="flex justify-between space-x-8 h-92">
+							{loadingSootblowData ? (
+								<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
+									<Typography className="text-12 xl:text-16">Loading ... </Typography>
+								</Paper>
+							) : parameterData && parameterData.length !== 0 ? (
+								<Paper
+									className="flex-1 flex flex-col justify-between items-center py-8 xl:py-16"
+									square
 								>
-									{sootblowStatus === '1' ? 'Running' : 'Standby'}
-								</Typography>
-								<div />
-							</Paper>
-						) : (
-							<Paper
-								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 "
-								square
-							>
-								<Typography className="text-12 xl:text-16">Something went wrong</Typography>
-							</Paper>
-						)}
+									<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
+										Sootblow Running
+									</Typography>
+									<Typography
+										className={
+											sootblowStatus === '1'
+												? `text-14 md:text-18 xl:text-28 text-orange-600`
+												: `text-14 md:text-18 xl:text-28 text-green-300`
+										}
+									>
+										{sootblowStatus === '1' ? 'Running' : 'Standby'}
+									</Typography>
+									<div />
+								</Paper>
+							) : (
+								<Paper
+									className="flex-1 flex justify-center items-center py-8 md:py-4 md:p-0 mb-8 md:mb-0"
+									square
+								>
+									<Typography className="text-12 xl:text-16">Something went wrong</Typography>
+								</Paper>
+							)}
 
-						{loadingSootblowData ? (
-							<Paper
-								className="flex-1 md:flex-initial md:h-1/5 flex flex-col justify-between items-center py-8 xl:py-16"
-								square
-							>
-								<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
-									Timer
-								</Typography>
-								<Typography className={`text-14 md:text-18 xl:text-28 `}>Loading ... </Typography>
-								<div />
-							</Paper>
-						) : parameterData.length !== 0 ? (
-							<Paper
-								className="flex-1 md:flex-initial md:h-1/5 flex flex-col justify-between items-center py-8 xl:py-16"
-								square
-							>
-								<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
-									Timer
-								</Typography>
-								<Typography className={`text-14 md:text-18 xl:text-28 `}>300 s</Typography>
-								<div />
-							</Paper>
-						) : (
-							<Paper
-								className="flex-1 md:flex-initial md:h-1/5 flex flex-col justify-between items-center py-8 xl:py-16"
-								square
-							>
-								<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
-									Timer
-								</Typography>
-								<Typography className={`text-14 md:text-18 xl:text-28 `}>-</Typography>
-								<div />
-							</Paper>
-						)}
+							{loadingSootblowData ? (
+								<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
+									<Typography className="text-12 xl:text-16">Loading ... </Typography>
+								</Paper>
+							) : parameterData.length !== 0 ? (
+								<Paper
+									className="flex-1 flex flex-col justify-between items-center py-8 xl:py-16"
+									square
+								>
+									<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
+										Timer
+									</Typography>
+									<Typography className={`text-14 md:text-18 xl:text-28 `}>300 s</Typography>
+									<div />
+								</Paper>
+							) : (
+								<Paper
+									className="flex-1 flex justify-center items-center py-8 md:py-4 md:p-0 mb-8 md:mb-0"
+									square
+								>
+									<Typography className="text-12 xl:text-16">Something went wrong</Typography>
+								</Paper>
+							)}
+						</div>
 						{loadingSootblowData ? (
 							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
@@ -416,7 +404,10 @@ const Sootblow = () => {
 								</Table>
 							</TableContainer>
 						) : (
-							<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0" square>
+							<Paper
+								className="flex-1 flex justify-center items-center py-8 md:py-4 md:p-0 mb-8 md:mb-0"
+								square
+							>
 								<Typography className="text-12 xl:text-16">No Recommendation</Typography>
 							</Paper>
 						)}
