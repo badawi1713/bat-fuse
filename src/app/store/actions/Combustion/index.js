@@ -1,6 +1,5 @@
 // import { ApiGetRequest } from '../../api-configs';
 // import { errorcallback } from '../../global';
-import history from '@history';
 import jwtService from 'app/services/jwtService';
 import { SET_COMBUSTION } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
