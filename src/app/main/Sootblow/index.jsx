@@ -435,7 +435,7 @@ const Sootblow = () => {
 								className="flex-1 md:flex-initial md:h-96 flex flex-col justify-between items-center py-8 xl:py-16 overflow-auto"
 								square
 							>
-								<Typography className="text-16 md:text-11 xl:text-16 text-light-blue-300 font-600">
+								<Typography className="text-16 md:text-12 xl:text-16 text-light-blue-300 font-600">
 									Sootblow Running
 								</Typography>
 								<Typography
@@ -465,7 +465,7 @@ const Sootblow = () => {
 									aria-controls="panel1a-content"
 									id="panel1a-header"
 								>
-									<Typography className="text-12 xl:text-16 text-light-blue-300">
+									<Typography className="text-16 md:text-12 xl:text-16 text-light-blue-300 font-600">
 										Recommendation
 									</Typography>
 								</AccordionSummary>
@@ -558,7 +558,7 @@ const Sootblow = () => {
 									aria-controls="panel2a-content"
 									id="panel2a-header"
 								>
-									<Typography className="text-12 xl:text-16 text-light-blue-300">
+									<Typography className="text-16 md:text-12 xl:text-16 text-light-blue-300 font-600">
 										Operation Parameter Settings
 									</Typography>
 								</AccordionSummary>
@@ -643,7 +643,7 @@ const Sootblow = () => {
 									aria-controls="panel3a-content"
 									id="panel3a-header"
 								>
-									<Typography className="text-12 xl:text-16 text-light-blue-300">
+									<Typography className="text-16 md:text-12 xl:text-16 text-light-blue-300 font-600">
 										Rules Settings
 									</Typography>
 								</AccordionSummary>
