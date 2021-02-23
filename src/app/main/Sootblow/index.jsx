@@ -20,7 +20,7 @@ import {
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo, ExpandMore } from '@material-ui/icons';
 import { changeSootblow, getParameterByID, getSootblowData, updateParameterData } from 'app/store/actions';
 import { showMessage } from 'app/store/fuse/messageSlice';
@@ -28,7 +28,6 @@ import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
 import { SvgSootblowTjAwarAwar } from './Components';
 import './styles/index.css';
 
@@ -147,6 +146,11 @@ const Sootblow = () => {
 	// const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
 	const [open, setOpen] = useState(false);
 	const [parameterValue, setParameterValue] = useState('');
+	const [expanded, setExpanded] = useState('panel1');
+
+	const handleChange = panel => (event, isExpanded) => {
+		setExpanded(isExpanded ? panel : false);
+	};
 
 	useEffect(() => {
 		dispatch(getSootblowData(true));
@@ -425,17 +429,17 @@ const Sootblow = () => {
 					<div className="flex flex-col flex-1 space-y-8">
 						{loadingSootblowData ? (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 "
+								className="flex-initial min-h-52 md:min-h-96 flex justify-center items-center py-4 md:p-0 "
 								square
 							>
 								<Typography className="text-12 xl:text-16">Loading ... </Typography>
 							</Paper>
 						) : parameterData && parameterData.length !== 0 ? (
 							<Paper
-								className="flex-1 md:flex-initial md:h-96 flex flex-col justify-between items-center py-8 xl:py-16 overflow-auto"
+								className="flex-initial min-h-52 md:min-h-96 flex flex-col justify-between items-center py-4 md:p-8 "
 								square
 							>
-								<Typography className="text-16 md:text-12 xl:text-16 text-light-blue-300 font-600">
+								<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
 									Sootblow Running
 								</Typography>
 								<Typography
@@ -451,34 +455,40 @@ const Sootblow = () => {
 							</Paper>
 						) : (
 							<Paper
-								className="flex-1 md:flex-initial md:h-1/4 flex justify-center items-center py-4 md:p-0 "
+								className="flex-initial min-h-52 md:min-h-96 flex justify-center items-center py-4 md:p-0 "
 								square
 							>
 								<Typography className="text-12 xl:text-16">Something went wrong</Typography>
 							</Paper>
 						)}
 
-						<div className="overflow-auto w-full">
-							<Accordion className="py-0" defaultExpanded={true} square>
+						<div className="flex-1 flex flex-col pb-8 md:pb-0 overflow-auto">
+							<Accordion
+								expanded={expanded === 'panel1'}
+								onChange={handleChange('panel1')}
+								className={expanded === 'panel1' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								square
+							>
 								<AccordionSummary
 									expandIcon={<ExpandMore />}
 									aria-controls="panel1a-content"
 									id="panel1a-header"
+									className="w-full flex-1"
 								>
-									<Typography className="text-16 md:text-12 xl:text-16 text-light-blue-300 font-600">
+									<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
 										Recommendation
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0 max-h-136">
+								<AccordionDetails className="p-0">
 									{loadingSootblowData ? (
 										<Paper
-											className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
+											className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
 											square
 										>
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</Paper>
 									) : sequenceData.length !== 0 ? (
-										<TableContainer component={Paper} className="flex-1 mb-8 md:mb-0" square>
+										<TableContainer component={Paper} square>
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -552,23 +562,29 @@ const Sootblow = () => {
 									)}
 								</AccordionDetails>
 							</Accordion>
-							<Accordion square>
+							<Accordion
+								className={expanded === 'panel2' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								expanded={expanded === 'panel2'}
+								onChange={handleChange('panel2')}
+								square
+							>
 								<AccordionSummary
 									expandIcon={<ExpandMore />}
 									aria-controls="panel2a-content"
 									id="panel2a-header"
+									className="w-full"
 								>
-									<Typography className="text-16 md:text-12 xl:text-16 text-light-blue-300 font-600">
+									<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
 										Operation Parameter Settings
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0 max-h-136">
+								<AccordionDetails className="p-0 ">
 									{loadingSootblowData ? (
 										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</Paper>
 									) : parameterData.length !== 0 ? (
-										<TableContainer className="flex-1 " component={Paper} square>
+										<TableContainer component={Paper} square>
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -637,23 +653,29 @@ const Sootblow = () => {
 									)}
 								</AccordionDetails>
 							</Accordion>
-							<Accordion square>
+							<Accordion
+								className={expanded === 'panel3' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								expanded={expanded === 'panel3'}
+								onChange={handleChange('panel3')}
+								square
+							>
 								<AccordionSummary
 									expandIcon={<ExpandMore />}
 									aria-controls="panel3a-content"
 									id="panel3a-header"
+									className="w-full"
 								>
-									<Typography className="text-16 md:text-12 xl:text-16 text-light-blue-300 font-600">
+									<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
 										Rules Settings
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0 max-h-136">
+								<AccordionDetails className="p-0">
 									{loadingSootblowData ? (
 										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</Paper>
 									) : parameterData.length !== 0 ? (
-										<TableContainer className="flex-1 " component={Paper} square>
+										<TableContainer component={Paper} square>
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
