@@ -925,7 +925,7 @@ const Combustion = () => {
 									</Paper>
 								</div>
 							</div>
-							<div className="flex md:flex-row flex-col flex-1 mt-8 md:mt-4">
+							<div className="flex md:flex-row flex-col flex-1 mt-8 md:mt-4 pb-8 md:pb-0">
 								<div className="md:flex-inital w-full flex flex-col">
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
 										Oxygen Trend Chart
@@ -938,7 +938,10 @@ const Combustion = () => {
 										square
 										className="w-full h-full"
 									>
-										<Grid item className="w-full h-full flex flex-col flex-1 justify-center">
+										<Grid
+											item
+											className="w-full md:min-h-full flex flex-col flex-1 justify-center min-h-68"
+										>
 											{o2ChartError ? (
 												<div className="w-full text-11 xl:text-16 text-center">
 													Sorry, something went wrong with the server
