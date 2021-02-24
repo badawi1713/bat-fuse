@@ -553,7 +553,7 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0">
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0">
 											<Typography className="text-12 xl:text-16">No Recommendation</Typography>
 										</div>
 									)}
@@ -577,7 +577,7 @@ const Sootblow = () => {
 								</AccordionSummary>
 								<AccordionDetails className="p-0 ">
 									{loadingSootblowData ? (
-										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0">
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : parameterData.length !== 0 ? (
@@ -644,7 +644,7 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 ">
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0 ">
 											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
 										</div>
 									)}
@@ -668,7 +668,7 @@ const Sootblow = () => {
 								</AccordionSummary>
 								<AccordionDetails className="p-0">
 									{loadingSootblowData ? (
-										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0">
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : parameterData.length !== 0 ? (
@@ -680,13 +680,7 @@ const Sootblow = () => {
 															align="center"
 															className="text-11 xl:text-16 py-auto text-light-blue-300"
 														>
-															Parameter
-														</TableCell>
-														<TableCell
-															align="center"
-															className="text-11 xl:text-16 py-auto text-light-blue-300"
-														>
-															Value
+															Rule
 														</TableCell>
 														<TableCell
 															align="center"
@@ -704,12 +698,6 @@ const Sootblow = () => {
 																className="text-10 xl:text-14 py-4"
 															>
 																{row.label}
-															</TableCell>
-															<TableCell
-																align="center"
-																className="text-10 xl:text-14 py-4"
-															>
-																{row.value}
 															</TableCell>
 															<TableCell
 																align="center"
@@ -735,8 +723,10 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 ">
-											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0 ">
+											<Typography className="text-12 xl:text-16">
+												No Rules Settings to Show
+											</Typography>
 										</div>
 									)}
 								</AccordionDetails>
@@ -759,10 +749,10 @@ const Sootblow = () => {
 								</AccordionSummary>
 								<AccordionDetails className="p-0">
 									{loadingSootblowData ? (
-										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0">
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
-									) : parameterData.length !== 0 ? (
+									) : parameterData.length === 0 ? (
 										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
@@ -771,19 +761,19 @@ const Sootblow = () => {
 															align="center"
 															className="text-11 xl:text-16 py-auto text-light-blue-300"
 														>
-															Parameter
+															Min Time
 														</TableCell>
 														<TableCell
 															align="center"
 															className="text-11 xl:text-16 py-auto text-light-blue-300"
 														>
-															Value
+															Max Time
 														</TableCell>
 														<TableCell
 															align="center"
 															className="text-11 xl:text-16 py-auto text-light-blue-300"
 														>
-															Modify
+															Area
 														</TableCell>
 													</TableRow>
 												</TableHead>
@@ -826,8 +816,10 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 ">
-											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
+										<div className="flex-1 flex-col flex min-h-96 justify-center items-center py-4 md:p-0 ">
+											<Typography className="text-12 xl:text-16">
+												No Sootblow Settings to Show
+											</Typography>
 										</div>
 									)}
 								</AccordionDetails>
