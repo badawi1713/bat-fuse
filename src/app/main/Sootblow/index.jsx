@@ -233,7 +233,6 @@ const Sootblow = () => {
 					variant: 'error'
 				})
 			);
-			// await alert('Sorry, value must be changed and cannot be empty.');
 		} else {
 			await dispatch(
 				changeSootblow({
@@ -462,7 +461,7 @@ const Sootblow = () => {
 							</Paper>
 						)}
 
-						<div className="flex-1 flex flex-col pb-8 md:pb-0 overflow-auto">
+						<div className="flex-1 flex flex-col pb-8 md:pb-0 overflow-y-auto overflow-x-hidden">
 							<Accordion
 								expanded={expanded === 'panel1'}
 								onChange={handleChange('panel1')}
@@ -479,14 +478,11 @@ const Sootblow = () => {
 										Recommendation
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0">
+								<AccordionDetails className="p-0 max-h-136 md:max-h-full">
 									{loadingSootblowData ? (
-										<Paper
-											className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
-											square
-										>
+										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
-										</Paper>
+										</div>
 									) : sequenceData.length !== 0 ? (
 										<TableContainer component={Paper} square>
 											<Table stickyHeader size="small" aria-label="a dense table">
@@ -553,12 +549,9 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<Paper
-											className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
-											square
-										>
+										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0">
 											<Typography className="text-12 xl:text-16">No Recommendation</Typography>
-										</Paper>
+										</div>
 									)}
 								</AccordionDetails>
 							</Accordion>
@@ -578,11 +571,11 @@ const Sootblow = () => {
 										Operation Parameter Settings
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0 ">
+								<AccordionDetails className="p-0 max-h-136 md:max-h-full">
 									{loadingSootblowData ? (
-										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
+										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
-										</Paper>
+										</div>
 									) : parameterData.length !== 0 ? (
 										<TableContainer component={Paper} square>
 											<Table stickyHeader size="small" aria-label="a dense table">
@@ -647,9 +640,9 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
+										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 ">
 											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
-										</Paper>
+										</div>
 									)}
 								</AccordionDetails>
 							</Accordion>
@@ -669,11 +662,11 @@ const Sootblow = () => {
 										Rules Settings
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0">
+								<AccordionDetails className="p-0 max-h-136 md:max-h-full">
 									{loadingSootblowData ? (
-										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
+										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
-										</Paper>
+										</div>
 									) : parameterData.length !== 0 ? (
 										<TableContainer component={Paper} square>
 											<Table stickyHeader size="small" aria-label="a dense table">
@@ -738,9 +731,9 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
+										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 ">
 											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
-										</Paper>
+										</div>
 									)}
 								</AccordionDetails>
 							</Accordion>
