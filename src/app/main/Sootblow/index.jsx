@@ -60,7 +60,7 @@ const AccordionSummary = withStyles({
 	},
 	content: {
 		'&$expanded': {
-			margin: '12px 0'
+			margin: '0'
 		}
 	},
 	expanded: {}
@@ -169,7 +169,7 @@ const Sootblow = () => {
 	const recommendationTime = sootblowData.control[3] && sootblowData.control[3].value;
 	const operationControlStatus = sootblowData.control[1] && sootblowData.control[1].value;
 	const safeGuardStatus = sootblowData.control[0] && sootblowData.control[0].value;
-	const sootblowStatus = sootblowData.control[4] && sootblowData.control[4].value;
+	// const sootblowStatus = sootblowData.control[4] && sootblowData.control[4].value;
 
 	// const masterControlData = sootblowData.control[2];
 
@@ -426,7 +426,7 @@ const Sootblow = () => {
 						<SvgSootblowTjAwarAwar width="100%" height="100%" />
 					</Paper>
 					<div className="flex flex-col flex-1 space-y-8">
-						{loadingSootblowData ? (
+						{/* {loadingSootblowData ? (
 							<Paper
 								className="flex-initial min-h-52 md:min-h-96 flex justify-center items-center py-4 md:p-0 "
 								square
@@ -459,32 +459,36 @@ const Sootblow = () => {
 							>
 								<Typography className="text-12 xl:text-16">Something went wrong</Typography>
 							</Paper>
-						)}
+						)} */}
 
-						<div className="flex-1 flex flex-col pb-8 md:pb-0 overflow-y-auto overflow-x-hidden">
+						<div className="flex flex-1 flex-col pb-8 md:pb-0 overflow-hidden">
 							<Accordion
 								expanded={expanded === 'panel1'}
 								onChange={handleChange('panel1')}
-								className={expanded === 'panel1' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								className={
+									expanded === 'panel1'
+										? 'flex-1 w-full overflow-hidden'
+										: 'flex-initial w-full overflow-hidden'
+								}
 								square
 							>
 								<AccordionSummary
 									expandIcon={<ExpandMore />}
 									aria-controls="panel1a-content"
 									id="panel1a-header"
-									className="w-full flex-1"
+									className="w-full"
 								>
 									<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
 										Recommendation
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0 max-h-136 md:max-h-full">
+								<AccordionDetails className="p-0">
 									{loadingSootblowData ? (
-										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0">
+										<div className="flex-1 flex h-full flex-col justify-center items-center py-4 md:p-0 mb-8 md:mb-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : sequenceData.length !== 0 ? (
-										<TableContainer component={Paper} square>
+										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -571,13 +575,13 @@ const Sootblow = () => {
 										Operation Parameter Settings
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0 max-h-136 md:max-h-full">
+								<AccordionDetails className="p-0 ">
 									{loadingSootblowData ? (
 										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : parameterData.length !== 0 ? (
-										<TableContainer component={Paper} square>
+										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -662,13 +666,104 @@ const Sootblow = () => {
 										Rules Settings
 									</Typography>
 								</AccordionSummary>
-								<AccordionDetails className="p-0 max-h-136 md:max-h-full">
+								<AccordionDetails className="p-0">
 									{loadingSootblowData ? (
 										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : parameterData.length !== 0 ? (
-										<TableContainer component={Paper} square>
+										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
+											<Table stickyHeader size="small" aria-label="a dense table">
+												<TableHead>
+													<TableRow>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Parameter
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Value
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Modify
+														</TableCell>
+													</TableRow>
+												</TableHead>
+												<TableBody>
+													{parameterData.map((row, index) => (
+														<TableRow key={index}>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.label}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.value}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="py-4 text-14 xl:text-16"
+															>
+																{typeof row.value !== 'number' ? (
+																	'-'
+																) : (
+																	<IconButton
+																		onClick={async () => {
+																			await handleClickOpen();
+																			await parameterDetailFetch(row.id);
+																		}}
+																		size="small"
+																	>
+																		<Build className="text-14 xl:text-16" />
+																	</IconButton>
+																)}
+															</TableCell>
+														</TableRow>
+													))}
+												</TableBody>
+											</Table>
+										</TableContainer>
+									) : (
+										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 ">
+											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
+										</div>
+									)}
+								</AccordionDetails>
+							</Accordion>
+							<Accordion
+								className={expanded === 'panel4' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								expanded={expanded === 'panel4'}
+								onChange={handleChange('panel4')}
+								square
+							>
+								<AccordionSummary
+									expandIcon={<ExpandMore />}
+									aria-controls="panel4a-content"
+									id="panel4a-header"
+									className="w-full"
+								>
+									<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
+										Sootblower Settings
+									</Typography>
+								</AccordionSummary>
+								<AccordionDetails className="p-0">
+									{loadingSootblowData ? (
+										<div className="flex-1 flex h-96 justify-center items-center py-4 md:p-0">
+											<Typography className="text-12 xl:text-16">Loading ... </Typography>
+										</div>
+									) : parameterData.length !== 0 ? (
+										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
