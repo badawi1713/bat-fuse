@@ -2,18 +2,23 @@ import {
 	getCombustionConstraints,
 	getCombustionConstraintsLimit,
 	getCombustionDisturbances,
-	getCombustionMVCurrent,
 	getCombustionMVBias,
+	getCombustionMVCurrent,
 	getCombustionO2Chart,
 	getCombustionRecommendationTime,
 	getCombustionSensorsTime
 } from './Combustion';
+import { changeEfficiency, getEfficiencyData } from './Efficiency';
 import {
-	getSootblowData,
+	changeSootblow,
 	getParameterByID,
-	updateParameterData,
+	getRuleByID,
+	getSootblowData,
+	getSootblowSettingByID,
 	updateMasterControl,
-	changeSootblow
+	updateParameterData,
+	updateRuleData,
+	updateSootblowSettingData
 } from './Sootblow';
 
 export {
@@ -29,5 +34,11 @@ export {
 	getCombustionMVCurrent,
 	getCombustionMVBias,
 	getCombustionO2Chart,
-	changeSootblow
+	changeSootblow,
+	getEfficiencyData,
+	changeEfficiency,
+	getRuleByID,
+	getSootblowSettingByID,
+	updateRuleData,
+	updateSootblowSettingData
 };
