@@ -18,11 +18,20 @@ import {
 	Typography
 } from '@material-ui/core';
 import MuiAccordion from '@material-ui/core/Accordion';
-import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
+import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { ArrowBack, Build, Cancel, CheckCircle, FlashOn, HourglassEmpty, Redo, ExpandMore } from '@material-ui/icons';
-import { changeSootblow, getParameterByID, getSootblowData, updateParameterData } from 'app/store/actions';
+import { ArrowBack, Build, Cancel, CheckCircle, ExpandMore, FlashOn, HourglassEmpty, Redo } from '@material-ui/icons';
+import {
+	changeSootblow,
+	getParameterByID,
+	getRuleByID,
+	getSootblowData,
+	getSootblowSettingByID,
+	updateParameterData,
+	updateRuleData,
+	updateSootblowSettingData
+} from 'app/store/actions';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
@@ -60,7 +69,7 @@ const AccordionSummary = withStyles({
 	},
 	content: {
 		'&$expanded': {
-			margin: '12px 0'
+			margin: '0'
 		}
 	},
 	expanded: {}
@@ -133,19 +142,48 @@ const createParameterData = (label, value, id) => {
 	return { label, value, id };
 };
 
+const createRuleSettingData = (label, id) => {
+	return { label, id };
+};
+
+const createSootblowSettingData = (label, maxTime, minTime, id) => {
+	return { label, maxTime, minTime, id };
+};
+
 const Sootblow = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
 	const sootblowReducer = useSelector(state => state.sootblowReducer);
 
-	const { loading, loadingSootblowData, sootblowData, parameterDetailData, loadingParameterUpdate } = sootblowReducer;
+	const {
+		loading,
+		loadingSootblowData,
+		sootblowData,
+		parameterDetailData,
+		loadingParameterUpdate,
+		sootblowSettingDetailData,
+		loadingSootblowUpdate,
+		loadingRuleUpdate,
+		ruleDetailData
+	} = sootblowReducer;
 
-	const masterControl = sootblowData.control[2] && sootblowData.control[2].value;
+	const { indicator, sequence, parameter, waitingTime, control, rules } = sootblowData;
+	const { detailRule } = ruleDetailData;
+
+	// const masterControl = control[2] && control[2].value;
 
 	// const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
-	const [open, setOpen] = useState(false);
+	const [openParameterUpdate, setOpenParameterUpdate] = useState(false);
+	const [openRuleSettingUpdate, setOpenRuleSettingUpdate] = useState(false);
+	const [openSootblowSettingUpdate, setOpenSootblowSettingUpdate] = useState(false);
+
 	const [parameterValue, setParameterValue] = useState('');
+	const [sootblowSettingMaxValue, setSootblowSettingMaxValue] = useState('');
+	const [sootblowSettingMinValue, setSootblowSettingMinValue] = useState('');
+
+	const [ruleDetail, setRuleDetail] = useState(detailRule);
+
 	const [expanded, setExpanded] = useState('panel1');
 
 	const handleChange = panel => (event, isExpanded) => {
@@ -153,76 +191,63 @@ const Sootblow = () => {
 	};
 
 	useEffect(() => {
-		dispatch(getSootblowData(true));
-		// setMasterControlStatus(masterControl && masterControl);
-	}, [dispatch, masterControl]);
-
-	useEffect(() => {
-		dispatch(getSootblowData(true));
+		dispatch(getSootblowData());
 	}, [dispatch]);
 
-	const sequenceData = sootblowData.sequence.map(item =>
+	useEffect(() => {
+		setRuleDetail(detailRule);
+	}, [detailRule]);
+
+	const sequenceData = sequence.map(item =>
 		createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
 	);
-	const parameterData = sootblowData.parameter.map(item => createParameterData(item.label, item.value, item.id));
+	const parameterData = parameter.map(item => createParameterData(item.label, item.value, item.id));
 
-	const recommendationTime = sootblowData.control[3] && sootblowData.control[3].value;
-	const operationControlStatus = sootblowData.control[1] && sootblowData.control[1].value;
-	const safeGuardStatus = sootblowData.control[0] && sootblowData.control[0].value;
-	const sootblowStatus = sootblowData.control[4] && sootblowData.control[4].value;
+	const ruleSettingData = rules.map(item => createRuleSettingData(item.label, item.id));
 
-	// const masterControlData = sootblowData.control[2];
+	const sootblowSettingData = waitingTime.map(item =>
+		createSootblowSettingData(item.label, item.maxTime, item.minTime, item.id)
+	);
 
-	// const handleMasterControlOn = async () => {
-	// 	if (errorSootblow) {
-	// 		await dispatch(
-	// 			showMessage({
-	// 				message: 'Sorry, something went wrong right now',
-	// 				variant: 'error'
-	// 			})
-	// 		);
-	// 	} else {
-	// 		await dispatch(
-	// 			updateMasterControl({
-	// 				id: masterControlData.id,
-	// 				label: masterControlData.label,
-	// 				value: '1'
-	// 			})
-	// 		);
-	// 		await dispatch(getSootblowData());
-	// 	}
-	// };
+	const watchdogStatus = control[0] && control[0].value;
+	const safeGuardStatus = control[1] && control[1].value;
+	const operationControlStatus = control[2] && control[2].value;
+	const recommendationTime = control[4] && control[4].value;
 
-	// const handleMasterControlOff = async () => {
-	// 	if (errorSootblow) {
-	// 		await dispatch(
-	// 			showMessage({
-	// 				message: 'Sorry, something went wrong right now',
-	// 				variant: 'error'
-	// 			})
-	// 		);
-	// 	} else {
-	// 		await dispatch(
-	// 			updateMasterControl({
-	// 				id: masterControlData.id,
-	// 				label: masterControlData.label,
-	// 				value: '0'
-	// 			})
-	// 		);
-	// 		await dispatch(getSootblowData());
-	// 	}
-	// };
-
-	const handleClickOpen = () => {
-		setOpen(true);
+	const handleClickOpenParameterUpdate = () => {
+		setOpenParameterUpdate(true);
 	};
 
-	const handleClose = () => {
-		setOpen(false);
+	const handleClickOpenRuleUpdate = () => {
+		setOpenRuleSettingUpdate(true);
+	};
+
+	const handleClickOpenSootblowSettingUpdate = () => {
+		setOpenSootblowSettingUpdate(true);
+	};
+
+	const handleCloseParameterUpdate = () => {
+		setOpenParameterUpdate(false);
+	};
+
+	const handleCloseRuleUpdate = () => {
+		setOpenRuleSettingUpdate(false);
+	};
+
+	const handleCloseSootblowSettingUpdate = () => {
+		setOpenSootblowSettingUpdate(false);
 	};
 
 	const parameterDetailFetch = async id => {
 		await dispatch(getParameterByID(id));
+	};
+
+	const ruleDetailFetch = async id => {
+		await dispatch(getRuleByID(id));
+	};
+
+	const sootblowSettingDetailFetch = async id => {
+		await dispatch(getSootblowSettingByID(id));
 	};
 
 	const updateParameterHandler = async (id, label) => {
@@ -233,7 +258,6 @@ const Sootblow = () => {
 					variant: 'error'
 				})
 			);
-			// await alert('Sorry, value must be changed and cannot be empty.');
 		} else {
 			await dispatch(
 				changeSootblow({
@@ -247,7 +271,81 @@ const Sootblow = () => {
 					value: parameterValue
 				})
 			);
-			await handleClose();
+			await handleCloseParameterUpdate();
+			await dispatch(getSootblowData());
+		}
+	};
+
+	const updateRuleValueHandler = (id, newValue) => {
+		let updatedData = detailRule.map(item => {
+			if (item.detailId === id) {
+				return { ...item, value: newValue };
+			}
+			return item;
+		});
+
+		setRuleDetail(updatedData);
+	};
+
+	const updateRuleSettingHandler = async (id, label) => {
+		// for (let i = 0; i < ruleDetail.length; i++) {
+		// 	if (ruleDetail[i].value === '' || toString(ruleDetail[i].value).trim() === '' || !ruleDetail[i].value) {
+		// 		await dispatch(
+		// 			showMessage({
+		// 				message: 'Sorry, value must be filled',
+		// 				variant: 'error'
+		// 			})
+		// 		);
+		// 		return false;
+		// 	} else {
+		await dispatch(
+			changeSootblow({
+				loadingRuleUpdate: true
+			})
+		);
+		await dispatch(
+			updateRuleData({
+				id,
+				label,
+				detailRule: ruleDetail
+			})
+		);
+		await handleCloseRuleUpdate();
+		await dispatch(getSootblowData());
+	};
+	// }
+	// };
+
+	const updateSootblowSettingHandler = async (id, label) => {
+		if (sootblowSettingMaxValue === '' || sootblowSettingDetailData.maxTime === sootblowSettingMaxValue) {
+			await dispatch(
+				showMessage({
+					message: 'Sorry, max value must be changed and cannot be empty',
+					variant: 'error'
+				})
+			);
+		} else if (sootblowSettingMinValue === '' || sootblowSettingDetailData.minTime === sootblowSettingMinValue) {
+			await dispatch(
+				showMessage({
+					message: 'Sorry, min value must be changed and cannot be empty',
+					variant: 'error'
+				})
+			);
+		} else {
+			await dispatch(
+				changeSootblow({
+					loadingSootblowUpdate: true
+				})
+			);
+			await dispatch(
+				updateSootblowSettingData({
+					id,
+					label,
+					maxTime: sootblowSettingMaxValue,
+					minTime: sootblowSettingMinValue
+				})
+			);
+			await handleCloseSootblowSettingUpdate();
 			await dispatch(getSootblowData());
 		}
 	};
@@ -331,12 +429,12 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											operationControlStatus && operationControlStatus === '1'
+											operationControlStatus === '1'
 												? classes.statusButtonOn
 												: classes.statusButtonOff
 										)}
 									>
-										{operationControlStatus && operationControlStatus === '1' ? 'AUTO' : 'MANUAL'}
+										{operationControlStatus === '1' ? 'AUTO' : 'MANUAL'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -361,14 +459,10 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											operationControlStatus && operationControlStatus === '1'
-												? classes.statusButtonOn
-												: classes.statusButtonOff
+											watchdogStatus === '1' ? classes.statusButtonOn : classes.statusButtonOff
 										)}
 									>
-										{operationControlStatus && operationControlStatus === '1'
-											? 'CONNECTED'
-											: 'DISCONNECTED'}
+										{watchdogStatus === '1' ? 'CONNECTED' : 'DISCONNECTED'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -393,12 +487,10 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											safeGuardStatus && safeGuardStatus === '1'
-												? classes.statusButtonOn
-												: classes.statusButtonOff
+											safeGuardStatus === '1' ? classes.statusButtonOn : classes.statusButtonOff
 										)}
 									>
-										{safeGuardStatus && safeGuardStatus === '1' ? 'READY' : 'NOT READY'}
+										{safeGuardStatus === '1' ? 'READY' : 'NOT READY'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -424,10 +516,10 @@ const Sootblow = () => {
 					className="flex-1 md:overflow-hidden flex md:flex-row flex-col w-full md:h-1/2 space-y-8 md:space-y-0"
 				>
 					<Paper className="md:w-8/12 w-full h-full flex justify-center md:mr-8 p-20" square>
-						<SvgSootblowTjAwarAwar width="100%" height="100%" />
+						<SvgSootblowTjAwarAwar indicator={indicator} width="100%" height="100%" />
 					</Paper>
 					<div className="flex flex-col flex-1 space-y-8">
-						{loadingSootblowData ? (
+						{/* {loadingSootblowData ? (
 							<Paper
 								className="flex-initial min-h-52 md:min-h-96 flex justify-center items-center py-4 md:p-0 "
 								square
@@ -460,20 +552,24 @@ const Sootblow = () => {
 							>
 								<Typography className="text-12 xl:text-16">Something went wrong</Typography>
 							</Paper>
-						)}
+						)} */}
 
-						<div className="flex-1 flex flex-col pb-8 md:pb-0 overflow-auto">
+						<div className="flex flex-1 flex-col pb-8 md:pb-0 overflow-hidden">
 							<Accordion
 								expanded={expanded === 'panel1'}
 								onChange={handleChange('panel1')}
-								className={expanded === 'panel1' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								className={
+									expanded === 'panel1'
+										? 'flex-1 w-full overflow-hidden'
+										: 'flex-initial w-full overflow-hidden'
+								}
 								square
 							>
 								<AccordionSummary
 									expandIcon={<ExpandMore />}
 									aria-controls="panel1a-content"
 									id="panel1a-header"
-									className="w-full flex-1"
+									className="w-full"
 								>
 									<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
 										Recommendation
@@ -481,14 +577,11 @@ const Sootblow = () => {
 								</AccordionSummary>
 								<AccordionDetails className="p-0">
 									{loadingSootblowData ? (
-										<Paper
-											className="flex-1 flex h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
-											square
-										>
+										<div className="flex-1 flex h-full flex-col justify-center items-center py-4 md:p-0 mb-8 md:mb-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
-										</Paper>
+										</div>
 									) : sequenceData.length !== 0 ? (
-										<TableContainer component={Paper} square>
+										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -539,7 +632,7 @@ const Sootblow = () => {
 																align="center"
 																className="text-10 xl:text-14 py-4"
 															>
-																{row.zoneCode}
+																{row.zoneCode === '' ? 'Unknown Area' : row.zoneCode}
 															</TableCell>
 															<TableCell
 																align="center"
@@ -553,12 +646,9 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<Paper
-											className="flex-1 flex justify-center items-center py-4 md:p-0 mb-8 md:mb-0"
-											square
-										>
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0 mb-8 md:mb-0">
 											<Typography className="text-12 xl:text-16">No Recommendation</Typography>
-										</Paper>
+										</div>
 									)}
 								</AccordionDetails>
 							</Accordion>
@@ -580,11 +670,11 @@ const Sootblow = () => {
 								</AccordionSummary>
 								<AccordionDetails className="p-0 ">
 									{loadingSootblowData ? (
-										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
-										</Paper>
+										</div>
 									) : parameterData.length !== 0 ? (
-										<TableContainer component={Paper} square>
+										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -632,7 +722,7 @@ const Sootblow = () => {
 																) : (
 																	<IconButton
 																		onClick={async () => {
-																			await handleClickOpen();
+																			await handleClickOpenParameterUpdate();
 																			await parameterDetailFetch(row.id);
 																		}}
 																		size="small"
@@ -647,9 +737,9 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0 ">
 											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
-										</Paper>
+										</div>
 									)}
 								</AccordionDetails>
 							</Accordion>
@@ -671,11 +761,11 @@ const Sootblow = () => {
 								</AccordionSummary>
 								<AccordionDetails className="p-0">
 									{loadingSootblowData ? (
-										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0" square>
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0">
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
-										</Paper>
-									) : parameterData.length !== 0 ? (
-										<TableContainer component={Paper} square>
+										</div>
+									) : ruleSettingData.length !== 0 ? (
+										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -683,13 +773,7 @@ const Sootblow = () => {
 															align="center"
 															className="text-11 xl:text-16 py-auto text-light-blue-300"
 														>
-															Parameter
-														</TableCell>
-														<TableCell
-															align="center"
-															className="text-11 xl:text-16 py-auto text-light-blue-300"
-														>
-															Value
+															Rule
 														</TableCell>
 														<TableCell
 															align="center"
@@ -700,7 +784,96 @@ const Sootblow = () => {
 													</TableRow>
 												</TableHead>
 												<TableBody>
-													{parameterData.map((row, index) => (
+													{ruleSettingData.map((row, index) => (
+														<TableRow key={index}>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.label}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="py-4 text-14 xl:text-16"
+															>
+																<IconButton
+																	onClick={async () => {
+																		await handleClickOpenRuleUpdate();
+																		await ruleDetailFetch(row.id);
+																	}}
+																	size="small"
+																>
+																	<Build className="text-14 xl:text-16" />
+																</IconButton>
+															</TableCell>
+														</TableRow>
+													))}
+												</TableBody>
+											</Table>
+										</TableContainer>
+									) : (
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0 ">
+											<Typography className="text-12 xl:text-16">
+												No Rules Settings to Show
+											</Typography>
+										</div>
+									)}
+								</AccordionDetails>
+							</Accordion>
+							<Accordion
+								className={expanded === 'panel4' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								expanded={expanded === 'panel4'}
+								onChange={handleChange('panel4')}
+								square
+							>
+								<AccordionSummary
+									expandIcon={<ExpandMore />}
+									aria-controls="panel4a-content"
+									id="panel4a-header"
+									className="w-full"
+								>
+									<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
+										Sootblower Settings
+									</Typography>
+								</AccordionSummary>
+								<AccordionDetails className="p-0">
+									{loadingSootblowData ? (
+										<div className="flex-1 flex min-h-96 justify-center items-center py-4 md:p-0">
+											<Typography className="text-12 xl:text-16">Loading ... </Typography>
+										</div>
+									) : sootblowSettingData.length !== 0 ? (
+										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
+											<Table stickyHeader size="small" aria-label="a dense table">
+												<TableHead>
+													<TableRow>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Area
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Max Time
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Min Time
+														</TableCell>
+														<TableCell
+															align="center"
+															className="text-11 xl:text-16 py-auto text-light-blue-300"
+														>
+															Modify
+														</TableCell>
+													</TableRow>
+												</TableHead>
+												<TableBody>
+													{sootblowSettingData.map((row, index) => (
 														<TableRow key={index}>
 															<TableCell
 																align="center"
@@ -712,25 +885,27 @@ const Sootblow = () => {
 																align="center"
 																className="text-10 xl:text-14 py-4"
 															>
-																{row.value}
+																{row.maxTime}
+															</TableCell>
+															<TableCell
+																align="center"
+																className="text-10 xl:text-14 py-4"
+															>
+																{row.minTime}
 															</TableCell>
 															<TableCell
 																align="center"
 																className="py-4 text-14 xl:text-16"
 															>
-																{typeof row.value !== 'number' ? (
-																	'-'
-																) : (
-																	<IconButton
-																		onClick={async () => {
-																			await handleClickOpen();
-																			await parameterDetailFetch(row.id);
-																		}}
-																		size="small"
-																	>
-																		<Build className="text-14 xl:text-16" />
-																	</IconButton>
-																)}
+																<IconButton
+																	onClick={async () => {
+																		await handleClickOpenSootblowSettingUpdate();
+																		await sootblowSettingDetailFetch(row.id);
+																	}}
+																	size="small"
+																>
+																	<Build className="text-14 xl:text-16" />
+																</IconButton>
 															</TableCell>
 														</TableRow>
 													))}
@@ -738,9 +913,11 @@ const Sootblow = () => {
 											</Table>
 										</TableContainer>
 									) : (
-										<Paper className="flex-1 flex justify-center items-center py-4 md:p-0 " square>
-											<Typography className="text-12 xl:text-16">No Parameter to Show</Typography>
-										</Paper>
+										<div className="flex-1 flex-col flex min-h-96 justify-center items-center py-4 md:p-0 ">
+											<Typography className="text-12 xl:text-16">
+												No Sootblow Settings to Show
+											</Typography>
+										</div>
 									)}
 								</AccordionDetails>
 							</Accordion>
@@ -749,7 +926,7 @@ const Sootblow = () => {
 				</Grid>
 				{/* Main Content */}
 			</Grid>
-			<Dialog fullWidth open={open} aria-labelledby="responsive-dialog-title">
+			<Dialog fullWidth open={openParameterUpdate} aria-labelledby="responsive-dialog-title">
 				<Typography className="text-16 m-24" id="responsive-dialog-title">
 					{"Modify this parameter's value?"}
 				</Typography>
@@ -785,7 +962,12 @@ const Sootblow = () => {
 				</DialogContent>
 				<DialogActions className="p-24">
 					{!loadingParameterUpdate && (
-						<Button autoFocus onClick={handleClose} variant="outlined" className="text-12 px-6">
+						<Button
+							autoFocus
+							onClick={handleCloseParameterUpdate}
+							variant="outlined"
+							className="text-12 px-6"
+						>
 							Cancel
 						</Button>
 					)}
@@ -796,6 +978,170 @@ const Sootblow = () => {
 					) : (
 						<Button
 							onClick={() => updateParameterHandler(parameterDetailData.id, parameterDetailData.label)}
+							variant="contained"
+							autoFocus
+							className={clsx(classes.saveButton, 'text-12 px-6')}
+						>
+							Save
+						</Button>
+					)}
+				</DialogActions>
+			</Dialog>
+
+			<Dialog fullWidth open={openRuleSettingUpdate} aria-labelledby="responsive-dialog-title">
+				<Typography className="text-16 m-24" id="responsive-dialog-title">
+					{"Modify this rule's setting value?"}
+				</Typography>
+				<DialogContent>
+					{loading ? (
+						<LinearProgress color="secondary" />
+					) : (
+						<div className="space-y-10">
+							<Grid container alignItems="center" item xs={12}>
+								<Grid item xs={12} className="text-14 text-light-blue-300">
+									{ruleDetailData.label}
+								</Grid>
+							</Grid>
+							{ruleDetailData.detailRule && ruleDetailData.detailRule.length === 0 ? (
+								<Grid container alignItems="center" item xs={12}>
+									<Grid item xs={12} className="text-14">
+										Sorry, there is no value to be changed
+									</Grid>
+								</Grid>
+							) : (
+								ruleDetailData.detailRule &&
+								ruleDetailData.detailRule.map((item, index) => (
+									<div className="flex flex-col space-y-10" key={index}>
+										{/* <Grid item xs={4} className="text-14 text-light-blue-300">
+											Tag Sensor
+										</Grid> */}
+										<div className="text-14 ">{item.tagSensor}</div>
+										{/* <Grid item xs={4} className="text-14 text-light-blue-300">
+											Operator
+										</Grid> */}
+										{item.value === '' ? null : (
+											<div item xs={12}>
+												<TextField
+													variant="outlined"
+													defaultValue={item.value}
+													fullWidth
+													size="small"
+													onChange={e =>
+														updateRuleValueHandler(item.detailId, e.target.value)
+													}
+													// onChange={e => setParameterValue(e.target.value)}
+												/>
+											</div>
+										)}
+										{item.operator === ' ' || item.operator === '/' ? null : (
+											<div item xs={12} className="text-14">
+												{item.operator}
+											</div>
+										)}
+										{/* <Grid item xs={4} className="text-14 text-light-blue-300">
+											Value
+										</Grid> */}
+									</div>
+								))
+							)}
+						</div>
+					)}
+				</DialogContent>
+				<DialogActions className="p-24">
+					{!loadingRuleUpdate && (
+						<Button autoFocus onClick={handleCloseRuleUpdate} variant="outlined" className="text-12 px-6">
+							Cancel
+						</Button>
+					)}
+					{loadingRuleUpdate ? (
+						<Button disabled variant="contained" autoFocus className={clsx('text-12 px-6')}>
+							Saving
+						</Button>
+					) : (
+						<Button
+							disabled={ruleDetailData.detailRule && ruleDetailData.detailRule.length === 0}
+							onClick={() => updateRuleSettingHandler(ruleDetailData.id, ruleDetailData.label)}
+							variant="contained"
+							autoFocus
+							className={clsx(classes.saveButton, 'text-12 px-6')}
+						>
+							Save
+						</Button>
+					)}
+				</DialogActions>
+			</Dialog>
+
+			<Dialog fullWidth open={openSootblowSettingUpdate} aria-labelledby="responsive-dialog-title">
+				<Typography className="text-16 m-24" id="responsive-dialog-title">
+					{"Modify this sootblow's setting value?"}
+				</Typography>
+				<DialogContent>
+					{loading ? (
+						<LinearProgress color="secondary" />
+					) : (
+						<Grid container spacing={1}>
+							<Grid container alignItems="center" item xs={12}>
+								<Grid item xs={3} className="text-14 text-light-blue-300">
+									Area
+								</Grid>
+								<Grid item xs={9} className="text-14">
+									{sootblowSettingDetailData.label}
+								</Grid>
+							</Grid>
+							<Grid container alignItems="center" item xs={12}>
+								<Grid item xs={3} className="text-14 text-light-blue-300">
+									Max Time
+								</Grid>
+								<Grid item xs={9}>
+									<TextField
+										variant="outlined"
+										defaultValue={sootblowSettingDetailData.maxTime}
+										fullWidth
+										size="small"
+										onChange={e => setSootblowSettingMaxValue(e.target.value)}
+									/>
+								</Grid>
+							</Grid>
+							<Grid container alignItems="center" item xs={12}>
+								<Grid item xs={3} className="text-14 text-light-blue-300">
+									Min Time
+								</Grid>
+								<Grid item xs={9}>
+									<TextField
+										variant="outlined"
+										defaultValue={sootblowSettingDetailData.minTime}
+										fullWidth
+										size="small"
+										onChange={e => setSootblowSettingMinValue(e.target.value)}
+									/>
+								</Grid>
+							</Grid>
+						</Grid>
+					)}
+				</DialogContent>
+				<DialogActions className="p-24">
+					{!loadingSootblowUpdate && (
+						<Button
+							autoFocus
+							onClick={handleCloseSootblowSettingUpdate}
+							variant="outlined"
+							className="text-12 px-6"
+						>
+							Cancel
+						</Button>
+					)}
+					{loadingSootblowUpdate ? (
+						<Button disabled variant="contained" autoFocus className={clsx('text-12 px-6')}>
+							Saving
+						</Button>
+					) : (
+						<Button
+							onClick={() =>
+								updateSootblowSettingHandler(
+									sootblowSettingDetailData.id,
+									sootblowSettingDetailData.label
+								)
+							}
 							variant="contained"
 							autoFocus
 							className={clsx(classes.saveButton, 'text-12 px-6')}

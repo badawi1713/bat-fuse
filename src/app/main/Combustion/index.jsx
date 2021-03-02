@@ -243,9 +243,13 @@ const Combustion = () => {
 									</Typography>
 									<Paper square className="flex justify-around flex-col flex-initial text-center p-8">
 										<div>
-											<p className="text-9 xl:text-16 font-semibold text-light-blue-300">
-												{recommendationTime.length === 0 ? '-' : recommendationTime}
-											</p>
+											{recommendationTime.length === 0 ? (
+												<p className="text-9 xl:text-16 font-semibold ">-</p>
+											) : (
+												<p className="text-9 xl:text-16 font-semibold text-light-blue-300">
+													{recommendationTime}
+												</p>
+											)}
 										</div>
 									</Paper>
 									{/* <Typography className="text-11 xl:text-14 my-4 flex-initial">
@@ -267,13 +271,13 @@ const Combustion = () => {
 														No messages to display.
 													</p>
 												) : (
-													<p className="text-12 xl:text-16 font-semibold text-red-600 text-center">
+													<p className="text-12 xl:text-16 font-semibold text-red-600 text-left">
 														{constraints &&
 															constraints.constraints_messages.split(',').join(', ')}
 													</p>
 												)
 											) : constraintsError ? (
-												<p className="text-11 xl:text-16 font-semibold text-grey-100 text-center">
+												<p className="text-11 xl:text-16 font-semibold text-red-600 text-center">
 													Sorry, something went wrong with the server
 												</p>
 											) : (
@@ -943,7 +947,7 @@ const Combustion = () => {
 											className="w-full md:min-h-full flex flex-col flex-1 justify-center min-h-68"
 										>
 											{o2ChartError ? (
-												<div className="w-full text-11 xl:text-16 text-center">
+												<div className="w-full text-11 xl:text-16 text-red-600 text-center">
 													Sorry, something went wrong with the server
 												</div>
 											) : (
