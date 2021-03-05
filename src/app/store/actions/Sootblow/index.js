@@ -114,17 +114,20 @@ export const getRuleByID = id => {
 				loading: true
 			}
 		});
-		const response = await Axios.get(`${baseURL}/service/bat/sootblow/parameter/${id}`, {
+		const response = await Axios.get(`${baseURL}/service/bat/sootblow/rule/${id}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
 		});
-
 		try {
 			await dispatch({
 				type: SET_SOOTBLOW,
 				payload: {
-					ruleDetailData: response.data.object,
+					ruleDetailData: {
+						detailRule: response.data.object.detailRule,
+						label: response.data.object.label,
+						id: response.data.object.id
+					},
 					loading: false
 				}
 			});
@@ -245,8 +248,9 @@ export const updateParameterData = data => {
 };
 
 export const updateRuleData = data => {
+	console.log('data send', data);
 	return async dispatch => {
-		await Axios.post(`${baseURL}/service/bat/sootblow/parameter`, data, {
+		await Axios.post(`${baseURL}/service/bat/sootblow/rule`, data, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`,
 				'Content-Type': 'application/json'

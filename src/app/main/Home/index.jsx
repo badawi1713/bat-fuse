@@ -69,8 +69,7 @@ const Home = () => {
 		currentEfficiency,
 		chart,
 		referenceValue,
-		loading,
-		error
+		loading
 	} = efficiencyData;
 
 	return (
@@ -230,19 +229,7 @@ const Home = () => {
 						</Grid>
 						<Grid item xs={12}>
 							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
-								<Grid container className="w-full h-full">
-									<Grid item className="w-full h-full mr-8 flex flex-col justify-center">
-										<Typography className="text-center text-12 uppercase">
-											BAT Efficiency Improvement Dashboard
-										</Typography>
-										<Chart
-											id="home-chart"
-											height={heightChart}
-											loading={loading}
-											data={chart}
-											referenceValue={referenceValue}
-										/>
-									</Grid>
+								<Grid container className="w-full h-full space-y-8">
 									<Grid item className="flex flex-1 space-x-8">
 										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
@@ -280,6 +267,18 @@ const Home = () => {
 												<div />
 											</Paper>
 										</div>
+									</Grid>
+									<Grid item className="w-full h-full flex flex-col justify-center">
+										<Typography className="text-center text-12 uppercase">
+											BAT Efficiency Improvement Dashboard
+										</Typography>
+										<Chart
+											id="home-chart"
+											height={heightChart}
+											loading={loading}
+											data={chart}
+											referenceValue={referenceValue}
+										/>
 									</Grid>
 								</Grid>
 							</Paper>

@@ -25,9 +25,11 @@ import { ArrowBack, Build, Cancel, CheckCircle, ExpandMore, FlashOn, HourglassEm
 import {
 	changeSootblow,
 	getParameterByID,
+	getRuleByID,
 	getSootblowData,
 	getSootblowSettingByID,
 	updateParameterData,
+	updateRuleData,
 	updateSootblowSettingData
 } from 'app/store/actions';
 import { showMessage } from 'app/store/fuse/messageSlice';
@@ -161,19 +163,26 @@ const Sootblow = () => {
 		parameterDetailData,
 		loadingParameterUpdate,
 		sootblowSettingDetailData,
-		loadingSootblowUpdate
+		loadingSootblowUpdate,
+		loadingRuleUpdate,
+		ruleDetailData
 	} = sootblowReducer;
 
 	const { indicator, sequence, parameter, waitingTime, control, rules } = sootblowData;
+	const { detailRule } = ruleDetailData;
 
-	const masterControl = control[2] && control[2].value;
+	// const masterControl = control[2] && control[2].value;
 
 	// const [masterControlStatus, setMasterControlStatus] = useState(masterControl && masterControl);
 	const [openParameterUpdate, setOpenParameterUpdate] = useState(false);
+	const [openRuleSettingUpdate, setOpenRuleSettingUpdate] = useState(false);
 	const [openSootblowSettingUpdate, setOpenSootblowSettingUpdate] = useState(false);
 
 	const [parameterValue, setParameterValue] = useState('');
-	const [sootblowSettingValue, setSootblowSettingValue] = useState('');
+	const [sootblowSettingMaxValue, setSootblowSettingMaxValue] = useState('');
+	const [sootblowSettingMinValue, setSootblowSettingMinValue] = useState('');
+
+	const [ruleDetail, setRuleDetail] = useState(detailRule);
 
 	const [expanded, setExpanded] = useState('panel1');
 
@@ -182,8 +191,12 @@ const Sootblow = () => {
 	};
 
 	useEffect(() => {
-		dispatch(getSootblowData(true));
+		dispatch(getSootblowData());
 	}, [dispatch]);
+
+	useEffect(() => {
+		setRuleDetail(detailRule);
+	}, [detailRule]);
 
 	const sequenceData = sequence.map(item =>
 		createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
@@ -205,6 +218,10 @@ const Sootblow = () => {
 		setOpenParameterUpdate(true);
 	};
 
+	const handleClickOpenRuleUpdate = () => {
+		setOpenRuleSettingUpdate(true);
+	};
+
 	const handleClickOpenSootblowSettingUpdate = () => {
 		setOpenSootblowSettingUpdate(true);
 	};
@@ -213,12 +230,20 @@ const Sootblow = () => {
 		setOpenParameterUpdate(false);
 	};
 
+	const handleCloseRuleUpdate = () => {
+		setOpenRuleSettingUpdate(false);
+	};
+
 	const handleCloseSootblowSettingUpdate = () => {
 		setOpenSootblowSettingUpdate(false);
 	};
 
 	const parameterDetailFetch = async id => {
 		await dispatch(getParameterByID(id));
+	};
+
+	const ruleDetailFetch = async id => {
+		await dispatch(getRuleByID(id));
 	};
 
 	const sootblowSettingDetailFetch = async id => {
@@ -251,11 +276,58 @@ const Sootblow = () => {
 		}
 	};
 
+	const updateRuleValueHandler = (id, newValue) => {
+		let updatedData = detailRule.map(item => {
+			if (item.detailId === id) {
+				return { ...item, value: newValue };
+			}
+			return item;
+		});
+
+		setRuleDetail(updatedData);
+	};
+
+	const updateRuleSettingHandler = async (id, label) => {
+		// for (let i = 0; i < ruleDetail.length; i++) {
+		// 	if (ruleDetail[i].value === '' || toString(ruleDetail[i].value).trim() === '' || !ruleDetail[i].value) {
+		// 		await dispatch(
+		// 			showMessage({
+		// 				message: 'Sorry, value must be filled',
+		// 				variant: 'error'
+		// 			})
+		// 		);
+		// 		return false;
+		// 	} else {
+		await dispatch(
+			changeSootblow({
+				loadingRuleUpdate: true
+			})
+		);
+		await dispatch(
+			updateRuleData({
+				id,
+				label,
+				detailRule: ruleDetail
+			})
+		);
+		await handleCloseRuleUpdate();
+		await dispatch(getSootblowData());
+	};
+	// }
+	// };
+
 	const updateSootblowSettingHandler = async (id, label) => {
-		if (sootblowSettingValue === '' || sootblowSettingValue.value === sootblowSettingValue) {
+		if (sootblowSettingMaxValue === '' || sootblowSettingDetailData.maxTime === sootblowSettingMaxValue) {
 			await dispatch(
 				showMessage({
-					message: 'Sorry, value must be changed and cannot be empty',
+					message: 'Sorry, max value must be changed and cannot be empty',
+					variant: 'error'
+				})
+			);
+		} else if (sootblowSettingMinValue === '' || sootblowSettingDetailData.minTime === sootblowSettingMinValue) {
+			await dispatch(
+				showMessage({
+					message: 'Sorry, min value must be changed and cannot be empty',
 					variant: 'error'
 				})
 			);
@@ -269,7 +341,8 @@ const Sootblow = () => {
 				updateSootblowSettingData({
 					id,
 					label,
-					value: sootblowSettingValue
+					maxTime: sootblowSettingMaxValue,
+					minTime: sootblowSettingMinValue
 				})
 			);
 			await handleCloseSootblowSettingUpdate();
@@ -559,7 +632,7 @@ const Sootblow = () => {
 																align="center"
 																className="text-10 xl:text-14 py-4"
 															>
-																{row.zoneCode}
+																{row.zoneCode === '' ? 'Unknown Area' : row.zoneCode}
 															</TableCell>
 															<TableCell
 																align="center"
@@ -725,8 +798,8 @@ const Sootblow = () => {
 															>
 																<IconButton
 																	onClick={async () => {
-																		await handleClickOpenParameterUpdate();
-																		await parameterDetailFetch(row.id);
+																		await handleClickOpenRuleUpdate();
+																		await ruleDetailFetch(row.id);
 																	}}
 																	size="small"
 																>
@@ -914,6 +987,90 @@ const Sootblow = () => {
 					)}
 				</DialogActions>
 			</Dialog>
+
+			<Dialog fullWidth open={openRuleSettingUpdate} aria-labelledby="responsive-dialog-title">
+				<Typography className="text-16 m-24" id="responsive-dialog-title">
+					{"Modify this rule's setting value?"}
+				</Typography>
+				<DialogContent>
+					{loading ? (
+						<LinearProgress color="secondary" />
+					) : (
+						<div className="space-y-10">
+							<Grid container alignItems="center" item xs={12}>
+								<Grid item xs={12} className="text-14 text-light-blue-300">
+									{ruleDetailData.label}
+								</Grid>
+							</Grid>
+							{ruleDetailData.detailRule && ruleDetailData.detailRule.length === 0 ? (
+								<Grid container alignItems="center" item xs={12}>
+									<Grid item xs={12} className="text-14">
+										Sorry, there is no value to be changed
+									</Grid>
+								</Grid>
+							) : (
+								ruleDetailData.detailRule &&
+								ruleDetailData.detailRule.map((item, index) => (
+									<div className="flex flex-col space-y-10" key={index}>
+										{/* <Grid item xs={4} className="text-14 text-light-blue-300">
+											Tag Sensor
+										</Grid> */}
+										<div className="text-14 ">{item.tagSensor}</div>
+										{/* <Grid item xs={4} className="text-14 text-light-blue-300">
+											Operator
+										</Grid> */}
+										{item.value === '' ? null : (
+											<div item xs={12}>
+												<TextField
+													variant="outlined"
+													defaultValue={item.value}
+													fullWidth
+													size="small"
+													onChange={e =>
+														updateRuleValueHandler(item.detailId, e.target.value)
+													}
+													// onChange={e => setParameterValue(e.target.value)}
+												/>
+											</div>
+										)}
+										{item.operator === ' ' || item.operator === '/' ? null : (
+											<div item xs={12} className="text-14">
+												{item.operator}
+											</div>
+										)}
+										{/* <Grid item xs={4} className="text-14 text-light-blue-300">
+											Value
+										</Grid> */}
+									</div>
+								))
+							)}
+						</div>
+					)}
+				</DialogContent>
+				<DialogActions className="p-24">
+					{!loadingRuleUpdate && (
+						<Button autoFocus onClick={handleCloseRuleUpdate} variant="outlined" className="text-12 px-6">
+							Cancel
+						</Button>
+					)}
+					{loadingRuleUpdate ? (
+						<Button disabled variant="contained" autoFocus className={clsx('text-12 px-6')}>
+							Saving
+						</Button>
+					) : (
+						<Button
+							disabled={ruleDetailData.detailRule && ruleDetailData.detailRule.length === 0}
+							onClick={() => updateRuleSettingHandler(ruleDetailData.id, ruleDetailData.label)}
+							variant="contained"
+							autoFocus
+							className={clsx(classes.saveButton, 'text-12 px-6')}
+						>
+							Save
+						</Button>
+					)}
+				</DialogActions>
+			</Dialog>
+
 			<Dialog fullWidth open={openSootblowSettingUpdate} aria-labelledby="responsive-dialog-title">
 				<Typography className="text-16 m-24" id="responsive-dialog-title">
 					{"Modify this sootblow's setting value?"}
@@ -933,15 +1090,29 @@ const Sootblow = () => {
 							</Grid>
 							<Grid container alignItems="center" item xs={12}>
 								<Grid item xs={3} className="text-14 text-light-blue-300">
-									Value
+									Max Time
 								</Grid>
 								<Grid item xs={9}>
 									<TextField
 										variant="outlined"
-										defaultValue={sootblowSettingDetailData.value}
+										defaultValue={sootblowSettingDetailData.maxTime}
 										fullWidth
 										size="small"
-										onChange={e => setSootblowSettingValue(e.target.value)}
+										onChange={e => setSootblowSettingMaxValue(e.target.value)}
+									/>
+								</Grid>
+							</Grid>
+							<Grid container alignItems="center" item xs={12}>
+								<Grid item xs={3} className="text-14 text-light-blue-300">
+									Min Time
+								</Grid>
+								<Grid item xs={9}>
+									<TextField
+										variant="outlined"
+										defaultValue={sootblowSettingDetailData.minTime}
+										fullWidth
+										size="small"
+										onChange={e => setSootblowSettingMinValue(e.target.value)}
 									/>
 								</Grid>
 							</Grid>
@@ -952,7 +1123,7 @@ const Sootblow = () => {
 					{!loadingSootblowUpdate && (
 						<Button
 							autoFocus
-							onClick={handleCloseParameterUpdate}
+							onClick={handleCloseSootblowSettingUpdate}
 							variant="outlined"
 							className="text-12 px-6"
 						>

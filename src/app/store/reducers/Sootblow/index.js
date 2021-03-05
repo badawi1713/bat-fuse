@@ -10,7 +10,7 @@ const initialState = {
 		rules: []
 	},
 	parameterDetailData: {},
-	ruleDetailData: {},
+	ruleDetailData: { detailRule: [], label: '', id: '' },
 	sootblowSettingDetailData: {},
 	loading: false,
 	loadingSootblowData: false,
