@@ -101,7 +101,7 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithToken = () => {
 		return new Promise((resolve, reject) => {
 			axios
-				.get(`${process.env.REACT_APP_API_URL_AUTH}/service/bat/validate/access-token`, {
+				.get(`${process.env.REACT_APP_API_URL}/service/bat/validate/access-token`, {
 					headers: {
 						Authorization: `Bearer ${this.getAccessToken()}`,
 						Accept: 'application/json',

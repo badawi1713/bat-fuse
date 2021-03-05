@@ -237,7 +237,7 @@ const Combustion = () => {
 					<div className="flex md:flex-row flex-col flex-1">
 						<div className="flex flex-col md:w-full h-full">
 							<div className="flex md:flex-row flex-col w-full flex-1 md:flex-initial md:h-3/5 mb-4">
-								<div className="flex flex-col flex-1 mb-8 md:mb-0 md:mr-8 ">
+								<div className="flex flex-col flex-1 md:flex-initial md:w-1/6 mb-8 md:mb-0 md:mr-8 ">
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
 										Last Recommendation Time
 									</Typography>
@@ -263,7 +263,7 @@ const Combustion = () => {
 										</div>
 									</Paper> */}
 									<Typography className="text-11 xl:text-14 my-4 flex-initial">Message</Typography>
-									<Paper square className="flex justify-around flex-col flex-1 p-8">
+									<Paper square className="flex justify-around flex-col flex-1 p-8 overflow-auto">
 										<div>
 											{constraints ? (
 												constraints && constraints.constraints_messages === '' ? (
@@ -292,175 +292,290 @@ const Combustion = () => {
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
 										Manipulated Variables
 									</Typography>
-									<Paper className="flex flex-col flex-1 justify-around p-8" square>
-										<div className="mb-4">
-											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												O<sub>2</sub> Control
-											</p>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Current
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Recommended Bias
-													</Typography>
+									<Paper className="flex flex-1 p-8 justify-between" square>
+										<div className="flex flex-1 justify-between flex-col space-y-4">
+											<div>
+												<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+													Secondary Air Flow (Tn/Hr)
+												</p>
+												<Grid container>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Current
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Recommended Bias
+														</Typography>
+													</Grid>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvCurrent
+																? !mvCurrent && mvCurrent.oxygen_control
+																	? '-'
+																	: Number(
+																			mvCurrent && mvCurrent.oxygen_control
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvBias
+																? !mvBias && mvBias.oxygen_control
+																	? '-'
+																	: Number(mvBias && mvBias.oxygen_control).toFixed(2)
+																: '-'}
+														</Typography>
+													</Grid>
 												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvCurrent
-															? !mvCurrent && mvCurrent.oxygen_control
-																? '-'
-																: Number(mvCurrent && mvCurrent.oxygen_control).toFixed(
-																		2
-																  )
-															: '-'}
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvBias
-															? !mvBias && mvBias.oxygen_control
-																? '-'
-																: Number(mvBias && mvBias.oxygen_control).toFixed(2)
-															: '-'}
-													</Typography>
+											</div>
+											<div>
+												<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+													FD Fan #1 Air Flow (Tn/Hr)
+												</p>
+												<Grid container>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Current
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Recommended Bias
+														</Typography>
+													</Grid>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvCurrent
+																? !mvCurrent && mvCurrent.secondary_air_flow
+																	? '-'
+																	: Number(
+																			mvCurrent && mvCurrent.secondary_air_flow
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvBias
+																? !mvBias && mvBias.secondary_air_flow
+																	? '-'
+																	: Number(
+																			mvBias && mvBias.secondary_air_flow
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+													</Grid>
 												</Grid>
-											</Grid>
+											</div>
+											<div>
+												<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+													FD Fan #2 Air Flow (Tn/Hr)
+												</Typography>
+												<Grid container>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Current
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Recommended Bias
+														</Typography>
+													</Grid>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvCurrent
+																? !mvCurrent && mvCurrent.burner_tilt_pos
+																	? '-'
+																	: Number(
+																			mvCurrent && mvCurrent.burner_tilt_pos
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvBias
+																? !mvBias && mvBias.burner_tilt_pos
+																	? '-'
+																	: Number(mvBias && mvBias.burner_tilt_pos).toFixed(
+																			2
+																	  )
+																: '-'}
+														</Typography>
+													</Grid>
+												</Grid>
+											</div>
+											<div>
+												<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+													Coal Flow (Tn/Hr)
+												</Typography>
+												<Grid container>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Current
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Resulting Change
+														</Typography>
+													</Grid>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvCurrent
+																? !mvCurrent && mvCurrent.fuel_to_air_ratio
+																	? '-'
+																	: Number(
+																			mvCurrent && mvCurrent.fuel_to_air_ratio
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvBias
+																? !mvBias && mvBias.fuel_to_air_ratio
+																	? '-'
+																	: Number(
+																			mvBias && mvBias.fuel_to_air_ratio
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+													</Grid>
+												</Grid>
+											</div>
 										</div>
-										<div className="mb-4">
-											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												Secondary Air Flow (Tonnes/Hour)
-											</p>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Current
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Recommended Bias
-													</Typography>
+										<div className="flex flex-1 justify-between flex-col space-y-4">
+											<div>
+												<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+													Burner Tilt #1 Position
+												</p>
+												<Grid container>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Current
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Recommended Bias
+														</Typography>
+													</Grid>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvCurrent
+																? !mvCurrent && mvCurrent.oxygen_control
+																	? '-'
+																	: Number(
+																			mvCurrent && mvCurrent.oxygen_control
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvBias
+																? !mvBias && mvBias.oxygen_control
+																	? '-'
+																	: Number(mvBias && mvBias.oxygen_control).toFixed(2)
+																: '-'}
+														</Typography>
+													</Grid>
 												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvCurrent
-															? !mvCurrent && mvCurrent.secondary_air_flow
-																? '-'
-																: Number(
-																		mvCurrent && mvCurrent.secondary_air_flow
-																  ).toFixed(2)
-															: '-'}
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvBias
-															? !mvBias && mvBias.secondary_air_flow
-																? '-'
-																: Number(mvBias && mvBias.secondary_air_flow).toFixed(2)
-															: '-'}
-													</Typography>
+											</div>
+											<div>
+												<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+													Burner Tilt #2 Position
+												</p>
+												<Grid container>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Current
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Recommended Bias
+														</Typography>
+													</Grid>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvCurrent
+																? !mvCurrent && mvCurrent.secondary_air_flow
+																	? '-'
+																	: Number(
+																			mvCurrent && mvCurrent.secondary_air_flow
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvBias
+																? !mvBias && mvBias.secondary_air_flow
+																	? '-'
+																	: Number(
+																			mvBias && mvBias.secondary_air_flow
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+													</Grid>
 												</Grid>
-											</Grid>
-										</div>
-										<div className="mb-4">
-											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												Burner Tilt Position
-											</Typography>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Current
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Recommended Bias
-													</Typography>
+											</div>
+											<div>
+												<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+													Burner Tilt #3 Position
+												</Typography>
+												<Grid container>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Current
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Recommended Bias
+														</Typography>
+													</Grid>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvCurrent
+																? !mvCurrent && mvCurrent.burner_tilt_pos
+																	? '-'
+																	: Number(
+																			mvCurrent && mvCurrent.burner_tilt_pos
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvBias
+																? !mvBias && mvBias.burner_tilt_pos
+																	? '-'
+																	: Number(mvBias && mvBias.burner_tilt_pos).toFixed(
+																			2
+																	  )
+																: '-'}
+														</Typography>
+													</Grid>
 												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvCurrent
-															? !mvCurrent && mvCurrent.burner_tilt_pos
-																? '-'
-																: Number(
-																		mvCurrent && mvCurrent.burner_tilt_pos
-																  ).toFixed(2)
-															: '-'}
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvBias
-															? !mvBias && mvBias.burner_tilt_pos
-																? '-'
-																: Number(mvBias && mvBias.burner_tilt_pos).toFixed(2)
-															: '-'}
-													</Typography>
+											</div>
+											<div>
+												<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+													Burner Tilt #4 Position
+												</Typography>
+												<Grid container>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Current
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold">
+															Resulting Change
+														</Typography>
+													</Grid>
+													<Grid item xs={6}>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvCurrent
+																? !mvCurrent && mvCurrent.fuel_to_air_ratio
+																	? '-'
+																	: Number(
+																			mvCurrent && mvCurrent.fuel_to_air_ratio
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+														<Typography className="text-8 xl:text-12 font-semibold text-right">
+															{mvBias
+																? !mvBias && mvBias.fuel_to_air_ratio
+																	? '-'
+																	: Number(
+																			mvBias && mvBias.fuel_to_air_ratio
+																	  ).toFixed(2)
+																: '-'}
+														</Typography>
+													</Grid>
 												</Grid>
-											</Grid>
-										</div>
-										<div className="mb-4">
-											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												Fuel-to-Air Ratio
-											</Typography>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Current
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Resulting Change
-													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvCurrent
-															? !mvCurrent && mvCurrent.fuel_to_air_ratio
-																? '-'
-																: Number(
-																		mvCurrent && mvCurrent.fuel_to_air_ratio
-																  ).toFixed(2)
-															: '-'}
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvBias
-															? !mvBias && mvBias.fuel_to_air_ratio
-																? '-'
-																: Number(mvBias && mvBias.fuel_to_air_ratio).toFixed(2)
-															: '-'}
-													</Typography>
-												</Grid>
-											</Grid>
-										</div>
-										<div>
-											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												Secondary-to-Primary Air Ratio
-											</Typography>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Current
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Resulting Change
-													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvCurrent
-															? !mvCurrent && mvCurrent.sa_to_pa_ratio
-																? '-'
-																: Number(mvCurrent && mvCurrent.sa_to_pa_ratio).toFixed(
-																		2
-																  )
-															: '-'}
-													</Typography>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{mvBias
-															? !mvBias && mvBias.sa_to_pa_ratio
-																? '-'
-																: Number(mvBias && mvBias.sa_to_pa_ratio).toFixed(2)
-															: '-'}
-													</Typography>
-												</Grid>
-											</Grid>
+											</div>
 										</div>
 									</Paper>
 								</div>
-								<div className="flex flex-col flex-1 my-4 md:my-0 md:mx-8">
+								<div className="flex flex-col flex-1 md:flex-initial md:w-1/5 my-4 md:my-0 md:mx-8">
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial mt-8 md:mt-0">
 										Monitored Disturbances
 									</Typography>
@@ -658,7 +773,7 @@ const Combustion = () => {
 										</div>
 									</Paper>
 								</div>
-								<div className="flex-1 md:w-1/4 md:h-full flex flex-col justify-between mt-8 md:mt-0">
+								<div className="flex-1 md:flex-initial md:w-1/4 md:h-full flex flex-col justify-between mt-8 md:mt-0">
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
 										Constraints
 									</Typography>
@@ -929,10 +1044,70 @@ const Combustion = () => {
 									</Paper>
 								</div>
 							</div>
-							<div className="flex md:flex-row flex-col flex-1 mt-8 md:mt-4 pb-8 md:pb-0">
+							<div className="flex md:flex-row flex-col flex-1 mt-8 md:mt-4 pb-8 md:pb-0 md:space-x-8 space-y-4 md:space-y-0">
 								<div className="md:flex-inital w-full flex flex-col">
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
-										Oxygen Trend Chart
+										Avg. Excess Oxygen Trend Chart
+									</Typography>
+									<Grid
+										container
+										component={Paper}
+										direction="column"
+										justify="center"
+										square
+										className="w-full h-full"
+									>
+										<Grid
+											item
+											className="w-full md:min-h-full flex flex-col flex-1 justify-center min-h-68"
+										>
+											{o2ChartError ? (
+												<div className="w-full text-11 xl:text-16 text-red-600 text-center">
+													Sorry, something went wrong with the server
+												</div>
+											) : (
+												<O2TrendChart
+													data={o2Chart}
+													loading={o2ChartLoading}
+													height={heightChart}
+												/>
+											)}
+										</Grid>
+									</Grid>
+								</div>
+								<div className="md:flex-inital w-full flex flex-col">
+									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
+										Fuel-to-Air Ratio Trend Chart
+									</Typography>
+									<Grid
+										container
+										component={Paper}
+										direction="column"
+										justify="center"
+										square
+										className="w-full h-full"
+									>
+										<Grid
+											item
+											className="w-full md:min-h-full flex flex-col flex-1 justify-center min-h-68"
+										>
+											{o2ChartError ? (
+												<div className="w-full text-11 xl:text-16 text-red-600 text-center">
+													Sorry, something went wrong with the server
+												</div>
+											) : (
+												<O2TrendChart
+													data={o2Chart}
+													loading={o2ChartLoading}
+													height={heightChart}
+												/>
+											)}
+										</Grid>
+									</Grid>
+								</div>
+								<div className="md:flex-inital w-full flex flex-col">
+									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
+										SA-to-PA Ratio Trend Chart
 									</Typography>
 									<Grid
 										container
