@@ -122,7 +122,7 @@ const Home = () => {
 						<Grid item className="flex-1 overflow-auto">
 							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
 								<Grid container className="w-full h-full">
-									<Grid item className="w-4/5 h-full mr-8 flex flex-col justify-center">
+									<Grid item className="w-4/5 h-full mr-8 flex flex-col justify-between">
 										<Typography className="text-center text-16 uppercase xl:text-28">
 											Boiler Efficiency Improvement
 										</Typography>

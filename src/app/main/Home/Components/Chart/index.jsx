@@ -233,7 +233,7 @@ export default class Chart extends React.Component {
 				className={
 					this.props.loading || this.props.data.length === 0
 						? 'flex-1 flex items-center justify-items-center'
-						: ''
+						: 'flex-1 items-center justify-items-center'
 				}
 			>
 				{this.props.loading ? (
