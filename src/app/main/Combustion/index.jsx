@@ -292,7 +292,7 @@ const Combustion = () => {
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
 										Manipulated Variables
 									</Typography>
-									<Paper className="flex flex-1 p-8 justify-between" square>
+									<Paper className="flex flex-1 p-8 justify-between space-x-14" square>
 										<div className="flex flex-1 justify-between flex-col space-y-4">
 											<div>
 												<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
