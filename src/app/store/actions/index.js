@@ -5,8 +5,10 @@ import {
 	getCombustionMVBias,
 	getCombustionMVCurrent,
 	getCombustionO2Chart,
-	getCombustionRecommendationTime,
-	getCombustionSensorsTime
+	getCombustionFuelToAirChart,
+	getCombustionSAChart,
+	getCombustionOptimalityParameters, getCombustionRecommendationTime,
+	getCombustionSensorsTime,
 } from './Combustion';
 import { changeEfficiency, getEfficiencyData } from './Efficiency';
 import {
@@ -34,6 +36,9 @@ export {
 	getCombustionMVCurrent,
 	getCombustionMVBias,
 	getCombustionO2Chart,
+	getCombustionFuelToAirChart,
+	getCombustionSAChart,
+	getCombustionOptimalityParameters,
 	changeSootblow,
 	getEfficiencyData,
 	changeEfficiency,
@@ -42,3 +47,4 @@ export {
 	updateRuleData,
 	updateSootblowSettingData
 };
+
