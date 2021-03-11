@@ -6,7 +6,7 @@ import {
 	getCombustionMVCurrent,
 	getCombustionO2Chart,
 	getCombustionFuelToAirChart,
-	getCombustionSAChart,
+	getCombustionWindboxChart,
 	getCombustionOptimalityParameters, getCombustionRecommendationTime,
 	getCombustionSensorsTime,
 } from './Combustion';
@@ -37,7 +37,7 @@ export {
 	getCombustionMVBias,
 	getCombustionO2Chart,
 	getCombustionFuelToAirChart,
-	getCombustionSAChart,
+	getCombustionWindboxChart,
 	getCombustionOptimalityParameters,
 	changeSootblow,
 	getEfficiencyData,

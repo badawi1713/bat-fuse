@@ -17,9 +17,9 @@ const initialState = {
 	fuelToAirChart: [],
 	fuelToAirChartLoading: false,
 	fuelToAirChartError: false,
-	saChart: [],
-	saChartLoading: false,
-	saChartError: false,
+	windboxChart: [],
+	windboxChartLoading: false,
+	windboxChartError: false,
 	loading: false,
 	error: false
 };

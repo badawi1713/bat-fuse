@@ -218,7 +218,6 @@ export const getCombustionMVCurrent = () => {
 			}
 		})
 			.then(response => {
-				console.log(response.data)
 				dispatch({
 					type: SET_COMBUSTION,
 					payload: {
@@ -255,7 +254,6 @@ export const getCombustionMVBias = () => {
 			}
 		})
 			.then(response => {
-
 				dispatch({
 					type: SET_COMBUSTION,
 					payload: {
@@ -292,6 +290,7 @@ export const getCombustionOptimalityParameters = () => {
 			}
 		})
 			.then(response => {
+
 				dispatch({
 					type: SET_COMBUSTION,
 					payload: {
@@ -383,6 +382,7 @@ export const getCombustionFuelToAirChart = () => {
 			}
 		})
 			.then(response => {
+
 				dispatch({
 					type: SET_COMBUSTION,
 					payload: {
@@ -419,12 +419,12 @@ export const getCombustionFuelToAirChart = () => {
 	};
 };
 
-export const getCombustionSAChart = () => {
+export const getCombustionWindboxChart = () => {
 	return async dispatch => {
 		await dispatch({
 			type: SET_COMBUSTION,
 			payload: {
-				saChartLoading: true
+				windboxChartLoading: true
 			}
 		});
 		await Axios.get(`${baseURL}/getWTFRatioDay`, {
@@ -433,11 +433,12 @@ export const getCombustionSAChart = () => {
 			}
 		})
 			.then(response => {
+
 				dispatch({
 					type: SET_COMBUSTION,
 					payload: {
-						saChart: JSON.parse(response.data),
-						saChartLoading: false
+						windboxChart: JSON.parse(response.data),
+						windboxChartLoading: false
 					}
 				});
 			})
@@ -452,16 +453,16 @@ export const getCombustionSAChart = () => {
 					dispatch({
 						type: SET_COMBUSTION,
 						payload: {
-							saChartError: true,
-							saChartLoading: false
+							windboxChartError: true,
+							windboxChartLoading: false
 						}
 					});
 				} else {
 					dispatch({
 						type: SET_COMBUSTION,
 						payload: {
-							saChartError: true,
-							saChartLoading: false
+							windboxChartError: true,
+							windboxChartLoading: false
 						}
 					});
 				}

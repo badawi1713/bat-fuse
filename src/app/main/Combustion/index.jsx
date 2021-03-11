@@ -12,14 +12,14 @@ import {
 	getCombustionSensorsTime,
 	getCombustionOptimalityParameters,
 	getCombustionFuelToAirChart,
-	getCombustionSAChart
+	getCombustionWindboxChart
 } from 'app/store/actions';
 import clsx from 'clsx';
 import { ResizeWindows } from 'helpers';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { O2TrendChart } from './Components';
+import { TrendChart } from './Components';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -88,9 +88,9 @@ const Combustion = () => {
 		fuelToAirChart,
 		fuelToAirChartError,
 		fuelToAirChartLoading,
-		saChart,
-		saChartError,
-		saChartLoading
+		windboxChart,
+		windboxChartError,
+		windboxChartLoading
 	} = combustionReducer;
 
 	const recommendationTime = combustionRecommendationTime;
@@ -117,7 +117,7 @@ const Combustion = () => {
 
 	useEffect(() => {
 		dispatch(getCombustionFuelToAirChart());
-		dispatch(getCombustionSAChart());
+		dispatch(getCombustionWindboxChart());
 		dispatch(getCombustionRecommendationTime());
 		const onFetchCombustion = async () => {
 			await dispatch(getCombustionSensorsTime());
@@ -491,7 +491,7 @@ const Combustion = () => {
 															Current
 														</Typography>
 														<Typography className="text-8 xl:text-12 font-semibold">
-															Resulting Change
+															Recommended Bias
 														</Typography>
 													</Grid>
 													<Grid item xs={6}>
@@ -927,7 +927,7 @@ const Combustion = () => {
 													Sorry, something went wrong with the server
 												</div>
 											) : (
-												<O2TrendChart
+												<TrendChart
 													data={o2Chart}
 													loading={o2ChartLoading}
 													height={heightChart}
@@ -957,7 +957,7 @@ const Combustion = () => {
 													Sorry, something went wrong with the server
 												</div>
 											) : (
-												<O2TrendChart
+												<TrendChart
 													data={fuelToAirChart}
 													loading={fuelToAirChartLoading}
 													height={heightChart}
@@ -968,7 +968,7 @@ const Combustion = () => {
 								</div>
 								<div className="md:flex-inital w-full flex flex-col">
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
-										SA-to-PA Ratio Trend Chart
+										Windbox To Furnace Difference Trend Chart
 									</Typography>
 									<Grid
 										container
@@ -982,14 +982,14 @@ const Combustion = () => {
 											item
 											className="w-full md:min-h-full flex flex-col flex-1 justify-center min-h-68"
 										>
-											{saChartError ? (
+											{windboxChartError ? (
 												<div className="w-full text-11 xl:text-16 text-red-600 text-center">
 													Sorry, something went wrong with the server
 												</div>
 											) : (
-												<O2TrendChart
-													data={saChart}
-													loading={saChartLoading}
+												<TrendChart
+													data={windboxChart}
+													loading={windboxChartLoading}
 													height={heightChart}
 												/>
 											)}

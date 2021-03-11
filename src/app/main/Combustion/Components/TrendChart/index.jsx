@@ -36,7 +36,7 @@ FusionCharts.options.license({
 // 	['01/12/2020 22:00', 1, 3.5],
 // 	['01/12/2020 23:00', 1, 4.4]
 // ];
-export default class O2TrendChart extends React.Component {
+export default class TrendChart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.onFetchData = this.onFetchData.bind(this);
@@ -44,7 +44,7 @@ export default class O2TrendChart extends React.Component {
 			timeseriesDs: {
 				type: 'timeseries',
 				renderAt: 'container',
-				width: '100%',
+				width: '96%',
 				height: this.props.height,
 				dataFetch: false,
 				schemaFetch: [
@@ -52,11 +52,11 @@ export default class O2TrendChart extends React.Component {
 						id: 0,
 						name: 'Time',
 						type: 'date',
-						format: '%-d/%-m/%Y %H:%M'
+						format: '%Y-%m-%d %H:%M:%S'
 					},
 					{
 						id: 1,
-						name: 'Oxygen Control',
+						name: 'Value',
 						type: 'number'
 					}
 				],
