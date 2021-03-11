@@ -1,3 +1,3 @@
-import O2TrendChart from './O2TrendChart';
+import TrendChart from './TrendChart';
 
-export { O2TrendChart };
+export { TrendChart };
