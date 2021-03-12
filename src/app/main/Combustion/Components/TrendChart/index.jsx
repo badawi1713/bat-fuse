@@ -36,7 +36,7 @@ FusionCharts.options.license({
 // 	['01/12/2020 22:00', 1, 3.5],
 // 	['01/12/2020 23:00', 1, 4.4]
 // ];
-export default class O2TrendChart extends React.Component {
+export default class TrendChart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.onFetchData = this.onFetchData.bind(this);
@@ -44,7 +44,7 @@ export default class O2TrendChart extends React.Component {
 			timeseriesDs: {
 				type: 'timeseries',
 				renderAt: 'container',
-				width: '100%',
+				width: '96%',
 				height: this.props.height,
 				dataFetch: false,
 				schemaFetch: [
@@ -52,63 +52,16 @@ export default class O2TrendChart extends React.Component {
 						id: 0,
 						name: 'Time',
 						type: 'date',
-						format: '%-d/%-m/%Y %H:%M'
+						format: '%Y-%m-%d %H:%M:%S'
 					},
 					{
 						id: 1,
-						name: 'Oxygen Control',
+						name: 'Value',
 						type: 'number'
 					}
 				],
 				dataSource: {
 					/*  time navigator */
-					chart: {
-						chartLeftMargin: '0',
-						chartTopMargin: '0',
-						chartRightMargin: '0',
-						chartBottomMargin: '0',
-						bgColor: '#000',
-						bgAlpha: '0',
-						showLegend: 0,
-						showtooltip: 1,
-						multiCanvas: false,
-						paletteColors: '#00ff37, #fff000 ',
-						style: {
-							text: {
-								fill: '#fff',
-								'font-size': 11
-							},
-
-							canvas: {
-								'fill-opacity': 0
-							},
-							background: {
-								'fill-opacity': 0
-							}
-						}
-					},
-					navigator: {
-						enabled: 0
-					},
-					extensions: {
-						customRangeSelector: {
-							enabled: '0'
-						}
-					},
-					yaxis: [
-						{
-							id: 1,
-							plot: [
-								{
-									value: 'Oxygen Control',
-									connectNullData: true
-								}
-							],
-							title: '%',
-							orientation: 'left',
-							plottype: 'smooth-line'
-						}
-					]
 				}
 			}
 		};
@@ -133,7 +86,74 @@ export default class O2TrendChart extends React.Component {
 				timeseriesDs: {
 					...prevState.timeseriesDs,
 					dataFetch: this.props.data,
-					height: this.props.height
+					height: this.props.height,
+					dataSource: {
+						chart: {
+							chartLeftMargin: '0',
+							chartTopMargin: '0',
+							chartRightMargin: '0',
+							chartBottomMargin: '0',
+							bgColor: '#000',
+							bgAlpha: '0',
+							showLegend: 0,
+							showtooltip: 1,
+							multiCanvas: false,
+							paletteColors: '#00ff37, #fff000 ',
+							style: {
+								text: {
+									fill: '#fff',
+									'font-size': 11
+								},
+
+								canvas: {
+									'fill-opacity': 0
+								},
+								background: {
+									'fill-opacity': 0
+								}
+							}
+						},
+						navigator: {
+							enabled: 0
+						},
+						extensions: {
+							customRangeSelector: {
+								enabled: '0'
+							}
+						},
+						yaxis: [
+							{
+								id: 1,
+								plot: [
+									{
+										value: 'Value',
+										connectNullData: true
+									}
+								],
+								title: this.props.yAxisTitle || '%',
+								orientation: 'left',
+								plottype: 'smooth-line',
+								max: this.props.referenceValue || '0',
+								min: this.props.referenceValue || 'auto',
+								referenceLine: this.props.referenceValue
+									? [
+											{
+												label: 'Limit',
+												value: this.props.referenceValue,
+												style: {
+													marker: {
+														'stroke-dasharray': '4 1',
+														fill: '#ff0000',
+														stroke: '#ff0000',
+														'stroke-width': '3'
+													}
+												}
+											}
+									  ]
+									: ''
+							}
+						]
+					}
 				}
 			}));
 			await this.onFetchData();
