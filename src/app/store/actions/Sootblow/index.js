@@ -7,7 +7,7 @@ import history from '@history';
 
 import Axios from 'axios';
 
-const baseURL = process.env.REACT_APP_API_URL_SOOTBLOW;
+const baseURL = process.env.REACT_APP_API_URL;
 
 export const getSootblowData = loading => {
 	return async dispatch => {
