@@ -137,19 +137,19 @@ export default class TrendChart extends React.Component {
 								min: this.props.referenceValue || 'auto',
 								referenceLine: this.props.referenceValue
 									? [
-											{
-												label: 'Limit',
-												value: this.props.referenceValue,
-												style: {
-													marker: {
-														'stroke-dasharray': '4 1',
-														fill: '#ff0000',
-														stroke: '#ff0000',
-														'stroke-width': '3'
-													}
+										{
+											label: 'Limit',
+											value: this.props.referenceValue,
+											style: {
+												marker: {
+													'stroke-dasharray': '4 1',
+													fill: '#ff0000',
+													stroke: '#ff0000',
+													'stroke-width': '3'
 												}
 											}
-									  ]
+										}
+									]
 									: ''
 							}
 						]
