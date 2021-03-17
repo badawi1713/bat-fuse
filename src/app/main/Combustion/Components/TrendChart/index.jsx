@@ -62,53 +62,6 @@ export default class TrendChart extends React.Component {
 				],
 				dataSource: {
 					/*  time navigator */
-					chart: {
-						chartLeftMargin: '0',
-						chartTopMargin: '0',
-						chartRightMargin: '0',
-						chartBottomMargin: '0',
-						bgColor: '#000',
-						bgAlpha: '0',
-						showLegend: 0,
-						showtooltip: 1,
-						multiCanvas: false,
-						paletteColors: '#00ff37, #fff000 ',
-						style: {
-							text: {
-								fill: '#fff',
-								'font-size': 11
-							},
-
-							canvas: {
-								'fill-opacity': 0
-							},
-							background: {
-								'fill-opacity': 0
-							}
-						}
-					},
-					navigator: {
-						enabled: 0
-					},
-					extensions: {
-						customRangeSelector: {
-							enabled: '0'
-						}
-					},
-					yaxis: [
-						{
-							id: 1,
-							plot: [
-								{
-									value: 'Oxygen Control',
-									connectNullData: true
-								}
-							],
-							title: '%',
-							orientation: 'left',
-							plottype: 'smooth-line'
-						}
-					]
 				}
 			}
 		};
@@ -133,7 +86,74 @@ export default class TrendChart extends React.Component {
 				timeseriesDs: {
 					...prevState.timeseriesDs,
 					dataFetch: this.props.data,
-					height: this.props.height
+					height: this.props.height,
+					dataSource: {
+						chart: {
+							chartLeftMargin: '0',
+							chartTopMargin: '0',
+							chartRightMargin: '0',
+							chartBottomMargin: '0',
+							bgColor: '#000',
+							bgAlpha: '0',
+							showLegend: 0,
+							showtooltip: 1,
+							multiCanvas: false,
+							paletteColors: '#00ff37, #fff000 ',
+							style: {
+								text: {
+									fill: '#fff',
+									'font-size': 11
+								},
+
+								canvas: {
+									'fill-opacity': 0
+								},
+								background: {
+									'fill-opacity': 0
+								}
+							}
+						},
+						navigator: {
+							enabled: 0
+						},
+						extensions: {
+							customRangeSelector: {
+								enabled: '0'
+							}
+						},
+						yaxis: [
+							{
+								id: 1,
+								plot: [
+									{
+										value: 'Value',
+										connectNullData: true
+									}
+								],
+								title: this.props.yAxisTitle || '%',
+								orientation: 'left',
+								plottype: 'smooth-line',
+								max: this.props.referenceValue || '0',
+								min: this.props.referenceValue || 'auto',
+								referenceLine: this.props.referenceValue
+									? [
+											{
+												label: 'Limit',
+												value: this.props.referenceValue,
+												style: {
+													marker: {
+														'stroke-dasharray': '4 1',
+														fill: '#ff0000',
+														stroke: '#ff0000',
+														'stroke-width': '3'
+													}
+												}
+											}
+									  ]
+									: ''
+							}
+						]
+					}
 				}
 			}));
 			await this.onFetchData();
