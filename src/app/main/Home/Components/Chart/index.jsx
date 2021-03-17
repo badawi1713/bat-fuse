@@ -85,7 +85,7 @@ export default class Chart extends React.Component {
 							style: {
 								text: {
 									fill: '#fff',
-									'font-size': 11
+									'font-size': 12
 								},
 
 								canvas: {
@@ -232,8 +232,8 @@ export default class Chart extends React.Component {
 			<div
 				className={
 					this.props.loading || this.props.data.length === 0
-						? 'flex-1 flex items-center justify-items-center'
-						: 'flex-1 items-center justify-items-center'
+						? 'flex-1 flex items-center justify-center'
+						: 'flex-1 items-center justify-center'
 				}
 			>
 				{this.props.loading ? (

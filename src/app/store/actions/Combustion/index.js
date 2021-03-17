@@ -95,7 +95,7 @@ export const getCombustionConstraints = () => {
 				constraintsLoading: true
 			}
 		});
-		Axios.get(`${baseURL}/getConstraints?last_update=${combustionReducer.combustionSensorsTime}`, {
+		Axios.get(`${baseURL}/getConstraints?last_update=${combustionReducer.combustionRecommendationTime}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
@@ -176,7 +176,7 @@ export const getCombustionDisturbances = () => {
 	return async (dispatch, getState) => {
 		const { combustionReducer } = getState()
 
-		Axios.get(`${baseURL}/getDisturbances?last_update=${combustionReducer.combustionSensorsTime}`, {
+		Axios.get(`${baseURL}/getDisturbances?last_update=${combustionReducer.combustionRecommendationTime}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
@@ -212,7 +212,7 @@ export const getCombustionDisturbances = () => {
 export const getCombustionMVCurrent = () => {
 	return async (dispatch, getState) => {
 		const { combustionReducer } = getState()
-		Axios.get(`${baseURL}/getMVCurrent?last_update=${combustionReducer.combustionSensorsTime}`, {
+		Axios.get(`${baseURL}/getMVCurrent?last_update=${combustionReducer.combustionRecommendationTime}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
@@ -284,13 +284,12 @@ export const getCombustionMVBias = () => {
 export const getCombustionOptimalityParameters = () => {
 	return async (dispatch, getState) => {
 		const { combustionReducer } = getState()
-		Axios.get(`${baseURL}/getOptimalityParams?last_update=${combustionReducer.combustionSensorsTime}`, {
+		Axios.get(`${baseURL}/getOptimalityParams?last_update=${combustionReducer.combustionRecommendationTime}`, {
 			headers: {
 				Authorization: `Bearer ${jwtService.getAccessToken()}`
 			}
 		})
 			.then(response => {
-
 				dispatch({
 					type: SET_COMBUSTION,
 					payload: {

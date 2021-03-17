@@ -3,7 +3,7 @@
 import jwtService from 'app/services/jwtService';
 import { SET_SOOTBLOW } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
-import history from '@history';
+// import history from '@history';
 
 import Axios from 'axios';
 
@@ -42,11 +42,11 @@ export const getSootblowData = loading => {
 				if (error.response.status === 500) {
 					dispatch(
 						showMessage({
-							message: 'Sorry, something went wrong with the server',
+							message: "Sorry, something went wrong with Sootblow's service",
 							variant: 'error'
 						})
 					);
-					history.push({ pathname: '/errors/error-500' });
+					// history.push({ pathname: '/errors/error-500' });
 				}
 				dispatch(
 					showMessage({
