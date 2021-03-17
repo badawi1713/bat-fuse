@@ -9,7 +9,6 @@ import {
 	getCombustionMVCurrent,
 	getCombustionO2Chart,
 	getCombustionRecommendationTime,
-	getCombustionSensorsTime,
 	getCombustionOptimalityParameters,
 	getCombustionFuelToAirChart,
 	getCombustionWindboxChart
@@ -86,10 +85,8 @@ const Combustion = () => {
 		// combustionSensorsTime,
 		o2Chart,
 		o2ChartError,
-		o2ChartLoading,
 		fuelToAirChart,
 		fuelToAirChartError,
-		fuelToAirChartLoading,
 		windboxChart,
 		windboxChartError,
 		windboxChartLoading
@@ -120,7 +117,7 @@ const Combustion = () => {
 	useEffect(() => {
 		dispatch(getCombustionFuelToAirChart());
 		dispatch(getCombustionRecommendationTime());
-		dispatch(getCombustionSensorsTime());
+		// dispatch(getCombustionSensorsTime());
 		const onFetchCombustion = async () => {
 			await dispatch(getCombustionO2Chart());
 			await dispatch(getCombustionConstraintsLimit());
@@ -260,7 +257,7 @@ const Combustion = () => {
 					<div className="flex md:flex-row flex-col flex-1">
 						<div className="flex flex-col md:w-full h-full">
 							<div className="flex md:flex-row flex-col w-full flex-1 md:flex-initial md:h-3/5 mb-4">
-								<div className="flex flex-col flex-1 md:flex-initial md:w-1/6 mb-8 md:mb-0 md:mr-8 ">
+								<div className="flex flex-col flex-1 md:flex-initial md:w-1/6 mb-8 md:mb-0 ">
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
 										Last Recommendation Time
 									</Typography>
@@ -311,323 +308,303 @@ const Combustion = () => {
 										</div>
 									</Paper>
 								</div>
-								<div className="flex-1 flex flex-col justify-between">
-									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
-										Manipulated Variables
+
+								<div className="flex flex-col flex-1 md:flex-initial md:w-3/6 my-4 md:my-0 md:mx-8 space-y-8">
+									<div className=" flex flex-col justify-between">
+										<Typography className="text-11 xl:text-14 mb-4 flex-initial">
+											Manipulated Variables
 									</Typography>
-									<Paper className="flex flex-1 p-8 justify-between space-x-14" square>
-										<div className="flex flex-1 justify-between flex-col space-y-4">
-											<div>
-												<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-													Secondary Air Flow (Tn/Hr)
+										<Paper className="flex flex-1 p-8 justify-between space-x-14" square>
+											<div className="flex flex-1 justify-between flex-col space-y-4">
+												<div >
+													<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+														Secondary Air Flow (Tn/Hr)
 												</p>
-												<Grid container>
-													<Grid item xs={6}>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Current
+													<Grid container>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Current
 														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Recommended Bias
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Recommended Bias
 														</Typography>
-													</Grid>
-													<Grid item xs={6}>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{mvCurrent
-																? (mvCurrent &&
-																		mvCurrent.secondary_air_flow === null) ||
-																  (mvCurrent &&
-																		mvCurrent.secondary_air_flow === undefined)
-																	? '-'
-																	: Number(
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{mvCurrent
+																	? !mvCurrent && mvCurrent.secondary_air_flow
+																		? '-'
+																		: Number(
 																			mvCurrent && mvCurrent.secondary_air_flow
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{mvBias
-																? (mvBias && mvBias.bias_secondary_air_flow === null) ||
-																  (mvBias &&
-																		mvBias.bias_secondary_air_flow === undefined)
-																	? '-'
-																	: Number(
+																		).toFixed(2)
+																	: '-'}
+															</Typography>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{mvBias
+																	? mvBias && mvBias.bias_secondary_air_flow === null
+																		? '-'
+																		: Number(
 																			mvBias && mvBias.bias_secondary_air_flow
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
+																		).toFixed(2)
+																	: '-'}
+															</Typography>
+														</Grid>
 													</Grid>
-												</Grid>
+												</div>
+
+
 											</div>
-											<div>
-												<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-													Coal Flow (Tn/Hr)
+											<div className="flex flex-1 justify-between flex-col space-y-4">
+												<div>
+													<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+														Coal Flow (Tn/Hr)
 												</Typography>
-												<Grid container>
-													<Grid item xs={6}>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Current
+													<Grid container>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Current
 														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Recommended Bias
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Recommended Bias
 														</Typography>
-													</Grid>
-													<Grid item xs={6}>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{mvCurrent
-																? (mvCurrent && mvCurrent.coal_flow === null) ||
-																  (mvCurrent && mvCurrent.coal_flow === undefined)
-																	? '-'
-																	: Number(mvCurrent && mvCurrent.coal_flow).toFixed(
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{mvCurrent
+																	? mvCurrent && mvCurrent.coal_flow === null
+																		? '-'
+																		: Number(mvCurrent && mvCurrent.coal_flow).toFixed(
 																			2
-																	  )
-																: '-'}
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{mvBias
-																? (mvBias && mvBias.bias_coal_flow === null) ||
-																  (mvBias && mvBias.bias_coal_flow === undefined)
-																	? '-'
-																	: Number(mvBias && mvBias.bias_coal_flow).toFixed(2)
-																: '-'}
-														</Typography>
+																		)
+																	: '-'}
+															</Typography>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{mvBias
+																	? mvBias && mvBias.bias_coal_flow === null
+																		? '-'
+																		: Number(mvBias && mvBias.bias_coal_flow).toFixed(2)
+																	: '-'}
+															</Typography>
+														</Grid>
 													</Grid>
-												</Grid>
+												</div>
 											</div>
-											<div>
-												<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-													Burner Tilt #2 Position
+											<div className="flex flex-1 justify-between flex-col space-y-4">
+												<div>
+													<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+														FD Fan #1 Air Flow (Tn/Hr)
 												</Typography>
-												<Grid container>
-													<Grid item xs={6}>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Current
+													<Grid container>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Current
 														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Recommended Bias
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Recommended Bias
 														</Typography>
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{mvCurrent
+																	? (mvCurrent && mvCurrent.fd_fan_1 === null) ||
+																		(mvCurrent && mvCurrent.fd_fan_1 === undefined)
+																		? '-'
+																		: Number(mvCurrent && mvCurrent.fd_fan_1).toFixed(2)
+																	: '-'}
+															</Typography>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{mvBias
+																	? (mvBias && mvBias.bias_fd_fan_1 === null) ||
+																		(mvBias && mvBias.bias_fd_fan_1 === undefined)
+																		? '-'
+																		: Number(mvBias && mvBias.bias_fd_fan_1).toFixed(2)
+																	: '-'}
+															</Typography>
+														</Grid>
 													</Grid>
-													<Grid item xs={6}>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{mvCurrent
-																? (mvCurrent && mvCurrent.fd_fan_1 === null) ||
-																  (mvCurrent && mvCurrent.fd_fan_1 === undefined)
-																	? '-'
-																	: Number(mvCurrent && mvCurrent.fd_fan_1).toFixed(2)
-																: '-'}
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{mvBias
-																? (mvBias && mvBias.bias_fd_fan_1 === null) ||
-																  (mvBias && mvBias.bias_fd_fan_1 === undefined)
-																	? '-'
-																	: Number(mvBias && mvBias.bias_fd_fan_1).toFixed(2)
-																: '-'}
-														</Typography>
-													</Grid>
-												</Grid>
+												</div>
 											</div>
-										</div>
-									</Paper>
-								</div>
-								<div className="flex flex-col flex-1 md:flex-initial md:w-1/5 my-4 md:my-0 md:mx-8">
-									<Typography className="text-11 xl:text-14 mb-4 flex-initial mt-8 md:mt-0">
-										Monitored Disturbances
+										</Paper>
+									</div>
+									<div className='flex flex-1 space-x-8'>
+										<div className='flex flex-col flex-1'>
+											<Typography className="text-11 xl:text-14 mb-4 flex-initial mt-8 md:mt-0">
+												Monitored Disturbances
 									</Typography>
-									<Paper square className="flex justify-around flex-col flex-1 p-8">
-										<div className="mb-4">
-											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												Primary Air Flow (Tonnes/Hour)
+											<Paper square className="flex justify-around flex-col flex-1 p-8">
+												<div className="mb-4">
+													<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+														Primary Air Flow (Tonnes/Hour)
 											</p>
-											<Grid container>
-												<Grid container item xs={12} justify="space-between">
-													<Grid item>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Value
+													<Grid container>
+														<Grid container item xs={12} justify="space-between">
+															<Grid item>
+																<Typography className="text-8 xl:text-12 font-semibold">
+																	Value
 														</Typography>
-													</Grid>
-													<Grid item>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															{disturbances
-																? (disturbances &&
-																		disturbances.primary_air_flow === null) ||
-																  (disturbances &&
-																		disturbances.primary_air_flow === undefined)
-																	? '-'
-																	: Number(
-																			disturbances &&
+															</Grid>
+															<Grid item>
+																<Typography className="text-8 xl:text-12 font-semibold">
+																	{disturbances
+																		? disturbances && disturbances.primary_air_flow === null
+																			? '-'
+																			: Number(
+																				disturbances &&
 																				disturbances.primary_air_flow
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
+																			).toFixed(2)
+																		: '-'}
+																</Typography>
+															</Grid>
+														</Grid>
 													</Grid>
-												</Grid>
-											</Grid>
-										</div>
-										<div className="mb-4">
-											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												Gross Production Rating (MW)
+												</div>
+												<div className="mb-4">
+													<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+														Gross Production Rating (MW)
 											</p>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Value
+													<Grid container>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Value
 													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{disturbances
-															? (disturbances &&
-																	disturbances.gross_production_rating === null) ||
-															  (disturbances &&
-																	disturbances.gross_production_rating === undefined)
-																? '-'
-																: Number(
-																		disturbances &&
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{disturbances
+																	? disturbances &&
+																		disturbances.gross_production_rating === null
+																		? '-'
+																		: Number(
+																			disturbances &&
 																			disturbances.gross_production_rating
-																  ).toFixed(2)
-															: '-'}
-													</Typography>
-												</Grid>
-											</Grid>
-										</div>
-										<div>
-											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												Coal HHV (Joule)
+																		).toFixed(2)
+																	: '-'}
+															</Typography>
+														</Grid>
+													</Grid>
+												</div>
+												<div>
+													<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
+														Coal HHV (Joule)
 											</p>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Value
+													<Grid container>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Value
 													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{disturbances
-															? (disturbances &&
-																	disturbances.gross_production_rating === null) ||
-															  (disturbances &&
-																	disturbances.gross_production_rating === undefined)
-																? '-'
-																: disturbances && disturbances.coal_hhv
-															: '-'}
-													</Typography>
-												</Grid>
-											</Grid>
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{disturbances
+																	? disturbances &&
+																		disturbances.gross_production_rating === null
+																		? '-'
+																		: disturbances && disturbances.coal_hhv
+																	: '-'}
+															</Typography>
+														</Grid>
+													</Grid>
+												</div>
+											</Paper>
 										</div>
-									</Paper>
-									<Typography className="text-11 xl:text-14 my-4 flex-initial ">
-										Optimality Parameters
+										<div className='flex flex-col flex-1'>
+											<Typography className="text-11 xl:text-14 mb-4 flex-initial ">
+												Optimality Parameters
 									</Typography>
-									<Paper square className="flex justify-around flex-col flex-1 p-8">
-										<div className="mb-4">
-											<p className="text-10 xl:text-14 font-semibold text-light-blue-300">
-												Excess Air Oxygen (%)
+											<Paper square className="flex justify-around flex-col flex-1 p-8">
+												<div className="mb-4">
+													<p className="text-10 xl:text-14 font-semibold text-light-blue-300">
+														Excess Air Oxygen (%)
 											</p>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Outlet A (Actual/Target)
+													<Grid container>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Outlet A (Actual/Target)
 													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{optimalityParameters
-															? (optimalityParameters &&
-																	optimalityParameters.actual_excess_outlet_a ===
-																		null) ||
-															  (optimalityParameters &&
-																	optimalityParameters.actual_excess_outlet_a ===
-																		undefined)
-																? '-'
-																: Number(
-																		optimalityParameters &&
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{optimalityParameters
+																	? optimalityParameters &&
+																		optimalityParameters.actual_excess_outlet_a === null
+																		? '-'
+																		: Number(
+																			optimalityParameters &&
 																			optimalityParameters.actual_excess_outlet_a
-																  ).toFixed(2)
-															: '-'}{' '}
+																		).toFixed(2)
+																	: '-'}{' '}
 														/{' '}
-														{optimalityParameters
-															? (optimalityParameters &&
-																	optimalityParameters.target_excess_outlet_a ===
-																		null) ||
-															  (optimalityParameters &&
-																	optimalityParameters.target_excess_outlet_a ===
-																		undefined)
-																? '-'
-																: Number(
-																		optimalityParameters &&
+																{optimalityParameters
+																	? optimalityParameters &&
+																		optimalityParameters.target_excess_outlet_a === null
+																		? '-'
+																		: Number(
+																			optimalityParameters &&
 																			optimalityParameters.target_excess_outlet_a
-																  ).toFixed(2)
-															: '-'}
+																		).toFixed(2)
+																	: '-'}
+															</Typography>
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Outlet B (Actual/Target)
 													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Outlet B (Actual/Target)
-													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{optimalityParameters
-															? (optimalityParameters &&
-																	optimalityParameters.actual_excess_outlet_b ===
-																		null) ||
-															  (optimalityParameters &&
-																	optimalityParameters.actual_excess_outlet_b ===
-																		undefined)
-																? '-'
-																: Number(
-																		optimalityParameters &&
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{optimalityParameters
+																	? optimalityParameters &&
+																		optimalityParameters.actual_excess_outlet_b === null
+																		? '-'
+																		: Number(
+																			optimalityParameters &&
 																			optimalityParameters.actual_excess_outlet_b
-																  ).toFixed(2)
-															: '-'}{' '}
+																		).toFixed(2)
+																	: '-'}{' '}
 														/{' '}
-														{optimalityParameters
-															? (optimalityParameters &&
-																	optimalityParameters.target_excess_outlet_b ===
-																		null) ||
-															  (optimalityParameters &&
-																	optimalityParameters.target_excess_outlet_b ===
-																		undefined)
-																? '-'
-																: Number(
-																		optimalityParameters &&
+																{optimalityParameters
+																	? optimalityParameters &&
+																		optimalityParameters.target_excess_outlet_b === null
+																		? '-'
+																		: Number(
+																			optimalityParameters &&
 																			optimalityParameters.target_excess_outlet_b
-																  ).toFixed(2)
-															: '-'}
-													</Typography>
-												</Grid>
-											</Grid>
-										</div>
-										<div>
-											<p className="text-10 xl:text-14 font-semibold mt-8 md:mt-0 text-light-blue-300">
-												Efficiency Change
+																		).toFixed(2)
+																	: '-'}
+															</Typography>
+														</Grid>
+													</Grid>
+												</div>
+												<div>
+													<p className="text-10 xl:text-14 font-semibold mt-8 md:mt-0 text-light-blue-300">
+														Efficiency Change
 											</p>
-											<Grid container>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Target Realized
+													<Grid container>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold">
+																Target Realized
 													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{optimalityParameters
-															? (optimalityParameters &&
-																	optimalityParameters.target_efficiency === null) ||
-															  (optimalityParameters &&
-																	optimalityParameters.target_efficiency ===
-																		undefined)
-																? '-'
-																: Number(
-																		optimalityParameters &&
+														</Grid>
+														<Grid item xs={6}>
+															<Typography className="text-8 xl:text-12 font-semibold text-right">
+																{optimalityParameters
+																	? optimalityParameters &&
+																		optimalityParameters.target_efficiency === null
+																		? '-'
+																		: Number(
+																			optimalityParameters &&
 																			optimalityParameters.target_efficiency
-																  ).toFixed(2)
-															: '-'}
-													</Typography>
-												</Grid>
-											</Grid>
+																		).toFixed(2)
+																	: '-'}
+															</Typography>
+														</Grid>
+													</Grid>
+												</div>
+											</Paper>
 										</div>
-									</Paper>
+									</div>
 								</div>
-								<div className="flex-1 md:flex-initial md:w-2/5 md:h-full flex flex-col justify-between mt-8 md:mt-0">
+								<div className="flex-1 md:flex-initial md:w-2/6 md:h-full flex flex-col justify-between mt-8 md:mt-0">
 									<Typography className="text-11 xl:text-14 mb-4 flex-initial">
 										Constraints
 									</Typography>
@@ -639,16 +616,13 @@ const Combustion = () => {
 											<p className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Excess Air Oxygen (Ref: Min.{' '}
 												{constraintLimit
-													? (constraintLimit &&
-															constraintLimit[0] &&
-															constraintLimit[0].value === null) ||
-													  (constraintLimit &&
-															constraintLimit[0] &&
-															constraintLimit[0].value === undefined)
+													? constraintLimit &&
+														constraintLimit[0] &&
+														constraintLimit[0].value === null
 														? '-'
 														: constraintLimit &&
-														  constraintLimit[0] &&
-														  constraintLimit[0].value
+														constraintLimit[0] &&
+														constraintLimit[0].value
 													: '-'}
 												%)
 											</p>
@@ -661,12 +635,11 @@ const Combustion = () => {
 												<Grid item xs={6}>
 													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
-															? (constraints && constraints.excess_outlet_a === null) ||
-															  (constraints && constraints.excess_outlet_a === undefined)
+															? constraints && constraints.excess_outlet_a === null
 																? '-'
 																: Number(
-																		constraints && constraints.excess_outlet_a
-																  ).toFixed(2)
+																	constraints && constraints.excess_outlet_a
+																).toFixed(2)
 															: '-'}
 													</Typography>
 												</Grid>
@@ -678,12 +651,11 @@ const Combustion = () => {
 												<Grid item xs={6}>
 													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
-															? (constraints && constraints.excess_outlet_b === null) ||
-															  (constraints && constraints.excess_outlet_b === undefined)
+															? constraints && constraints.excess_outlet_b === null
 																? '-'
 																: Number(
-																		constraints && constraints.excess_outlet_b
-																  ).toFixed(2)
+																	constraints && constraints.excess_outlet_b
+																).toFixed(2)
 															: '-'}
 													</Typography>
 												</Grid>
@@ -693,16 +665,13 @@ const Combustion = () => {
 											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Windbox-to-Furnace Diff. Press. (Ref: Max.{' '}
 												{constraintLimit
-													? (constraintLimit &&
-															constraintLimit[4] &&
-															constraintLimit[4].value === null) ||
-													  (constraintLimit &&
-															constraintLimit[4] &&
-															constraintLimit[4].value === undefined)
+													? constraintLimit &&
+														constraintLimit[4] &&
+														constraintLimit[4].value === null
 														? '-'
 														: constraintLimit &&
-														  constraintLimit[4] &&
-														  constraintLimit[4].value
+														constraintLimit[4] &&
+														constraintLimit[4].value
 													: '-'}{' '}
 												mmwc)
 											</Typography>
@@ -715,13 +684,11 @@ const Combustion = () => {
 												<Grid item xs={6}>
 													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
-															? (constraints && constraints.windbox_pressure === null) ||
-															  (constraints &&
-																	constraints.windbox_pressure === undefined)
+															? constraints && constraints.windbox_pressure === null
 																? '-'
 																: Number(
-																		constraints && constraints.windbox_pressure
-																  ).toFixed(2)
+																	constraints && constraints.windbox_pressure
+																).toFixed(2)
 															: '-'}
 													</Typography>
 												</Grid>
@@ -731,16 +698,13 @@ const Combustion = () => {
 											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
 												Furnace Pressure (Ref: Max.{' '}
 												{constraintLimit
-													? (constraintLimit &&
-															constraintLimit[1] &&
-															constraintLimit[1].value === null) ||
-													  (constraintLimit &&
-															constraintLimit[1] &&
-															constraintLimit[1].value === undefined)
+													? constraintLimit &&
+														constraintLimit[1] &&
+														constraintLimit[1].value === null
 														? '-'
 														: constraintLimit &&
-														  constraintLimit[1] &&
-														  constraintLimit[1].value
+														constraintLimit[1] &&
+														constraintLimit[1].value
 													: '-'}{' '}
 												mmwc)
 											</Typography>
@@ -753,14 +717,11 @@ const Combustion = () => {
 												<Grid item xs={6}>
 													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
-															? (constraints &&
-																	constraints.furnace_pressure_a === null) ||
-															  (constraints &&
-																	constraints.furnace_pressure_a === undefined)
+															? constraints && constraints.furnace_pressure_a === null
 																? '-'
 																: Number(
-																		constraints && constraints.furnace_pressure_a
-																  ).toFixed(2)
+																	constraints && constraints.furnace_pressure_a
+																).toFixed(2)
 															: '-'}
 													</Typography>
 												</Grid>
@@ -772,164 +733,13 @@ const Combustion = () => {
 												<Grid item xs={6}>
 													<Typography className="text-8 xl:text-12 font-semibold text-right">
 														{constraints
-															? (constraints &&
-																	constraints.furnace_pressure_b === null) ||
-															  (constraints &&
-																	constraints.furnace_pressure_b === undefined)
+															? constraints && constraints.furnace_pressure_b === null
 																? '-'
 																: Number(
-																		constraints && constraints.furnace_pressure_b
-																  ).toFixed(2)
+																	constraints && constraints.furnace_pressure_b
+																).toFixed(2)
 															: '-'}
 													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold">
-														Furnace C
-													</Typography>
-												</Grid>
-												<Grid item xs={6}>
-													<Typography className="text-8 xl:text-12 font-semibold text-right">
-														{constraints
-															? (constraints &&
-																	constraints.furnace_pressure_c === null) ||
-															  (constraints &&
-																	constraints.furnace_pressure_c === undefined)
-																? '-'
-																: Number(
-																		constraints && constraints.furnace_pressure_c
-																  ).toFixed(2)
-															: '-'}
-													</Typography>
-												</Grid>
-											</Grid>
-										</div>
-										<div>
-											<Typography className="text-10 xl:text-14 font-semibold text-light-blue-300 mb-1">
-												Mill Outlet Temperature (Ref:{' '}
-												{constraintLimit
-													? (constraintLimit &&
-															constraintLimit[3] &&
-															constraintLimit[3].value === null) ||
-													  (constraintLimit &&
-															constraintLimit[3] &&
-															constraintLimit[3].value === undefined)
-														? '0'
-														: constraintLimit &&
-														  constraintLimit[3] &&
-														  constraintLimit[3].value
-													: ''}
-												-
-												{constraintLimit
-													? (constraintLimit &&
-															constraintLimit[2] &&
-															constraintLimit[2].value === null) ||
-													  (constraintLimit &&
-															constraintLimit[2] &&
-															constraintLimit[2].value === undefined)
-														? '0'
-														: constraintLimit &&
-														  constraintLimit[2] &&
-														  constraintLimit[2].value
-													: ''}{' '}
-												°C)
-											</Typography>
-											<Grid container spacing={2}>
-												<Grid container item xs={6} justify="space-between">
-													<Grid item>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Mill A
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Mill B
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Mill C
-														</Typography>
-													</Grid>
-													<Grid item>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{constraints
-																? (constraints && constraints.mill_outlet_a === null) ||
-																  (constraints &&
-																		constraints.mill_outlet_a === undefined)
-																	? '-'
-																	: Number(
-																			constraints && constraints.mill_outlet_a
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{constraints
-																? (constraints && constraints.mill_outlet_b === null) ||
-																  (constraints &&
-																		constraints.mill_outlet_b === undefined)
-																	? '-'
-																	: Number(
-																			constraints && constraints.mill_outlet_b
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{constraints
-																? (constraints && constraints.mill_outlet_c === null) ||
-																  (constraints &&
-																		constraints.mill_outlet_c === undefined)
-																	? '-'
-																	: Number(
-																			constraints && constraints.mill_outlet_c
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
-													</Grid>
-												</Grid>
-												<Grid container item xs={6} justify="space-between">
-													<Grid item>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Mill D
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Mill E
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold">
-															Mill F
-														</Typography>
-													</Grid>
-													<Grid item>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{constraints
-																? (constraints && constraints.mill_outlet_d === null) ||
-																  (constraints &&
-																		constraints.mill_outlet_d === undefined)
-																	? '-'
-																	: Number(
-																			constraints && constraints.mill_outlet_d
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{constraints
-																? (constraints && constraints.mill_outlet_e === null) ||
-																  (constraints &&
-																		constraints.mill_outlet_e === undefined)
-																	? '-'
-																	: Number(
-																			constraints && constraints.mill_outlet_e
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
-														<Typography className="text-8 xl:text-12 font-semibold text-right">
-															{constraints
-																? (constraints && constraints.mill_outlet_f === null) ||
-																  (constraints &&
-																		constraints.mill_outlet_f === undefined)
-																	? '-'
-																	: Number(
-																			constraints && constraints.mill_outlet_f
-																	  ).toFixed(2)
-																: '-'}
-														</Typography>
-													</Grid>
 												</Grid>
 											</Grid>
 										</div>
@@ -960,7 +770,7 @@ const Combustion = () => {
 											) : (
 												<TrendChart
 													data={o2Chart}
-													loading={o2ChartLoading}
+													loading={windboxChartLoading || !constraints}
 													height={heightChart}
 												/>
 											)}
@@ -990,7 +800,7 @@ const Combustion = () => {
 											) : (
 												<TrendChart
 													data={fuelToAirChart}
-													loading={fuelToAirChartLoading}
+													loading={windboxChartLoading || !constraints}
 													height={heightChart}
 												/>
 											)}
@@ -1020,10 +830,10 @@ const Combustion = () => {
 											) : (
 												<TrendChart
 													data={windboxChart}
-													loading={o2ChartLoading || windboxChartLoading || !constraints}
+													loading={windboxChartLoading || !constraints}
 													height={heightChart}
 													referenceValue={windboxLimit}
-													yAxisTitle="mmwc"
+													yAxisTitle={'mmwc'}
 												/>
 											)}
 										</Grid>
