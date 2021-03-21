@@ -1,6 +1,6 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
 import { Button, Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core';
-import { getSootblowData } from 'app/store/actions';
+import { getEfficiencyData, getSootblowData } from 'app/store/actions';
 import clsx from 'clsx';
 import { ResizeWindows } from 'helpers';
 import React, { useEffect, useState } from 'react';
@@ -31,18 +31,21 @@ const Home = () => {
 	const dispatch = useDispatch();
 	const sootblowData = useSelector(state => state.sootblowReducer.sootblowData);
 
+	const efficiencyData = useSelector(state => state.efficiencyReducer);
+
 	const [heightChart, setHeightChart] = useState('370');
 
 	const { width, height } = ResizeWindows();
 
 	useEffect(() => {
 		dispatch(getSootblowData());
+		dispatch(getEfficiencyData());
 	}, [dispatch]);
 
 	useEffect(() => {
 		const heightChartHandler = (width, height) => {
 			if (width >= 1920) {
-				setHeightChart('570');
+				setHeightChart('470');
 			} else if (width >= 1300) {
 				setHeightChart('350');
 			} else {
@@ -59,6 +62,17 @@ const Home = () => {
 		sootblowData && sootblowData.control && sootblowData.control[1] && sootblowData.control[1].value;
 	const safeGuardStatus =
 		sootblowData && sootblowData.control && sootblowData.control[0] && sootblowData.control[0].value;
+
+	const {
+		improvementEfficiency,
+		baselineEfficiency,
+		currentEfficiency,
+		chart,
+		referenceValue,
+		loading
+	} = efficiencyData;
+
+	console.log('chart', chart)
 
 	return (
 		<div className="py-16 h-full container px-0 mx-24">
@@ -90,8 +104,8 @@ const Home = () => {
 										variant="outlined"
 										className={
 											operationControlStatus === '1' &&
-											safeGuardStatus === '1' &&
-											masterControl === '1'
+												safeGuardStatus === '1' &&
+												masterControl === '1'
 												? clsx('h-full', classes.statusButtonOn)
 												: clsx('h-full', classes.statusButtonOff)
 										}
@@ -109,14 +123,22 @@ const Home = () => {
 						</Grid>
 						<Grid item className="flex-1 overflow-auto">
 							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
-								<Grid container className="w-full h-full">
-									<Grid item className="w-4/5 h-full mr-8 flex flex-col justify-center">
+								<div className="flex md:flex-row space-x-8 flex-col-reverse h-full justify-around md:justify-start">
+									<div className="w-full md:w-4/5 h-full flex flex-col justify-center">
 										<Typography className="text-center text-16 uppercase xl:text-28">
 											Boiler Efficiency Improvement
 										</Typography>
-										<Chart id="home-chart" height={heightChart} />
-									</Grid>
-									<Grid item className="flex flex-col flex-1 space-y-8">
+										<div className='flex justify-center items-center'>
+											<Chart
+												id="home-chart"
+												height={heightChart}
+												loading={loading}
+												data={chart}
+												referenceValue={referenceValue}
+											/>
+										</div>
+									</div>
+									<div className="flex flex-row md:flex-col flex-1 space-x-8 md:space-x-0 md:space-y-8">
 										<div className="flex-1 flex">
 											<Paper
 												square
@@ -126,7 +148,7 @@ const Home = () => {
 													Current Efficiency
 												</Typography>
 												<Typography className=" text-center text-36 text-light-green-A700 font-semibold">
-													83.9%
+													{currentEfficiency ? Number(currentEfficiency).toFixed(2) : 0}%
 												</Typography>
 												<div />
 											</Paper>
@@ -140,7 +162,10 @@ const Home = () => {
 													Efficiency Improvement
 												</Typography>
 												<Typography className="flex items-center justify-center text-center text-36 text-light-green-A700 font-semibold">
-													0.7%
+													{improvementEfficiency
+														? Number(improvementEfficiency).toFixed(2)
+														: 0}
+													%
 												</Typography>
 												<div />
 											</Paper>
@@ -154,13 +179,13 @@ const Home = () => {
 													Efficiency Baseline
 												</Typography>
 												<Typography className=" text-center text-36 text-orange-600 font-semibold">
-													83.2%
+													{baselineEfficiency ? Number(baselineEfficiency).toFixed(2) : 0}%
 												</Typography>
 												<div />
 											</Paper>
 										</div>
-									</Grid>
-								</Grid>
+									</div>
+								</div>
 							</Paper>
 						</Grid>
 					</Grid>
@@ -192,8 +217,8 @@ const Home = () => {
 									variant="outlined"
 									className={
 										operationControlStatus === '1' &&
-										safeGuardStatus === '1' &&
-										masterControl === '1'
+											safeGuardStatus === '1' &&
+											masterControl === '1'
 											? clsx('h-full', classes.statusButtonOn)
 											: clsx('h-full', classes.statusButtonOff)
 									}
@@ -208,22 +233,16 @@ const Home = () => {
 						</Grid>
 						<Grid item xs={12}>
 							<Paper square className="border-grey-800 bg-transparent border w-full h-full rounded p-8">
-								<Grid container className="w-full h-full">
-									<Grid item className="w-full h-full mr-8 flex flex-col justify-center">
-										<Typography className="text-center text-12 uppercase">
-											BAT Efficiency Improvement Dashboard
-										</Typography>
-										<Chart />
-									</Grid>
+								<Grid container className="w-full h-full space-y-8">
 									<Grid item className="flex flex-1 space-x-8">
 										<div className="flex-1 flex">
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-10">
 													Current Efficiency
-												</Typography>
+									</Typography>
 												<Typography className=" text-center text-24 text-light-green-A700 font-semibold">
-													83%
-												</Typography>
+													{currentEfficiency ? Number(currentEfficiency).toFixed(2) : 0}%
+									</Typography>
 												<div />
 											</Paper>
 										</div>
@@ -231,10 +250,13 @@ const Home = () => {
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-10">
 													Efficiency Improvement
-												</Typography>
+									</Typography>
 												<Typography className="flex items-center justify-center text-center text-24 text-light-green-A700 font-semibold">
-													8.7%
-												</Typography>
+													{improvementEfficiency
+														? Number(improvementEfficiency).toFixed(2)
+														: 0}
+										%
+									</Typography>
 												<div />
 											</Paper>
 										</div>
@@ -242,13 +264,25 @@ const Home = () => {
 											<Paper square className="flex-1 flex flex-col justify-between py-10 px-4">
 												<Typography className="text-center text-10">
 													Efficiency Baseline
-												</Typography>
+									</Typography>
 												<Typography className=" text-center text-24 text-orange-600 font-semibold">
-													83.2%
-												</Typography>
+													{baselineEfficiency ? Number(baselineEfficiency).toFixed(2) : 0}%
+									</Typography>
 												<div />
 											</Paper>
 										</div>
+									</Grid>
+									<Grid item className="w-full h-full flex flex-col justify-center">
+										<Typography className="text-center text-12 uppercase">
+											BAT Efficiency Improvement Dashboard
+							</Typography>
+										<Chart
+											id="home-chart"
+											height={"100%"}
+											loading={loading}
+											data={chart}
+											referenceValue={referenceValue}
+										/>
 									</Grid>
 								</Grid>
 							</Paper>
