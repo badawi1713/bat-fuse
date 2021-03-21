@@ -1,4 +1,4 @@
 import { SET_SOOTBLOW } from './Sootblow';
 import { SET_COMBUSTION } from './Combustion';
-
-export { SET_SOOTBLOW, SET_COMBUSTION };
+import { SET_EFFICIENCY } from './Efficiency'
+export { SET_SOOTBLOW, SET_COMBUSTION, SET_EFFICIENCY };

@@ -1,4 +1,5 @@
 import sootblowReducer from './Sootblow';
 import combustionReducer from './Combustion';
+import efficiencyReducer from './Efficiency';
 
-export { sootblowReducer, combustionReducer };
+export { sootblowReducer, combustionReducer, efficiencyReducer };

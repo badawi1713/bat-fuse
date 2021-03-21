@@ -1,7 +1,7 @@
 const { SET_COMBUSTION } = require('app/store/constants');
 
 const initialState = {
-	combustionRecommendationTime: "2021-02-16 16:24:00",
+	combustionRecommendationTime: "",
 	combustionSensorsTime: "",
 	constraints: [],
 	constraintsLoading: false,
@@ -18,7 +18,7 @@ const initialState = {
 	fuelToAirChartLoading: false,
 	fuelToAirChartError: false,
 	windboxChart: [],
-	windboxChartLoading: true,
+	windboxChartLoading: false,
 	windboxChartError: false,
 	loading: false,
 	error: false
