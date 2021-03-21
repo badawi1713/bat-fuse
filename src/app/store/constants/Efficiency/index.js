@@ -1,0 +1,1 @@
+export const SET_EFFICIENCY = 'SET_EFFICIENCY';

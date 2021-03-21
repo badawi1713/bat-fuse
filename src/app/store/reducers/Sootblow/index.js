@@ -2,15 +2,22 @@ import { SET_SOOTBLOW } from 'app/store/constants';
 
 const initialState = {
 	sootblowData: {
-		parameter: [],
+		indicator: {},
 		sequence: [],
-		control: []
+		parameter: [],
+		waitingTime: [],
+		control: [],
+		rules: []
 	},
 	parameterDetailData: {},
+	ruleDetailData: { detailRule: [], label: '', id: '' },
+	sootblowSettingDetailData: {},
 	loading: false,
 	loadingSootblowData: false,
 	loadingMasterControl: false,
 	loadingParameterUpdate: false,
+	loadingRuleUpdate: false,
+	loadingSootblowUpdate: false,
 	error: '',
 	errorSootblow: false
 };
