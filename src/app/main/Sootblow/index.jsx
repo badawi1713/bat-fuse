@@ -209,9 +209,9 @@ const Sootblow = () => {
 		createSootblowSettingData(item.label, item.maxTime, item.minTime, item.id)
 	);
 
-	const watchdogStatus = control[0] && control[0].value;
-	const safeGuardStatus = control[1] && control[1].value;
-	const operationControlStatus = control[2] && control[2].value;
+	const operationControlStatus = control[0] && control[0].value;
+	const watchdogStatus = control[1] && control[1].value;
+	const safeGuardStatus = control[2] && control[2].value;
 	const recommendationTime = control[3] && control[3].value;
 
 	const handleClickOpenParameterUpdate = () => {
