@@ -212,7 +212,7 @@ const Sootblow = () => {
 	const watchdogStatus = control[0] && control[0].value;
 	const safeGuardStatus = control[1] && control[1].value;
 	const operationControlStatus = control[2] && control[2].value;
-	const recommendationTime = control[4] && control[4].value;
+	const recommendationTime = control[3] && control[3].value;
 
 	const handleClickOpenParameterUpdate = () => {
 		setOpenParameterUpdate(true);
@@ -429,12 +429,13 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											operationControlStatus === '1'
-												? classes.statusButtonOn
-												: classes.statusButtonOff
+											operationControlStatus === '0' ||
+												operationControlStatus === '1'
+												? classes.statusButtonOff
+												: classes.statusButtonOn
 										)}
 									>
-										{operationControlStatus === '1' ? 'AUTO' : 'MANUAL'}
+										{operationControlStatus === '1' ? 'MANUAL' : 'AUTO'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -519,41 +520,6 @@ const Sootblow = () => {
 						<SvgSootblowTenayan indicator={indicator} width="100%" height="100%" />
 					</Paper>
 					<div className="flex flex-col flex-1 space-y-8">
-						{/* {loadingSootblowData ? (
-							<Paper
-								className="flex-initial min-h-52 md:min-h-96 flex justify-center items-center py-4 md:p-0 "
-								square
-							>
-								<Typography className="text-12 xl:text-16">Loading ... </Typography>
-							</Paper>
-						) : parameterData && parameterData.length !== 0 ? (
-							<Paper
-								className="flex-initial min-h-52 md:min-h-96 flex flex-col justify-between items-center py-4 md:p-8 "
-								square
-							>
-								<Typography className="text-12 xl:text-16 text-light-blue-300 font-600">
-									Sootblow Running
-								</Typography>
-								<Typography
-									className={
-										sootblowStatus === '1'
-											? `text-14 md:text-18 xl:text-28 text-orange-600`
-											: `text-14 md:text-18 xl:text-28 text-green-300`
-									}
-								>
-									{sootblowStatus === '1' ? 'Running' : 'Standby'}
-								</Typography>
-								<div />
-							</Paper>
-						) : (
-							<Paper
-								className="flex-initial min-h-52 md:min-h-96 flex justify-center items-center py-4 md:p-0 "
-								square
-							>
-								<Typography className="text-12 xl:text-16">Something went wrong</Typography>
-							</Paper>
-						)} */}
-
 						<div className="flex flex-1 flex-col pb-8 md:pb-0 overflow-hidden">
 							<Accordion
 								expanded={expanded === 'panel1'}
@@ -581,7 +547,7 @@ const Sootblow = () => {
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : sequenceData && sequenceData.length !== 0 ? (
-										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
+										<TableContainer className="  max-h-160 lg:max-h-224 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -674,7 +640,7 @@ const Sootblow = () => {
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : parameterData && parameterData.length !== 0 ? (
-										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
+										<TableContainer className="  max-h-160 lg:max-h-224 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -765,7 +731,7 @@ const Sootblow = () => {
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : ruleSettingData && ruleSettingData.length !== 0 ? (
-										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
+										<TableContainer className="  max-h-160 lg:max-h-224 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
@@ -842,7 +808,7 @@ const Sootblow = () => {
 											<Typography className="text-12 xl:text-16">Loading ... </Typography>
 										</div>
 									) : sootblowSettingData && sootblowSettingData.length !== 0 ? (
-										<TableContainer className="  max-h-160 xl:max-h-288 2xl:max-h-512 overflow-auto">
+										<TableContainer className="  max-h-160 lg:max-h-224 xl:max-h-288 2xl:max-h-512 overflow-auto">
 											<Table stickyHeader size="small" aria-label="a dense table">
 												<TableHead>
 													<TableRow>
