@@ -188,6 +188,7 @@ export default class Chart extends React.Component {
 					}
 				}
 			}));
+
 			await this.onFetchData();
 			await setTimeout(async function () {
 				const getChart = document.getElementById('home-chart');
