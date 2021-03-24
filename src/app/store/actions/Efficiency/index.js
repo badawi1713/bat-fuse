@@ -23,7 +23,6 @@ export const getEfficiencyData = () => {
             }
         })
             .then(response => {
-                console.log('response', response)
                 dispatch({
                     type: SET_EFFICIENCY,
                     payload: {

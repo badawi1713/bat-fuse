@@ -72,8 +72,6 @@ const Home = () => {
 		loading
 	} = efficiencyData;
 
-	console.log('chart', chart)
-
 	return (
 		<div className="py-16 h-full container px-0 mx-24">
 			<Hidden smDown>

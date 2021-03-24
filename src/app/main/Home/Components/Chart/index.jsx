@@ -200,8 +200,6 @@ export default class Chart extends React.Component {
 					let getYaxis = await gMexoAxis[1].getElementsByTagName('g');
 					let getYLine = await gMexoAxis[1].getElementsByTagName('path');
 
-					console.log('yline', getYaxis);
-
 					getYLine[2].style.display = await 'none';
 					getYaxis[25].style.display = await 'none';
 					getYaxis[34].style.display = await 'none';
