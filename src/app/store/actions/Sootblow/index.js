@@ -248,7 +248,6 @@ export const updateParameterData = data => {
 };
 
 export const updateRuleData = data => {
-	console.log('data send', data);
 	return async dispatch => {
 		await Axios.post(`${baseURL}/service/bat/sootblow/rule`, data, {
 			headers: {

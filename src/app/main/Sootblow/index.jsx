@@ -191,7 +191,13 @@ const Sootblow = () => {
 	};
 
 	useEffect(() => {
-		dispatch(getSootblowData());
+		const getSootblowScheduler = setInterval(() => {
+			dispatch(getSootblowData());
+
+		}, 5000)
+
+
+		return () => clearInterval(getSootblowScheduler)
 	}, [dispatch]);
 
 	useEffect(() => {
