@@ -440,7 +440,10 @@ const Sootblow = () => {
 												: classes.statusButtonOn
 										)}
 									>
-										{operationControlStatus === '1' ? 'MANUAL' : 'AUTO'}
+										{operationControlStatus === '0' ||
+											operationControlStatus === '1'
+											? "MANUAL"
+											: "AUTO"}
 									</Button>
 								</Grid>
 							</Grid>
