@@ -200,8 +200,8 @@ export default class Chart extends React.Component {
 					let getYLine = await gMexoAxis[1].getElementsByTagName('path');
 
 					getYLine[2].style.display = await 'none';
-					getYaxis[25].style.display = await 'none';
-					getYaxis[34].style.display = await 'none';
+					getYaxis[22].style.display = await 'none';
+					getYaxis[30].style.display = await 'none';
 				}
 			}, 3000);
 		}
@@ -239,7 +239,7 @@ export default class Chart extends React.Component {
 				) : this.props.data.length === 0 ? (
 					<div className="w-full text-11 xl:text-16 text-center">No chart available right now</div>
 				) : (
-					<div className="w-full text-11 xl:text-16 text-center">No chart available right now</div>
+					<ReactFC {...this.state.timeseriesDs} />
 				)}
 			</div>
 		);
