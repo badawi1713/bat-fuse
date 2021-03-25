@@ -103,16 +103,16 @@ const useStyles = makeStyles(theme => ({
 	},
 	statusButtonOn: {
 		color: '#FFF',
-		backgroundColor: '#3D9140',
+		backgroundColor: '#FA0000',
 		'&:hover': {
-			backgroundColor: '#327835'
+			backgroundColor: '#bd291e'
 		}
 	},
 	statusButtonOff: {
 		color: '#FFF',
-		backgroundColor: '#FA0000',
+		backgroundColor: '#3D9140',
 		'&:hover': {
-			backgroundColor: '#bd291e'
+			backgroundColor: '#327835'
 		}
 	},
 	saveButton: {
@@ -440,14 +440,12 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											operationControlStatus === '0' ||
-												operationControlStatus === '1'
+											operationControlStatus === '0'
 												? classes.statusButtonOff
 												: classes.statusButtonOn
 										)}
 									>
-										{operationControlStatus === '0' ||
-											operationControlStatus === '1'
+										{operationControlStatus === '0'
 											? "MANUAL"
 											: "AUTO"}
 									</Button>
