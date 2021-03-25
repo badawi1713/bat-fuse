@@ -188,7 +188,6 @@ export default class Chart extends React.Component {
 					}
 				}
 			}));
-
 			await this.onFetchData();
 			await setTimeout(async function () {
 				const getChart = document.getElementById('home-chart');
@@ -200,9 +199,11 @@ export default class Chart extends React.Component {
 					let getYaxis = await gMexoAxis[1].getElementsByTagName('g');
 					let getYLine = await gMexoAxis[1].getElementsByTagName('path');
 
+					console.log('yline', getYaxis);
+
 					getYLine[2].style.display = await 'none';
-					getYaxis[25].style.display = await 'none';
-					getYaxis[34].style.display = await 'none';
+					getYaxis[22].style.display = await 'none';
+					getYaxis[30].style.display = await 'none';
 				}
 			}, 3000);
 		}
@@ -240,7 +241,7 @@ export default class Chart extends React.Component {
 				) : this.props.data.length === 0 ? (
 					<div className="w-full text-11 xl:text-16 text-center">No chart available right now</div>
 				) : (
-					<div className="w-full text-11 xl:text-16 text-center">No chart available right now</div>
+					<ReactFC {...this.state.timeseriesDs} />
 				)}
 			</div>
 		);
