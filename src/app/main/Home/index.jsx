@@ -38,8 +38,13 @@ const Home = () => {
 	const { width, height } = ResizeWindows();
 
 	useEffect(() => {
-		dispatch(getSootblowData());
-		dispatch(getEfficiencyData());
+		const getEfficiencyInterval = setInterval(() => {
+			dispatch(getSootblowData());
+			dispatch(getEfficiencyData());
+		}, 5000)
+
+		return () => clearInterval(getEfficiencyInterval)
+
 	}, [dispatch]);
 
 	useEffect(() => {
