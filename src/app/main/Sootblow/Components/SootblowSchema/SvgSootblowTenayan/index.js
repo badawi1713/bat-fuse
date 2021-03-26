@@ -343,7 +343,7 @@ const SvgSootblowTenayan = props => {
 				<g id="sootblow_svg__shape260-150" transform="translate(15.943 -5.456)">
 					<path className="sootblow_svg__st8" d="M0 331.299h65.906v8.858H0z" />
 					<text x={12.92} y={338.73} className="sootblow_svg__st16">
-						{'ADVANCE'}
+						{'INSERT'}
 					</text>
 				</g>
 				<g id="sootblow_svg__shape261-153" transform="translate(77.615 -25.363)">
