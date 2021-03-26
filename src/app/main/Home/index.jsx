@@ -38,8 +38,13 @@ const Home = () => {
 	const { width, height } = ResizeWindows();
 
 	useEffect(() => {
-		dispatch(getSootblowData());
-		dispatch(getEfficiencyData());
+		const getEfficiencyInterval = setInterval(() => {
+			dispatch(getSootblowData());
+			dispatch(getEfficiencyData());
+		}, 5000)
+
+		return () => clearInterval(getEfficiencyInterval)
+
 	}, [dispatch]);
 
 	useEffect(() => {
@@ -101,9 +106,9 @@ const Home = () => {
 										fullWidth
 										variant="outlined"
 										className={
-											operationControlStatus === '1' &&
-												safeGuardStatus === '1' &&
-												masterControl === '1'
+											operationControlStatus == '1' &&
+												safeGuardStatus == '1' &&
+												masterControl == '1'
 												? clsx('h-full', classes.statusButtonOn)
 												: clsx('h-full', classes.statusButtonOff)
 										}
@@ -214,9 +219,9 @@ const Home = () => {
 									fullWidth
 									variant="outlined"
 									className={
-										operationControlStatus === '1' &&
-											safeGuardStatus === '1' &&
-											masterControl === '1'
+										operationControlStatus == '1' &&
+											safeGuardStatus == '1' &&
+											masterControl == '1'
 											? clsx('h-full', classes.statusButtonOn)
 											: clsx('h-full', classes.statusButtonOff)
 									}

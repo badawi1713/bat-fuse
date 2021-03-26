@@ -199,9 +199,11 @@ export default class Chart extends React.Component {
 					let getYaxis = await gMexoAxis[1].getElementsByTagName('g');
 					let getYLine = await gMexoAxis[1].getElementsByTagName('path');
 
-					getYLine[2].style.display = await 'none';
-					getYaxis[22].style.display = await 'none';
-					getYaxis[30].style.display = await 'none';
+					// console.log('yline', getYaxis);
+
+					// getYLine[2].style.display = await 'none';
+					// getYaxis[22].style.display = await 'none';
+					// getYaxis[30].style.display = await 'none';
 				}
 			}, 3000);
 		}
@@ -229,6 +231,19 @@ export default class Chart extends React.Component {
 		return (
 			<div
 				className={
+					this.props.data.length === 0
+						? 'flex-1 flex items-center justify-center'
+						: 'flex-1 items-center justify-center'
+				}
+			>
+				{this.props.data.length === 0 ? (
+					<div className="w-full text-11 xl:text-16 text-center">No chart available right now</div>
+				) : (
+					<ReactFC {...this.state.timeseriesDs} />
+				)}
+				{/* 
+				<div
+				className={
 					this.props.loading || this.props.data.length === 0
 						? 'flex-1 flex items-center justify-center'
 						: 'flex-1 items-center justify-center'
@@ -240,7 +255,7 @@ export default class Chart extends React.Component {
 					<div className="w-full text-11 xl:text-16 text-center">No chart available right now</div>
 				) : (
 					<ReactFC {...this.state.timeseriesDs} />
-				)}
+				)} */}
 			</div>
 		);
 	}
