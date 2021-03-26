@@ -215,10 +215,10 @@ const Sootblow = () => {
 		createSootblowSettingData(item.label, item.maxTime, item.minTime, item.id)
 	);
 
-	const watchdogValue = control && control.find(item => item.label === "watchdog")
-	const safeGuardValue = control && control.find(item => item.label === "safeguard")
-	const operationControlValue = control && control.find(item => item.label === "operation_control")
-	const recommendationTimeValue = control && control.find(item => item.label === "date_recommendation")
+	const watchdogValue = control && control.find(item => item.label == "watchdog")
+	const safeGuardValue = control && control.find(item => item.label == "safeguard")
+	const operationControlValue = control && control.find(item => item.label == "operation_control")
+	const recommendationTimeValue = control && control.find(item => item.label == "date_recommendation")
 
 	const watchdogStatus = watchdogValue && watchdogValue.value;
 	const safeGuardStatus = safeGuardValue && safeGuardValue.value;
@@ -262,7 +262,7 @@ const Sootblow = () => {
 	};
 
 	const updateParameterHandler = async (id, label) => {
-		if (parameterValue === '' || parameterDetailData.value === parameterValue) {
+		if (parameterValue == '' || parameterDetailData.value == parameterValue) {
 			await dispatch(
 				showMessage({
 					message: 'Sorry, value must be changed and cannot be empty',
@@ -289,7 +289,7 @@ const Sootblow = () => {
 
 	const updateRuleValueHandler = (id, newValue) => {
 		let updatedData = detailRule && detailRule.map(item => {
-			if (item.detailId === id) {
+			if (item.detailId == id) {
 				return { ...item, value: newValue };
 			}
 			return item;
@@ -300,7 +300,7 @@ const Sootblow = () => {
 
 	const updateRuleSettingHandler = async (id, label) => {
 		// for (let i = 0; i < ruleDetail.length; i++) {
-		// 	if (ruleDetail[i].value === '' || toString(ruleDetail[i].value).trim() === '' || !ruleDetail[i].value) {
+		// 	if (ruleDetail[i].value == '' || toString(ruleDetail[i].value).trim() == '' || !ruleDetail[i].value) {
 		// 		await dispatch(
 		// 			showMessage({
 		// 				message: 'Sorry, value must be filled',
@@ -328,14 +328,14 @@ const Sootblow = () => {
 	// };
 
 	const updateSootblowSettingHandler = async (id, label) => {
-		if (sootblowSettingMaxValue === '' || sootblowSettingDetailData.maxTime === sootblowSettingMaxValue) {
+		if (sootblowSettingMaxValue == '' || sootblowSettingDetailData.maxTime == sootblowSettingMaxValue) {
 			await dispatch(
 				showMessage({
 					message: 'Sorry, max value must be changed and cannot be empty',
 					variant: 'error'
 				})
 			);
-		} else if (sootblowSettingMinValue === '' || sootblowSettingDetailData.minTime === sootblowSettingMinValue) {
+		} else if (sootblowSettingMinValue == '' || sootblowSettingDetailData.minTime == sootblowSettingMinValue) {
 			await dispatch(
 				showMessage({
 					message: 'Sorry, min value must be changed and cannot be empty',
@@ -362,31 +362,31 @@ const Sootblow = () => {
 	};
 
 	const renderExecutionStatusIcon = value => {
-		if (value === 0) {
+		if (value == 0) {
 			return (
 				<Tooltip title="Waiting" arrow className="text-12 xl:text-16">
 					<HourglassEmpty fontSize="inherit" className="text-grey-600" />
 				</Tooltip>
 			);
-		} else if (value === 1) {
+		} else if (value == 1) {
 			return (
 				<Tooltip title="Executing" arrow className="text-12 xl:text-16">
 					<FlashOn fontSize="inherit" className="text-orange-600" />
 				</Tooltip>
 			);
-		} else if (value === 2) {
+		} else if (value == 2) {
 			return (
 				<Tooltip title="Success" arrow className="text-12 xl:text-16">
 					<CheckCircle fontSize="inherit" className="text-green-600" />;
 				</Tooltip>
 			);
-		} else if (value === 3) {
+		} else if (value == 3) {
 			return (
 				<Tooltip title="Fail" arrow className="text-12 xl:text-16">
 					<Cancel fontSize="inherit" className="text-red-600" />
 				</Tooltip>
 			);
-		} else if (value === 4) {
+		} else if (value == 4) {
 			return (
 				<Tooltip title="Skip" arrow>
 					<Redo fontSize="small" className="text-blue-600" />
@@ -440,12 +440,12 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											operationControlStatus === '0'
+											operationControlStatus == '0'
 												? classes.statusButtonOff
 												: classes.statusButtonOn
 										)}
 									>
-										{operationControlStatus === '0'
+										{operationControlStatus == '0'
 											? "MANUAL"
 											: "AUTO"}
 									</Button>
@@ -472,10 +472,10 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											watchdogStatus === '1' ? classes.statusButtonOn : classes.statusButtonOff
+											watchdogStatus == '1' ? classes.statusButtonOn : classes.statusButtonOff
 										)}
 									>
-										{watchdogStatus === '1' ? 'CONNECTED' : 'DISCONNECTED'}
+										{watchdogStatus == '1' ? 'CONNECTED' : 'DISCONNECTED'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -500,10 +500,10 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											safeGuardStatus === '1' ? classes.statusButtonOn : classes.statusButtonOff
+											safeGuardStatus == '1' ? classes.statusButtonOn : classes.statusButtonOff
 										)}
 									>
-										{safeGuardStatus === '1' ? 'READY' : 'NOT READY'}
+										{safeGuardStatus == '1' ? 'READY' : 'NOT READY'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -534,10 +534,10 @@ const Sootblow = () => {
 					<div className="flex flex-col flex-1 space-y-8">
 						<div className="flex flex-1 flex-col pb-8 md:pb-0 overflow-hidden">
 							<Accordion
-								expanded={expanded === 'panel1'}
+								expanded={expanded == 'panel1'}
 								onChange={handleChange('panel1')}
 								className={
-									expanded === 'panel1'
+									expanded == 'panel1'
 										? 'flex-1 w-full overflow-hidden'
 										: 'flex-initial w-full overflow-hidden'
 								}
@@ -610,7 +610,7 @@ const Sootblow = () => {
 																align="center"
 																className="text-10 xl:text-14 py-4"
 															>
-																{row.zoneCode === '' ? 'Unknown Area' : row.zoneCode}
+																{row.zoneCode == '' ? 'Unknown Area' : row.zoneCode}
 															</TableCell>
 															<TableCell
 																align="center"
@@ -631,8 +631,8 @@ const Sootblow = () => {
 								</AccordionDetails>
 							</Accordion>
 							<Accordion
-								className={expanded === 'panel2' ? 'flex-1 w-full' : 'flex-initial w-full'}
-								expanded={expanded === 'panel2'}
+								className={expanded == 'panel2' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								expanded={expanded == 'panel2'}
 								onChange={handleChange('panel2')}
 								square
 							>
@@ -722,8 +722,8 @@ const Sootblow = () => {
 								</AccordionDetails>
 							</Accordion>
 							<Accordion
-								className={expanded === 'panel3' ? 'flex-1 w-full' : 'flex-initial w-full'}
-								expanded={expanded === 'panel3'}
+								className={expanded == 'panel3' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								expanded={expanded == 'panel3'}
 								onChange={handleChange('panel3')}
 								square
 							>
@@ -799,8 +799,8 @@ const Sootblow = () => {
 								</AccordionDetails>
 							</Accordion>
 							<Accordion
-								className={expanded === 'panel4' ? 'flex-1 w-full' : 'flex-initial w-full'}
-								expanded={expanded === 'panel4'}
+								className={expanded == 'panel4' ? 'flex-1 w-full' : 'flex-initial w-full'}
+								expanded={expanded == 'panel4'}
 								onChange={handleChange('panel4')}
 								square
 							>
@@ -980,7 +980,7 @@ const Sootblow = () => {
 									{ruleDetailData.label}
 								</Grid>
 							</Grid>
-							{ruleDetailData.detailRule && ruleDetailData.detailRule.length === 0 ? (
+							{ruleDetailData.detailRule && ruleDetailData.detailRule.length == 0 ? (
 								<Grid container alignItems="center" item xs={12}>
 									<Grid item xs={12} className="text-14">
 										Sorry, there is no value to be changed
@@ -997,7 +997,7 @@ const Sootblow = () => {
 										{/* <Grid item xs={4} className="text-14 text-light-blue-300">
 											Operator
 										</Grid> */}
-										{item.value === '' ? null : (
+										{item.value == '' ? null : (
 											<div item xs={12}>
 												<TextField
 													variant="outlined"
@@ -1011,7 +1011,7 @@ const Sootblow = () => {
 												/>
 											</div>
 										)}
-										{item.operator === ' ' || item.operator === '/' ? null : (
+										{item.operator == ' ' || item.operator == '/' ? null : (
 											<div item xs={12} className="text-14">
 												{item.operator}
 											</div>
@@ -1037,7 +1037,7 @@ const Sootblow = () => {
 						</Button>
 					) : (
 						<Button
-							disabled={ruleDetailData.detailRule && ruleDetailData.detailRule.length === 0}
+							disabled={ruleDetailData.detailRule && ruleDetailData.detailRule.length == 0}
 							onClick={() => updateRuleSettingHandler(ruleDetailData.id, ruleDetailData.label)}
 							variant="contained"
 							autoFocus
