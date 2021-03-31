@@ -191,7 +191,13 @@ const Sootblow = () => {
 	};
 
 	useEffect(() => {
-		dispatch(getSootblowData());
+		const getSootblowScheduler = setInterval(() => {
+			dispatch(getSootblowData());
+
+		}, 5000)
+
+
+		return () => clearInterval(getSootblowScheduler)
 	}, [dispatch]);
 
 	useEffect(() => {
@@ -464,10 +470,10 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											watchdogStatus === '1' ? classes.statusButtonOn : classes.statusButtonOff
+											watchdogStatus !== '0' ? classes.statusButtonOn : classes.statusButtonOff
 										)}
 									>
-										{watchdogStatus === '1' ? 'CONNECTED' : 'DISCONNECTED'}
+										{watchdogStatus !== '0' ? 'CONNECTED' : 'DISCONNECTED'}
 									</Button>
 								</Grid>
 							</Grid>

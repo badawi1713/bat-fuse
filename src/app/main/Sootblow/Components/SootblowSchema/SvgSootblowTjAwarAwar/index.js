@@ -2142,8 +2142,8 @@ function SvgSootblowTjAwarAwar(props) {
 				<g id="sootblow_svg__shape1041-843" transform="translate(26.343 -31.118)">
 					<path
 						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
-						fill="#ff0000"
 						stroke="#000"
+						fill="#00b050"
 						strokeLinecap="round"
 						strokeLinejoin="round"
 					/>
@@ -2157,7 +2157,7 @@ function SvgSootblowTjAwarAwar(props) {
 				<g id="sootblow_svg__shape1043-848" transform="translate(26.343 -9.485)">
 					<path
 						d="M0 446.83a6.713 6.713 0 0113.43 0 6.713 6.713 0 01-13.43 0z"
-						fill="#00b050"
+						fill="#ff0000"
 						stroke="#000"
 						strokeLinecap="round"
 						strokeLinejoin="round"
