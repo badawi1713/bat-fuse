@@ -1,6 +1,6 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
 import { Button, Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core';
-import { getEfficiencyData, getSootblowData } from 'app/store/actions';
+import { getEfficiencyData } from 'app/store/actions';
 import clsx from 'clsx';
 import { ResizeWindows } from 'helpers';
 import React, { useEffect, useState } from 'react';
@@ -29,7 +29,6 @@ const useStyles = makeStyles(() => ({
 const Home = () => {
 	const classes = useStyles();
 	const dispatch = useDispatch();
-	const sootblowData = useSelector(state => state.sootblowReducer.sootblowData);
 
 	const efficiencyData = useSelector(state => state.efficiencyReducer);
 
@@ -38,7 +37,6 @@ const Home = () => {
 	const { width, height } = ResizeWindows();
 
 	useEffect(() => {
-		dispatch(getSootblowData());
 		dispatch(getEfficiencyData());
 	}, [dispatch]);
 
@@ -57,11 +55,11 @@ const Home = () => {
 	}, [width, height]);
 
 	const masterControl =
-		sootblowData && sootblowData.control && sootblowData.control[2] && sootblowData.control[2].value;
+		1
 	const operationControlStatus =
-		sootblowData && sootblowData.control && sootblowData.control[1] && sootblowData.control[1].value;
+		1
 	const safeGuardStatus =
-		sootblowData && sootblowData.control && sootblowData.control[0] && sootblowData.control[0].value;
+		1
 
 	const {
 		improvementEfficiency,
@@ -145,8 +143,8 @@ const Home = () => {
 												<Typography className="text-center text-14 xl:text-20">
 													Current Efficiency
 												</Typography>
-												<Typography className=" text-center text-36 text-light-green-A700 font-semibold">
-													{currentEfficiency ? Number(currentEfficiency).toFixed(2) : 0}%
+												<Typography className={currentEfficiency < 0 ? "text-red text-center text-36  font-semibold" : "text-light-green-A700 text-center text-36  font-semibold"}>
+													{currentEfficiency ? Number(currentEfficiency).toFixed(2) : Number(0).toFixed(2)}%
 												</Typography>
 												<div />
 											</Paper>
@@ -159,10 +157,10 @@ const Home = () => {
 												<Typography className="text-center text-14 xl:text-20">
 													Efficiency Improvement
 												</Typography>
-												<Typography className="flex items-center justify-center text-center text-36 text-light-green-A700 font-semibold">
+												<Typography className={improvementEfficiency < 0 ? "text-red text-center text-36  font-semibold" : "text-light-green-A700 text-center text-36  font-semibold"}>
 													{improvementEfficiency
 														? Number(improvementEfficiency).toFixed(2)
-														: 0}
+														: Number(0).toFixed(2)}
 													%
 												</Typography>
 												<div />
@@ -238,8 +236,8 @@ const Home = () => {
 												<Typography className="text-center text-10">
 													Current Efficiency
 									</Typography>
-												<Typography className=" text-center text-24 text-light-green-A700 font-semibold">
-													{currentEfficiency ? Number(currentEfficiency).toFixed(2) : 0}%
+												<Typography className={currentEfficiency < 0 ? "text-red text-center text-24  font-semibold" : "text-light-green-A700 text-center text-24  font-semibold"}>
+													{currentEfficiency ? Number(currentEfficiency).toFixed(2) : Number(0).toFixed(2)}%
 									</Typography>
 												<div />
 											</Paper>
@@ -249,10 +247,10 @@ const Home = () => {
 												<Typography className="text-center text-10">
 													Efficiency Improvement
 									</Typography>
-												<Typography className="flex items-center justify-center text-center text-24 text-light-green-A700 font-semibold">
+												<Typography className={improvementEfficiency < 0 ? "text-red text-center text-24  font-semibold" : "text-light-green-A700 text-center text-24  font-semibold"}>
 													{improvementEfficiency
 														? Number(improvementEfficiency).toFixed(2)
-														: 0}
+														: Number(0).toFixed(2)}
 										%
 									</Typography>
 												<div />
