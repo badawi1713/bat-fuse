@@ -1,5 +1,5 @@
 import { authRoles } from 'app/auth';
-import Home from './index';
+import React from 'react';
 
 const HomeConfig = {
 	settings: {
@@ -11,7 +11,7 @@ const HomeConfig = {
 	routes: [
 		{
 			path: '/home',
-			component: Home
+			component: React.lazy(() => import('.'))
 		}
 	]
 };

@@ -175,7 +175,7 @@ const Home = () => {
 													Efficiency Baseline
 												</Typography>
 												<Typography className=" text-center text-36 text-orange-600 font-semibold">
-													{baselineEfficiency ? Number(baselineEfficiency).toFixed(2) : 0}%
+													{baselineEfficiency ? Number(baselineEfficiency).toFixed(2) : Number(0).toFixed(2)}%
 												</Typography>
 												<div />
 											</Paper>
@@ -262,7 +262,7 @@ const Home = () => {
 													Efficiency Baseline
 									</Typography>
 												<Typography className=" text-center text-24 text-orange-600 font-semibold">
-													{baselineEfficiency ? Number(baselineEfficiency).toFixed(2) : 0}%
+													{baselineEfficiency ? Number(baselineEfficiency).toFixed(2) : Number(0).toFixed(2)}%
 									</Typography>
 												<div />
 											</Paper>

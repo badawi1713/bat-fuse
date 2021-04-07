@@ -1,5 +1,5 @@
+import React from 'react';
 import { authRoles } from 'app/auth';
-import Combustion from './index';
 
 const CombustionConfig = {
 	settings: {
@@ -11,7 +11,7 @@ const CombustionConfig = {
 	routes: [
 		{
 			path: '/combustion',
-			component: Combustion
+			component: React.lazy(() => import('.'))
 		}
 	]
 };

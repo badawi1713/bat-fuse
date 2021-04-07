@@ -77,8 +77,8 @@ function Login() {
 						<div className="max-w-320">
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
 								<Typography color="inherit" className="font-800 leading-tight text-44 lg:text-56">
-									Welcome <br />
-									to SOKKET <br />
+									Welcome to <br />
+									SOKKET <br />
 								</Typography>
 							</FuseAnimate>
 

@@ -36,12 +36,14 @@ class Auth extends Component {
 				jwtService
 					.signInWithToken()
 					.then(user => {
+
 						this.props.setUserData({
 							role: [user.role.roleName],
 							data: {
+								id: user.id,
 								displayName: user.fullname,
 								email: user.email,
-								photoURL: user.imageUrl,
+								photoURL: "assets/images/avatars/profile.jpg",
 								settings: {
 									layout: {
 										style: 'layout2'

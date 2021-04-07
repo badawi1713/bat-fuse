@@ -39,15 +39,15 @@ export const getSootblowData = loading => {
 				});
 			})
 			.catch(error => {
-				if (error.response.status === 500) {
-					dispatch(
-						showMessage({
-							message: "Sorry, something went wrong with Sootblow's service",
-							variant: 'error'
-						})
-					);
-					// history.push({ pathname: '/errors/error-500' });
-				}
+				// if (error.response.status === 500) {
+				// 	dispatch(
+				// 		showMessage({
+				// 			message: "Sorry, something went wrong with Sootblow's service",
+				// 			variant: 'error'
+				// 		})
+				// 	);
+				// 	// history.push({ pathname: '/errors/error-500' });
+				// }
 				dispatch(
 					showMessage({
 						message: error.message,
