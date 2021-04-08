@@ -5,9 +5,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { darken } from '@material-ui/core/styles/colorManipulator';
 import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './index.css';
 import JWTLoginTab from './Components/JWTLoginTab';
+// import SockJS from 'sockjs-client'
+// import Stomp from 'stompjs';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -29,6 +31,29 @@ const useStyles = makeStyles(theme => ({
 
 function Login() {
 	const classes = useStyles();
+
+	// function onMessageReceived(payload) {
+	// 	let message = JSON.parse(payload.body);
+	// 	console.log(message)
+	// }
+
+	// useEffect(() => {
+	// 	const socket = new SockJS('http://192.168.43.93:8080/ws');
+	// 	// const socket = new SockJS('http://192.168.43.214:8081/service/bat/log-soopt');
+	// 	const stompClient = Stomp.over(socket);
+	// 	const headers = {
+	// 		"Access-Control-Allow-Credentials": true
+	// 	}
+	// 	stompClient.connect(headers, () => {
+	// 		stompClient.subscribe(
+	// 			`/topic/public`, console.log, onMessageReceived
+	// 		);
+
+	// 	});
+
+
+	// 	return () => stompClient && stompClient.disconnect();
+	// });
 
 	return (
 		<div
@@ -76,7 +101,7 @@ function Login() {
 					>
 						<div className="max-w-320">
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
-								<Typography color="inherit" className="font-800 leading-tight text-44 lg:text-56">
+								<Typography color="inherit" className="font-800 leading-tight text-44 lg:text-56 text-center">
 									Welcome to <br />
 									SOKKET <br />
 								</Typography>

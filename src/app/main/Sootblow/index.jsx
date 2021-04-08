@@ -39,6 +39,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
 import './styles/index.css';
+// import SockJS from 'sockjs-client'
+// import Stomp from 'stompjs';
 
 const Accordion = withStyles({
 	root: {
@@ -213,6 +215,24 @@ const Sootblow = () => {
 	useEffect(() => {
 		setRuleDetail(detailRule);
 	}, [detailRule]);
+
+	// useEffect(() => {
+	// 	// const socket = new SockJS('http://192.168.43.93:8080/ws');
+	// 	const socket = new SockJS('http://192.168.43.214:8081/service/bat/log-soopt');
+	// 	const stompClient = Stomp.over(socket);
+	// 	const headers = {
+	// 		"Access-Control-Allow-Credentials": true
+	// 	}
+	// 	stompClient.connect(headers, () => {
+	// 		stompClient.subscribe(
+	// 			`/soopt/topic`, console.log
+	// 		);
+
+	// 	});
+
+
+	// 	return () => stompClient && stompClient.disconnect();
+	// }, []);
 
 	const sequenceData = sequence.map(item =>
 		createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
@@ -497,7 +517,7 @@ const Sootblow = () => {
 
 				{/* Last Recommendation Section*/}
 
-				<Grid item className="flex-initial w-full md:overflow-hidden">
+				<Grid item className="flex-initial w-full md:overflow-hidden justify-between">
 					<Typography className="text-11 my-8 xl:text-16">
 						<span className="text-light-blue-300">Last Recommendation Time</span> :{' '}
 						{!recommendationTime ? '-' : recommendationTime}
