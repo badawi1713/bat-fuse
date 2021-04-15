@@ -48,3 +48,4 @@ export {
 	updateSootblowSettingData
 };
 
+export { updateUserPassword } from './Profile'

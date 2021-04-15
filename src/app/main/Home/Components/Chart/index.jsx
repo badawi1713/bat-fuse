@@ -145,7 +145,8 @@ export default class Chart extends React.Component {
 								plot: [
 									{
 										value: 'Sootblow Optimization Running',
-										connectNullData: true
+										connectNullData: true,
+										aggregation: "Last"
 									}
 								],
 								title: '',
@@ -165,7 +166,8 @@ export default class Chart extends React.Component {
 								plot: [
 									{
 										value: 'Combustion Optimization Running',
-										connectNullData: true
+										connectNullData: true,
+										aggregation: "Last"
 									}
 								],
 								title: 'Sootblow & Combustion Optimization Running',
@@ -189,23 +191,23 @@ export default class Chart extends React.Component {
 				}
 			}));
 			await this.onFetchData();
-			await setTimeout(async function () {
-				const getChart = document.getElementById('home-chart');
+			// await setTimeout(async function () {
+			// 	const getChart = document.getElementById('home-chart');
 
-				if (getChart) {
-					// get all meso-axis
-					const gMexoAxis = await getChart.getElementsByTagName('g');
-					// remove anomaly y-axis and y-line-right
-					let getYaxis = await gMexoAxis[1].getElementsByTagName('g');
-					let getYLine = await gMexoAxis[1].getElementsByTagName('path');
+			// 	if (getChart) {
+			// 		// get all meso-axis
+			// 		const gMexoAxis = await getChart.getElementsByTagName('g');
+			// 		// remove anomaly y-axis and y-line-right
+			// 		let getYaxis = await gMexoAxis[1].getElementsByTagName('g');
+			// 		let getYLine = await gMexoAxis[1].getElementsByTagName('path');
 
-					// console.log('yline', getYaxis);
+			// 		// console.log('yline', getYaxis);
 
-					// getYLine[2].style.display = await 'none';
-					// getYaxis[22].style.display = await 'none';
-					// getYaxis[30].style.display = await 'none';
-				}
-			}, 3000);
+			// 		// getYLine[2].style.display = await 'none';
+			// 		// getYaxis[22].style.display = await 'none';
+			// 		// getYaxis[30].style.display = await 'none';
+			// 	}
+			// }, 3000);
 		}
 	}
 
