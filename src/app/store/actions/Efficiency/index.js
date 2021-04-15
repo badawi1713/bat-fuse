@@ -3,8 +3,6 @@
 import jwtService from 'app/services/jwtService';
 import { SET_EFFICIENCY } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
-import history from '@history';
-
 import Axios from 'axios';
 
 const baseURL = process.env.REACT_APP_API_URL;
@@ -36,15 +34,6 @@ export const getEfficiencyData = () => {
                 });
             })
             .catch(error => {
-                if (error.response.status === 500) {
-                    dispatch(
-                        showMessage({
-                            message: 'Sorry, something went wrong with the server',
-                            variant: 'error'
-                        })
-                    );
-                    history.push({ pathname: '/errors/error-500' });
-                }
                 dispatch(
                     showMessage({
                         message: error.message,
