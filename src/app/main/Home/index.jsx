@@ -41,6 +41,14 @@ const Home = () => {
 	}, [dispatch]);
 
 	useEffect(() => {
+		const efficiencyHandler = setInterval(() => {
+			dispatch(getEfficiencyData());
+		}, 60000)
+
+		return () => clearInterval(efficiencyHandler)
+	}, [dispatch]);
+
+	useEffect(() => {
 		const heightChartHandler = (width, height) => {
 			if (width >= 1920) {
 				setHeightChart('470');

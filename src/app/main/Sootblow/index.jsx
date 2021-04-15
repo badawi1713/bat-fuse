@@ -203,10 +203,18 @@ const Sootblow = () => {
 	};
 
 	useEffect(() => {
+		const getSootblowHandler = () => {
+			dispatch(getSootblowData());
+		}
+
+		return getSootblowHandler();
+	}, [dispatch]);
+
+	useEffect(() => {
 		const getSootblowScheduler = setInterval(() => {
 			dispatch(getSootblowData());
 
-		}, 5000)
+		}, 25000)
 
 
 		return () => clearInterval(getSootblowScheduler)
@@ -215,24 +223,6 @@ const Sootblow = () => {
 	useEffect(() => {
 		setRuleDetail(detailRule);
 	}, [detailRule]);
-
-	// useEffect(() => {
-	// 	// const socket = new SockJS('http://192.168.43.93:8080/ws');
-	// 	const socket = new SockJS('http://192.168.43.214:8081/service/bat/log-soopt');
-	// 	const stompClient = Stomp.over(socket);
-	// 	const headers = {
-	// 		"Access-Control-Allow-Credentials": true
-	// 	}
-	// 	stompClient.connect(headers, () => {
-	// 		stompClient.subscribe(
-	// 			`/soopt/topic`, console.log
-	// 		);
-
-	// 	});
-
-
-	// 	return () => stompClient && stompClient.disconnect();
-	// }, []);
 
 	const sequenceData = sequence.map(item =>
 		createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)

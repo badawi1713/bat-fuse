@@ -81,6 +81,7 @@ export default class Chart extends React.Component {
 							showLegend: 1,
 							showtooltip: 1,
 							multiCanvas: false,
+							numDivLines: 4,
 							paletteColors: '#00ff37, #fff00, #2196F3',
 							style: {
 								text: {
@@ -119,6 +120,7 @@ export default class Chart extends React.Component {
 										connectNullData: true
 									}
 								],
+								min: this.props.referenceValue,
 								title: '%',
 								orientation: 'left',
 								plottype: 'smooth-line',
@@ -154,10 +156,10 @@ export default class Chart extends React.Component {
 								plottype: 'step-line',
 								min: '0',
 								max: '1',
-								format: {
-									defaultFormat: 0,
-									round: '0'
-								},
+								// format: {
+								// 	defaultFormat: 0,
+								// 	round: '0'
+								// },
 
 								showYAxis: 0
 							},
@@ -175,10 +177,10 @@ export default class Chart extends React.Component {
 								plottype: 'step-line',
 								min: '0.0',
 								max: '1.0',
-								format: {
-									defaultFormat: 0,
-									round: '0'
-								},
+								// format: {
+								// 	defaultFormat: 0,
+								// 	round: '0'
+								// },
 								style: {
 									text: {
 										color: '#000',
@@ -203,9 +205,9 @@ export default class Chart extends React.Component {
 
 			// 		// console.log('yline', getYaxis);
 
-			// 		// getYLine[2].style.display = await 'none';
-			// 		// getYaxis[22].style.display = await 'none';
-			// 		// getYaxis[30].style.display = await 'none';
+			// 		getYLine[2].style.display = await 'none';
+			// 		getYaxis[22].style.display = await 'none';
+			// 		getYaxis[30].style.display = await 'none';
 			// 	}
 			// }, 3000);
 		}
