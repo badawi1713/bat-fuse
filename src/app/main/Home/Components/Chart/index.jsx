@@ -121,11 +121,11 @@ export default class Chart extends React.Component {
 									}
 								],
 								min: this.props.referenceValue,
-								title: '%',
+								title: 'Boiler Efficiency',
 								orientation: 'left',
 								plottype: 'smooth-line',
 								format: {
-									suffix: ' %'
+									suffix: '%'
 								},
 								referenceLine: [
 									{
