@@ -72,7 +72,7 @@ function Login() {
 					>
 						<div className="max-w-320">
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
-								<Typography variant="h3" color="inherit" className="font-800 leading-tight">
+								<Typography variant="h3" color="inherit" className="font-800 leading-tight text-center">
 									Welcome <br />
 									to SOKKET <br />
 								</Typography>

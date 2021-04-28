@@ -27,7 +27,7 @@ export default class Chart extends React.Component {
 						id: 0,
 						name: 'Time',
 						type: 'date',
-						format: '%-d/%-m/%Y %H:%M'
+						format: '%-d/%-m/%y %H:%M'
 					},
 					{
 						id: 1,

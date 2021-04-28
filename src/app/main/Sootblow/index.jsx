@@ -348,8 +348,8 @@ const Sootblow = () => {
 			updateSootblowSettingData({
 				id,
 				label,
-				maxTime: sootblowSettingMaxValue,
-				minTime: sootblowSettingMinValue
+				maxTime: sootblowSettingMaxValue || sootblowSettingDetailData.maxTime,
+				minTime: sootblowSettingMinValue || sootblowSettingDetailData.minTime
 			})
 		);
 		await handleCloseSootblowSettingUpdate();
@@ -937,6 +937,7 @@ const Sootblow = () => {
 										variant="outlined"
 										defaultValue={parameterDetailData.value}
 										fullWidth
+										type='number'
 										size="small"
 										onChange={e => setParameterValue(e.target.value)}
 									/>
@@ -1079,6 +1080,7 @@ const Sootblow = () => {
 								</Grid>
 								<Grid item xs={9}>
 									<TextField
+										type='number'
 										variant="outlined"
 										defaultValue={sootblowSettingDetailData.maxTime}
 										fullWidth
@@ -1093,6 +1095,7 @@ const Sootblow = () => {
 								</Grid>
 								<Grid item xs={9}>
 									<TextField
+										type='number'
 										variant="outlined"
 										defaultValue={sootblowSettingDetailData.minTime}
 										fullWidth
