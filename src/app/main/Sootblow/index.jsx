@@ -250,7 +250,7 @@ const Sootblow = () => {
 	const operationControlValue = control && control.find(item => item.label === "operation_control")
 	const recommendationTimeValue = control && control.find(item => item.label === "date_recommendation")
 
-	const watchdogStatus = watchdogValue && watchdogValue.value;
+	const watchdogStatus = (watchdogValue && watchdogValue.value) || 0;
 	const safeGuardStatus = safeGuardValue && safeGuardValue.value;
 	const operationControlStatus = operationControlValue && operationControlValue.value;
 	const recommendationTime = recommendationTimeValue && recommendationTimeValue.value;
@@ -948,6 +948,7 @@ const Sootblow = () => {
 										defaultValue={parameterDetailData.value}
 										fullWidth
 										size="small"
+										type='number'
 										onChange={e => setParameterValue(e.target.value)}
 									/>
 								</Grid>
@@ -1092,6 +1093,7 @@ const Sootblow = () => {
 										variant="outlined"
 										defaultValue={sootblowSettingDetailData.maxTime}
 										fullWidth
+										type='number'
 										size="small"
 										onChange={e => setSootblowSettingMaxValue(e.target.value)}
 									/>
@@ -1103,6 +1105,7 @@ const Sootblow = () => {
 								</Grid>
 								<Grid item xs={9}>
 									<TextField
+										type='number'
 										variant="outlined"
 										defaultValue={sootblowSettingDetailData.minTime}
 										fullWidth
