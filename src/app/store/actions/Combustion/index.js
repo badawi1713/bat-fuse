@@ -1,19 +1,14 @@
 // import { ApiGetRequest } from '../../api-configs';
 // import { errorcallback } from '../../global';
-import jwtService from 'app/services/jwtService';
+import { Api } from 'app/store/api-configs';
 import { SET_COMBUSTION } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
-import Axios from 'axios';
 
 const baseURL = process.env.REACT_APP_API_URL_COMBUSTION;
 
 export const getCombustionRecommendationTime = () => {
 	return async dispatch => {
-		Axios.get(`${baseURL}/getMaxTR`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		Api.get(`${baseURL}/getMaxTR`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -52,11 +47,7 @@ export const getCombustionRecommendationTime = () => {
 
 export const getCombustionSensorsTime = () => {
 	return async dispatch => {
-		Axios.get(`${baseURL}/getMaxTS`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		Api.get(`${baseURL}/getMaxTS`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -95,11 +86,7 @@ export const getCombustionConstraints = () => {
 				constraintsLoading: true
 			}
 		});
-		Axios.get(`${baseURL}/getConstraints?last_update=${combustionReducer.combustionRecommendationTime}`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		Api.get(`${baseURL}/getConstraints?last_update=${combustionReducer.combustionRecommendationTime}`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -139,11 +126,7 @@ export const getCombustionConstraints = () => {
 
 export const getCombustionConstraintsLimit = () => {
 	return async (dispatch) => {
-		Axios.get(`${baseURL}/getConstraintsLimit`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		Api.get(`${baseURL}/getConstraintsLimit`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -176,11 +159,7 @@ export const getCombustionDisturbances = () => {
 	return async (dispatch, getState) => {
 		const { combustionReducer } = getState()
 
-		Axios.get(`${baseURL}/getDisturbances?last_update=${combustionReducer.combustionRecommendationTime}`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		Api.get(`${baseURL}/getDisturbances?last_update=${combustionReducer.combustionRecommendationTime}`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -212,11 +191,7 @@ export const getCombustionDisturbances = () => {
 export const getCombustionMVCurrent = () => {
 	return async (dispatch, getState) => {
 		const { combustionReducer } = getState()
-		Axios.get(`${baseURL}/getMVCurrent?last_update=${combustionReducer.combustionRecommendationTime}`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		Api.get(`${baseURL}/getMVCurrent?last_update=${combustionReducer.combustionRecommendationTime}`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -248,11 +223,7 @@ export const getCombustionMVCurrent = () => {
 export const getCombustionMVBias = () => {
 	return async (dispatch, getState) => {
 		const { combustionReducer } = getState()
-		Axios.get(`${baseURL}/getMVBias?last_update=${combustionReducer.combustionRecommendationTime}`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		Api.get(`${baseURL}/getMVBias?last_update=${combustionReducer.combustionRecommendationTime}`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -284,11 +255,7 @@ export const getCombustionMVBias = () => {
 export const getCombustionOptimalityParameters = () => {
 	return async (dispatch, getState) => {
 		const { combustionReducer } = getState()
-		Axios.get(`${baseURL}/getOptimalityParams?last_update=${combustionReducer.combustionRecommendationTime}`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		Api.get(`${baseURL}/getOptimalityParams?last_update=${combustionReducer.combustionRecommendationTime}`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -325,11 +292,7 @@ export const getCombustionO2Chart = () => {
 				o2ChartLoading: true
 			}
 		});
-		await Axios.get(`${baseURL}/getAvgExcessO2Day`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		await Api.get(`${baseURL}/getAvgExcessO2Day`)
 			.then(response => {
 				dispatch({
 					type: SET_COMBUSTION,
@@ -375,11 +338,7 @@ export const getCombustionFuelToAirChart = () => {
 				fuelToAirChartLoading: true
 			}
 		});
-		await Axios.get(`${baseURL}/getFTARatioDay`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		await Api.get(`${baseURL}/getFTARatioDay`)
 			.then(response => {
 
 				dispatch({
@@ -426,11 +385,7 @@ export const getCombustionWindboxChart = () => {
 				windboxChartLoading: true
 			}
 		});
-		await Axios.get(`${baseURL}/getWTFRatioDay`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		await Api.get(`${baseURL}/getWTFRatioDay`)
 			.then(response => {
 
 				dispatch({

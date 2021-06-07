@@ -39,6 +39,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SvgSootblowTjAwarAwar } from './Components';
 import './styles/index.css';
+// import SockJS from 'sockjs-client'
+// import Stomp from 'stompjs';
 
 const Accordion = withStyles({
 	root: {
@@ -101,18 +103,25 @@ const useStyles = makeStyles(theme => ({
 	statusButton: {
 		minWidth: 100
 	},
-	statusButtonOn: {
+	statusButtonGreen: {
 		color: '#FFF',
 		backgroundColor: '#3D9140',
 		'&:hover': {
 			backgroundColor: '#327835'
 		}
 	},
-	statusButtonOff: {
+	statusButtonRed: {
 		color: '#FFF',
 		backgroundColor: '#FA0000',
 		'&:hover': {
 			backgroundColor: '#bd291e'
+		}
+	},
+	statusButtonYellow: {
+		color: '#000',
+		backgroundColor: 'rgb(255,238,0)',
+		'&:hover': {
+			backgroundColor: 'rgb(204,190,0)'
 		}
 	},
 	saveButton: {
@@ -155,6 +164,9 @@ const Sootblow = () => {
 	const dispatch = useDispatch();
 
 	const sootblowReducer = useSelector(state => state.sootblowReducer);
+	const userReducer = useSelector(state => state.auth)
+
+	const { user } = userReducer
 
 	const {
 		loading,
@@ -191,12 +203,36 @@ const Sootblow = () => {
 	};
 
 	useEffect(() => {
-		dispatch(getSootblowData());
+		const getSootblowScheduler = setInterval(() => {
+			dispatch(getSootblowData());
+
+		}, 5000)
+
+
+		return () => clearInterval(getSootblowScheduler)
 	}, [dispatch]);
 
 	useEffect(() => {
 		setRuleDetail(detailRule);
 	}, [detailRule]);
+
+	// useEffect(() => {
+	// 	// const socket = new SockJS('http://192.168.43.93:8080/ws');
+	// 	const socket = new SockJS('http://192.168.43.214:8081/service/bat/log-soopt');
+	// 	const stompClient = Stomp.over(socket);
+	// 	const headers = {
+	// 		"Access-Control-Allow-Credentials": true
+	// 	}
+	// 	stompClient.connect(headers, () => {
+	// 		stompClient.subscribe(
+	// 			`/soopt/topic`, console.log
+	// 		);
+
+	// 	});
+
+
+	// 	return () => stompClient && stompClient.disconnect();
+	// }, []);
 
 	const sequenceData = sequence.map(item =>
 		createSequenceData(item.zone, item.area, item.zoneCode, item.executionStatus)
@@ -214,7 +250,7 @@ const Sootblow = () => {
 	const operationControlValue = control && control.find(item => item.label === "operation_control")
 	const recommendationTimeValue = control && control.find(item => item.label === "date_recommendation")
 
-	const watchdogStatus = watchdogValue && watchdogValue.value;
+	const watchdogStatus = (watchdogValue && watchdogValue.value) || 0;
 	const safeGuardStatus = safeGuardValue && safeGuardValue.value;
 	const operationControlStatus = operationControlValue && operationControlValue.value;
 	const recommendationTime = recommendationTimeValue && recommendationTimeValue.value;
@@ -293,16 +329,7 @@ const Sootblow = () => {
 	};
 
 	const updateRuleSettingHandler = async (id, label) => {
-		// for (let i = 0; i < ruleDetail.length; i++) {
-		// 	if (ruleDetail[i].value === '' || toString(ruleDetail[i].value).trim() === '' || !ruleDetail[i].value) {
-		// 		await dispatch(
-		// 			showMessage({
-		// 				message: 'Sorry, value must be filled',
-		// 				variant: 'error'
-		// 			})
-		// 		);
-		// 		return false;
-		// 	} else {
+
 		await dispatch(
 			changeSootblow({
 				loadingRuleUpdate: true
@@ -318,63 +345,47 @@ const Sootblow = () => {
 		await handleCloseRuleUpdate();
 		await dispatch(getSootblowData());
 	};
-	// }
-	// };
+
 
 	const updateSootblowSettingHandler = async (id, label) => {
-		if (sootblowSettingMaxValue === '' || sootblowSettingDetailData.maxTime === sootblowSettingMaxValue) {
-			await dispatch(
-				showMessage({
-					message: 'Sorry, max value must be changed and cannot be empty',
-					variant: 'error'
-				})
-			);
-		} else if (sootblowSettingMinValue === '' || sootblowSettingDetailData.minTime === sootblowSettingMinValue) {
-			await dispatch(
-				showMessage({
-					message: 'Sorry, min value must be changed and cannot be empty',
-					variant: 'error'
-				})
-			);
-		} else {
-			await dispatch(
-				changeSootblow({
-					loadingSootblowUpdate: true
-				})
-			);
-			await dispatch(
-				updateSootblowSettingData({
-					id,
-					label,
-					maxTime: sootblowSettingMaxValue,
-					minTime: sootblowSettingMinValue
-				})
-			);
-			await handleCloseSootblowSettingUpdate();
-			await dispatch(getSootblowData());
-		}
-	};
+
+		await dispatch(
+			changeSootblow({
+				loadingSootblowUpdate: true
+			})
+		);
+		await dispatch(
+			updateSootblowSettingData({
+				id,
+				label,
+				maxTime: sootblowSettingMaxValue,
+				minTime: sootblowSettingMinValue
+			})
+		);
+		await handleCloseSootblowSettingUpdate();
+		await dispatch(getSootblowData());
+	}
 
 	const renderExecutionStatusIcon = value => {
-		if (value === 0) {
+		if (value === "0") {
 			return (
 				<Tooltip title="Waiting" arrow className="text-12 xl:text-16">
 					<HourglassEmpty fontSize="inherit" className="text-grey-600" />
 				</Tooltip>
 			);
-		} else if (value === 1) {
+		} else if (value === "1") {
 			return (
 				<Tooltip title="Executing" arrow className="text-12 xl:text-16">
 					<FlashOn fontSize="inherit" className="text-orange-600" />
 				</Tooltip>
 			);
-		} else if (value === 2) {
+		} else if (value === "2") {
 			return (
 				<Tooltip title="Success" arrow className="text-12 xl:text-16">
-					<CheckCircle fontSize="inherit" className="text-green-600" />;
+					<CheckCircle fontSize="inherit" className="text-green-600" />
 				</Tooltip>
 			);
-		} else if (value === 3) {
+		} else if (value === "3") {
 			return (
 				<Tooltip title="Fail" arrow className="text-12 xl:text-16">
 					<Cancel fontSize="inherit" className="text-red-600" />
@@ -434,12 +445,12 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											operationControlStatus === '1' || operationControlStatus === '0'
-												? classes.statusButtonOff
-												: classes.statusButtonOn
+											operationControlStatus === 1
+												? classes.statusButtonGreen
+												: classes.statusButtonRed
 										)}
 									>
-										{operationControlStatus === '1' || operationControlStatus === '0' ? 'MANUAL' : 'AUTO'}
+										{operationControlStatus === 1 ? 'ENABLE' : 'DISABLE'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -464,10 +475,10 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											watchdogStatus === '1' ? classes.statusButtonOn : classes.statusButtonOff
+											watchdogStatus === 1 ? classes.statusButtonGreen : watchdogStatus === 0 ? classes.statusButtonRed : classes.statusButtonYellow
 										)}
 									>
-										{watchdogStatus === '1' ? 'CONNECTED' : 'DISCONNECTED'}
+										{watchdogStatus === 0 ? 'DISCONNECTED' : watchdogStatus === 1 ? 'CONNECTED' : "LAGGED"}
 									</Button>
 								</Grid>
 							</Grid>
@@ -492,10 +503,10 @@ const Sootblow = () => {
 										variant="contained"
 										className={clsx(
 											'text-10 cursor-default xl:text-16',
-											safeGuardStatus === '1' ? classes.statusButtonOn : classes.statusButtonOff
+											safeGuardStatus === 1 ? classes.statusButtonGreen : classes.statusButtonRed
 										)}
 									>
-										{safeGuardStatus === '1' ? 'READY' : 'NOT READY'}
+										{safeGuardStatus === 1 ? 'READY' : 'NOT READY'}
 									</Button>
 								</Grid>
 							</Grid>
@@ -506,7 +517,7 @@ const Sootblow = () => {
 
 				{/* Last Recommendation Section*/}
 
-				<Grid item className="flex-initial w-full md:overflow-hidden">
+				<Grid item className="flex-initial w-full md:overflow-hidden justify-between">
 					<Typography className="text-11 my-8 xl:text-16">
 						<span className="text-light-blue-300">Last Recommendation Time</span> :{' '}
 						{!recommendationTime ? '-' : recommendationTime}
@@ -610,7 +621,7 @@ const Sootblow = () => {
 																align="center"
 																className="text-10 xl:text-14 py-4"
 															>
-																{renderExecutionStatusIcon(row.executionStatus)}
+																{renderExecutionStatusIcon((row.executionStatus).toString())}
 															</TableCell>
 														</TableRow>
 													))}
@@ -662,12 +673,14 @@ const Sootblow = () => {
 														>
 															Value
 														</TableCell>
-														<TableCell
-															align="center"
-															className="text-11 xl:text-16 py-auto text-light-blue-300"
-														>
-															Modify
-														</TableCell>
+														{user && user.role && user.role[0] === "ENGINEER" &&
+															<TableCell
+																align="center"
+																className="text-11 xl:text-16 py-auto text-light-blue-300"
+															>
+																Modify
+													</TableCell>
+														}
 													</TableRow>
 												</TableHead>
 												<TableBody>
@@ -685,24 +698,26 @@ const Sootblow = () => {
 															>
 																{row.value}
 															</TableCell>
-															<TableCell
-																align="center"
-																className="py-4 text-14 xl:text-16"
-															>
-																{typeof row.value !== 'number' ? (
-																	'-'
-																) : (
-																	<IconButton
-																		onClick={async () => {
-																			await handleClickOpenParameterUpdate();
-																			await parameterDetailFetch(row.id);
-																		}}
-																		size="small"
-																	>
-																		<Build className="text-14 xl:text-16" />
-																	</IconButton>
-																)}
-															</TableCell>
+															{user && user.role && user.role[0] === "ENGINEER" &&
+																<TableCell
+																	align="center"
+																	className="py-4 text-14 xl:text-16"
+																>
+																	{typeof row.value !== 'number' ? (
+																		'-'
+																	) : (
+																		<IconButton
+																			onClick={async () => {
+																				await handleClickOpenParameterUpdate();
+																				await parameterDetailFetch(row.id);
+																			}}
+																			size="small"
+																		>
+																			<Build className="text-14 xl:text-16" />
+																		</IconButton>
+																	)}
+																</TableCell>
+															}
 														</TableRow>
 													))}
 												</TableBody>
@@ -747,12 +762,14 @@ const Sootblow = () => {
 														>
 															Rule
 														</TableCell>
-														<TableCell
-															align="center"
-															className="text-11 xl:text-16 py-auto text-light-blue-300"
-														>
-															Modify
+														{user && user.role && user.role[0] === "ENGINEER" &&
+															<TableCell
+																align="center"
+																className="text-11 xl:text-16 py-auto text-light-blue-300"
+															>
+																Modify
 														</TableCell>
+														}
 													</TableRow>
 												</TableHead>
 												<TableBody>
@@ -764,20 +781,22 @@ const Sootblow = () => {
 															>
 																{row.label}
 															</TableCell>
-															<TableCell
-																align="center"
-																className="py-4 text-14 xl:text-16"
-															>
-																<IconButton
-																	onClick={async () => {
-																		await handleClickOpenRuleUpdate();
-																		await ruleDetailFetch(row.id);
-																	}}
-																	size="small"
+															{user && user.role && user.role[0] === "ENGINEER" &&
+																<TableCell
+																	align="center"
+																	className="py-4 text-14 xl:text-16"
 																>
-																	<Build className="text-14 xl:text-16" />
-																</IconButton>
-															</TableCell>
+																	<IconButton
+																		onClick={async () => {
+																			await handleClickOpenRuleUpdate();
+																			await ruleDetailFetch(row.id);
+																		}}
+																		size="small"
+																	>
+																		<Build className="text-14 xl:text-16" />
+																	</IconButton>
+																</TableCell>
+															}
 														</TableRow>
 													))}
 												</TableBody>
@@ -836,12 +855,14 @@ const Sootblow = () => {
 														>
 															Min Time
 														</TableCell>
-														<TableCell
-															align="center"
-															className="text-11 xl:text-16 py-auto text-light-blue-300"
-														>
-															Modify
+														{user && user.role && user.role[0] === "ENGINEER" &&
+															<TableCell
+																align="center"
+																className="text-11 xl:text-16 py-auto text-light-blue-300"
+															>
+																Modify
 														</TableCell>
+														}
 													</TableRow>
 												</TableHead>
 												<TableBody>
@@ -865,20 +886,22 @@ const Sootblow = () => {
 															>
 																{row.minTime}
 															</TableCell>
-															<TableCell
-																align="center"
-																className="py-4 text-14 xl:text-16"
-															>
-																<IconButton
-																	onClick={async () => {
-																		await handleClickOpenSootblowSettingUpdate();
-																		await sootblowSettingDetailFetch(row.id);
-																	}}
-																	size="small"
+															{user && user.role && user.role[0] === "ENGINEER" &&
+																<TableCell
+																	align="center"
+																	className="py-4 text-14 xl:text-16"
 																>
-																	<Build className="text-14 xl:text-16" />
-																</IconButton>
-															</TableCell>
+																	<IconButton
+																		onClick={async () => {
+																			await handleClickOpenSootblowSettingUpdate();
+																			await sootblowSettingDetailFetch(row.id);
+																		}}
+																		size="small"
+																	>
+																		<Build className="text-14 xl:text-16" />
+																	</IconButton>
+																</TableCell>
+															}
 														</TableRow>
 													))}
 												</TableBody>
@@ -925,6 +948,7 @@ const Sootblow = () => {
 										defaultValue={parameterDetailData.value}
 										fullWidth
 										size="small"
+										type='number'
 										onChange={e => setParameterValue(e.target.value)}
 									/>
 								</Grid>
@@ -991,7 +1015,7 @@ const Sootblow = () => {
 										{/* <Grid item xs={4} className="text-14 text-light-blue-300">
 											Operator
 										</Grid> */}
-										{item.value === '' ? null : (
+										{(item.value && item.value.length === 0) || item.value === "" ? null : (
 											<div item xs={12}>
 												<TextField
 													variant="outlined"
@@ -1069,6 +1093,7 @@ const Sootblow = () => {
 										variant="outlined"
 										defaultValue={sootblowSettingDetailData.maxTime}
 										fullWidth
+										type='number'
 										size="small"
 										onChange={e => setSootblowSettingMaxValue(e.target.value)}
 									/>
@@ -1080,6 +1105,7 @@ const Sootblow = () => {
 								</Grid>
 								<Grid item xs={9}>
 									<TextField
+										type='number'
 										variant="outlined"
 										defaultValue={sootblowSettingDetailData.minTime}
 										fullWidth

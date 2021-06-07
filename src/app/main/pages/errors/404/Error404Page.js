@@ -36,7 +36,7 @@ function Error404Page() {
 				</Paper> */}
 
 				<Link className="font-medium" to="/">
-					Go Back
+					Go back to home
 				</Link>
 			</div>
 		</div>

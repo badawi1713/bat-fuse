@@ -3,6 +3,7 @@ import authRoleExamplesConfigs from 'app/main/auth/authRoleExamplesConfigs';
 import CallbackConfig from 'app/main/callback/CallbackConfig';
 import CombustionConfig from 'app/main/Combustion/CombustionConfig';
 import HomeConfig from 'app/main/Home/HomeConfig';
+import ProfileConfig from 'app/main/Profile/ProfileConfig'
 import LoginConfig from 'app/main/Login/LoginConfig';
 import LogoutConfig from 'app/main/logout/LogoutConfig';
 import pagesConfigs from 'app/main/pages/pagesConfigs';
@@ -14,6 +15,7 @@ const routeConfigs = [
 	...pagesConfigs,
 	...authRoleExamplesConfigs,
 	HomeConfig,
+	ProfileConfig,
 	SootblowConfig,
 	CombustionConfig,
 	LogoutConfig,

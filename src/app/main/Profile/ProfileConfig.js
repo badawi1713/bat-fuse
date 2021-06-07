@@ -1,7 +1,7 @@
 import React from 'react';
 import { authRoles } from 'app/auth';
 
-const CombustionConfig = {
+const ProfileConfig = {
 	settings: {
 		layout: {
 			config: {}
@@ -10,10 +10,10 @@ const CombustionConfig = {
 	auth: authRoles.admin,
 	routes: [
 		{
-			path: '/combustion',
+			path: '/profile',
 			component: React.lazy(() => import('.'))
 		}
 	]
 };
 
-export default CombustionConfig;
+export default ProfileConfig;

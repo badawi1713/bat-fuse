@@ -1,11 +1,8 @@
 // import { ApiGetRequest } from '../../api-configs';
 // import { errorcallback } from '../../global';
-import jwtService from 'app/services/jwtService';
+import { Api } from 'app/store/api-configs';
 import { SET_SOOTBLOW } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
-// import history from '@history';
-
-import Axios from 'axios';
 
 const baseURL = process.env.REACT_APP_API_URL;
 
@@ -17,11 +14,7 @@ export const getSootblowData = loading => {
 				loadingSootblowData: loading
 			}
 		});
-		await Axios.get(`${baseURL}/service/bat/sootblow/indicator`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		await Api.get(`${baseURL}/service/bat/sootblow/indicator`)
 			.then(response => {
 				dispatch({
 					type: SET_SOOTBLOW,
@@ -39,15 +32,15 @@ export const getSootblowData = loading => {
 				});
 			})
 			.catch(error => {
-				if (error.response.status === 500) {
-					dispatch(
-						showMessage({
-							message: "Sorry, something went wrong with Sootblow's service",
-							variant: 'error'
-						})
-					);
-					// history.push({ pathname: '/errors/error-500' });
-				}
+				// if (error.response.status === 500) {
+				// 	dispatch(
+				// 		showMessage({
+				// 			message: "Sorry, something went wrong with Sootblow's service",
+				// 			variant: 'error'
+				// 		})
+				// 	);
+				// 	// history.push({ pathname: '/errors/error-500' });
+				// }
 				dispatch(
 					showMessage({
 						message: error.message,
@@ -74,11 +67,7 @@ export const getParameterByID = id => {
 				loading: true
 			}
 		});
-		const response = await Axios.get(`${baseURL}/service/bat/sootblow/parameter/${id}`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		});
+		const response = await Api.get(`${baseURL}/service/bat/sootblow/parameter/${id}`);
 
 		try {
 			await dispatch({
@@ -114,11 +103,7 @@ export const getRuleByID = id => {
 				loading: true
 			}
 		});
-		const response = await Axios.get(`${baseURL}/service/bat/sootblow/rule/${id}`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		});
+		const response = await Api.get(`${baseURL}/service/bat/sootblow/rule/${id}`);
 		try {
 			await dispatch({
 				type: SET_SOOTBLOW,
@@ -157,11 +142,7 @@ export const getSootblowSettingByID = id => {
 				loading: true
 			}
 		});
-		const response = await Axios.get(`${baseURL}/service/bat/sootblow/waitingtime/${id}`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		});
+		const response = await Api.get(`${baseURL}/service/bat/sootblow/waitingtime/${id}`);
 
 		try {
 			await dispatch({
@@ -191,12 +172,7 @@ export const getSootblowSettingByID = id => {
 
 export const updateParameterData = data => {
 	return async dispatch => {
-		await Axios.post(`${baseURL}/service/bat/sootblow/parameter`, data, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`,
-				'Content-Type': 'application/json'
-			}
-		})
+		await Api.post(`${baseURL}/service/bat/sootblow/parameter`, data)
 			.then(() => {
 				dispatch(
 					showMessage({
@@ -248,14 +224,8 @@ export const updateParameterData = data => {
 };
 
 export const updateRuleData = data => {
-	console.log('data send', data);
 	return async dispatch => {
-		await Axios.post(`${baseURL}/service/bat/sootblow/rule`, data, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`,
-				'Content-Type': 'application/json'
-			}
-		})
+		await Api.post(`${baseURL}/service/bat/sootblow/rule`, data)
 			.then(() => {
 				dispatch(
 					showMessage({
@@ -308,12 +278,7 @@ export const updateRuleData = data => {
 
 export const updateSootblowSettingData = data => {
 	return async dispatch => {
-		await Axios.post(`${baseURL}/service/bat/sootblow/waitingtime`, data, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`,
-				'Content-Type': 'application/json'
-			}
-		})
+		await Api.post(`${baseURL}/service/bat/sootblow/waitingtime`, data)
 			.then(() => {
 				dispatch(
 					showMessage({
@@ -378,12 +343,7 @@ export const updateMasterControl = data => {
 		if (sootblowData.control[2].value === data.value) {
 			return false;
 		} else {
-			await Axios.post(`${baseURL}/service/bat/sootblow/control`, data, {
-				headers: {
-					Authorization: `Bearer ${jwtService.getAccessToken()}`,
-					'Content-Type': 'application/json'
-				}
-			})
+			await Api.post(`${baseURL}/service/bat/sootblow/control`, data)
 				.then(() => {
 					dispatch(
 						showMessage({

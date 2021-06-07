@@ -1,5 +1,5 @@
+import React from 'react';
 import { authRoles } from 'app/auth';
-import Sootblow from './index';
 
 const SootblowConfig = {
 	settings: {
@@ -11,7 +11,7 @@ const SootblowConfig = {
 	routes: [
 		{
 			path: '/sootblow',
-			component: Sootblow
+			component: React.lazy(() => import('.'))
 		}
 	]
 };

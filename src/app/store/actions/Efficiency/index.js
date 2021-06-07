@@ -1,13 +1,11 @@
 // import { ApiGetRequest } from '../../api-configs';
 // import { errorcallback } from '../../global';
-import jwtService from 'app/services/jwtService';
+import { Api } from 'app/store/api-configs';
 import { SET_EFFICIENCY } from 'app/store/constants';
 import { showMessage } from 'app/store/fuse/messageSlice';
-import history from '@history';
-
-import Axios from 'axios';
 
 const baseURL = process.env.REACT_APP_API_URL;
+
 
 export const getEfficiencyData = () => {
 	return async dispatch => {
@@ -17,11 +15,7 @@ export const getEfficiencyData = () => {
 				loading: true
 			}
 		});
-		await Axios.get(`${baseURL}/service/bat/sootblow/efficiency`, {
-			headers: {
-				Authorization: `Bearer ${jwtService.getAccessToken()}`
-			}
-		})
+		await Api.get(`${baseURL}/service/bat/sootblow/efficiency`)
 			.then(response => {
 				dispatch({
 					type: SET_EFFICIENCY,
@@ -36,15 +30,6 @@ export const getEfficiencyData = () => {
 				});
 			})
 			.catch(error => {
-				if (error.response.status === 500) {
-					dispatch(
-						showMessage({
-							message: 'Sorry, something went wrong with the server',
-							variant: 'error'
-						})
-					);
-					history.push({ pathname: '/errors/error-500' });
-				}
 				dispatch(
 					showMessage({
 						message: error.message,

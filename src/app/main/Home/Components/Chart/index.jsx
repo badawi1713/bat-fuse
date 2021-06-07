@@ -27,7 +27,7 @@ export default class Chart extends React.Component {
 						id: 0,
 						name: 'Time',
 						type: 'date',
-						format: '%-d/%-m/%Y %H:%M'
+						format: '%-d/%-m/%y %H:%M'
 					},
 					{
 						id: 1,
@@ -116,10 +116,10 @@ export default class Chart extends React.Component {
 								plot: [
 									{
 										value: 'Boiler Efficiency',
-										connectNullData: true
+										connectNullData: true,
 									}
 								],
-								title: '%',
+								title: '',
 								orientation: 'left',
 								plottype: 'smooth-line',
 								format: {
@@ -145,7 +145,9 @@ export default class Chart extends React.Component {
 								plot: [
 									{
 										value: 'Sootblow Optimization Running',
-										connectNullData: true
+										connectNullData: true,
+										aggregation: "Last"
+
 									}
 								],
 								title: '',
@@ -155,7 +157,7 @@ export default class Chart extends React.Component {
 								max: '1',
 								format: {
 									defaultFormat: 0,
-									round: '0'
+									round: '1'
 								},
 
 								showYAxis: 0
@@ -165,17 +167,19 @@ export default class Chart extends React.Component {
 								plot: [
 									{
 										value: 'Combustion Optimization Running',
-										connectNullData: true
+										connectNullData: true,
+										aggregation: "Last"
+
 									}
 								],
 								title: 'Sootblow & Combustion Optimization Running',
 								orientation: 'right',
 								plottype: 'step-line',
-								min: '0.0',
-								max: '1.0',
+								min: '0',
+								max: '1',
 								format: {
 									defaultFormat: 0,
-									round: '0'
+									round: '1'
 								},
 								style: {
 									text: {
@@ -189,23 +193,23 @@ export default class Chart extends React.Component {
 				}
 			}));
 			await this.onFetchData();
-			await setTimeout(async function () {
-				const getChart = document.getElementById('home-chart');
+			// await setTimeout(async function () {
+			// 	const getChart = document.getElementById('home-chart');
 
-				if (getChart) {
-					// get all meso-axis
-					const gMexoAxis = await getChart.getElementsByTagName('g');
-					// remove anomaly y-axis and y-line-right
-					let getYaxis = await gMexoAxis[1].getElementsByTagName('g');
-					let getYLine = await gMexoAxis[1].getElementsByTagName('path');
+			// 	if (getChart) {
+			// 		// get all meso-axis
+			// 		const gMexoAxis = await getChart.getElementsByTagName('g');
+			// 		// remove anomaly y-axis and y-line-right
+			// 		let getYaxis = await gMexoAxis[1].getElementsByTagName('g');
+			// 		let getYLine = await gMexoAxis[1].getElementsByTagName('path');
 
-					console.log('yline', getYaxis);
+			// 		console.log('yline', getYaxis);
 
-					getYLine[2].style.display = await 'none';
-					getYaxis[25].style.display = await 'none';
-					getYaxis[34].style.display = await 'none';
-				}
-			}, 3000);
+			// 		getYLine[2].style.display = await 'none';
+			// 		getYaxis[25].style.display = await 'none';
+			// 		getYaxis[34].style.display = await 'none';
+			// 	}
+			// }, 3000);
 		}
 	}
 
@@ -228,6 +232,7 @@ export default class Chart extends React.Component {
 	}
 
 	render() {
+		console.log('props', this.props)
 		return (
 			<div
 				className={

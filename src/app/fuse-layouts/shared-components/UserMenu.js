@@ -10,12 +10,14 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logoutUser } from 'app/auth/store/userSlice';
+import Profile from './Profile';
 
 function UserMenu(props) {
 	const dispatch = useDispatch();
 	const user = useSelector(({ auth }) => auth.user);
 
 	const [userMenu, setUserMenu] = useState(null);
+	const [showProfile, setShowProfile] = useState(false)
 
 	const userMenuClick = event => {
 		setUserMenu(event.currentTarget);
@@ -25,8 +27,17 @@ function UserMenu(props) {
 		setUserMenu(null);
 	};
 
+	const showProfileHandler = () => {
+		setShowProfile(true)
+	}
+
+	const closeProfileHandler = () => {
+		setShowProfile(false)
+	}
+
 	return (
 		<>
+			{showProfile && <Profile closeProfileHandler={closeProfileHandler} showProfile={showProfile} />}
 			<Button className="min-h-40 min-w-40 mx-16 md:mx-0 px-0 md:px-16 py-0 md:py-6" onClick={userMenuClick}>
 				<div className="hidden md:flex flex-col mx-4 items-end">
 					<Typography component="span" className="normal-case font-bold flex xl:text-16">
@@ -39,7 +50,7 @@ function UserMenu(props) {
 				</div>
 
 				{user.data.photoURL ? (
-					<Avatar className="md:mx-4" alt="user photo" src={user.data.photoURL} />
+					<Avatar className="md:mx-4" alt="user photo" src="assets/images/avatars/profile.jpg" />
 				) : (
 					<Avatar className="md:mx-4">{user.data.displayName[0]}</Avatar>
 				)}
@@ -69,12 +80,6 @@ function UserMenu(props) {
 							</ListItemIcon>
 							<ListItemText primary="Login" />
 						</MenuItem>
-						{/* <MenuItem component={Link} to="/register" role="button">
-							<ListItemIcon className="min-w-40">
-								<Icon>person_add</Icon>
-							</ListItemIcon>
-							<ListItemText primary="Register" />
-						</MenuItem> */}
 					</>
 				) : (
 					<>
@@ -84,18 +89,15 @@ function UserMenu(props) {
 							</ListItemIcon>
 							<ListItemText primary="Home" />
 						</MenuItem>
-						{/* <MenuItem component={Link} to="/pages/profile" onClick={userMenuClose} role="button">
+						<MenuItem onClick={async () => {
+							await showProfileHandler();
+							await userMenuClose();
+						}} role="button">
 							<ListItemIcon className="min-w-40">
 								<Icon>account_circle</Icon>
 							</ListItemIcon>
-							<ListItemText primary="My Profile" />
+							<ListItemText primary="Profile" />
 						</MenuItem>
-						<MenuItem component={Link} to="/apps/mail" onClick={userMenuClose} role="button">
-							<ListItemIcon className="min-w-40">
-								<Icon>mail</Icon>
-							</ListItemIcon>
-							<ListItemText primary="Inbox" />
-						</MenuItem> */}
 						<MenuItem
 							onClick={() => {
 								dispatch(logoutUser());
