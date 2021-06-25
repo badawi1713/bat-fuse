@@ -6,7 +6,7 @@ const initialState = {
 	currentEfficiency: '',
 	referenceValue: '',
 	chart: [],
-	loading: false,
+	loading: true,
 	error: false
 };
 

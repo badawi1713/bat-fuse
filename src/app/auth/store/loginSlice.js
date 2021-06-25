@@ -33,6 +33,7 @@ export const submitLogin = ({ username, password }) => async dispatch => {
 					}
 				})
 			);
+			window.location.reload()
 
 			return dispatch(loginSuccess());
 		})
